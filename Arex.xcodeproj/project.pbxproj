@@ -30,7 +30,7 @@
 		8390C42D1A8975490010D616 /* Arex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8390C4311A8975490010D616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8390C4321A8975490010D616 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8390C4351A8975490010D616 /* Arex.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Arex.xcdatamodel; sourceTree = "<group>"; };
+		8390C4351A8975490010D616 /* 1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 1.xcdatamodel; sourceTree = "<group>"; };
 		8390C4371A8975490010D616 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8390C43A1A8975490010D616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8390C43C1A8975490010D616 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -413,6 +413,7 @@
 				8390C4511A8975490010D616 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8390C4521A8975490010D616 /* Build configuration list for PBXNativeTarget "ArexTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +422,7 @@
 				8390C4541A8975490010D616 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -428,9 +430,9 @@
 		8390C4341A8975490010D616 /* Arex.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				8390C4351A8975490010D616 /* Arex.xcdatamodel */,
+				8390C4351A8975490010D616 /* 1.xcdatamodel */,
 			);
-			currentVersion = 8390C4351A8975490010D616 /* Arex.xcdatamodel */;
+			currentVersion = 8390C4351A8975490010D616 /* 1.xcdatamodel */;
 			path = Arex.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
