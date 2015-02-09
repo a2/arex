@@ -58,6 +58,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		838178A81A897B1200FF78A3 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				8390C4321A8975490010D616 /* AppDelegate.swift */,
+				8390C4371A8975490010D616 /* ViewController.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		838178A91A897B1D00FF78A3 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				8390C44B1A8975490010D616 /* ArexTests.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		8390C4241A8975490010D616 = {
 			isa = PBXGroup;
 			children = (
@@ -79,12 +96,7 @@
 		8390C42F1A8975490010D616 /* Arex */ = {
 			isa = PBXGroup;
 			children = (
-				8390C4321A8975490010D616 /* AppDelegate.swift */,
-				8390C4371A8975490010D616 /* ViewController.swift */,
-				8390C4391A8975490010D616 /* Main.storyboard */,
-				8390C43C1A8975490010D616 /* Images.xcassets */,
-				8390C43E1A8975490010D616 /* LaunchScreen.xib */,
-				8390C4341A8975490010D616 /* Arex.xcdatamodeld */,
+				838178A81A897B1200FF78A3 /* Source */,
 				8390C4301A8975490010D616 /* Supporting Files */,
 			);
 			path = Arex;
@@ -93,15 +105,19 @@
 		8390C4301A8975490010D616 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8390C4341A8975490010D616 /* Arex.xcdatamodeld */,
+				8390C43C1A8975490010D616 /* Images.xcassets */,
 				8390C4311A8975490010D616 /* Info.plist */,
+				8390C43E1A8975490010D616 /* LaunchScreen.xib */,
+				8390C4391A8975490010D616 /* Main.storyboard */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		8390C4481A8975490010D616 /* ArexTests */ = {
 			isa = PBXGroup;
 			children = (
-				8390C44B1A8975490010D616 /* ArexTests.swift */,
+				838178A91A897B1D00FF78A3 /* Source */,
 				8390C4491A8975490010D616 /* Supporting Files */,
 			);
 			path = ArexTests;
@@ -112,7 +128,7 @@
 			children = (
 				8390C44A1A8975490010D616 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +262,7 @@
 				8390C43A1A8975490010D616 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		8390C43E1A8975490010D616 /* LaunchScreen.xib */ = {
@@ -254,6 +271,7 @@
 				8390C43F1A8975490010D616 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -344,7 +362,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Arex/Info.plist;
+				INFOPLIST_FILE = "Arex/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -354,7 +372,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Arex/Info.plist;
+				INFOPLIST_FILE = "Arex/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -372,7 +390,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = ArexTests/Info.plist;
+				INFOPLIST_FILE = "ArexTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arex.app/Arex";
@@ -387,7 +405,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = ArexTests/Info.plist;
+				INFOPLIST_FILE = "ArexTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arex.app/Arex";
