@@ -1,0 +1,441 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8390C4331A8975490010D616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4321A8975490010D616 /* AppDelegate.swift */; };
+		8390C4361A8975490010D616 /* Arex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4341A8975490010D616 /* Arex.xcdatamodeld */; };
+		8390C4381A8975490010D616 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4371A8975490010D616 /* ViewController.swift */; };
+		8390C43B1A8975490010D616 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8390C4391A8975490010D616 /* Main.storyboard */; };
+		8390C43D1A8975490010D616 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8390C43C1A8975490010D616 /* Images.xcassets */; };
+		8390C4401A8975490010D616 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8390C43E1A8975490010D616 /* LaunchScreen.xib */; };
+		8390C44C1A8975490010D616 /* ArexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C44B1A8975490010D616 /* ArexTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8390C4461A8975490010D616 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8390C4251A8975490010D616 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8390C42C1A8975490010D616;
+			remoteInfo = Arex;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8390C42D1A8975490010D616 /* Arex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8390C4311A8975490010D616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8390C4321A8975490010D616 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8390C4351A8975490010D616 /* Arex.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Arex.xcdatamodel; sourceTree = "<group>"; };
+		8390C4371A8975490010D616 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8390C43A1A8975490010D616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8390C43C1A8975490010D616 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8390C43F1A8975490010D616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		8390C4451A8975490010D616 /* ArexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8390C44A1A8975490010D616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8390C44B1A8975490010D616 /* ArexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArexTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8390C42A1A8975490010D616 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8390C4421A8975490010D616 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8390C4241A8975490010D616 = {
+			isa = PBXGroup;
+			children = (
+				8390C42F1A8975490010D616 /* Arex */,
+				8390C4481A8975490010D616 /* ArexTests */,
+				8390C42E1A8975490010D616 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8390C42E1A8975490010D616 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8390C42D1A8975490010D616 /* Arex.app */,
+				8390C4451A8975490010D616 /* ArexTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8390C42F1A8975490010D616 /* Arex */ = {
+			isa = PBXGroup;
+			children = (
+				8390C4321A8975490010D616 /* AppDelegate.swift */,
+				8390C4371A8975490010D616 /* ViewController.swift */,
+				8390C4391A8975490010D616 /* Main.storyboard */,
+				8390C43C1A8975490010D616 /* Images.xcassets */,
+				8390C43E1A8975490010D616 /* LaunchScreen.xib */,
+				8390C4341A8975490010D616 /* Arex.xcdatamodeld */,
+				8390C4301A8975490010D616 /* Supporting Files */,
+			);
+			path = Arex;
+			sourceTree = "<group>";
+		};
+		8390C4301A8975490010D616 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8390C4311A8975490010D616 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8390C4481A8975490010D616 /* ArexTests */ = {
+			isa = PBXGroup;
+			children = (
+				8390C44B1A8975490010D616 /* ArexTests.swift */,
+				8390C4491A8975490010D616 /* Supporting Files */,
+			);
+			path = ArexTests;
+			sourceTree = "<group>";
+		};
+		8390C4491A8975490010D616 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8390C44A1A8975490010D616 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8390C42C1A8975490010D616 /* Arex */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8390C44F1A8975490010D616 /* Build configuration list for PBXNativeTarget "Arex" */;
+			buildPhases = (
+				8390C4291A8975490010D616 /* Sources */,
+				8390C42A1A8975490010D616 /* Frameworks */,
+				8390C42B1A8975490010D616 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Arex;
+			productName = Arex;
+			productReference = 8390C42D1A8975490010D616 /* Arex.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8390C4441A8975490010D616 /* ArexTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8390C4521A8975490010D616 /* Build configuration list for PBXNativeTarget "ArexTests" */;
+			buildPhases = (
+				8390C4411A8975490010D616 /* Sources */,
+				8390C4421A8975490010D616 /* Frameworks */,
+				8390C4431A8975490010D616 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8390C4471A8975490010D616 /* PBXTargetDependency */,
+			);
+			name = ArexTests;
+			productName = ArexTests;
+			productReference = 8390C4451A8975490010D616 /* ArexTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8390C4251A8975490010D616 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = Pandamonia;
+				TargetAttributes = {
+					8390C42C1A8975490010D616 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					8390C4441A8975490010D616 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 8390C42C1A8975490010D616;
+					};
+				};
+			};
+			buildConfigurationList = 8390C4281A8975490010D616 /* Build configuration list for PBXProject "Arex" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8390C4241A8975490010D616;
+			productRefGroup = 8390C42E1A8975490010D616 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8390C42C1A8975490010D616 /* Arex */,
+				8390C4441A8975490010D616 /* ArexTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8390C42B1A8975490010D616 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8390C43B1A8975490010D616 /* Main.storyboard in Resources */,
+				8390C4401A8975490010D616 /* LaunchScreen.xib in Resources */,
+				8390C43D1A8975490010D616 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8390C4431A8975490010D616 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8390C4291A8975490010D616 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8390C4381A8975490010D616 /* ViewController.swift in Sources */,
+				8390C4331A8975490010D616 /* AppDelegate.swift in Sources */,
+				8390C4361A8975490010D616 /* Arex.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8390C4411A8975490010D616 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8390C44C1A8975490010D616 /* ArexTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8390C4471A8975490010D616 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8390C42C1A8975490010D616 /* Arex */;
+			targetProxy = 8390C4461A8975490010D616 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8390C4391A8975490010D616 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8390C43A1A8975490010D616 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8390C43E1A8975490010D616 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8390C43F1A8975490010D616 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8390C44D1A8975490010D616 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8390C44E1A8975490010D616 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8390C4501A8975490010D616 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Arex/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8390C4511A8975490010D616 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Arex/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8390C4531A8975490010D616 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ArexTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arex.app/Arex";
+			};
+			name = Debug;
+		};
+		8390C4541A8975490010D616 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ArexTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arex.app/Arex";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8390C4281A8975490010D616 /* Build configuration list for PBXProject "Arex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8390C44D1A8975490010D616 /* Debug */,
+				8390C44E1A8975490010D616 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8390C44F1A8975490010D616 /* Build configuration list for PBXNativeTarget "Arex" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8390C4501A8975490010D616 /* Debug */,
+				8390C4511A8975490010D616 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8390C4521A8975490010D616 /* Build configuration list for PBXNativeTarget "ArexTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8390C4531A8975490010D616 /* Debug */,
+				8390C4541A8975490010D616 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8390C4341A8975490010D616 /* Arex.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8390C4351A8975490010D616 /* Arex.xcdatamodel */,
+			);
+			currentVersion = 8390C4351A8975490010D616 /* Arex.xcdatamodel */;
+			path = Arex.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8390C4251A8975490010D616 /* Project object */;
+}
