@@ -2,6 +2,33 @@ import CoreData
 import Foundation
 
 class WeeklySchedule: Schedule {
+    enum Attributes: String {
+        case daysOfWeek = "daysOfWeek"
+        case hour = "hour"
+        case minute = "minute"
+    }
+
+    // MARK: - Helpers
+
+    override class var entityName: String {
+        return "WeeklySchedule"
+    }
+
+    override class func entity(managedObjectContext: NSManagedObjectContext) -> NSEntityDescription? {
+        return NSEntityDescription.entityForName(entityName, inManagedObjectContext: managedObjectContext)
+    }
+
+    // MARK: - Life Cycle Methods
+
+    override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
+        super.init(entity: entity, insertIntoManagedObjectContext: context)
+    }
+
+    convenience init(managedObjectContext: NSManagedObjectContext) {
+        let entity = WeeklySchedule.entity(managedObjectContext)
+        self.init(entity: entity!, insertIntoManagedObjectContext: managedObjectContext)
+    }
+
     // MARK: - Attributes
 
     @NSManaged var daysOfWeek: NSNumber?
