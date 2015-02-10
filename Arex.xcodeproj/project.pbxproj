@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		830B143A1A89834C000E0A2D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B14391A89834C000E0A2D /* Constants.swift */; };
+		830B143C1A89835B000E0A2D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B143B1A89835B000E0A2D /* Error.swift */; };
 		8390C4331A8975490010D616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4321A8975490010D616 /* AppDelegate.swift */; };
 		8390C4361A8975490010D616 /* Arex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4341A8975490010D616 /* Arex.xcdatamodeld */; };
 		8390C4381A8975490010D616 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4371A8975490010D616 /* ViewController.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		830B14391A89834C000E0A2D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		830B143B1A89835B000E0A2D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		8390C42D1A8975490010D616 /* Arex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8390C4311A8975490010D616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8390C4321A8975490010D616 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 			isa = PBXGroup;
 			children = (
 				8390C4321A8975490010D616 /* AppDelegate.swift */,
+				830B14391A89834C000E0A2D /* Constants.swift */,
+				830B143B1A89835B000E0A2D /* Error.swift */,
 				8390C4371A8975490010D616 /* ViewController.swift */,
 			);
 			path = Source;
@@ -234,6 +240,8 @@
 				8390C4381A8975490010D616 /* ViewController.swift in Sources */,
 				8390C4331A8975490010D616 /* AppDelegate.swift in Sources */,
 				8390C4361A8975490010D616 /* Arex.xcdatamodeld in Sources */,
+				830B143C1A89835B000E0A2D /* Error.swift in Sources */,
+				830B143A1A89834C000E0A2D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
