@@ -1,6 +1,8 @@
 import CoreData
 import UIKit
 
+let DatabaseFilename = "Database.rx"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

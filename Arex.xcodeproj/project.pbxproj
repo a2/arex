@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		830B143A1A89834C000E0A2D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B14391A89834C000E0A2D /* Constants.swift */; };
 		830B143C1A89835B000E0A2D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B143B1A89835B000E0A2D /* Error.swift */; };
 		830B14571A898A7A000E0A2D /* WeeklySchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B14561A898A7A000E0A2D /* WeeklySchedule.swift */; };
 		830B14591A898A7A000E0A2D /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B14581A898A7A000E0A2D /* Schedule.swift */; };
@@ -35,7 +34,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		830B14391A89834C000E0A2D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		830B143B1A89835B000E0A2D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		830B14561A898A7A000E0A2D /* WeeklySchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklySchedule.swift; sourceTree = "<group>"; };
 		830B14581A898A7A000E0A2D /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				8390C4321A8975490010D616 /* AppDelegate.swift */,
-				830B14391A89834C000E0A2D /* Constants.swift */,
 				830B14491A898A15000E0A2D /* Core Data */,
 				830B143B1A89835B000E0A2D /* Error.swift */,
 				8390C4371A8975490010D616 /* ViewController.swift */,
@@ -277,7 +274,6 @@
 				830B14611A898A7B000E0A2D /* DailySchedule.swift in Sources */,
 				830B143C1A89835B000E0A2D /* Error.swift in Sources */,
 				830B14591A898A7A000E0A2D /* Schedule.swift in Sources */,
-				830B143A1A89834C000E0A2D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
