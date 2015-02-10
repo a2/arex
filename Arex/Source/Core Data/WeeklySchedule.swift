@@ -1,5 +1,4 @@
 import CoreData
-import Foundation
 
 class WeeklySchedule: Schedule {
     enum Attributes: String {

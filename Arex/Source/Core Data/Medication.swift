@@ -1,6 +1,5 @@
 import AddressBook
 import CoreData
-import Foundation
 import UIKit
 
 class Medication: NSManagedObject {

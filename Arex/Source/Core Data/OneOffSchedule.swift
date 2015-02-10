@@ -1,5 +1,4 @@
 import CoreData
-import Foundation
 
 class OneOffSchedule: Schedule {
     enum Attributes: String {

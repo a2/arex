@@ -1,5 +1,4 @@
 import CoreData
-import Foundation
 
 class Schedule: NSManagedObject {
     enum Attributes: String {
