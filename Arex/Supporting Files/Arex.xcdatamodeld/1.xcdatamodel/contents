@@ -1,4 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="1" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7517.1" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="1" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6750" systemVersion="14B25" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="DailySchedule" representedClassName="DailySchedule" parentEntity="Schedule" syncable="YES">
+        <attribute name="hour" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="minute" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="repeatCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="repeatInterval" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Medication" representedClassName="Medication" syncable="YES">
+        <attribute name="doctorRecordID" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="dosesLeft" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="lastFilledDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pharmacyRecordID" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="pictureData" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="strength" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="schedules" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Schedule" inverseName="medication" inverseEntity="Schedule" syncable="YES"/>
+    </entity>
+    <entity name="MonthlySchedule" representedClassName="MonthlySchedule" parentEntity="Schedule" syncable="YES">
+        <attribute name="dayOfMonth" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="dayOfWeek" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="hour" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="minute" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="onDayOfWeek" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="weekOfMonth" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="OneOffSchedule" representedClassName="OneOffSchedule" parentEntity="Schedule" syncable="YES">
+        <attribute name="fireDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="timeZone" optional="YES" attributeType="Transformable" syncable="YES"/>
+    </entity>
+    <entity name="Schedule" representedClassName="Schedule" isAbstract="YES" syncable="YES">
+        <attribute name="on" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <relationship name="medication" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medication" inverseName="schedules" inverseEntity="Medication" syncable="YES"/>
+    </entity>
+    <entity name="WeeklySchedule" representedClassName="WeeklySchedule" parentEntity="Schedule" syncable="YES">
+        <attribute name="daysOfWeek" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="hour" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="minute" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Medication" positionX="-335" positionY="-60" width="128" height="178"/>
+        <element name="Schedule" positionX="-144" positionY="45" width="128" height="73"/>
+        <element name="DailySchedule" positionX="9" positionY="-90" width="128" height="103"/>
+        <element name="OneOffSchedule" positionX="52" positionY="36" width="128" height="73"/>
+        <element name="WeeklySchedule" positionX="70" positionY="128" width="128" height="88"/>
+        <element name="MonthlySchedule" positionX="-81" positionY="144" width="128" height="133"/>
+    </elements>
 </model>

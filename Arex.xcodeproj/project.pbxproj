@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		830B143A1A89834C000E0A2D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B14391A89834C000E0A2D /* Constants.swift */; };
 		830B143C1A89835B000E0A2D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B143B1A89835B000E0A2D /* Error.swift */; };
+		830B14571A898A7A000E0A2D /* WeeklySchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B14561A898A7A000E0A2D /* WeeklySchedule.swift */; };
+		830B14591A898A7A000E0A2D /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B14581A898A7A000E0A2D /* Schedule.swift */; };
+		830B145B1A898A7B000E0A2D /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B145A1A898A7B000E0A2D /* Medication.swift */; };
+		830B145D1A898A7B000E0A2D /* OneOffSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B145C1A898A7B000E0A2D /* OneOffSchedule.swift */; };
+		830B145F1A898A7B000E0A2D /* MonthlySchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B145E1A898A7B000E0A2D /* MonthlySchedule.swift */; };
+		830B14611A898A7B000E0A2D /* DailySchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B14601A898A7B000E0A2D /* DailySchedule.swift */; };
 		8390C4331A8975490010D616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4321A8975490010D616 /* AppDelegate.swift */; };
 		8390C4361A8975490010D616 /* Arex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4341A8975490010D616 /* Arex.xcdatamodeld */; };
 		8390C4381A8975490010D616 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4371A8975490010D616 /* ViewController.swift */; };
@@ -31,6 +37,12 @@
 /* Begin PBXFileReference section */
 		830B14391A89834C000E0A2D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		830B143B1A89835B000E0A2D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		830B14561A898A7A000E0A2D /* WeeklySchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklySchedule.swift; sourceTree = "<group>"; };
+		830B14581A898A7A000E0A2D /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		830B145A1A898A7B000E0A2D /* Medication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
+		830B145C1A898A7B000E0A2D /* OneOffSchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneOffSchedule.swift; sourceTree = "<group>"; };
+		830B145E1A898A7B000E0A2D /* MonthlySchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthlySchedule.swift; sourceTree = "<group>"; };
+		830B14601A898A7B000E0A2D /* DailySchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailySchedule.swift; sourceTree = "<group>"; };
 		8390C42D1A8975490010D616 /* Arex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8390C4311A8975490010D616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8390C4321A8975490010D616 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,11 +74,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		830B14491A898A15000E0A2D /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				830B14601A898A7B000E0A2D /* DailySchedule.swift */,
+				830B145A1A898A7B000E0A2D /* Medication.swift */,
+				830B145E1A898A7B000E0A2D /* MonthlySchedule.swift */,
+				830B145C1A898A7B000E0A2D /* OneOffSchedule.swift */,
+				830B14581A898A7A000E0A2D /* Schedule.swift */,
+				830B14561A898A7A000E0A2D /* WeeklySchedule.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
 		838178A81A897B1200FF78A3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				8390C4321A8975490010D616 /* AppDelegate.swift */,
 				830B14391A89834C000E0A2D /* Constants.swift */,
+				830B14491A898A15000E0A2D /* Core Data */,
 				830B143B1A89835B000E0A2D /* Error.swift */,
 				8390C4371A8975490010D616 /* ViewController.swift */,
 			);
@@ -237,10 +263,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				830B145F1A898A7B000E0A2D /* MonthlySchedule.swift in Sources */,
+				830B145B1A898A7B000E0A2D /* Medication.swift in Sources */,
 				8390C4381A8975490010D616 /* ViewController.swift in Sources */,
 				8390C4331A8975490010D616 /* AppDelegate.swift in Sources */,
 				8390C4361A8975490010D616 /* Arex.xcdatamodeld in Sources */,
+				830B14571A898A7A000E0A2D /* WeeklySchedule.swift in Sources */,
+				830B145D1A898A7B000E0A2D /* OneOffSchedule.swift in Sources */,
+				830B14611A898A7B000E0A2D /* DailySchedule.swift in Sources */,
 				830B143C1A89835B000E0A2D /* Error.swift in Sources */,
+				830B14591A898A7A000E0A2D /* Schedule.swift in Sources */,
 				830B143A1A89834C000E0A2D /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
