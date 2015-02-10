@@ -114,7 +114,11 @@
 				8390C4481A8975490010D616 /* ArexTests */,
 				8390C42E1A8975490010D616 /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
+			usesTabs = 0;
+			wrapsLines = 1;
 		};
 		8390C42E1A8975490010D616 /* Products */ = {
 			isa = PBXGroup;
