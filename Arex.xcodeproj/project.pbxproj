@@ -21,6 +21,8 @@
 		8390C43D1A8975490010D616 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8390C43C1A8975490010D616 /* Images.xcassets */; };
 		8390C4401A8975490010D616 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8390C43E1A8975490010D616 /* LaunchScreen.xib */; };
 		8390C44C1A8975490010D616 /* ArexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C44B1A8975490010D616 /* ArexTests.swift */; };
+		839D2D411A8AB27B0071A441 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839D2D401A8AB27B0071A441 /* Colors.swift */; };
+		839D2D431A8AB2DC0071A441 /* CSSColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839D2D421A8AB2DC0071A441 /* CSSColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		8390C4451A8975490010D616 /* ArexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8390C44A1A8975490010D616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8390C44B1A8975490010D616 /* ArexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArexTests.swift; sourceTree = "<group>"; };
+		839D2D401A8AB27B0071A441 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		839D2D421A8AB2DC0071A441 /* CSSColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +93,9 @@
 			isa = PBXGroup;
 			children = (
 				8390C4321A8975490010D616 /* AppDelegate.swift */,
+				839D2D401A8AB27B0071A441 /* Colors.swift */,
 				830B14491A898A15000E0A2D /* Core Data */,
+				839D2D421A8AB2DC0071A441 /* CSSColors.swift */,
 				830B143B1A89835B000E0A2D /* Error.swift */,
 				8390C4371A8975490010D616 /* ViewController.swift */,
 			);
@@ -273,7 +279,9 @@
 				830B145D1A898A7B000E0A2D /* OneOffSchedule.swift in Sources */,
 				830B14611A898A7B000E0A2D /* DailySchedule.swift in Sources */,
 				830B143C1A89835B000E0A2D /* Error.swift in Sources */,
+				839D2D411A8AB27B0071A441 /* Colors.swift in Sources */,
 				830B14591A898A7A000E0A2D /* Schedule.swift in Sources */,
+				839D2D431A8AB2DC0071A441 /* CSSColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
