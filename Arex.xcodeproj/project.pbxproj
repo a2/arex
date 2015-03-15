@@ -8,14 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		830B143C1A89835B000E0A2D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B143B1A89835B000E0A2D /* Error.swift */; };
-		830B14571A898A7A000E0A2D /* WeeklySchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B14561A898A7A000E0A2D /* WeeklySchedule.swift */; };
-		830B14591A898A7A000E0A2D /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B14581A898A7A000E0A2D /* Schedule.swift */; };
-		830B145B1A898A7B000E0A2D /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B145A1A898A7B000E0A2D /* Medication.swift */; };
-		830B145D1A898A7B000E0A2D /* OneOffSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B145C1A898A7B000E0A2D /* OneOffSchedule.swift */; };
-		830B145F1A898A7B000E0A2D /* MonthlySchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B145E1A898A7B000E0A2D /* MonthlySchedule.swift */; };
-		830B14611A898A7B000E0A2D /* DailySchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B14601A898A7B000E0A2D /* DailySchedule.swift */; };
+		833F39561AB4B1E900DC56FF /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F39551AB4B1E900DC56FF /* Schedule.swift */; };
+		833F395D1AB4C18600DC56FF /* Flush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F395C1AB4C18600DC56FF /* Flush.swift */; };
+		833F395F1AB4C48100DC56FF /* ImageTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F395E1AB4C48100DC56FF /* ImageTransformers.swift */; };
+		833F39611AB519AC00DC56FF /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F39601AB519AC00DC56FF /* Time.swift */; };
+		833F39631AB51AF400DC56FF /* Adapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F39621AB51AF400DC56FF /* Adapters.swift */; };
+		833F39651AB51C8700DC56FF /* MessagePack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833F39641AB51C8700DC56FF /* MessagePack.framework */; };
+		833F39691AB51DAC00DC56FF /* GenericDictionaryAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F39681AB51DAC00DC56FF /* GenericDictionaryAdapter.swift */; };
+		833F396B1AB51E3E00DC56FF /* MessagePackValueTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F396A1AB51E3E00DC56FF /* MessagePackValueTransformers.swift */; };
+		83804A431A8EA40D004D92DA /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83804A411A8EA40D004D92DA /* LlamaKit.framework */; };
+		83804A441A8EA40D004D92DA /* Pistachio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83804A421A8EA40D004D92DA /* Pistachio.framework */; };
+		83804A4D1A8EA538004D92DA /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83804A4C1A8EA538004D92DA /* Medication.swift */; };
 		8390C4331A8975490010D616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4321A8975490010D616 /* AppDelegate.swift */; };
-		8390C4361A8975490010D616 /* Arex.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4341A8975490010D616 /* Arex.xcdatamodeld */; };
 		8390C4381A8975490010D616 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4371A8975490010D616 /* ViewController.swift */; };
 		8390C43B1A8975490010D616 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8390C4391A8975490010D616 /* Main.storyboard */; };
 		8390C43D1A8975490010D616 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8390C43C1A8975490010D616 /* Images.xcassets */; };
@@ -23,6 +27,7 @@
 		8390C44C1A8975490010D616 /* ArexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C44B1A8975490010D616 /* ArexTests.swift */; };
 		839D2D411A8AB27B0071A441 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839D2D401A8AB27B0071A441 /* Colors.swift */; };
 		839D2D431A8AB2DC0071A441 /* CSSColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839D2D421A8AB2DC0071A441 /* CSSColors.swift */; };
+		83E1FC4D1AB5FCF700333762 /* ArexError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E1FC4C1AB5FCF700333762 /* ArexError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,16 +42,20 @@
 
 /* Begin PBXFileReference section */
 		830B143B1A89835B000E0A2D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
-		830B14561A898A7A000E0A2D /* WeeklySchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklySchedule.swift; sourceTree = "<group>"; };
-		830B14581A898A7A000E0A2D /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
-		830B145A1A898A7B000E0A2D /* Medication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
-		830B145C1A898A7B000E0A2D /* OneOffSchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneOffSchedule.swift; sourceTree = "<group>"; };
-		830B145E1A898A7B000E0A2D /* MonthlySchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthlySchedule.swift; sourceTree = "<group>"; };
-		830B14601A898A7B000E0A2D /* DailySchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailySchedule.swift; sourceTree = "<group>"; };
+		833F39551AB4B1E900DC56FF /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		833F395C1AB4C18600DC56FF /* Flush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flush.swift; sourceTree = "<group>"; };
+		833F395E1AB4C48100DC56FF /* ImageTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTransformers.swift; sourceTree = "<group>"; };
+		833F39601AB519AC00DC56FF /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		833F39621AB51AF400DC56FF /* Adapters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adapters.swift; sourceTree = "<group>"; };
+		833F39641AB51C8700DC56FF /* MessagePack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessagePack.framework; path = Carthage/Build/iOS/MessagePack.framework; sourceTree = "<group>"; };
+		833F39681AB51DAC00DC56FF /* GenericDictionaryAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDictionaryAdapter.swift; sourceTree = "<group>"; };
+		833F396A1AB51E3E00DC56FF /* MessagePackValueTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePackValueTransformers.swift; sourceTree = "<group>"; };
+		83804A411A8EA40D004D92DA /* LlamaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LlamaKit.framework; path = Carthage/Build/iOS/LlamaKit.framework; sourceTree = "<group>"; };
+		83804A421A8EA40D004D92DA /* Pistachio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pistachio.framework; path = Carthage/Build/iOS/Pistachio.framework; sourceTree = "<group>"; };
+		83804A4C1A8EA538004D92DA /* Medication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
 		8390C42D1A8975490010D616 /* Arex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8390C4311A8975490010D616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8390C4321A8975490010D616 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8390C4351A8975490010D616 /* 1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 1.xcdatamodel; sourceTree = "<group>"; };
 		8390C4371A8975490010D616 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8390C43A1A8975490010D616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8390C43C1A8975490010D616 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -56,6 +65,7 @@
 		8390C44B1A8975490010D616 /* ArexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArexTests.swift; sourceTree = "<group>"; };
 		839D2D401A8AB27B0071A441 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		839D2D421A8AB2DC0071A441 /* CSSColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSColors.swift; sourceTree = "<group>"; };
+		83E1FC4C1AB5FCF700333762 /* ArexError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArexError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +73,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				833F39651AB51C8700DC56FF /* MessagePack.framework in Frameworks */,
+				83804A431A8EA40D004D92DA /* LlamaKit.framework in Frameworks */,
+				83804A441A8EA40D004D92DA /* Pistachio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,28 +89,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		830B14491A898A15000E0A2D /* Core Data */ = {
+		833F395B1AB4C17800DC56FF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				830B14601A898A7B000E0A2D /* DailySchedule.swift */,
-				830B145A1A898A7B000E0A2D /* Medication.swift */,
-				830B145E1A898A7B000E0A2D /* MonthlySchedule.swift */,
-				830B145C1A898A7B000E0A2D /* OneOffSchedule.swift */,
-				830B14581A898A7A000E0A2D /* Schedule.swift */,
-				830B14561A898A7A000E0A2D /* WeeklySchedule.swift */,
+				83E1FC4C1AB5FCF700333762 /* ArexError.swift */,
+				839D2D401A8AB27B0071A441 /* Colors.swift */,
+				839D2D421A8AB2DC0071A441 /* CSSColors.swift */,
+				830B143B1A89835B000E0A2D /* Error.swift */,
+				833F395C1AB4C18600DC56FF /* Flush.swift */,
 			);
-			path = "Core Data";
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		83804A401A8EA3FD004D92DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83804A411A8EA40D004D92DA /* LlamaKit.framework */,
+				833F39641AB51C8700DC56FF /* MessagePack.framework */,
+				83804A421A8EA40D004D92DA /* Pistachio.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		83804A4B1A8EA529004D92DA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				83804A4C1A8EA538004D92DA /* Medication.swift */,
+				833F39551AB4B1E900DC56FF /* Schedule.swift */,
+				833F39601AB519AC00DC56FF /* Time.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		838178A81A897B1200FF78A3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				8390C4321A8975490010D616 /* AppDelegate.swift */,
-				839D2D401A8AB27B0071A441 /* Colors.swift */,
-				830B14491A898A15000E0A2D /* Core Data */,
-				839D2D421A8AB2DC0071A441 /* CSSColors.swift */,
-				830B143B1A89835B000E0A2D /* Error.swift */,
-				8390C4371A8975490010D616 /* ViewController.swift */,
+				833F395B1AB4C17800DC56FF /* Helpers */,
+				83804A4B1A8EA529004D92DA /* Models */,
+				83E1FC4E1AB5FD0D00333762 /* Pistachio */,
+				83E1FC4F1AB5FD5A00333762 /* Views */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -115,6 +146,7 @@
 			children = (
 				8390C42F1A8975490010D616 /* Arex */,
 				8390C4481A8975490010D616 /* ArexTests */,
+				83804A401A8EA3FD004D92DA /* Frameworks */,
 				8390C42E1A8975490010D616 /* Products */,
 			);
 			indentWidth = 4;
@@ -144,7 +176,6 @@
 		8390C4301A8975490010D616 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8390C4341A8975490010D616 /* Arex.xcdatamodeld */,
 				8390C43C1A8975490010D616 /* Images.xcassets */,
 				8390C4311A8975490010D616 /* Info.plist */,
 				8390C43E1A8975490010D616 /* LaunchScreen.xib */,
@@ -170,6 +201,25 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		83E1FC4E1AB5FD0D00333762 /* Pistachio */ = {
+			isa = PBXGroup;
+			children = (
+				833F39621AB51AF400DC56FF /* Adapters.swift */,
+				833F39681AB51DAC00DC56FF /* GenericDictionaryAdapter.swift */,
+				833F395E1AB4C48100DC56FF /* ImageTransformers.swift */,
+				833F396A1AB51E3E00DC56FF /* MessagePackValueTransformers.swift */,
+			);
+			path = Pistachio;
+			sourceTree = "<group>";
+		};
+		83E1FC4F1AB5FD5A00333762 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8390C4371A8975490010D616 /* ViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,6 +230,7 @@
 				8390C4291A8975490010D616 /* Sources */,
 				8390C42A1A8975490010D616 /* Frameworks */,
 				8390C42B1A8975490010D616 /* Resources */,
+				83804A4A1A8EA42E004D92DA /* Embed Carthage Frameworks */,
 			);
 			buildRules = (
 			);
@@ -265,23 +316,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		83804A4A1A8EA42E004D92DA /* Embed Carthage Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/LlamaKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MessagePack.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Pistachio.framework",
+			);
+			name = "Embed Carthage Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8390C4291A8975490010D616 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				830B145F1A898A7B000E0A2D /* MonthlySchedule.swift in Sources */,
-				830B145B1A898A7B000E0A2D /* Medication.swift in Sources */,
+				833F396B1AB51E3E00DC56FF /* MessagePackValueTransformers.swift in Sources */,
 				8390C4381A8975490010D616 /* ViewController.swift in Sources */,
+				83804A4D1A8EA538004D92DA /* Medication.swift in Sources */,
+				833F39611AB519AC00DC56FF /* Time.swift in Sources */,
+				83E1FC4D1AB5FCF700333762 /* ArexError.swift in Sources */,
 				8390C4331A8975490010D616 /* AppDelegate.swift in Sources */,
-				8390C4361A8975490010D616 /* Arex.xcdatamodeld in Sources */,
-				830B14571A898A7A000E0A2D /* WeeklySchedule.swift in Sources */,
-				830B145D1A898A7B000E0A2D /* OneOffSchedule.swift in Sources */,
-				830B14611A898A7B000E0A2D /* DailySchedule.swift in Sources */,
+				833F395F1AB4C48100DC56FF /* ImageTransformers.swift in Sources */,
+				833F39691AB51DAC00DC56FF /* GenericDictionaryAdapter.swift in Sources */,
 				830B143C1A89835B000E0A2D /* Error.swift in Sources */,
+				833F39631AB51AF400DC56FF /* Adapters.swift in Sources */,
 				839D2D411A8AB27B0071A441 /* Colors.swift in Sources */,
-				830B14591A898A7A000E0A2D /* Schedule.swift in Sources */,
+				833F39561AB4B1E900DC56FF /* Schedule.swift in Sources */,
 				839D2D431A8AB2DC0071A441 /* CSSColors.swift in Sources */,
+				833F395D1AB4C18600DC56FF /* Flush.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +483,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Arex/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -420,6 +497,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Arex/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -491,19 +572,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		8390C4341A8975490010D616 /* Arex.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				8390C4351A8975490010D616 /* 1.xcdatamodel */,
-			);
-			currentVersion = 8390C4351A8975490010D616 /* 1.xcdatamodel */;
-			path = Arex.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 8390C4251A8975490010D616 /* Project object */;
 }

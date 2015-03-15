@@ -1,0 +1,3 @@
+github "LlamaKit/LlamaKit" "v0.5.0"
+github "a2/MessagePack" "f3c0fbb4a41de7fca2c446c063b9617f466cea7c"
+github "felixjendrusch/Pistachio" "0.1.1"
