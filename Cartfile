@@ -1,2 +1,3 @@
 github "a2/MessagePack" "master"
-github "felixjendrusch/Pistachio"
+github "a2/Pistachio" "swift-1.2"
+github "ReactiveCocoa/ReactiveCocoa" "swift-1.2"

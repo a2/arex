@@ -1,3 +1,4 @@
-github "LlamaKit/LlamaKit" "v0.5.0"
+github "LlamaKit/LlamaKit" "v0.6.0"
 github "a2/MessagePack" "f3c0fbb4a41de7fca2c446c063b9617f466cea7c"
-github "felixjendrusch/Pistachio" "0.1.1"
+github "a2/Pistachio" "3b91650d91000a12c1663cf8027831beac81315b"
+github "ReactiveCocoa/ReactiveCocoa" "43808aaf3e3034dcb96857f44291296786caa2c4"
