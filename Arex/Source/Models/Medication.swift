@@ -2,7 +2,7 @@ import AddressBook
 import Pistachio
 import UIKit
 
-struct Medication {
+struct Medication: Hashable {
     var doctorRecordID: ABRecordID?
     var dosesLeft: Int?
     var lastFilledDate: NSDate?
@@ -12,8 +12,9 @@ struct Medication {
     var pictureData: NSData?
     var schedules: [Schedule]
     var strength: String?
+    var uuid: NSUUID
 
-    init(doctorRecordID: ABRecordID? = nil, dosesLeft: Int? = nil, lastFilledDate: NSDate? = nil, name: String? = nil, note: String? = nil, pharmacyRecordID: ABRecordID? = nil, pictureData: NSData? = nil, schedules: [Schedule] = [], strength: String? = nil) {
+    init(doctorRecordID: ABRecordID? = nil, dosesLeft: Int? = nil, lastFilledDate: NSDate? = nil, name: String? = nil, note: String? = nil, pharmacyRecordID: ABRecordID? = nil, pictureData: NSData? = nil, schedules: [Schedule] = [], strength: String? = nil, uuid: NSUUID = NSUUID()) {
         self.doctorRecordID = doctorRecordID
         self.dosesLeft = dosesLeft
         self.lastFilledDate = lastFilledDate
@@ -23,7 +24,20 @@ struct Medication {
         self.pictureData = pictureData
         self.schedules = schedules
         self.strength = strength
+        self.uuid = uuid
     }
+
+    mutating func refreshIdentity() {
+        uuid = NSUUID()
+    }
+
+    var hashValue: Int {
+        return uuid.hash
+    }
+}
+
+func ==(lhs: Medication, rhs: Medication) -> Bool {
+    return lhs.uuid == rhs.uuid
 }
 
 struct MedicationLenses {

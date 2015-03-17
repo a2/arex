@@ -140,12 +140,49 @@ struct ScheduleAdapter: Adapter {
 }
 
 struct Adapters {
-    static let time = GenericDictionaryAdapter(specification: [
-        "hour": messagePackInt(TimeLenses.hour),
-        "minute": messagePackInt(TimeLenses.minute),
-    ], dictionaryTansformer: MessagePackValueTransformers.map)
+    private static let dictionaryTransformer: ValueTransformer<[String : MessagePackValue], MessagePackValue, NSError> = {
+        let transformClosure: [String : MessagePackValue] -> Result<MessagePackValue, NSError> = { dictionary in
+            var messagePackDict = [MessagePackValue : MessagePackValue]()
+            for (key, value) in dictionary {
+                messagePackDict[.String(key)] = value
+            }
+
+            return MessagePackValueTransformers.map.transformedValue(messagePackDict)
+        }
+
+        let reverseTransformClosure: MessagePackValue -> Result<[String : MessagePackValue], NSError> = { value in
+            return MessagePackValueTransformers.map.reverseTransformedValue(value).flatMap { dictionary in
+                var stringDict = [String : MessagePackValue]()
+                for (key, value) in dictionary {
+                    if let string = key.stringValue {
+                        stringDict[string] = value
+                    } else {
+                        return failure()
+                    }
+                }
+
+                return success(stringDict)
+            }
+        }
+
+        return ValueTransformer(transformClosure: transformClosure, reverseTransformClosure: reverseTransformClosure)
+    }()
+
+    static let medication: DictionaryAdapter<Medication, MessagePackValue, NSError> = {
+        let lastFilledDate = transform(transform(MedicationLenses.lastFilledDate, lift(DateTransformers.timeIntervalSince1970(), 0.0)), MessagePackValueTransformers.double)
+        return DictionaryAdapter(specification: [
+            "doctorRecordID": messagePackInt(MedicationLenses.doctorRecordID, defaultTransformedValue: .Nil),
+            "dosesLeft": messagePackInt(MedicationLenses.dosesLeft, defaultTransformedValue: .Nil),
+            "lastFilledDate": lastFilledDate,
+        ], dictionaryTansformer: dictionaryTransformer)
+    }()
 
     static let repeat = RepeatAdapter()
 
     static let schedule = ScheduleAdapter()
+
+    static let time = DictionaryAdapter(specification: [
+        "hour": messagePackInt(TimeLenses.hour),
+        "minute": messagePackInt(TimeLenses.minute),
+    ], dictionaryTansformer: dictionaryTransformer)
 }

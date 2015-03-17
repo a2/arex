@@ -1,5 +1,7 @@
 import UIKit
 
-class ViewController: UIViewController {
+class MedicationsListViewController: UITableViewController {
+    var medicationsListViewModel: MedicationsListViewModel?
 
+    // MARK: Table View
 }

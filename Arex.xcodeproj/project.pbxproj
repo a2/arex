@@ -14,20 +14,25 @@
 		833F39611AB519AC00DC56FF /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F39601AB519AC00DC56FF /* Time.swift */; };
 		833F39631AB51AF400DC56FF /* Adapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F39621AB51AF400DC56FF /* Adapters.swift */; };
 		833F39651AB51C8700DC56FF /* MessagePack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833F39641AB51C8700DC56FF /* MessagePack.framework */; };
-		833F39691AB51DAC00DC56FF /* GenericDictionaryAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F39681AB51DAC00DC56FF /* GenericDictionaryAdapter.swift */; };
 		833F396B1AB51E3E00DC56FF /* MessagePackValueTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F396A1AB51E3E00DC56FF /* MessagePackValueTransformers.swift */; };
+		8350F0211AB715B200C9867F /* DateTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350F0201AB715B200C9867F /* DateTransformers.swift */; };
 		83804A431A8EA40D004D92DA /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83804A411A8EA40D004D92DA /* LlamaKit.framework */; };
 		83804A441A8EA40D004D92DA /* Pistachio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83804A421A8EA40D004D92DA /* Pistachio.framework */; };
 		83804A4D1A8EA538004D92DA /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83804A4C1A8EA538004D92DA /* Medication.swift */; };
 		8390C4331A8975490010D616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4321A8975490010D616 /* AppDelegate.swift */; };
-		8390C4381A8975490010D616 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4371A8975490010D616 /* ViewController.swift */; };
+		8390C4381A8975490010D616 /* MedicationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4371A8975490010D616 /* MedicationsListViewController.swift */; };
 		8390C43B1A8975490010D616 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8390C4391A8975490010D616 /* Main.storyboard */; };
 		8390C43D1A8975490010D616 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8390C43C1A8975490010D616 /* Images.xcassets */; };
 		8390C4401A8975490010D616 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8390C43E1A8975490010D616 /* LaunchScreen.xib */; };
 		8390C44C1A8975490010D616 /* ArexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C44B1A8975490010D616 /* ArexTests.swift */; };
+		83971DE11AB6E7BE00686E67 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83971DE01AB6E7BE00686E67 /* ReactiveCocoa.framework */; };
+		83971DE81AB6F49D00686E67 /* DirectoryMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83971DE51AB6F49D00686E67 /* DirectoryMonitor.swift */; };
+		83971DE91AB6F49D00686E67 /* FilterByExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83971DE61AB6F49D00686E67 /* FilterByExtension.swift */; };
 		839D2D411A8AB27B0071A441 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839D2D401A8AB27B0071A441 /* Colors.swift */; };
 		839D2D431A8AB2DC0071A441 /* CSSColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839D2D421A8AB2DC0071A441 /* CSSColors.swift */; };
 		83E1FC4D1AB5FCF700333762 /* ArexError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E1FC4C1AB5FCF700333762 /* ArexError.swift */; };
+		83E1FC531AB5FE2100333762 /* MedicationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E1FC521AB5FE2100333762 /* MedicationsController.swift */; };
+		83E1FC561AB5FEA700333762 /* MedicationsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E1FC551AB5FEA700333762 /* MedicationsListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,24 +53,29 @@
 		833F39601AB519AC00DC56FF /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		833F39621AB51AF400DC56FF /* Adapters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adapters.swift; sourceTree = "<group>"; };
 		833F39641AB51C8700DC56FF /* MessagePack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessagePack.framework; path = Carthage/Build/iOS/MessagePack.framework; sourceTree = "<group>"; };
-		833F39681AB51DAC00DC56FF /* GenericDictionaryAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDictionaryAdapter.swift; sourceTree = "<group>"; };
 		833F396A1AB51E3E00DC56FF /* MessagePackValueTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePackValueTransformers.swift; sourceTree = "<group>"; };
+		8350F0201AB715B200C9867F /* DateTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTransformers.swift; sourceTree = "<group>"; };
 		83804A411A8EA40D004D92DA /* LlamaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LlamaKit.framework; path = Carthage/Build/iOS/LlamaKit.framework; sourceTree = "<group>"; };
 		83804A421A8EA40D004D92DA /* Pistachio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pistachio.framework; path = Carthage/Build/iOS/Pistachio.framework; sourceTree = "<group>"; };
 		83804A4C1A8EA538004D92DA /* Medication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
 		8390C42D1A8975490010D616 /* Arex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8390C4311A8975490010D616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8390C4321A8975490010D616 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8390C4371A8975490010D616 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8390C4371A8975490010D616 /* MedicationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationsListViewController.swift; sourceTree = "<group>"; };
 		8390C43A1A8975490010D616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8390C43C1A8975490010D616 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8390C43F1A8975490010D616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8390C4451A8975490010D616 /* ArexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8390C44A1A8975490010D616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8390C44B1A8975490010D616 /* ArexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArexTests.swift; sourceTree = "<group>"; };
+		83971DE01AB6E7BE00686E67 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		83971DE51AB6F49D00686E67 /* DirectoryMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryMonitor.swift; sourceTree = "<group>"; };
+		83971DE61AB6F49D00686E67 /* FilterByExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterByExtension.swift; sourceTree = "<group>"; };
 		839D2D401A8AB27B0071A441 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		839D2D421A8AB2DC0071A441 /* CSSColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSColors.swift; sourceTree = "<group>"; };
 		83E1FC4C1AB5FCF700333762 /* ArexError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArexError.swift; sourceTree = "<group>"; };
+		83E1FC521AB5FE2100333762 /* MedicationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationsController.swift; sourceTree = "<group>"; };
+		83E1FC551AB5FEA700333762 /* MedicationsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationsListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +86,7 @@
 				833F39651AB51C8700DC56FF /* MessagePack.framework in Frameworks */,
 				83804A431A8EA40D004D92DA /* LlamaKit.framework in Frameworks */,
 				83804A441A8EA40D004D92DA /* Pistachio.framework in Frameworks */,
+				83971DE11AB6E7BE00686E67 /* ReactiveCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +118,7 @@
 				83804A411A8EA40D004D92DA /* LlamaKit.framework */,
 				833F39641AB51C8700DC56FF /* MessagePack.framework */,
 				83804A421A8EA40D004D92DA /* Pistachio.framework */,
+				83971DE01AB6E7BE00686E67 /* ReactiveCocoa.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -125,9 +137,12 @@
 			isa = PBXGroup;
 			children = (
 				8390C4321A8975490010D616 /* AppDelegate.swift */,
+				83E1FC511AB5FE0600333762 /* Controllers */,
+				83971DE31AB6F49D00686E67 /* Functions */,
 				833F395B1AB4C17800DC56FF /* Helpers */,
 				83804A4B1A8EA529004D92DA /* Models */,
 				83E1FC4E1AB5FD0D00333762 /* Pistachio */,
+				83E1FC541AB5FE9000333762 /* View Models */,
 				83E1FC4F1AB5FD5A00333762 /* Views */,
 			);
 			path = Source;
@@ -201,11 +216,20 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		83971DE31AB6F49D00686E67 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				83971DE51AB6F49D00686E67 /* DirectoryMonitor.swift */,
+				83971DE61AB6F49D00686E67 /* FilterByExtension.swift */,
+			);
+			path = Functions;
+			sourceTree = "<group>";
+		};
 		83E1FC4E1AB5FD0D00333762 /* Pistachio */ = {
 			isa = PBXGroup;
 			children = (
 				833F39621AB51AF400DC56FF /* Adapters.swift */,
-				833F39681AB51DAC00DC56FF /* GenericDictionaryAdapter.swift */,
+				8350F0201AB715B200C9867F /* DateTransformers.swift */,
 				833F395E1AB4C48100DC56FF /* ImageTransformers.swift */,
 				833F396A1AB51E3E00DC56FF /* MessagePackValueTransformers.swift */,
 			);
@@ -215,9 +239,25 @@
 		83E1FC4F1AB5FD5A00333762 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8390C4371A8975490010D616 /* ViewController.swift */,
+				8390C4371A8975490010D616 /* MedicationsListViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		83E1FC511AB5FE0600333762 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				83E1FC521AB5FE2100333762 /* MedicationsController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		83E1FC541AB5FE9000333762 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				83E1FC551AB5FEA700333762 /* MedicationsListViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,6 +366,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/LlamaKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/MessagePack.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Pistachio.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
 			);
 			name = "Embed Carthage Frameworks";
 			outputPaths = (
@@ -342,18 +383,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				833F396B1AB51E3E00DC56FF /* MessagePackValueTransformers.swift in Sources */,
-				8390C4381A8975490010D616 /* ViewController.swift in Sources */,
+				83E1FC561AB5FEA700333762 /* MedicationsListViewModel.swift in Sources */,
+				8390C4381A8975490010D616 /* MedicationsListViewController.swift in Sources */,
 				83804A4D1A8EA538004D92DA /* Medication.swift in Sources */,
 				833F39611AB519AC00DC56FF /* Time.swift in Sources */,
 				83E1FC4D1AB5FCF700333762 /* ArexError.swift in Sources */,
 				8390C4331A8975490010D616 /* AppDelegate.swift in Sources */,
+				83E1FC531AB5FE2100333762 /* MedicationsController.swift in Sources */,
 				833F395F1AB4C48100DC56FF /* ImageTransformers.swift in Sources */,
-				833F39691AB51DAC00DC56FF /* GenericDictionaryAdapter.swift in Sources */,
+				8350F0211AB715B200C9867F /* DateTransformers.swift in Sources */,
 				830B143C1A89835B000E0A2D /* Error.swift in Sources */,
 				833F39631AB51AF400DC56FF /* Adapters.swift in Sources */,
 				839D2D411A8AB27B0071A441 /* Colors.swift in Sources */,
 				833F39561AB4B1E900DC56FF /* Schedule.swift in Sources */,
 				839D2D431A8AB2DC0071A441 /* CSSColors.swift in Sources */,
+				83971DE91AB6F49D00686E67 /* FilterByExtension.swift in Sources */,
+				83971DE81AB6F49D00686E67 /* DirectoryMonitor.swift in Sources */,
 				833F395D1AB4C18600DC56FF /* Flush.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
