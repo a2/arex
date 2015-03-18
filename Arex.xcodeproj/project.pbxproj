@@ -105,9 +105,7 @@
 			children = (
 				83E1FC4C1AB5FCF700333762 /* ArexError.swift */,
 				839D2D401A8AB27B0071A441 /* Colors.swift */,
-				839D2D421A8AB2DC0071A441 /* CSSColors.swift */,
 				830B143B1A89835B000E0A2D /* Error.swift */,
-				833F395C1AB4C18600DC56FF /* Flush.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -219,8 +217,10 @@
 		83971DE31AB6F49D00686E67 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
+				839D2D421A8AB2DC0071A441 /* CSSColors.swift */,
 				83971DE51AB6F49D00686E67 /* DirectoryMonitor.swift */,
 				83971DE61AB6F49D00686E67 /* FilterByExtension.swift */,
+				833F395C1AB4C18600DC56FF /* Flush.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
