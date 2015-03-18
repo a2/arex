@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		830B143C1A89835B000E0A2D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B143B1A89835B000E0A2D /* Error.swift */; };
+		8310B4371AB99F1E008597E1 /* ReactiveHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310B4361AB99F1E008597E1 /* ReactiveHelpers.swift */; };
+		8310B4441AB9A0C4008597E1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310B4431AB9A0C4008597E1 /* ViewModel.swift */; };
+		8310B4461ABA2F47008597E1 /* Compact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310B4451ABA2F47008597E1 /* Compact.swift */; };
 		833F39561AB4B1E900DC56FF /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F39551AB4B1E900DC56FF /* Schedule.swift */; };
 		833F395D1AB4C18600DC56FF /* Flush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F395C1AB4C18600DC56FF /* Flush.swift */; };
 		833F395F1AB4C48100DC56FF /* ImageTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F395E1AB4C48100DC56FF /* ImageTransformers.swift */; };
@@ -47,6 +50,9 @@
 
 /* Begin PBXFileReference section */
 		830B143B1A89835B000E0A2D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		8310B4361AB99F1E008597E1 /* ReactiveHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveHelpers.swift; sourceTree = "<group>"; };
+		8310B4431AB9A0C4008597E1 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		8310B4451ABA2F47008597E1 /* Compact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compact.swift; sourceTree = "<group>"; };
 		833F39551AB4B1E900DC56FF /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		833F395C1AB4C18600DC56FF /* Flush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flush.swift; sourceTree = "<group>"; };
 		833F395E1AB4C48100DC56FF /* ImageTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTransformers.swift; sourceTree = "<group>"; };
@@ -105,7 +111,9 @@
 			children = (
 				83E1FC4C1AB5FCF700333762 /* ArexError.swift */,
 				839D2D401A8AB27B0071A441 /* Colors.swift */,
+				8310B4451ABA2F47008597E1 /* Compact.swift */,
 				830B143B1A89835B000E0A2D /* Error.swift */,
+				8310B4361AB99F1E008597E1 /* ReactiveHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -256,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				83E1FC551AB5FEA700333762 /* MedicationsListViewModel.swift */,
+				8310B4431AB9A0C4008597E1 /* ViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -392,13 +401,16 @@
 				83E1FC531AB5FE2100333762 /* MedicationsController.swift in Sources */,
 				833F395F1AB4C48100DC56FF /* ImageTransformers.swift in Sources */,
 				8350F0211AB715B200C9867F /* DateTransformers.swift in Sources */,
+				8310B4441AB9A0C4008597E1 /* ViewModel.swift in Sources */,
 				830B143C1A89835B000E0A2D /* Error.swift in Sources */,
 				833F39631AB51AF400DC56FF /* Adapters.swift in Sources */,
 				839D2D411A8AB27B0071A441 /* Colors.swift in Sources */,
+				8310B4371AB99F1E008597E1 /* ReactiveHelpers.swift in Sources */,
 				833F39561AB4B1E900DC56FF /* Schedule.swift in Sources */,
 				839D2D431A8AB2DC0071A441 /* CSSColors.swift in Sources */,
 				83971DE91AB6F49D00686E67 /* FilterByExtension.swift in Sources */,
 				83971DE81AB6F49D00686E67 /* DirectoryMonitor.swift in Sources */,
+				8310B4461ABA2F47008597E1 /* Compact.swift in Sources */,
 				833F395D1AB4C18600DC56FF /* Flush.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

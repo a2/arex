@@ -1,3 +1,6 @@
+/// Originally written by Zachary Waldowski for URLGrey.
+/// https://github.com/zwaldowski/URLGrey
+
 import Foundation
 
 protocol ErrorRepresentable: Printable {
