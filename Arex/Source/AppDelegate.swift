@@ -1,7 +1,5 @@
 import UIKit
 
-let DatabaseFilename = "Database.rx"
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
