@@ -2,12 +2,15 @@ import ReactiveCocoa
 
 class MedicationsListViewModel: ViewModel {
     let medicationsUpdated: Signal<Void, NoError>
-    private(set) var medications = [Medication]()
 
-    private let medicationsUpdatedObserver: SinkOf<Event<Void, NoError>>
+    var cellViewModels: LazyRandomAccessCollection<MapCollectionView<[Medication], MedicationListCellViewModel>> {
+        return lazy(medications).map({ MedicationListCellViewModel(medication: $0) })
+    }
 
     private let medicationsController: MedicationsController
-    private let disposable = CompositeDisposable()
+    private var medications = [Medication]()
+    private let medicationsUpdatedObserver: SinkOf<Event<Void, NoError>>
+    private let disposable = SerialDisposable()
 
     init(medicationsController: MedicationsController) {
         self.medicationsController = medicationsController
@@ -15,7 +18,7 @@ class MedicationsListViewModel: ViewModel {
 
         super.init()
 
-        let disposable = self.medicationsController.medications()
+        self.disposable.innerDisposable = self.medicationsController.medications()
             |> forwardWhileActive
             |> catch(catchAll)
             |> on(
@@ -31,9 +34,12 @@ class MedicationsListViewModel: ViewModel {
             )
             |> map(gobble)
             |> start(medicationsUpdatedObserver)
-        self.disposable.addDisposable(disposable)
     }
 
+    var isEmpty: Bool {
+        return medications.isEmpty
+    }
+    
     var count: Int {
         return medications.count
     }

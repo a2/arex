@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		830B143C1A89835B000E0A2D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B143B1A89835B000E0A2D /* Error.swift */; };
+		830C80FE1ABB9D8700AE7E12 /* MedicationsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */; };
 		8310B4371AB99F1E008597E1 /* ReactiveHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310B4361AB99F1E008597E1 /* ReactiveHelpers.swift */; };
 		8310B4441AB9A0C4008597E1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310B4431AB9A0C4008597E1 /* ViewModel.swift */; };
 		8310B4461ABA2F47008597E1 /* Compact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310B4451ABA2F47008597E1 /* Compact.swift */; };
@@ -18,6 +19,7 @@
 		833F39631AB51AF400DC56FF /* Adapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F39621AB51AF400DC56FF /* Adapters.swift */; };
 		833F39651AB51C8700DC56FF /* MessagePack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833F39641AB51C8700DC56FF /* MessagePack.framework */; };
 		833F396B1AB51E3E00DC56FF /* MessagePackValueTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F396A1AB51E3E00DC56FF /* MessagePackValueTransformers.swift */; };
+		83442F831ABA39FD0078DA75 /* MedicationListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83442F821ABA39FD0078DA75 /* MedicationListCellViewModel.swift */; };
 		8350F0211AB715B200C9867F /* DateTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350F0201AB715B200C9867F /* DateTransformers.swift */; };
 		83804A431A8EA40D004D92DA /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83804A411A8EA40D004D92DA /* LlamaKit.framework */; };
 		83804A441A8EA40D004D92DA /* Pistachio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83804A421A8EA40D004D92DA /* Pistachio.framework */; };
@@ -50,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		830B143B1A89835B000E0A2D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationsListCell.swift; sourceTree = "<group>"; };
 		8310B4361AB99F1E008597E1 /* ReactiveHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveHelpers.swift; sourceTree = "<group>"; };
 		8310B4431AB9A0C4008597E1 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		8310B4451ABA2F47008597E1 /* Compact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compact.swift; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 		833F39621AB51AF400DC56FF /* Adapters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adapters.swift; sourceTree = "<group>"; };
 		833F39641AB51C8700DC56FF /* MessagePack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessagePack.framework; path = Carthage/Build/iOS/MessagePack.framework; sourceTree = "<group>"; };
 		833F396A1AB51E3E00DC56FF /* MessagePackValueTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePackValueTransformers.swift; sourceTree = "<group>"; };
+		83442F821ABA39FD0078DA75 /* MedicationListCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationListCellViewModel.swift; sourceTree = "<group>"; };
 		8350F0201AB715B200C9867F /* DateTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTransformers.swift; sourceTree = "<group>"; };
 		83804A411A8EA40D004D92DA /* LlamaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LlamaKit.framework; path = Carthage/Build/iOS/LlamaKit.framework; sourceTree = "<group>"; };
 		83804A421A8EA40D004D92DA /* Pistachio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pistachio.framework; path = Carthage/Build/iOS/Pistachio.framework; sourceTree = "<group>"; };
@@ -248,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				8390C4371A8975490010D616 /* MedicationsListViewController.swift */,
+				830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 		83E1FC541AB5FE9000333762 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				83442F821ABA39FD0078DA75 /* MedicationListCellViewModel.swift */,
 				83E1FC551AB5FEA700333762 /* MedicationsListViewModel.swift */,
 				8310B4431AB9A0C4008597E1 /* ViewModel.swift */,
 			);
@@ -400,6 +406,7 @@
 				8390C4331A8975490010D616 /* AppDelegate.swift in Sources */,
 				83E1FC531AB5FE2100333762 /* MedicationsController.swift in Sources */,
 				833F395F1AB4C48100DC56FF /* ImageTransformers.swift in Sources */,
+				83442F831ABA39FD0078DA75 /* MedicationListCellViewModel.swift in Sources */,
 				8350F0211AB715B200C9867F /* DateTransformers.swift in Sources */,
 				8310B4441AB9A0C4008597E1 /* ViewModel.swift in Sources */,
 				830B143C1A89835B000E0A2D /* Error.swift in Sources */,
@@ -410,6 +417,7 @@
 				839D2D431A8AB2DC0071A441 /* CSSColors.swift in Sources */,
 				83971DE91AB6F49D00686E67 /* FilterByExtension.swift in Sources */,
 				83971DE81AB6F49D00686E67 /* DirectoryMonitor.swift in Sources */,
+				830C80FE1ABB9D8700AE7E12 /* MedicationsListCell.swift in Sources */,
 				8310B4461ABA2F47008597E1 /* Compact.swift in Sources */,
 				833F395D1AB4C18600DC56FF /* Flush.swift in Sources */,
 			);

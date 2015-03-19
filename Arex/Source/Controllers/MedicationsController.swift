@@ -6,6 +6,8 @@ class MedicationsController {
     /// The file extension to use when saving `Medication` values.
     static let fileExtension = "rx"
 
+    static let defaultDirectoryURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last as! NSURL
+    
     /// The directory in which to save `Medication` values.
     let directoryURL: NSURL
 
@@ -18,6 +20,10 @@ class MedicationsController {
         return dispatch_queue_create("us.pandamonia.Arex.MedicationsController", attr)
     }()
 
+    convenience init() {
+        self.init(directoryURL: MedicationsController.defaultDirectoryURL)
+    }
+    
     /**
         :param: directoryURL The URL of the directory in which to load `Medication` values.
     */

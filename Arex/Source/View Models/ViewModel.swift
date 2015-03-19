@@ -1,48 +1,91 @@
 import ReactiveCocoa
 
 class ViewModel {
-    private static let throttleInterval: NSTimeInterval = 1
+    /// The default throttle interval is 1 second.
+    static let ThrottleInterval: NSTimeInterval = 1.0
 
-    private let _active = MutableProperty(false)
+    /// The underlying storage of the `active` property.
+    private let activeStorage = MutableProperty(false)
+
+    /**
+        Whether the view model is currently "active."
+
+        This generally implies that the associated view is visible. When set to `false`,
+        the view model should throttle or cancel low-priority or UI-related work.
+
+        This property defaults to `false`.
+    */
     final var active: Bool {
         get {
-            return _active.value
+            return activeStorage.value
         }
         set {
-            _active.value = newValue
+            activeStorage.value = newValue
         }
     }
 
-    final let didBecomeActiveSignal: Signal<ViewModel, NoError>
-    private let didBecomeActiveSignalObserver: SinkOf<Event<ViewModel, NoError>>
+    /**
+        Observes the receiver's `active` property, and sends the receiver whenever it
+        changes from `false` to `true`.
 
-    final let didBecomeInactiveSignal: Signal<ViewModel, NoError>
-    private let didBecomeInactiveSignalObserver: SinkOf<Event<ViewModel, NoError>>
+        If the receiver is currently active, this signal will send once immediately
+        upon subscription.
+    */
+    final var didBecomeActiveSignal: Signal<ViewModel, NoError> {
+        let (signal, observer) = Signal<ViewModel, NoError>.pipe()
 
-    private let disposable = CompositeDisposable()
-
-    init() {
-        (self.didBecomeActiveSignal, self.didBecomeActiveSignalObserver) = Signal.pipe()
-        (self.didBecomeInactiveSignal, self.didBecomeInactiveSignalObserver) = Signal.pipe()
-
-        self._active.producer.startWithSignal { [unowned self] (signal, disposable) in
-            signal
+        activeStorage.producer.startWithSignal { [unowned self] (signal, signalDisposable) in
+            let disposable = signal
                 |> filter(boolValue)
                 |> map(replace(self))
-                |> observe(self.didBecomeActiveSignalObserver)
+                |> observe(observer)
+            self.disposable.addDisposable(disposable)
+            self.disposable.addDisposable(signalDisposable)
+        }
 
-            signal
+        return signal
+    }
+
+    /**
+        Observes the receiver's `active` property, and sends the receiver whenever it
+        changes from YES to NO.
+
+        If the receiver is currently inactive, this signal will send once immediately
+        upon subscription.
+    */
+    final var didBecomeInactiveSignal: Signal<ViewModel, NoError> {
+        let (signal, observer) = Signal<ViewModel, NoError>.pipe()
+
+        activeStorage.producer.startWithSignal { [unowned self] (signal, signalDisposable) in
+            let disposable = signal
                 |> map(not)
                 |> filter(boolValue)
                 |> map(replace(self))
-                |> observe(self.didBecomeInactiveSignalObserver)
-
+                |> observe(observer)
             self.disposable.addDisposable(disposable)
+            self.disposable.addDisposable(signalDisposable)
         }
+
+        return signal
     }
 
+    /// A composite disposable that disposes subscriptions to either `didBecome(Active|Inactive)Signal`.
+    private let disposable = CompositeDisposable()
+
+    init() {
+
+    }
+
+    /**
+        Subscribes (or resubscribes) to the given signal whenever `didBecomeActiveSignal` fires.
+        When `didBecomeInactiveSignal` fires, any active subscription to `signal` is disposed.
+
+        :param: producer A signal producer to forward.
+
+        :returns: A signal which forwards `.Next` events from the latest subscription to `producer`, and completes when the receiver is deallocated. If `produer` sends an error at any point, the returned signal will error out as well.
+    */
     final func forwardWhileActive<T, E>(producer: SignalProducer<T, E>) -> SignalProducer<T, E> {
-        return _active.producer
+        return activeStorage.producer
             |> concat(SignalProducer(value: false))
             |> promoteErrors(E)
             |> joinMap(.Latest) { value in
@@ -54,8 +97,17 @@ class ViewModel {
             }
     }
 
-    final func throttleWhileInactive<T, E>(interval: NSTimeInterval = ViewModel.throttleInterval)(producer: SignalProducer<T, E>) -> SignalProducer<T, E> {
-        return _active.producer
+    /**
+        Throttles events on the given signal while the receiver is inactive.
+        Unlike `forwardSignalWhileActive()`, this method will stay subscribed to `signal` the entire time, except that its events will be throttled when the receiver becomes inactive.
+
+        :param: interval The minimum duration between Events.
+        :param: producer A signal producer to throttle.
+
+        :returns: A signal producer which forwards events from `producer` (throttled while the receiver is inactive), and completes when `producer` completes or the receiver is deallocated.
+    */
+    final func throttleWhileInactive<T, E>(interval: NSTimeInterval = ViewModel.ThrottleInterval)(producer: SignalProducer<T, E>) -> SignalProducer<T, E> {
+        return activeStorage.producer
             |> promoteErrors(E)
             |> materialize
             |> combineLatestWith(producer |> materialize)
