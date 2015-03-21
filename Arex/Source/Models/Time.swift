@@ -33,36 +33,6 @@ func ==(lhs: Time, rhs: Time) -> Bool {
     return lhs.hour == rhs.hour && lhs.minute == rhs.minute
 }
 
-func <=(lhs: Time, rhs: Time) -> Bool {
-    if lhs.hour < rhs.hour {
-        return true
-    } else if lhs.hour == rhs.hour {
-        return lhs.minute <= rhs.minute
-    } else {
-        return false
-    }
-}
-
-func >=(lhs: Time, rhs: Time) -> Bool {
-    if lhs.hour > rhs.hour {
-        return true
-    } else if lhs.hour == rhs.hour {
-        return lhs.minute >= rhs.minute
-    } else {
-        return false
-    }
-}
-
-func >(lhs: Time, rhs: Time) -> Bool {
-    if lhs.hour > rhs.hour {
-        return true
-    } else if lhs.hour == rhs.hour {
-        return lhs.minute > rhs.minute
-    } else {
-        return false
-    }
-}
-
 func <(lhs: Time, rhs: Time) -> Bool {
     if lhs.hour < rhs.hour {
         return true
