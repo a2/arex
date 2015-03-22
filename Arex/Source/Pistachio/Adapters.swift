@@ -1,6 +1,6 @@
 import Foundation
 import LlamaKit
-import MessagePack
+import MessagePack_swift
 import Pistachio
 
 struct RepeatAdapter: Adapter {

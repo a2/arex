@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78D115D525A9AE988EEB2720 /* Pods_Arex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D52CFFC6E1AE6FA3555DA010 /* Pods_Arex.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		830B143C1A89835B000E0A2D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B143B1A89835B000E0A2D /* Error.swift */; };
 		830C80FE1ABB9D8700AE7E12 /* MedicationsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */; };
 		8310B4371AB99F1E008597E1 /* ReactiveHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310B4361AB99F1E008597E1 /* ReactiveHelpers.swift */; };
@@ -17,12 +18,9 @@
 		833F395F1AB4C48100DC56FF /* ImageTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F395E1AB4C48100DC56FF /* ImageTransformers.swift */; };
 		833F39611AB519AC00DC56FF /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F39601AB519AC00DC56FF /* Time.swift */; };
 		833F39631AB51AF400DC56FF /* Adapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F39621AB51AF400DC56FF /* Adapters.swift */; };
-		833F39651AB51C8700DC56FF /* MessagePack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833F39641AB51C8700DC56FF /* MessagePack.framework */; };
 		833F396B1AB51E3E00DC56FF /* MessagePackValueTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F396A1AB51E3E00DC56FF /* MessagePackValueTransformers.swift */; };
 		83442F831ABA39FD0078DA75 /* MedicationListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83442F821ABA39FD0078DA75 /* MedicationListCellViewModel.swift */; };
 		8350F0211AB715B200C9867F /* DateTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8350F0201AB715B200C9867F /* DateTransformers.swift */; };
-		83804A431A8EA40D004D92DA /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83804A411A8EA40D004D92DA /* LlamaKit.framework */; };
-		83804A441A8EA40D004D92DA /* Pistachio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83804A421A8EA40D004D92DA /* Pistachio.framework */; };
 		83804A4D1A8EA538004D92DA /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83804A4C1A8EA538004D92DA /* Medication.swift */; };
 		8390C4331A8975490010D616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4321A8975490010D616 /* AppDelegate.swift */; };
 		8390C4381A8975490010D616 /* MedicationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4371A8975490010D616 /* MedicationsListViewController.swift */; };
@@ -30,14 +28,15 @@
 		8390C43D1A8975490010D616 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8390C43C1A8975490010D616 /* Images.xcassets */; };
 		8390C4401A8975490010D616 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8390C43E1A8975490010D616 /* LaunchScreen.xib */; };
 		8390C44C1A8975490010D616 /* ArexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C44B1A8975490010D616 /* ArexTests.swift */; };
-		83971DE11AB6E7BE00686E67 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83971DE01AB6E7BE00686E67 /* ReactiveCocoa.framework */; };
 		83971DE81AB6F49D00686E67 /* DirectoryMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83971DE51AB6F49D00686E67 /* DirectoryMonitor.swift */; };
 		83971DE91AB6F49D00686E67 /* FilterByExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83971DE61AB6F49D00686E67 /* FilterByExtension.swift */; };
 		839D2D411A8AB27B0071A441 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839D2D401A8AB27B0071A441 /* Colors.swift */; };
 		839D2D431A8AB2DC0071A441 /* CSSColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839D2D421A8AB2DC0071A441 /* CSSColors.swift */; };
+		83AFBC9C1ABDB47A0042F0AE /* MedicationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AFBC9B1ABDB47A0042F0AE /* MedicationDetailViewModel.swift */; };
 		83E1FC4D1AB5FCF700333762 /* ArexError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E1FC4C1AB5FCF700333762 /* ArexError.swift */; };
 		83E1FC531AB5FE2100333762 /* MedicationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E1FC521AB5FE2100333762 /* MedicationsController.swift */; };
 		83E1FC561AB5FEA700333762 /* MedicationsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E1FC551AB5FEA700333762 /* MedicationsListViewModel.swift */; };
+		83EFC9211ABC8DC400699EA2 /* MedicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4431E159D10B29C3175C1921 /* Pods-Arex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arex.release.xcconfig"; path = "Pods/Target Support Files/Pods-Arex/Pods-Arex.release.xcconfig"; sourceTree = "<group>"; };
+		6B0E337E3C92053979EFDED0 /* Pods-Arex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Arex/Pods-Arex.debug.xcconfig"; sourceTree = "<group>"; };
 		830B143B1A89835B000E0A2D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationsListCell.swift; sourceTree = "<group>"; };
 		8310B4361AB99F1E008597E1 /* ReactiveHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveHelpers.swift; sourceTree = "<group>"; };
@@ -83,9 +84,12 @@
 		83971DE61AB6F49D00686E67 /* FilterByExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterByExtension.swift; sourceTree = "<group>"; };
 		839D2D401A8AB27B0071A441 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		839D2D421A8AB2DC0071A441 /* CSSColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSColors.swift; sourceTree = "<group>"; };
+		83AFBC9B1ABDB47A0042F0AE /* MedicationDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationDetailViewModel.swift; sourceTree = "<group>"; };
 		83E1FC4C1AB5FCF700333762 /* ArexError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArexError.swift; sourceTree = "<group>"; };
 		83E1FC521AB5FE2100333762 /* MedicationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationsController.swift; sourceTree = "<group>"; };
 		83E1FC551AB5FEA700333762 /* MedicationsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationsListViewModel.swift; sourceTree = "<group>"; };
+		83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationDetailViewController.swift; sourceTree = "<group>"; };
+		D52CFFC6E1AE6FA3555DA010 /* Pods_Arex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,10 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				833F39651AB51C8700DC56FF /* MessagePack.framework in Frameworks */,
-				83804A431A8EA40D004D92DA /* LlamaKit.framework in Frameworks */,
-				83804A441A8EA40D004D92DA /* Pistachio.framework in Frameworks */,
-				83971DE11AB6E7BE00686E67 /* ReactiveCocoa.framework in Frameworks */,
+				78D115D525A9AE988EEB2720 /* Pods_Arex.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +111,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D02BE287FEC05D6F32B5A72 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B0E337E3C92053979EFDED0 /* Pods-Arex.debug.xcconfig */,
+				4431E159D10B29C3175C1921 /* Pods-Arex.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		833F395B1AB4C17800DC56FF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +138,7 @@
 				83804A411A8EA40D004D92DA /* LlamaKit.framework */,
 				833F39641AB51C8700DC56FF /* MessagePack.framework */,
 				83804A421A8EA40D004D92DA /* Pistachio.framework */,
+				D52CFFC6E1AE6FA3555DA010 /* Pods_Arex.framework */,
 				83971DE01AB6E7BE00686E67 /* ReactiveCocoa.framework */,
 			);
 			name = Frameworks;
@@ -172,6 +183,7 @@
 				8390C42F1A8975490010D616 /* Arex */,
 				8390C4481A8975490010D616 /* ArexTests */,
 				83804A401A8EA3FD004D92DA /* Frameworks */,
+				1D02BE287FEC05D6F32B5A72 /* Pods */,
 				8390C42E1A8975490010D616 /* Products */,
 			);
 			indentWidth = 4;
@@ -252,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				8390C4371A8975490010D616 /* MedicationsListViewController.swift */,
+				83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */,
 				830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */,
 			);
 			path = Views;
@@ -268,6 +281,7 @@
 		83E1FC541AB5FE9000333762 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				83AFBC9B1ABDB47A0042F0AE /* MedicationDetailViewModel.swift */,
 				83442F821ABA39FD0078DA75 /* MedicationListCellViewModel.swift */,
 				83E1FC551AB5FEA700333762 /* MedicationsListViewModel.swift */,
 				8310B4431AB9A0C4008597E1 /* ViewModel.swift */,
@@ -282,10 +296,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8390C44F1A8975490010D616 /* Build configuration list for PBXNativeTarget "Arex" */;
 			buildPhases = (
+				43790117857B33E13C6C7B34 /* Check Pods Manifest.lock */,
 				8390C4291A8975490010D616 /* Sources */,
 				8390C42A1A8975490010D616 /* Frameworks */,
 				8390C42B1A8975490010D616 /* Resources */,
-				83804A4A1A8EA42E004D92DA /* Embed Carthage Frameworks */,
+				A27CFC0378CC0625AC4B6772 /* Embed Pods Frameworks */,
+				FB39629669ADD6363DF82A6E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -372,23 +388,50 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		83804A4A1A8EA42E004D92DA /* Embed Carthage Frameworks */ = {
+		43790117857B33E13C6C7B34 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/LlamaKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/MessagePack.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Pistachio.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
 			);
-			name = "Embed Carthage Frameworks";
+			name = "Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A27CFC0378CC0625AC4B6772 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Arex/Pods-Arex-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB39629669ADD6363DF82A6E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Arex/Pods-Arex-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -403,9 +446,11 @@
 				83804A4D1A8EA538004D92DA /* Medication.swift in Sources */,
 				833F39611AB519AC00DC56FF /* Time.swift in Sources */,
 				83E1FC4D1AB5FCF700333762 /* ArexError.swift in Sources */,
+				83EFC9211ABC8DC400699EA2 /* MedicationDetailViewController.swift in Sources */,
 				8390C4331A8975490010D616 /* AppDelegate.swift in Sources */,
 				83E1FC531AB5FE2100333762 /* MedicationsController.swift in Sources */,
 				833F395F1AB4C48100DC56FF /* ImageTransformers.swift in Sources */,
+				83AFBC9C1ABDB47A0042F0AE /* MedicationDetailViewModel.swift in Sources */,
 				83442F831ABA39FD0078DA75 /* MedicationListCellViewModel.swift in Sources */,
 				8350F0211AB715B200C9867F /* DateTransformers.swift in Sources */,
 				8310B4441AB9A0C4008597E1 /* ViewModel.swift in Sources */,
@@ -546,12 +591,9 @@
 		};
 		8390C4501A8975490010D616 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B0E337E3C92053979EFDED0 /* Pods-Arex.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = "Arex/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -560,12 +602,9 @@
 		};
 		8390C4511A8975490010D616 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4431E159D10B29C3175C1921 /* Pods-Arex.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = "Arex/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

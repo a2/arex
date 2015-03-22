@@ -1,5 +1,5 @@
 import LlamaKit
-import MessagePack
+import MessagePack_swift
 import ReactiveCocoa
 
 class MedicationsController {
