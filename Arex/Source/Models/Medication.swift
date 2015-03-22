@@ -1,6 +1,5 @@
 import AddressBook
 import Pistachio
-import UIKit
 
 struct Medication: Hashable {
     private var doctorRecordID: ABRecordID?
