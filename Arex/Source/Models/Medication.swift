@@ -11,9 +11,9 @@ struct Medication: Hashable {
     private var pictureData: NSData?
     private var schedules: [Schedule]
     private var strength: String?
-    private var uuid: NSUUID
+    private var uuid: NSUUID?
 
-    init(doctorRecordID: ABRecordID? = nil, dosesLeft: Int? = nil, lastFilledDate: NSDate? = nil, name: String? = nil, note: String? = nil, pharmacyRecordID: ABRecordID? = nil, pictureData: NSData? = nil, schedules: [Schedule] = [], strength: String? = nil, uuid: NSUUID = NSUUID()) {
+    init(doctorRecordID: ABRecordID? = nil, dosesLeft: Int? = nil, lastFilledDate: NSDate? = nil, name: String? = nil, note: String? = nil, pharmacyRecordID: ABRecordID? = nil, pictureData: NSData? = nil, schedules: [Schedule] = [], strength: String? = nil, uuid: NSUUID? = nil) {
         self.doctorRecordID = doctorRecordID
         self.dosesLeft = dosesLeft
         self.lastFilledDate = lastFilledDate
@@ -26,17 +26,22 @@ struct Medication: Hashable {
         self.uuid = uuid
     }
 
-    mutating func resetUUID() {
-        uuid = NSUUID()
-    }
-
     var hashValue: Int {
-        return uuid.hash
+        if let uuid = uuid {
+            return uuid.hash
+        } else {
+            return (name?.hash ?? 0) ^ (strength?.hash ?? 0)
+        }
     }
 }
 
 func ==(lhs: Medication, rhs: Medication) -> Bool {
-    return lhs.uuid == rhs.uuid
+    switch (lhs.uuid, rhs.uuid) {
+    case let (.Some(lhu), .Some(rhu)):
+        return lhu == rhu
+    default:
+        return lhs.name == rhs.name && lhs.strength ==  rhs.strength
+    }
 }
 
 struct MedicationLenses {
@@ -83,5 +88,10 @@ struct MedicationLenses {
     static let strength = Lens(
         get: { $0.strength },
         set: { (inout medication: Medication, strength) in medication.strength = flush(strength, not(isEmpty)) }
+    )
+
+    static let uuid = Lens(
+        get: { $0.uuid },
+        set: { (inout medication: Medication, uuid) in medication.uuid = uuid }
     )
 }
