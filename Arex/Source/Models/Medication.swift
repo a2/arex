@@ -3,16 +3,16 @@ import Pistachio
 import UIKit
 
 struct Medication: Hashable {
-    var doctorRecordID: ABRecordID?
-    var dosesLeft: Int?
-    var lastFilledDate: NSDate?
-    var name: String?
-    var note: String?
-    var pharmacyRecordID: ABRecordID?
-    var pictureData: NSData?
-    var schedules: [Schedule]
-    var strength: String?
-    var uuid: NSUUID
+    private var doctorRecordID: ABRecordID?
+    private var dosesLeft: Int?
+    private var lastFilledDate: NSDate?
+    private var name: String?
+    private var note: String?
+    private var pharmacyRecordID: ABRecordID?
+    private var pictureData: NSData?
+    private var schedules: [Schedule]
+    private var strength: String?
+    private var uuid: NSUUID
 
     init(doctorRecordID: ABRecordID? = nil, dosesLeft: Int? = nil, lastFilledDate: NSDate? = nil, name: String? = nil, note: String? = nil, pharmacyRecordID: ABRecordID? = nil, pictureData: NSData? = nil, schedules: [Schedule] = [], strength: String? = nil, uuid: NSUUID = NSUUID()) {
         self.doctorRecordID = doctorRecordID
@@ -27,7 +27,7 @@ struct Medication: Hashable {
         self.uuid = uuid
     }
 
-    mutating func refreshIdentity() {
+    mutating func resetUUID() {
         uuid = NSUUID()
     }
 
@@ -58,12 +58,12 @@ struct MedicationLenses {
 
     static let name = Lens(
         get: { $0.name },
-        set: { (inout medication: Medication, name) in medication.name = name }
+        set: { (inout medication: Medication, name) in medication.name = flush(name, not(isEmpty)) }
     )
 
     static let note = Lens(
         get: { $0.note },
-        set: { (inout medication: Medication, note) in medication.note = note }
+        set: { (inout medication: Medication, note) in medication.note = flush(note, not(isEmpty)) }
     )
 
     static let pharmacyRecordID = Lens(
@@ -83,6 +83,6 @@ struct MedicationLenses {
 
     static let strength = Lens(
         get: { $0.strength },
-        set: { (inout medication: Medication, strength) in medication.strength = strength }
+        set: { (inout medication: Medication, strength) in medication.strength = flush(strength, not(isEmpty)) }
     )
 }

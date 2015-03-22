@@ -7,6 +7,10 @@ class MedicationsListViewModel: ViewModel {
         return lazy(medications).map({ MedicationListCellViewModel(medication: $0) })
     }
 
+    var detailViewModels: LazyRandomAccessCollection<MapCollectionView<[Medication], MedicationDetailViewModel>> {
+        return lazy(medications).map({ MedicationDetailViewModel(medication: $0) })
+    }
+
     private let medicationsController: MedicationsController
     private var medications = [Medication]()
     private let medicationsUpdatedObserver: SinkOf<Event<Void, NoError>>
@@ -33,7 +37,7 @@ class MedicationsListViewModel: ViewModel {
                 disposed: gobble
             )
             |> map(gobble)
-            |> start(medicationsUpdatedObserver)
+            |> start(self.medicationsUpdatedObserver)
     }
 
     var isEmpty: Bool {
@@ -42,5 +46,9 @@ class MedicationsListViewModel: ViewModel {
     
     var count: Int {
         return medications.count
+    }
+
+    func newDetailViewModel() -> MedicationDetailViewModel {
+        return MedicationDetailViewModel(medication: Medication())
     }
 }

@@ -30,6 +30,12 @@ func flush<T: Equatable, C: CollectionType where C.Generator.Element == T>(value
     }
 }
 
+func not<T, B: BooleanType>(validator: T -> B) -> T -> Bool {
+    return { value in
+        return !validator(value)
+    }
+}
+
 func flush<T, B: BooleanType>(value: T, validator: T -> B) -> T? {
     if validator(value) {
         return value

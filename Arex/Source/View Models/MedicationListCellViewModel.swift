@@ -1,3 +1,5 @@
+import Pistachio
+
 class MedicationListCellViewModel: ViewModel {
     private let medication: Medication
 
@@ -6,10 +8,10 @@ class MedicationListCellViewModel: ViewModel {
     }
 
     var text: String? {
-        return medication.name
+        return get(MedicationLenses.name, medication)
     }
 
     var detailText: String? {
-        return medication.strength
+        return get(MedicationLenses.strength, medication)
     }
 }
