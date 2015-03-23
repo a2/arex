@@ -10,9 +10,10 @@
 		78D115D525A9AE988EEB2720 /* Pods_Arex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D52CFFC6E1AE6FA3555DA010 /* Pods_Arex.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		830B143C1A89835B000E0A2D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830B143B1A89835B000E0A2D /* Error.swift */; };
 		830C80FE1ABB9D8700AE7E12 /* MedicationsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */; };
-		8310B4371AB99F1E008597E1 /* ReactiveHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310B4361AB99F1E008597E1 /* ReactiveHelpers.swift */; };
+		8310B4371AB99F1E008597E1 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310B4361AB99F1E008597E1 /* Helpers.swift */; };
 		8310B4441AB9A0C4008597E1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310B4431AB9A0C4008597E1 /* ViewModel.swift */; };
 		8310B4461ABA2F47008597E1 /* Compact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310B4451ABA2F47008597E1 /* Compact.swift */; };
+		8316718F1ABF040C00BFC705 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8316718E1ABF040C00BFC705 /* ScheduleViewModel.swift */; };
 		833F39561AB4B1E900DC56FF /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F39551AB4B1E900DC56FF /* Schedule.swift */; };
 		833F395D1AB4C18600DC56FF /* Flush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F395C1AB4C18600DC56FF /* Flush.swift */; };
 		833F395F1AB4C48100DC56FF /* ImageTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F395E1AB4C48100DC56FF /* ImageTransformers.swift */; };
@@ -36,6 +37,7 @@
 		83E1FC4D1AB5FCF700333762 /* ArexError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E1FC4C1AB5FCF700333762 /* ArexError.swift */; };
 		83E1FC531AB5FE2100333762 /* MedicationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E1FC521AB5FE2100333762 /* MedicationsController.swift */; };
 		83E1FC561AB5FEA700333762 /* MedicationsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E1FC551AB5FEA700333762 /* MedicationsListViewModel.swift */; };
+		83EA87EC1ABF16E40029EE1B /* IndexPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EA87EB1ABF16E40029EE1B /* IndexPath.swift */; };
 		83EFC9211ABC8DC400699EA2 /* MedicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,9 +56,10 @@
 		6B0E337E3C92053979EFDED0 /* Pods-Arex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Arex/Pods-Arex.debug.xcconfig"; sourceTree = "<group>"; };
 		830B143B1A89835B000E0A2D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationsListCell.swift; sourceTree = "<group>"; };
-		8310B4361AB99F1E008597E1 /* ReactiveHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveHelpers.swift; sourceTree = "<group>"; };
+		8310B4361AB99F1E008597E1 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		8310B4431AB9A0C4008597E1 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		8310B4451ABA2F47008597E1 /* Compact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compact.swift; sourceTree = "<group>"; };
+		8316718E1ABF040C00BFC705 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
 		833F39551AB4B1E900DC56FF /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		833F395C1AB4C18600DC56FF /* Flush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flush.swift; sourceTree = "<group>"; };
 		833F395E1AB4C48100DC56FF /* ImageTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ImageTransformers.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -88,6 +91,7 @@
 		83E1FC4C1AB5FCF700333762 /* ArexError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ArexError.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		83E1FC521AB5FE2100333762 /* MedicationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationsController.swift; sourceTree = "<group>"; };
 		83E1FC551AB5FEA700333762 /* MedicationsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationsListViewModel.swift; sourceTree = "<group>"; };
+		83EA87EB1ABF16E40029EE1B /* IndexPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexPath.swift; sourceTree = "<group>"; };
 		83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MedicationDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D52CFFC6E1AE6FA3555DA010 /* Pods_Arex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -125,9 +129,7 @@
 			children = (
 				83E1FC4C1AB5FCF700333762 /* ArexError.swift */,
 				839D2D401A8AB27B0071A441 /* Colors.swift */,
-				8310B4451ABA2F47008597E1 /* Compact.swift */,
 				830B143B1A89835B000E0A2D /* Error.swift */,
-				8310B4361AB99F1E008597E1 /* ReactiveHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -147,6 +149,7 @@
 		83804A4B1A8EA529004D92DA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				83E1FC4E1AB5FD0D00333762 /* Pistachio */,
 				83804A4C1A8EA538004D92DA /* Medication.swift */,
 				833F39551AB4B1E900DC56FF /* Schedule.swift */,
 				833F39601AB519AC00DC56FF /* Time.swift */,
@@ -162,7 +165,6 @@
 				83971DE31AB6F49D00686E67 /* Functions */,
 				833F395B1AB4C17800DC56FF /* Helpers */,
 				83804A4B1A8EA529004D92DA /* Models */,
-				83E1FC4E1AB5FD0D00333762 /* Pistachio */,
 				83E1FC541AB5FE9000333762 /* View Models */,
 				83E1FC4F1AB5FD5A00333762 /* Views */,
 			);
@@ -241,10 +243,13 @@
 		83971DE31AB6F49D00686E67 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
+				8310B4451ABA2F47008597E1 /* Compact.swift */,
 				839D2D421A8AB2DC0071A441 /* CSSColors.swift */,
 				83971DE51AB6F49D00686E67 /* DirectoryMonitor.swift */,
 				83971DE61AB6F49D00686E67 /* FilterByExtension.swift */,
 				833F395C1AB4C18600DC56FF /* Flush.swift */,
+				8310B4361AB99F1E008597E1 /* Helpers.swift */,
+				83EA87EB1ABF16E40029EE1B /* IndexPath.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 				83AFBC9B1ABDB47A0042F0AE /* MedicationDetailViewModel.swift */,
 				83442F821ABA39FD0078DA75 /* MedicationListCellViewModel.swift */,
 				83E1FC551AB5FEA700333762 /* MedicationsListViewModel.swift */,
+				8316718E1ABF040C00BFC705 /* ScheduleViewModel.swift */,
 				8310B4431AB9A0C4008597E1 /* ViewModel.swift */,
 			);
 			path = "View Models";
@@ -451,13 +457,15 @@
 				83E1FC531AB5FE2100333762 /* MedicationsController.swift in Sources */,
 				833F395F1AB4C48100DC56FF /* ImageTransformers.swift in Sources */,
 				83AFBC9C1ABDB47A0042F0AE /* MedicationDetailViewModel.swift in Sources */,
+				8316718F1ABF040C00BFC705 /* ScheduleViewModel.swift in Sources */,
 				83442F831ABA39FD0078DA75 /* MedicationListCellViewModel.swift in Sources */,
 				8350F0211AB715B200C9867F /* DateTransformers.swift in Sources */,
 				8310B4441AB9A0C4008597E1 /* ViewModel.swift in Sources */,
 				830B143C1A89835B000E0A2D /* Error.swift in Sources */,
 				833F39631AB51AF400DC56FF /* Adapters.swift in Sources */,
 				839D2D411A8AB27B0071A441 /* Colors.swift in Sources */,
-				8310B4371AB99F1E008597E1 /* ReactiveHelpers.swift in Sources */,
+				8310B4371AB99F1E008597E1 /* Helpers.swift in Sources */,
+				83EA87EC1ABF16E40029EE1B /* IndexPath.swift in Sources */,
 				833F39561AB4B1E900DC56FF /* Schedule.swift in Sources */,
 				839D2D431A8AB2DC0071A441 /* CSSColors.swift in Sources */,
 				83971DE91AB6F49D00686E67 /* FilterByExtension.swift in Sources */,

@@ -1,11 +1,48 @@
+import Foundation
 import LlamaKit
 import MessagePack_swift
+import Pistachio
 import ReactiveCocoa
+
+enum MedicationsControllerError: ErrorRepresentable, ErrorType {
+    static let domain = "MedicationsControllerError"
+
+    case CannotSave(name: String, underlying: NSError?)
+
+    var code: Int {
+        switch self {
+        case .CannotSave(name: _, underlying: _):
+            return 1
+        }
+    }
+
+    var description: String {
+        switch self {
+        case .CannotSave(name: let name, underlying: _):
+            return String(format: NSLocalizedString("Could not save medication “%@”. ", comment: ""), arguments: [name])
+        }
+    }
+
+    var failureReason: String? {
+        switch self {
+        case .CannotSave(name: _, underlying: let underlying):
+            return underlying?.localizedFailureReason ?? underlying?.localizedDescription
+        }
+    }
+
+    var nsError: NSError {
+        switch self {
+        case .CannotSave(name: _, underlying: let underlying):
+            return error(code: self, underlying: underlying)
+        }
+    }
+}
 
 class MedicationsController {
     /// The file extension to use when saving `Medication` values.
     static let fileExtension = "rx"
 
+    /// The default directory URL is ~/Documents directory.
     static let defaultDirectoryURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last as! NSURL
     
     /// The directory in which to save `Medication` values.
@@ -15,7 +52,7 @@ class MedicationsController {
     private let fileManager = NSFileManager()
 
     /// The queue on which `directoryURL` is loaded and its `Medication` contents are unpacked.
-    private let queue: dispatch_queue_t = {
+    private lazy var queue: dispatch_queue_t = {
         let attr = dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_SERIAL, QOS_CLASS_DEFAULT, 0)
         return dispatch_queue_create("us.pandamonia.Arex.MedicationsController", attr)
     }()
@@ -54,9 +91,10 @@ class MedicationsController {
         return directoryURLContents().map { URLs in
             return URLs.flatMap { fileURL in
                 if let pathExtension = fileURL.pathExtension where pathExtension == MedicationsController.fileExtension,
-                    let data = NSData(contentsOfURL: fileURL), messagePackValue = unpack(data) {
+                    let lastPathComponent = fileURL.lastPathComponent, uuid = NSUUID(UUIDString: lastPathComponent.stringByDeletingPathExtension),
+                    data = NSData(contentsOfURL: fileURL), messagePackValue = unpack(data) {
 
-                    switch Adapters.medication.decode(Medication(), from: messagePackValue) {
+                    switch Adapters.medication.decode(Medication(uuid: uuid), from: messagePackValue) {
                     case let .Success(valueBox):
                         return [valueBox.unbox]
                     case let .Failure(errorBox):
@@ -70,12 +108,50 @@ class MedicationsController {
     }
 
     /// Returns a signal producer that watches the contents of `directoryURL` 
-    /// and sends an `Array` of `Medication` values when the directory's
-    /// contents change.
+    /// and sends an `Array[Medication]` when the directory's contents change.
     func medications() -> SignalProducer<[Medication], NSError> {
         return monitorDirectory(directoryURL)
             |> observeOn(QueueScheduler(queue))
-            |> tryMap { [unowned self] _ in self.loadMedications() }
+            |> mapError { (error: MonitorDirectoryError) in error.nsError }
+            |> tryMap { [unowned self] (x: NSURL) in self.loadMedications() }
             |> observeOn(QueueScheduler.mainQueueScheduler)
+    }
+
+    /**
+        Saves the specified `Medication` value when the returned signal producer is started.
+    
+        :param: medication The `Medication` to save.
+    
+        :returns: A signal producer that saves the argument when started.
+    */
+    func save(inout #medication: Medication) -> SignalProducer<Void, MedicationsControllerError> {
+        let name = get(MedicationLenses.name, medication) ?? undefined("You cannot save a Medication without a name")
+        let uuid: NSUUID
+
+        if let _uuid = get(MedicationLenses.uuid, medication) {
+            uuid = _uuid
+        } else {
+            uuid = NSUUID()
+            medication = set(MedicationLenses.uuid, medication, uuid)
+        }
+
+        let producer = SignalProducer<Void, MedicationsControllerError> { (observer, disposable) in
+            switch Adapters.medication.encode(medication) {
+            case .Success(let valueBox):
+                let data = pack(valueBox.unbox)
+                let url = self.directoryURL.URLByAppendingPathComponent("\(uuid.UUIDString).\(MedicationsController.fileExtension)")
+
+                var error: NSError? = nil
+                if data.writeToURL(url, options: .DataWritingAtomic, error: &error) {
+                    sendCompleted(observer)
+                } else {
+                    sendError(observer, .CannotSave(name: name, underlying: error))
+                }
+            case .Failure(let errorBox):
+                sendError(observer, .CannotSave(name: name, underlying: errorBox.unbox))
+            }
+        }
+
+        return producer |> observeOn(QueueScheduler.mainQueueScheduler)
     }
 }

@@ -8,7 +8,9 @@ class MedicationsListViewModel: ViewModel {
     }
 
     var detailViewModels: LazyRandomAccessCollection<MapCollectionView<[Medication], MedicationDetailViewModel>> {
-        return lazy(medications).map({ MedicationDetailViewModel(medication: $0) })
+        return lazy(medications).map({ [unowned self] in
+            MedicationDetailViewModel(medicationsController: self.medicationsController, medication: $0)
+        })
     }
 
     private let medicationsController: MedicationsController
@@ -27,16 +29,16 @@ class MedicationsListViewModel: ViewModel {
             |> catch(catchAll)
             |> on(
                 // TODO: Remove the `gobble`s when Swift doesn't segfault.
-                started: gobble,
-                event: gobble,
+                started: void,
+                event: void,
                 next: { [unowned self] in self.medications = $0 },
-                error: gobble,
-                completed: gobble,
-                interrupted: gobble,
-                terminated: gobble,
-                disposed: gobble
+                error: void,
+                completed: void,
+                interrupted: void,
+                terminated: void,
+                disposed: void
             )
-            |> map(gobble)
+            |> map(void)
             |> start(self.medicationsUpdatedObserver)
     }
 
@@ -49,6 +51,6 @@ class MedicationsListViewModel: ViewModel {
     }
 
     func newDetailViewModel() -> MedicationDetailViewModel {
-        return MedicationDetailViewModel(medication: Medication())
+        return MedicationDetailViewModel(medicationsController: medicationsController, medication: Medication())
     }
 }

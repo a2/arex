@@ -14,7 +14,13 @@ class MedicationsListViewController: UITableViewController {
 
     private let viewModel = MedicationsListViewModel(medicationsController: MedicationsController())
 
-    // MARK: View Life Cycle
+    // MARK: - Actions
+
+    @IBAction func dismissModalEditor(segue: UIStoryboardSegue) {
+
+    }
+
+    // MARK: - View Life Cycle
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         switch segue.identifier {
@@ -33,7 +39,7 @@ class MedicationsListViewController: UITableViewController {
         }
     }
 
-    // MARK: Table View
+    // MARK: - Table View
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.count
