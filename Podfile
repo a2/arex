@@ -8,6 +8,9 @@ platform :ios, '8.0'
 # Use embedded frameworks
 use_frameworks!
 
+# Inhibit warnings
+inhibit_all_warnings!
+
 target 'Arex' do
   pod 'MessagePack.swift', '~> 0.1.0'
   pod 'Pistachio',

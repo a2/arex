@@ -1,0 +1,6 @@
+framework module LlamaKit {
+  umbrella header "Pods-Arex-LlamaKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

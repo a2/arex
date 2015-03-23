@@ -1,0 +1,25 @@
+{
+  "name": "Pistachio",
+  "version": "0.1.1-a2",
+  "summary": "Generic model framework for Swift",
+  "homepage": "https://github.com/a2/Pistachio",
+  "license": "MIT",
+  "authors": {
+    "Felix Jendrusch": "felix@felixjendrusch.is",
+    "Robert Böhnke": "robb@robb.is"
+  },
+  "source": {
+    "git": "https://github.com/a2/Pistachio.git",
+    "tag": "0.1.1-a2"
+  },
+  "source_files": "Pistachio/*.{h,swift}",
+  "dependencies": {
+    "LlamaKit": [
+      "~> 0.6.0"
+    ]
+  },
+  "platforms": {
+    "ios": "7.0",
+    "osx": "10.9"
+  }
+}
