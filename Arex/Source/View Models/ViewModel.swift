@@ -5,7 +5,7 @@ class ViewModel {
     static let ThrottleInterval: NSTimeInterval = 1.0
 
     /// The underlying storage of the `active` property.
-    private let activeStorage = MutableProperty(false)
+    private let _active = MutableProperty(false)
 
     /**
         Whether the view model is currently "active."
@@ -17,10 +17,10 @@ class ViewModel {
     */
     final var active: Bool {
         get {
-            return activeStorage.value
+            return _active.value
         }
         set {
-            activeStorage.value = newValue
+            _active.value = newValue
         }
     }
 
@@ -34,7 +34,7 @@ class ViewModel {
     final var didBecomeActiveSignal: Signal<ViewModel, NoError> {
         let (signal, observer) = Signal<ViewModel, NoError>.pipe()
 
-        activeStorage.producer.startWithSignal { [unowned self] (signal, signalDisposable) in
+        _active.producer.startWithSignal { [unowned self] (signal, signalDisposable) in
             let disposable = signal
                 |> filter(boolValue)
                 |> map(replace(self))
@@ -56,7 +56,7 @@ class ViewModel {
     final var didBecomeInactiveSignal: Signal<ViewModel, NoError> {
         let (signal, observer) = Signal<ViewModel, NoError>.pipe()
 
-        activeStorage.producer.startWithSignal { [unowned self] (signal, signalDisposable) in
+        _active.producer.startWithSignal { [unowned self] (signal, signalDisposable) in
             let disposable = signal
                 |> map(not)
                 |> filter(boolValue)
@@ -85,7 +85,7 @@ class ViewModel {
         :returns: A signal which forwards `.Next` events from the latest subscription to `producer`, and completes when the receiver is deallocated. If `produer` sends an error at any point, the returned signal will error out as well.
     */
     final func forwardWhileActive<T, E>(producer: SignalProducer<T, E>) -> SignalProducer<T, E> {
-        return activeStorage.producer
+        return _active.producer
             |> concat(SignalProducer(value: false))
             |> promoteErrors(E)
             |> joinMap(.Latest) { value in
@@ -107,7 +107,7 @@ class ViewModel {
         :returns: A signal producer which forwards events from `producer` (throttled while the receiver is inactive), and completes when `producer` completes or the receiver is deallocated.
     */
     final func throttleWhileInactive<T, E>(interval: NSTimeInterval = ViewModel.ThrottleInterval)(producer: SignalProducer<T, E>) -> SignalProducer<T, E> {
-        return activeStorage.producer
+        return _active.producer
             |> promoteErrors(E)
             |> materialize
             |> combineLatestWith(producer |> materialize)
