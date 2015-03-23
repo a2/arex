@@ -85,8 +85,8 @@ func replace<T, U>(replacement: T)(value: U) -> T {
 
     Some examples:
 
-     - `let x : String = undefined()
-     - `let f : String -> Int? = undefined("string to optional int function")
+     - `let x : String = undefined()`
+     - `let f : String -> Int? = undefined("string to optional int function")`
      - `return undefined() /* in any function */`
      - `let x : String = (undefined() as Int -> String)(42)`
      - ...
