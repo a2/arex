@@ -234,6 +234,7 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
 
     override func setEditing(editing: Bool, animated: Bool) {
         if viewModel.wasNew {
+            // TODO: Segue implementation is unfinished
             fatalError("Segue implementation is unfinished")
         }
 
@@ -364,6 +365,7 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if editing && indexPath.section == SectionIndex.Schedules.rawValue && indexPath.row == tableView.numberOfRowsInSection(indexPath.section) - 1 {
+            // TODO: Segue implementation is unfinished
             fatalError("Segue implementation is unfinished")
         } else {
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -374,8 +376,10 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
         if indexPath.section == SectionIndex.Schedules.rawValue {
             switch editingStyle {
             case .Insert:
+                // TODO: Segue implementation is unfinished
                 fatalError("Segue implementation is unfinished")
             case .Delete:
+                // TODO: Deletion is not yet implemented
                 fatalError("Deletion is not yet implemented")
             default:
                 break
