@@ -1,3 +1,4 @@
+import ArexKit
 import ReactiveCocoa
 import SAMTextView
 import UIKit
@@ -214,18 +215,18 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
             navigationItem.setLeftBarButtonItem(cancelBarButtonItem, animated: true)
 
             if schedulesCount == 0 {
-                tableView.deleteRowsAtIndexPaths([indexPath(SectionIndex.Schedules.rawValue, 0)], withRowAnimation: rowAnimation)
+                tableView.deleteRowsAtIndexPaths([NSIndexPath(SectionIndex.Schedules.rawValue, 0)], withRowAnimation: rowAnimation)
             }
 
-            tableView.insertRowsAtIndexPaths([indexPath(SectionIndex.Schedules.rawValue, schedulesCount)], withRowAnimation: rowAnimation)
+            tableView.insertRowsAtIndexPaths([NSIndexPath(SectionIndex.Schedules.rawValue, schedulesCount)], withRowAnimation: rowAnimation)
         } else {
             navigationItem.setRightBarButtonItem(editBarButtonItem, animated: true)
             navigationItem.setLeftBarButtonItem(nil, animated: true)
 
-            tableView.deleteRowsAtIndexPaths([indexPath(SectionIndex.Schedules.rawValue, schedulesCount)], withRowAnimation: rowAnimation)
+            tableView.deleteRowsAtIndexPaths([NSIndexPath(SectionIndex.Schedules.rawValue, schedulesCount)], withRowAnimation: rowAnimation)
 
             if schedulesCount == 0 {
-                tableView.insertRowsAtIndexPaths([indexPath(SectionIndex.Schedules.rawValue, 0)], withRowAnimation: rowAnimation)
+                tableView.insertRowsAtIndexPaths([NSIndexPath(SectionIndex.Schedules.rawValue, 0)], withRowAnimation: rowAnimation)
             }
         }
     }
@@ -392,7 +393,7 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
 
         switch index {
         case .Schedules:
-            return super.tableView(tableView, heightForRowAtIndexPath: indexPath(SectionIndex.Schedules.rawValue, 0))
+            return super.tableView(tableView, heightForRowAtIndexPath: NSIndexPath(SectionIndex.Schedules.rawValue, 0))
 
         case .Note:
             if noteTextView.bounds.width > 500 {

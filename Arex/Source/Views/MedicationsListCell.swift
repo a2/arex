@@ -1,3 +1,4 @@
+import ArexKit
 import UIKit
 
 class MedicationsListCell: UITableViewCell {

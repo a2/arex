@@ -1,0 +1,1 @@
+PODS_AREXKIT_REACTIVECOCOA_OTHER_LDFLAGS = -framework "Foundation" -framework "UIKit"
