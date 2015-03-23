@@ -1,7 +1,7 @@
 PODS:
   - LlamaKit (0.6.0)
   - MessagePack.swift (0.1.0)
-  - Nimble (0.4.0)
+  - Nimble (0.4.1)
   - Pistachio (0.1.1-a2):
     - LlamaKit (~> 0.6.0)
   - Quick (0.3.0)
@@ -39,7 +39,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   LlamaKit: 972880acb028505ffc4dc3bc54167e6ce16556fc
   MessagePack.swift: ba8ad7a73981cd22595599d90ca54623452912f8
-  Nimble: 9c3e917791790aa54ca6bebcc022a282d3d5eb39
+  Nimble: 36913d5c822a29b3ace4113c197c79eb766a3615
   Pistachio: 7cff2497f6b72064bfb8843637b7f310d8acaf42
   Quick: 295c961cb8cf2edc042f1d09cf31d72c850d8e93
   ReactiveCocoa: ec30c10aa6c6e3846546bfd25e0f30a874c4cf5d

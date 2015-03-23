@@ -1,6 +1,0 @@
-framework module Pistachio {
-  umbrella header "Pods-ArexKitTests-Pistachio-umbrella.h"
-
-  export *
-  module * { export * }
-}

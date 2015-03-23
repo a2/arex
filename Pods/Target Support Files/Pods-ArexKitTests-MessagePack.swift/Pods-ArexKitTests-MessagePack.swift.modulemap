@@ -1,6 +1,0 @@
-framework module MessagePack_swift {
-  umbrella header "Pods-ArexKitTests-MessagePack.swift-umbrella.h"
-
-  export *
-  module * { export * }
-}

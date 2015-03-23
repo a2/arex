@@ -6,9 +6,9 @@ struct AsyncMatcherWrapper<T, U where U: Matcher, U.ValueType == T>: Matcher {
     let pollInterval: NSTimeInterval
 
     init(fullMatcher: U, timeoutInterval: NSTimeInterval = 1, pollInterval: NSTimeInterval = 0.01) {
-        self.fullMatcher = fullMatcher
-        self.timeoutInterval = timeoutInterval
-        self.pollInterval = pollInterval
+      self.fullMatcher = fullMatcher
+      self.timeoutInterval = timeoutInterval
+      self.pollInterval = pollInterval
     }
 
     func matches(actualExpression: Expression<T>, failureMessage: FailureMessage) -> Bool {

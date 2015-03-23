@@ -3,12 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		098CC1F4D6E1008E741289D5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD98A999D28CDFDCA0BE606 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		78D115D525A9AE988EEB2720 /* Pods_Arex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D52CFFC6E1AE6FA3555DA010 /* Pods_Arex.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		830C80FE1ABB9D8700AE7E12 /* MedicationsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */; };
 		831CF0E81AC0454400AE59B4 /* CSSColorsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83698CF51AC0443C007C458C /* CSSColorsSpec.swift */; };
 		83825FA01AC03A9C00486D9B /* CompactSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83825F9F1AC03A9C00486D9B /* CompactSpec.swift */; };
@@ -48,8 +46,9 @@
 		83F7FA2A1AC033DD00E57CB0 /* MedicationsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E1FC551AB5FEA700333762 /* MedicationsListViewModel.swift */; };
 		83F7FA2B1AC033DD00E57CB0 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8316718E1ABF040C00BFC705 /* ScheduleViewModel.swift */; };
 		83F7FA2C1AC033DD00E57CB0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8310B4431AB9A0C4008597E1 /* ViewModel.swift */; };
-		8F8BDA7EA11939712A22AA8C /* Pods_ArexKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F60D865D9D3E180D948D505 /* Pods_ArexKitTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		ED8BDDAF06A82BCEEDE6E24F /* Pods_ArexKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE34276FFC73ABDD7E9ED006 /* Pods_ArexKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		935CEA98C3DF875D33E4DB2D /* Pods_Arex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D52CFFC6E1AE6FA3555DA010 /* Pods_Arex.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		ACCCC949DF99C1C7DCF3FB05 /* Pods_ArexKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F60D865D9D3E180D948D505 /* Pods_ArexKitTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		AE270F88746B74DEAD72F5FF /* Pods_ArexKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE34276FFC73ABDD7E9ED006 /* Pods_ArexKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,10 +97,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3C9E908445E3541BD51AACC6 /* Pods-ArexKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArexKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArexKit/Pods-ArexKit.release.xcconfig"; sourceTree = "<group>"; };
 		3F60D865D9D3E180D948D505 /* Pods_ArexKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArexKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4431E159D10B29C3175C1921 /* Pods-Arex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arex.release.xcconfig"; path = "Pods/Target Support Files/Pods-Arex/Pods-Arex.release.xcconfig"; sourceTree = "<group>"; };
-		56DF448D9B0F0AF589F042D1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6B0E337E3C92053979EFDED0 /* Pods-Arex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Arex/Pods-Arex.debug.xcconfig"; sourceTree = "<group>"; };
 		7BD98A999D28CDFDCA0BE606 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		830B143B1A89835B000E0A2D /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
@@ -137,6 +134,17 @@
 		839D2D421A8AB2DC0071A441 /* CSSColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSColors.swift; sourceTree = "<group>"; };
 		83A3C2211AC0C41D007B1115 /* IndexPathSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexPathSpec.swift; sourceTree = "<group>"; };
 		83A3C2231AC0C4E3007B1115 /* DirectoryMonitorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryMonitorSpec.swift; sourceTree = "<group>"; };
+		83A3C2251AC0D555007B1115 /* LlamaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LlamaKit.framework; path = "Pods/../build/Debug-iphoneos/Pods-Arex/LlamaKit.framework"; sourceTree = "<group>"; };
+		83A3C2261AC0D555007B1115 /* MessagePack_swift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessagePack_swift.framework; path = "Pods/../build/Debug-iphoneos/Pods-Arex/MessagePack_swift.framework"; sourceTree = "<group>"; };
+		83A3C2271AC0D555007B1115 /* Pistachio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pistachio.framework; path = "Pods/../build/Debug-iphoneos/Pods-Arex/Pistachio.framework"; sourceTree = "<group>"; };
+		83A3C2281AC0D555007B1115 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "Pods/../build/Debug-iphoneos/Pods-Arex/ReactiveCocoa.framework"; sourceTree = "<group>"; };
+		83A3C2291AC0D555007B1115 /* SAMTextView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAMTextView.framework; path = "Pods/../build/Debug-iphoneos/Pods-Arex/SAMTextView.framework"; sourceTree = "<group>"; };
+		83AD48651AC0D88800EEBB1B /* Pods-ArexKit.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Pods-ArexKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArexKit/Pods-ArexKit.debug.xcconfig"; sourceTree = "<group>"; };
+		83AD48661AC0D88800EEBB1B /* Pods-ArexKit.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Pods-ArexKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArexKit/Pods-ArexKit.release.xcconfig"; sourceTree = "<group>"; };
+		83AD48671AC0D90700EEBB1B /* Pods_Arex.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Arex.framework; path = "Pods/../build/Debug-iphoneos/Pods_Arex.framework"; sourceTree = "<group>"; };
+		83AD48681AC0D90700EEBB1B /* Pods_ArexKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_ArexKit.framework; path = "Pods/../build/Debug-iphoneos/Pods_ArexKit.framework"; sourceTree = "<group>"; };
+		83AD486B1AC0DA9A00EEBB1B /* Arex.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Arex.debug.xcconfig; sourceTree = "<group>"; };
+		83AD486C1AC0DAA300EEBB1B /* Arex.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Arex.release.xcconfig; sourceTree = "<group>"; };
 		83AFBC9B1ABDB47A0042F0AE /* MedicationDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationDetailViewModel.swift; sourceTree = "<group>"; };
 		83E1FC4C1AB5FCF700333762 /* ArexError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ArexError.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		83E1FC521AB5FE2100333762 /* MedicationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationsController.swift; sourceTree = "<group>"; };
@@ -148,12 +156,11 @@
 		83F7F9F81AC033A000E57CB0 /* ArexKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArexKit.h; sourceTree = "<group>"; };
 		83F7F9FE1AC033A000E57CB0 /* ArexKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArexKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F7FA061AC033A000E57CB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		879D9BD818FCC4FA1A8C77AB /* Pods-ArexKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArexKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArexKit/Pods-ArexKit.debug.xcconfig"; sourceTree = "<group>"; };
+		94F5F6344927810FB44205C8 /* Pods_SharedFrameworks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SharedFrameworks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE34276FFC73ABDD7E9ED006 /* Pods_ArexKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArexKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4C2144B7981DDD2F76FA0C /* Pods-ArexKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArexKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArexKitTests/Pods-ArexKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		D52CFFC6E1AE6FA3555DA010 /* Pods_Arex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1121912645A6AFCC14E3A2F /* Pods-ArexKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArexKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArexKitTests/Pods-ArexKitTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F54FA9C2DD83CC78E26B27B5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,9 +168,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78D115D525A9AE988EEB2720 /* Pods_Arex.framework in Frameworks */,
 				83F7FA0B1AC033A000E57CB0 /* ArexKit.framework in Frameworks */,
-				098CC1F4D6E1008E741289D5 /* Pods.framework in Frameworks */,
+				935CEA98C3DF875D33E4DB2D /* Pods_Arex.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,7 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED8BDDAF06A82BCEEDE6E24F /* Pods_ArexKit.framework in Frameworks */,
+				AE270F88746B74DEAD72F5FF /* Pods_ArexKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,7 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83F7F9FF1AC033A000E57CB0 /* ArexKit.framework in Frameworks */,
-				8F8BDA7EA11939712A22AA8C /* Pods_ArexKitTests.framework in Frameworks */,
+				ACCCC949DF99C1C7DCF3FB05 /* Pods_ArexKitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,14 +205,21 @@
 			children = (
 				6B0E337E3C92053979EFDED0 /* Pods-Arex.debug.xcconfig */,
 				4431E159D10B29C3175C1921 /* Pods-Arex.release.xcconfig */,
-				879D9BD818FCC4FA1A8C77AB /* Pods-ArexKit.debug.xcconfig */,
-				3C9E908445E3541BD51AACC6 /* Pods-ArexKit.release.xcconfig */,
+				83AD48651AC0D88800EEBB1B /* Pods-ArexKit.debug.xcconfig */,
+				83AD48661AC0D88800EEBB1B /* Pods-ArexKit.release.xcconfig */,
 				F1121912645A6AFCC14E3A2F /* Pods-ArexKitTests.debug.xcconfig */,
 				CB4C2144B7981DDD2F76FA0C /* Pods-ArexKitTests.release.xcconfig */,
-				F54FA9C2DD83CC78E26B27B5 /* Pods.debug.xcconfig */,
-				56DF448D9B0F0AF589F042D1 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8333B21C1AC0D5D2005F2A88 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				83AD486B1AC0DA9A00EEBB1B /* Arex.debug.xcconfig */,
+				83AD486C1AC0DAA300EEBB1B /* Arex.release.xcconfig */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 		833F395B1AB4C17800DC56FF /* Helpers */ = {
@@ -222,10 +235,18 @@
 		83804A401A8EA3FD004D92DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				83AD48671AC0D90700EEBB1B /* Pods_Arex.framework */,
+				83AD48681AC0D90700EEBB1B /* Pods_ArexKit.framework */,
+				83A3C2251AC0D555007B1115 /* LlamaKit.framework */,
+				83A3C2261AC0D555007B1115 /* MessagePack_swift.framework */,
+				83A3C2271AC0D555007B1115 /* Pistachio.framework */,
+				83A3C2281AC0D555007B1115 /* ReactiveCocoa.framework */,
+				83A3C2291AC0D555007B1115 /* SAMTextView.framework */,
 				D52CFFC6E1AE6FA3555DA010 /* Pods_Arex.framework */,
 				BE34276FFC73ABDD7E9ED006 /* Pods_ArexKit.framework */,
 				3F60D865D9D3E180D948D505 /* Pods_ArexKitTests.framework */,
 				7BD98A999D28CDFDCA0BE606 /* Pods.framework */,
+				94F5F6344927810FB44205C8 /* Pods_SharedFrameworks.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -265,6 +286,7 @@
 				8390C4481A8975490010D616 /* ArexTests */,
 				83F7F9F51AC033A000E57CB0 /* ArexKit */,
 				83F7FA041AC033A000E57CB0 /* ArexKitTests */,
+				8333B21C1AC0D5D2005F2A88 /* Configurations */,
 				83804A401A8EA3FD004D92DA /* Frameworks */,
 				1D02BE287FEC05D6F32B5A72 /* Pods */,
 				8390C42E1A8975490010D616 /* Products */,
@@ -454,13 +476,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8390C44F1A8975490010D616 /* Build configuration list for PBXNativeTarget "Arex" */;
 			buildPhases = (
-				43790117857B33E13C6C7B34 /* Check Pods Manifest.lock */,
+				63C8AE5381F432994B9F1C0D /* Check Pods Manifest.lock */,
 				8390C4291A8975490010D616 /* Sources */,
 				8390C42A1A8975490010D616 /* Frameworks */,
 				8390C42B1A8975490010D616 /* Resources */,
-				A27CFC0378CC0625AC4B6772 /* Embed Pods Frameworks */,
 				FB39629669ADD6363DF82A6E /* Copy Pods Resources */,
 				83F7FA121AC033A000E57CB0 /* Embed Frameworks */,
+				24A7E439817218A419792CFF /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -494,13 +516,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83F7FA111AC033A000E57CB0 /* Build configuration list for PBXNativeTarget "ArexKit" */;
 			buildPhases = (
-				6EBFCA597D33870A0D3910D3 /* Check Pods Manifest.lock */,
+				396EA913F692461C8A7E5061 /* Check Pods Manifest.lock */,
 				83F7F9EF1AC0339F00E57CB0 /* Sources */,
 				83F7F9F01AC0339F00E57CB0 /* Frameworks */,
 				83F7F9F11AC0339F00E57CB0 /* Headers */,
 				83F7F9F21AC0339F00E57CB0 /* Resources */,
-				EF3FB0FB551BC4349B2B65D8 /* Embed Pods Frameworks */,
-				525AE4647883320962A6072F /* Copy Pods Resources */,
+				240359CDE6374E267690D5CD /* Embed Pods Frameworks */,
+				1D52CACF1385F50058FA96FA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -515,12 +537,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83F7FA131AC033A000E57CB0 /* Build configuration list for PBXNativeTarget "ArexKitTests" */;
 			buildPhases = (
-				C0D1C176278EC758FE287C24 /* Check Pods Manifest.lock */,
+				969AB3820E110522B8EAC97B /* Check Pods Manifest.lock */,
 				83F7F9FA1AC033A000E57CB0 /* Sources */,
 				83F7F9FB1AC033A000E57CB0 /* Frameworks */,
 				83F7F9FC1AC033A000E57CB0 /* Resources */,
-				30B49DF987623BDEC3EDD0D7 /* Embed Pods Frameworks */,
-				57E0CC9AA37CC85499A8397D /* Copy Pods Resources */,
+				B145806D2B39B5F71D03DBD4 /* Embed Pods Frameworks */,
+				5DBC0DCA25932A176855CDAC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -540,7 +562,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0630;
-				ORGANIZATIONNAME = Pandamonia;
+				ORGANIZATIONNAME = "Pandamonia LLC";
 				TargetAttributes = {
 					8390C42C1A8975490010D616 = {
 						CreatedOnToolsVersion = 6.3;
@@ -558,7 +580,7 @@
 				};
 			};
 			buildConfigurationList = 8390C4281A8975490010D616 /* Build configuration list for PBXProject "Arex" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -613,37 +635,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		30B49DF987623BDEC3EDD0D7 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ArexKitTests/Pods-ArexKitTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		43790117857B33E13C6C7B34 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		525AE4647883320962A6072F /* Copy Pods Resources */ = {
+		1D52CACF1385F50058FA96FA /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -658,7 +650,52 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ArexKit/Pods-ArexKit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		57E0CC9AA37CC85499A8397D /* Copy Pods Resources */ = {
+		240359CDE6374E267690D5CD /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ArexKit/Pods-ArexKit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		24A7E439817218A419792CFF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Arex/Pods-Arex-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		396EA913F692461C8A7E5061 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5DBC0DCA25932A176855CDAC /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -673,7 +710,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ArexKitTests/Pods-ArexKitTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6EBFCA597D33870A0D3910D3 /* Check Pods Manifest.lock */ = {
+		63C8AE5381F432994B9F1C0D /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -688,22 +725,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		A27CFC0378CC0625AC4B6772 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C0D1C176278EC758FE287C24 /* Check Pods Manifest.lock */ = {
+		969AB3820E110522B8EAC97B /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -718,7 +740,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		EF3FB0FB551BC4349B2B65D8 /* Embed Pods Frameworks */ = {
+		B145806D2B39B5F71D03DBD4 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -730,7 +752,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ArexKit/Pods-ArexKit-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ArexKitTests/Pods-ArexKitTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FB39629669ADD6363DF82A6E /* Copy Pods Resources */ = {
@@ -860,7 +882,6 @@
 /* Begin XCBuildConfiguration section */
 		8390C44D1A8975490010D616 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F54FA9C2DD83CC78E26B27B5 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -905,7 +926,6 @@
 		};
 		8390C44E1A8975490010D616 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 56DF448D9B0F0AF589F042D1 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -943,7 +963,7 @@
 		};
 		8390C4501A8975490010D616 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B0E337E3C92053979EFDED0 /* Pods-Arex.debug.xcconfig */;
+			baseConfigurationReference = 83AD486B1AC0DA9A00EEBB1B /* Arex.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Arex/Supporting Files/Info.plist";
@@ -954,7 +974,7 @@
 		};
 		8390C4511A8975490010D616 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4431E159D10B29C3175C1921 /* Pods-Arex.release.xcconfig */;
+			baseConfigurationReference = 83AD486C1AC0DAA300EEBB1B /* Arex.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Arex/Supporting Files/Info.plist";
@@ -999,7 +1019,7 @@
 		};
 		83F7FA0D1AC033A000E57CB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 879D9BD818FCC4FA1A8C77AB /* Pods-ArexKit.debug.xcconfig */;
+			baseConfigurationReference = 83AD48651AC0D88800EEBB1B /* Pods-ArexKit.debug.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1024,7 +1044,7 @@
 		};
 		83F7FA0E1AC033A000E57CB0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C9E908445E3541BD51AACC6 /* Pods-ArexKit.release.xcconfig */;
+			baseConfigurationReference = 83AD48661AC0D88800EEBB1B /* Pods-ArexKit.release.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1058,7 +1078,6 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "ArexKitTests/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1076,7 +1095,6 @@
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "ArexKitTests/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -48,16 +48,8 @@ code_sign() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework 'LlamaKit.framework'
-  install_framework 'MessagePack_swift.framework'
-  install_framework 'Pistachio.framework'
-  install_framework 'ReactiveCocoa.framework'
   install_framework 'SAMTextView.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework 'LlamaKit.framework'
-  install_framework 'MessagePack_swift.framework'
-  install_framework 'Pistachio.framework'
-  install_framework 'ReactiveCocoa.framework'
   install_framework 'SAMTextView.framework'
 fi
