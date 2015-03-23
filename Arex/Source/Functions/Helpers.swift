@@ -73,16 +73,33 @@ func replace<T, U>(replacement: T)(value: U) -> T {
 }
 
 /**
-    `undefined` fills holes.
+    `undefined()` pretends to be able to produce a value of any type `T` which can
+    be very useful whilst writing a program. It happens that you need a value
+    (which can be a function as well) of a certain type but you can't produce it
+    just yet. However, you can always temporarily replace it by `undefined()`.
 
-    Thanks to Johannes Weiß <https://speakerdeck.com/johannesweiss/further-leveraging-the-type-system>.
+    Inspired by Haskell's
+    [undefined](http://hackage.haskell.org/package/base-4.7.0.2/docs/Prelude.html#v:undefined).
 
-    :param: message An optional message to print when evaluated. It should complete the phrase: "This is impossible because..."
+    Invoking `undefined()` will crash your program.
 
-    :returns: Raises an assertion
-*/
-func undefined<T>(_ message: String = "", file: StaticString = __FILE__, line: UWord = __LINE__) -> T {
-    fatalError("undefined \(message)", file: file, line: line)
+    Some examples:
+
+     - `let x : String = undefined()
+     - `let f : String -> Int? = undefined("string to optional int function")
+     - `return undefined() /* in any function */`
+     - `let x : String = (undefined() as Int -> String)(42)`
+     - ...
+
+    What a crash looks like:
+
+    `fatal error: undefined: main.swift, line 131`
+
+    Thanks to Johannes Weiß <https://github.com/weissi/swift-undefined>.
+ */
+func undefined<T>(_ hint: String = "", file: StaticString = __FILE__, line: UWord = __LINE__) -> T {
+    let message = hint.isEmpty ? "" : " \(hint)"
+    fatalError("undefined\(message)", file: file,  line:line)
 }
 
 /// A no-op function.
