@@ -110,7 +110,8 @@ class MedicationsController {
     /// Returns a signal producer that watches the contents of `directoryURL` 
     /// and sends an `Array[Medication]` when the directory's contents change.
     func medications() -> SignalProducer<[Medication], NSError> {
-        return monitorDirectory(directoryURL)
+        return SignalProducer(value: directoryURL)
+            |> concat(monitorDirectory(directoryURL))
             |> observeOn(QueueScheduler(queue))
             |> mapError { (error: MonitorDirectoryError) in error.nsError }
             |> tryMap { [unowned self] (x: NSURL) in self.loadMedications() }

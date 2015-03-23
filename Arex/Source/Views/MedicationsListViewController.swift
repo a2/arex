@@ -1,3 +1,4 @@
+import ReactiveCocoa
 import UIKit
 
 class MedicationsListViewController: UITableViewController {
@@ -13,6 +14,12 @@ class MedicationsListViewController: UITableViewController {
     }
 
     private let viewModel = MedicationsListViewModel(medicationsController: MedicationsController())
+
+    private let disposable = CompositeDisposable()
+
+    deinit {
+        disposable.dispose()
+    }
 
     // MARK: - Actions
 
@@ -39,6 +46,25 @@ class MedicationsListViewController: UITableViewController {
         }
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let updatedDisposable = viewModel.medicationsUpdated.observe(next: tableView.reloadData)
+        disposable.addDisposable(updatedDisposable)
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
+        viewModel.active = true
+    }
+
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        viewModel.active = false
+    }
+    
     // MARK: - Table View
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

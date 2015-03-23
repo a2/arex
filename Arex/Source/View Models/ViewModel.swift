@@ -76,6 +76,10 @@ class ViewModel {
 
     }
 
+    deinit {
+        disposable.dispose()
+    }
+
     /**
         Subscribes (or resubscribes) to the given signal whenever `didBecomeActiveSignal` fires.
         When `didBecomeInactiveSignal` fires, any active subscription to `signal` is disposed.
@@ -85,16 +89,47 @@ class ViewModel {
         :returns: A signal which forwards `.Next` events from the latest subscription to `producer`, and completes when the receiver is deallocated. If `produer` sends an error at any point, the returned signal will error out as well.
     */
     final func forwardWhileActive<T, E>(producer: SignalProducer<T, E>) -> SignalProducer<T, E> {
-        return _active.producer
-            |> concat(SignalProducer(value: false))
-            |> promoteErrors(E)
-            |> joinMap(.Latest) { value in
-                if value {
-                    return producer
-                } else {
-                    return .empty
+        return SignalProducer { (observer, compositeDisposable) in
+            var signalDisposable: Disposable? = nil
+            var signalDisposableHandle: CompositeDisposable.DisposableHandle? = nil
+
+            let disposable = self._active.producer.start(
+                next: { active in
+                    if active {
+                        signalDisposable = producer.start(next: { value in
+                            sendNext(observer, value)
+                        }, error: { error in
+                            sendError(observer, error)
+                        }, interrupted: {
+                            sendInterrupted(observer)
+                        })
+
+                        compositeDisposable.addDisposable(signalDisposable)
+                    } else {
+                        signalDisposable?.dispose()
+                        signalDisposableHandle?.remove()
+                        signalDisposableHandle = nil
+                        signalDisposable = nil
+                    }
+                },
+                completed: {
+                    sendCompleted(observer)
                 }
-            }
+            )
+
+            compositeDisposable.addDisposable(disposable)
+        }
+
+//        return _active.producer
+//            |> concat(SignalProducer(value: false))
+//            |> promoteErrors(E)
+//            |> joinMap(.Latest) { value in
+//                if value {
+//                    return producer
+//                } else {
+//                    return .empty
+//                }
+//            }
     }
 
     /**

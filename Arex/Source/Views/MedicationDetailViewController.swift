@@ -109,6 +109,10 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
     @IBOutlet private weak var pharmacyLabel: UILabel!
     @IBOutlet private weak var strengthTextField: UITextField!
 
+    deinit {
+        disposable.dispose()
+    }
+    
     // MARK: - Configuration
 
     private func configureNavigationItem() {

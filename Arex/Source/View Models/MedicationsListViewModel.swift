@@ -27,17 +27,7 @@ class MedicationsListViewModel: ViewModel {
         self.disposable.innerDisposable = self.medicationsController.medications()
             |> forwardWhileActive
             |> catch(catchAll)
-            |> on(
-                // TODO: Remove the `gobble`s when Swift doesn't segfault.
-                started: void,
-                event: void,
-                next: { [unowned self] in self.medications = $0 },
-                error: void,
-                completed: void,
-                interrupted: void,
-                terminated: void,
-                disposed: void
-            )
+            |> on(next: { [unowned self] in self.medications = $0 })
             |> map(void)
             |> start(self.medicationsUpdatedObserver)
     }
