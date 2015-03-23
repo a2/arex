@@ -1,9 +1,6 @@
 import ArexKit
-import Pistachio
-
 import Nimble
 import Quick
-import XCTest
 
 class CompactSpec: QuickSpec {
     override func spec() {

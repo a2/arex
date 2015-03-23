@@ -10,6 +10,7 @@
 		098CC1F4D6E1008E741289D5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD98A999D28CDFDCA0BE606 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		78D115D525A9AE988EEB2720 /* Pods_Arex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D52CFFC6E1AE6FA3555DA010 /* Pods_Arex.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		830C80FE1ABB9D8700AE7E12 /* MedicationsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */; };
+		831CF0E81AC0454400AE59B4 /* CSSColorsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83698CF51AC0443C007C458C /* CSSColorsSpec.swift */; };
 		83825FA01AC03A9C00486D9B /* CompactSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83825F9F1AC03A9C00486D9B /* CompactSpec.swift */; };
 		8390C4331A8975490010D616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4321A8975490010D616 /* AppDelegate.swift */; };
 		8390C4381A8975490010D616 /* MedicationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4371A8975490010D616 /* MedicationsListViewController.swift */; };
@@ -115,6 +116,7 @@
 		833F396A1AB51E3E00DC56FF /* MessagePackValueTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePackValueTransformers.swift; sourceTree = "<group>"; };
 		83442F821ABA39FD0078DA75 /* MedicationListCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationListCellViewModel.swift; sourceTree = "<group>"; };
 		8350F0201AB715B200C9867F /* DateTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTransformers.swift; sourceTree = "<group>"; };
+		83698CF51AC0443C007C458C /* CSSColorsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSColorsSpec.swift; sourceTree = "<group>"; };
 		83804A4C1A8EA538004D92DA /* Medication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Medication.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		83825F9F1AC03A9C00486D9B /* CompactSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompactSpec.swift; sourceTree = "<group>"; };
 		8390C42D1A8975490010D616 /* Arex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -411,6 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				83825F9F1AC03A9C00486D9B /* CompactSpec.swift */,
+				83698CF51AC0443C007C458C /* CSSColorsSpec.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -795,6 +798,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				831CF0E81AC0454400AE59B4 /* CSSColorsSpec.swift in Sources */,
 				83825FA01AC03A9C00486D9B /* CompactSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
