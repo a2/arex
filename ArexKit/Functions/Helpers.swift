@@ -96,10 +96,10 @@ public func replace<T, U>(replacement: T)(value: U) -> T {
     `fatal error: undefined: main.swift, line 131`
 
     Thanks to Johannes Weiß <https://github.com/weissi/swift-undefined>.
- */
+*/
 public func undefined<T>(_ hint: String = "", file: StaticString = __FILE__, line: UWord = __LINE__) -> T {
-    let message = hint.isEmpty ? "" : " \(hint)"
-    fatalError("undefined\(message)", file: file,  line:line)
+    let message = hint == "" ? "" : ": \(hint)"
+    fatalError("undefined \(T.self)\(message)", file: file, line: line)
 }
 
 /// A no-op function.
