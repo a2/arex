@@ -1,4 +1,8 @@
 PODS:
+  - ArexKit (0.0.1):
+    - MessagePack.swift (~> 0.1.0)
+    - Pistachio (= 0.1.1-a2)
+    - ReactiveCocoa (= 3.0-alpha.3)
   - LlamaKit (0.6.0)
   - MessagePack.swift (0.1.0)
   - Nimble (0.4.1)
@@ -19,28 +23,21 @@ PODS:
   - SAMTextView (0.2.2)
 
 DEPENDENCIES:
-  - MessagePack.swift (~> 0.1.0)
+  - ArexKit (from `.`)
   - Nimble (~> 0.4.0)
-  - Pistachio (from `https://github.com/a2/Pistachio.git`, branch `swift-1.2`)
   - Quick (~> 0.3.0)
-  - ReactiveCocoa (= 3.0-alpha.3)
   - SAMTextView (~> 0.2.2)
 
 EXTERNAL SOURCES:
-  Pistachio:
-    :branch: swift-1.2
-    :git: https://github.com/a2/Pistachio.git
-
-CHECKOUT OPTIONS:
-  Pistachio:
-    :commit: f50f957b7ac7cb32d046c2a038b00d4a6377de4a
-    :git: https://github.com/a2/Pistachio.git
+  ArexKit:
+    :path: .
 
 SPEC CHECKSUMS:
+  ArexKit: 336cabe373ff93ec3e824f9bbe8886315b63fde6
   LlamaKit: 972880acb028505ffc4dc3bc54167e6ce16556fc
   MessagePack.swift: ba8ad7a73981cd22595599d90ca54623452912f8
   Nimble: 36913d5c822a29b3ace4113c197c79eb766a3615
-  Pistachio: 7cff2497f6b72064bfb8843637b7f310d8acaf42
+  Pistachio: 8af44040ef91c624256beb5fe4a83e0f75058845
   Quick: 295c961cb8cf2edc042f1d09cf31d72c850d8e93
   ReactiveCocoa: ec30c10aa6c6e3846546bfd25e0f30a874c4cf5d
   SAMTextView: c37f114b5bbf3260d804453aa9614b721714646e

@@ -28,23 +28,9 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8390C4441A8975490010D616"
+               BlueprintIdentifier = "83F7F9FD1AC033A000E57CB0"
                BuildableName = "ArexTests.xctest"
                BlueprintName = "ArexTests"
-               ReferencedContainer = "container:Arex.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "83F7F9FD1AC033A000E57CB0"
-               BuildableName = "ArexKitTests.xctest"
-               BlueprintName = "ArexKitTests"
                ReferencedContainer = "container:Arex.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -60,19 +46,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8390C4441A8975490010D616"
+               BlueprintIdentifier = "83F7F9FD1AC033A000E57CB0"
                BuildableName = "ArexTests.xctest"
                BlueprintName = "ArexTests"
-               ReferencedContainer = "container:Arex.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "83F7F9FD1AC033A000E57CB0"
-               BuildableName = "ArexKitTests.xctest"
-               BlueprintName = "ArexKitTests"
                ReferencedContainer = "container:Arex.xcodeproj">
             </BuildableReference>
          </TestableReference>
