@@ -294,15 +294,16 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
     // MARK: - Table View
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == SectionIndex.Schedules.rawValue {
+        switch SectionIndex(rawValue: section) {
+        case .Some(.Schedules):
             if viewModel.editing.value {
                 return schedulesCount + 1
             } else {
                 return max(schedulesCount, 1)
             }
+        default:
+            return super.tableView(tableView, numberOfRowsInSection: section)
         }
-
-        return super.tableView(tableView, numberOfRowsInSection: section)
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -327,8 +328,6 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
                 cell.textLabel!.font = UIFont(descriptor: fontDescriptor, size: 0.0)
 
                 return cell
-
-
             } else {
                 // Schedule
 
