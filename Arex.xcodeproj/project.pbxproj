@@ -13,6 +13,7 @@
 		834E8AA61AC2208B00B8D597 /* DirectoryMonitorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E8AA01AC2208A00B8D597 /* DirectoryMonitorSpec.swift */; };
 		834E8AA71AC2208B00B8D597 /* IndexPathSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E8AA11AC2208B00B8D597 /* IndexPathSpec.swift */; };
 		839047221AC2295B00E43392 /* FlushSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839047211AC2295B00E43392 /* FlushSpec.swift */; };
+		839047241AC22B3400E43392 /* HelpersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839047231AC22B3400E43392 /* HelpersSpec.swift */; };
 		8390C4331A8975490010D616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4321A8975490010D616 /* AppDelegate.swift */; };
 		8390C4381A8975490010D616 /* MedicationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4371A8975490010D616 /* MedicationsListViewController.swift */; };
 		8390C43B1A8975490010D616 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8390C4391A8975490010D616 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		834E8AA11AC2208B00B8D597 /* IndexPathSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexPathSpec.swift; sourceTree = "<group>"; };
 		834E8AA31AC2208B00B8D597 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		839047211AC2295B00E43392 /* FlushSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlushSpec.swift; sourceTree = "<group>"; };
+		839047231AC22B3400E43392 /* HelpersSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpersSpec.swift; sourceTree = "<group>"; };
 		8390C42D1A8975490010D616 /* Arex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8390C4311A8975490010D616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8390C4321A8975490010D616 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				834E8AA01AC2208A00B8D597 /* DirectoryMonitorSpec.swift */,
 				839047211AC2295B00E43392 /* FlushSpec.swift */,
 				834E8AA11AC2208B00B8D597 /* IndexPathSpec.swift */,
+				839047231AC22B3400E43392 /* HelpersSpec.swift */,
 				834E8AA21AC2208B00B8D597 /* Supporting Files */,
 			);
 			path = ArexTests;
@@ -387,6 +390,7 @@
 				834E8AA41AC2208B00B8D597 /* CompactSpec.swift in Sources */,
 				834E8AA71AC2208B00B8D597 /* IndexPathSpec.swift in Sources */,
 				839047221AC2295B00E43392 /* FlushSpec.swift in Sources */,
+				839047241AC22B3400E43392 /* HelpersSpec.swift in Sources */,
 				834E8AA61AC2208B00B8D597 /* DirectoryMonitorSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
