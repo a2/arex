@@ -1,0 +1,6 @@
+framework module ArexKit {
+  umbrella header "Pods-ArexTests-ArexKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
