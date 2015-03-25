@@ -98,8 +98,8 @@
 				834E8A9F1AC2208A00B8D597 /* CSSColorsSpec.swift */,
 				834E8AA01AC2208A00B8D597 /* DirectoryMonitorSpec.swift */,
 				839047211AC2295B00E43392 /* FlushSpec.swift */,
-				834E8AA11AC2208B00B8D597 /* IndexPathSpec.swift */,
 				839047231AC22B3400E43392 /* HelpersSpec.swift */,
+				834E8AA11AC2208B00B8D597 /* IndexPathSpec.swift */,
 				834E8AA21AC2208B00B8D597 /* Supporting Files */,
 			);
 			path = ArexTests;
