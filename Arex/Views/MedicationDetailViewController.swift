@@ -117,14 +117,13 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
     // MARK: - Configuration
 
     private func configureNavigationItem() {
-        let property = map(viewModel.name) { (name: String?) in
-            return flush(name, not(isEmpty)) ?? NSLocalizedString("New Medication", comment: "Medication detail view title if medication has empty name")
+        let property = map(viewModel.name) { name in
+            return flush(name, not(isEmpty))
+                ?? NSLocalizedString("New Medication", comment: "Medication detail view title if medication has empty name")
         }
 
         property.producer.start(next: { [weak self] title in
-            if let _self = self {
-                _self.title = title
-            }
+            self?.title = title
         })
     }
 
@@ -147,12 +146,11 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
 
     private func configureEditing() {
         updateUI(editing)
-        viewModel.editing.producer.startWithSignal { (signal, _) in
-            let disposable = signal.observe(next: { [unowned self] editing in
-                self.setEditing(editing, animated: true)
-            })
-            self.disposable.addDisposable(disposable)
-        }
+
+        let editingDisposable = viewModel.editing.producer.start(next: { [weak self] editing in
+            self?.setEditing(editing, animated: true)
+        })
+        disposable.addDisposable(editingDisposable)
     }
 
     // MARK: - UI Update
@@ -234,9 +232,8 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
     // MARK: - View Life Cycle
 
     override func setEditing(editing: Bool, animated: Bool) {
-        if viewModel.wasNew {
-            // TODO: Segue implementation is unfinished
-            fatalError("Segue implementation is unfinished")
+        if !editing && viewModel.isNew && viewModel.hasSaved {
+            performSegueWithIdentifier(Constants.SegueIdentifiers.DismissModalEditor, sender: nil)
         }
 
         if !editing {
@@ -282,12 +279,8 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        if !editing {
-            if viewModel.isNew {
-                setEditing(true, animated: false)
-            } else {
-                navigationItem.rightBarButtonItem = editBarButtonItem
-            }
+        if !editing && !viewModel.editing.value {
+            navigationItem.rightBarButtonItem = editBarButtonItem
         }
     }
 

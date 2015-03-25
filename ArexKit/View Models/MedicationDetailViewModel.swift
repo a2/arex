@@ -40,11 +40,11 @@ public class MedicationDetailViewModel: ViewModel {
 
     public lazy var editing: PropertyOf<Bool> = PropertyOf(self._editing)
 
-    public var wasNew: Bool {
-        return get(MedicationLenses.uuid, immutableMedication) != nil
+    public var isNew: Bool {
+        return get(MedicationLenses.uuid, immutableMedication) == nil
     }
 
-    public var isNew: Bool {
+    public var hasSaved: Bool {
         return get(MedicationLenses.uuid, medication) != nil
     }
 
