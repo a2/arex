@@ -54,18 +54,6 @@ class MedicationsListViewController: UITableViewController {
         disposable.addDisposable(updatedDisposable)
     }
 
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-
-        viewModel.active = true
-    }
-
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-
-        viewModel.active = false
-    }
-    
     // MARK: - Table View
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

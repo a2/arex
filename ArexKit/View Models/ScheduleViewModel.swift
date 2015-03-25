@@ -1,4 +1,4 @@
-public class ScheduleViewModel: ViewModel {
+public class ScheduleViewModel {
     private var schedule: Schedule
 
     public init(schedule: Schedule) {

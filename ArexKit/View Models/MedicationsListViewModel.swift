@@ -1,6 +1,6 @@
 import ReactiveCocoa
 
-public class MedicationsListViewModel: ViewModel {
+public class MedicationsListViewModel {
     public let medicationsUpdated: Signal<Void, NoError>
 
     public var cellViewModels: LazyRandomAccessCollection<MapCollectionView<[Medication], MedicationListCellViewModel>> {
@@ -15,21 +15,30 @@ public class MedicationsListViewModel: ViewModel {
 
     private let medicationsController: MedicationsController
     private var medications = [Medication]()
-    private let medicationsUpdatedObserver: SinkOf<Event<Void, NoError>>
-    private let disposable = SerialDisposable()
+    private let medicationsDisposable = SerialDisposable()
 
     public init(medicationsController: MedicationsController) {
         self.medicationsController = medicationsController
-        (self.medicationsUpdated, self.medicationsUpdatedObserver) = Signal.pipe()
 
-        super.init()
+        // Prepare for observation.
+        let (signal, observer) = Signal<Void, NoError>.pipe()
 
-        self.disposable.innerDisposable = self.medicationsController.medications()
-            |> forwardWhileActive
+        // Assign the signal to the public property.
+        // This signal will forward events received below.
+        self.medicationsUpdated = signal
+
+        // Start the observation.
+        // We snatch the Medication values from the signal and map to void.
+        // This prevents leaking the Medication instances.
+        self.medicationsDisposable.innerDisposable = self.medicationsController.medications()
             |> catch(catchAll)
             |> on(next: { [unowned self] in self.medications = $0 })
             |> map(void)
-            |> start(self.medicationsUpdatedObserver)
+            |> start(observer)
+    }
+
+    deinit {
+        self.medicationsDisposable.dispose()
     }
 
     public var isEmpty: Bool {

@@ -1,6 +1,6 @@
 import Pistachio
 
-public class MedicationListCellViewModel: ViewModel {
+public class MedicationListCellViewModel {
     private let medication: Medication
 
     public init(medication: Medication) {

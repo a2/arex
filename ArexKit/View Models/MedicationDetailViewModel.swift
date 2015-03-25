@@ -2,7 +2,7 @@ import LlamaKit
 import Pistachio
 import ReactiveCocoa
 
-public class MedicationDetailViewModel: ViewModel {
+public class MedicationDetailViewModel {
     private let immutableMedication: Medication
     private var medication: Medication
     private let medicationsController: MedicationsController
@@ -29,8 +29,6 @@ public class MedicationDetailViewModel: ViewModel {
         self.immutableMedication = medication
         self.medication = medication
         self.medicationsController = medicationsController
-
-        super.init()
 
         // If `medication` is new, start in editing mode.
         self._editing.value = self.isNew
