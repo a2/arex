@@ -11,11 +11,24 @@ public struct Weekdays: RawOptionSetType {
     public var rawValue: UInt { return value }
 }
 
-public enum Repeat: Equatable {
+public enum Repeat: Equatable, Printable {
     case Interval(repeat: Int, calendarUnit: NSCalendarUnit)
     case Weekly(weekdays: Weekdays)
     case MonthlyByDay(day: Int)
     case MonthlyByWeek(week: Int, day: Int)
+
+    public var description: String {
+        switch self {
+        case let .Interval(repeat: repeat, calendarUnit: calendarUnit):
+            return "<Repeat.Interval: repeat=\(repeat); calendarUnit=\(calendarUnit)>"
+        case let .Weekly(weekdays: weekdays):
+            return "<Repeat.Weekly: weekdays=\(weekdays)>"
+        case let .MonthlyByDay(day: day):
+            return "<Repeat.MonthlyByDay: day=\(day)>"
+        case let .MonthlyByWeek(week: week, day: day):
+            return "<Repeat.MonthlyByWeek: week=\(week); day=\(day)>"
+        }
+    }
 }
 
 public func ==(lhs: Repeat, rhs: Repeat) -> Bool {
@@ -33,9 +46,18 @@ public func ==(lhs: Repeat, rhs: Repeat) -> Bool {
     }
 }
 
-public enum Schedule: Equatable {
+public enum Schedule: Equatable, Printable {
     case Repeating(repeat: Repeat, time: Time)
     case Once(fireDate: NSDate, timeZone: NSTimeZone)
+
+    public var description: String {
+        switch self {
+        case let .Repeating(repeat: repeat, time: time):
+            return "<Schedule.Repeating: repeat=\(repeat); time=\(time)>"
+        case let .Once(fireDate: fireDate, timeZone: timeZone):
+            return "<Schedule.Once: fireDate=\(fireDate); timeZone=\(timeZone.name)>"
+        }
+    }
 }
 
 public func ==(lhs: Schedule, rhs: Schedule) -> Bool {

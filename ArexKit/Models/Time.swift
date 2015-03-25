@@ -1,7 +1,7 @@
 import Foundation
 import Pistachio
 
-public struct Time: Comparable, Equatable, Hashable {
+public struct Time: Comparable, Equatable, Hashable, Printable {
     var hour: Int
     var minute: Int
 
@@ -27,6 +27,19 @@ public struct Time: Comparable, Equatable, Hashable {
 
     public var hashValue: Int {
         return hour.hashValue ^ minute.hashValue
+    }
+
+    public var description: String {
+        let minuteString: String
+        if minute == 0 {
+            minuteString = "00"
+        } else if minute < 10 {
+            minuteString = "0\(minute)"
+        } else {
+            minuteString = "\(minute)"
+        }
+
+        return "<Time: \(hour)\(minuteString)>"
     }
 }
 
