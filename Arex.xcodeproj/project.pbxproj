@@ -170,9 +170,9 @@
 		83E1FC4F1AB5FD5A00333762 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8390C4371A8975490010D616 /* MedicationsListViewController.swift */,
 				83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */,
 				830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */,
+				8390C4371A8975490010D616 /* MedicationsListViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
