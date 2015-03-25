@@ -57,14 +57,10 @@ public class MedicationsController {
         return dispatch_queue_create("us.pandamonia.Arex.MedicationsController", attr)
     }()
 
-    public convenience init() {
-        self.init(directoryURL: MedicationsController.defaultDirectoryURL)
-    }
-    
     /**
         :param: directoryURL The URL of the directory in which to load `Medication` values.
     */
-    public init(directoryURL: NSURL) {
+    public init(directoryURL: NSURL = MedicationsController.defaultDirectoryURL) {
         self.directoryURL = directoryURL
     }
 
