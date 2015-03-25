@@ -109,7 +109,7 @@ public class MedicationsController {
         return SignalProducer(value: directoryURL)
             |> concat(monitorDirectory(directoryURL))
             |> observeOn(QueueScheduler(queue))
-            |> mapError { (error: MonitorDirectoryError) in error.nsError }
+            |> mapError { $0.nsError }
             |> tryMap { [unowned self] _ in self.loadMedications() }
             |> observeOn(QueueScheduler.mainQueueScheduler)
     }
