@@ -417,7 +417,7 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
             let boundingRect = visibleText.boundingRectWithSize(boundingSize, options: .UsesLineFragmentOrigin, context: nil)
 
             let height = ceil(boundingRect.height) + verticalInset
-            let minHeight = Constants.TextView.minimumHeightMultiple * ceil(noteTextView.font.lineHeightUsingCoreText) + verticalInset
+            let minHeight = CGFloat(Constants.TextView.minimumHeightMultiple) * ceil(noteTextView.font.lineHeightUsingCoreText) + verticalInset
             return max(minHeight, height) + 1 // 1 for separator
 
         default:
