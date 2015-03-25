@@ -245,7 +245,7 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
     // MARK: - View Life Cycle
 
     override func setEditing(editing: Bool, animated: Bool) {
-        if !editing && viewModel.isNew && viewModel.hasSaved {
+        if !editing && viewModel.isNew {
             performSegueWithIdentifier(Constants.SegueIdentifiers.DismissModalEditor, sender: nil)
         }
 
