@@ -170,10 +170,18 @@ struct Adapters {
 
     static let medication: DictionaryAdapter<Medication, MessagePackValue, NSError> = {
         let lastFilledDate = transform(transform(MedicationLenses.lastFilledDate, lift(DateTransformers.timeIntervalSince1970(), 0.0)), MessagePackValueTransformers.double)
+        let schedules = messagePackArray(MedicationLenses.schedules)(adapter: Adapters.schedule, model: Schedule.Once(fireDate: NSDate(), timeZone: NSTimeZone()))
+
         return DictionaryAdapter(specification: [
             "doctorRecordID": messagePackInt(MedicationLenses.doctorRecordID, defaultTransformedValue: .Nil),
             "dosesLeft": messagePackInt(MedicationLenses.dosesLeft, defaultTransformedValue: .Nil),
             "lastFilledDate": lastFilledDate,
+            "name": messagePackString(MedicationLenses.name, defaultTransformedValue: .Nil),
+            "note": messagePackString(MedicationLenses.note, defaultTransformedValue: .Nil),
+            "pharmacyRecordID": messagePackInt(MedicationLenses.pharmacyRecordID, defaultTransformedValue: .Nil),
+            "pictureData": messagePackBinary(MedicationLenses.pictureData, defaultTransformedValue: .Nil),
+            "schedules": schedules,
+            "strength": messagePackString(MedicationLenses.strength, defaultTransformedValue: .Nil),
         ], dictionaryTansformer: dictionaryTransformer)
     }()
 
