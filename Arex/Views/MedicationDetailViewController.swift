@@ -10,10 +10,16 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
             static let caratRectEdgeInsets = UIEdgeInsets(top: -5, left: -5, bottom: -5, right: -5)
 
             // Horizontal inset is taken care of in the storyboard.
-            static let textContainerVerticalInset: CGFloat = 10
+            static let textContainerInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+
+            // Set the LFP to 0 and use the storyboard to take care of the horizontal padding.
+            static let lineFragmentPadding: CGFloat = 0
 
             // If you change this, update the storyboard too.
             static let horizontalPadding: CGFloat = 15
+
+            // In multiples of the font's line height.
+            static let minimumHeightMultiple = 3
         }
 
         struct CellIdentifiers {
@@ -88,6 +94,7 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
 
         var barButtonItem = UIBarButtonItem(barButtonSystemItem: type.systemItem, target: action, action: CocoaAction.selector)
         enabled.producer.start(next: { [weak barButtonItem] enabled in
+            // TODO #14: Remove workarounds for Xcode 6.3 beta 3 that were fixed in beta 4
             if let _barButtonItem = barButtonItem {
                 _barButtonItem.enabled = enabled
             }
@@ -131,8 +138,8 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
     }
 
     private func configureNoteTextView() {
-        noteTextView.textContainer.lineFragmentPadding = 0
-        noteTextView.textContainerInset = UIEdgeInsets(top: Constants.TextView.textContainerVerticalInset, left: 0, bottom: Constants.TextView.textContainerVerticalInset, right: 0)
+        noteTextView.textContainer.lineFragmentPadding = Constants.TextView.lineFragmentPadding
+        noteTextView.textContainerInset = Constants.TextView.textContainerInset
 
         let attributes = [
             NSFontAttributeName: noteTextView.font,
@@ -394,27 +401,23 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
             return super.tableView(tableView, heightForRowAtIndexPath: NSIndexPath(SectionIndex.Schedules.rawValue, 0))
 
         case .Note:
-            if noteTextView.bounds.width > 500 {
-                // 500 is a pseudo-magic number. The storyboard lays out content at a 600 pt width
-                // (minus 2 * 15 == 30 pt for padding is 570). Therefore, if the width is greater
-                // than 500, the view hasn't layed out yet. We can set the frame explicitly here,
-                // although it will be reset after an auto layout pass.
-                noteTextView.frame.size.width = tableView.bounds.width - 2 * Constants.TextView.horizontalPadding
-            }
-
             let textContainerInset = noteTextView.textContainerInset
+            let horizontalInset = textContainerInset.left + textContainerInset.right
             let verticalInset = textContainerInset.top + textContainerInset.bottom
 
-            let height: CGFloat
-            if count(noteTextView.text ?? "") > 0 {
-                height = noteTextView.contentSize.height
+            let visibleText: NSAttributedString
+            if let text = noteTextView.text where !isEmpty(text) {
+                visibleText = noteTextView.attributedText
             } else {
-                let boundingWidth = noteTextView.bounds.width - textContainerInset.left - textContainerInset.right
-                let boundingRect = noteTextView.attributedPlaceholder.boundingRectWithSize(CGSize(width: boundingWidth, height: CGFloat.max), options: .UsesLineFragmentOrigin, context: nil)
-                height = ceil(boundingRect.height) + verticalInset
+                visibleText = noteTextView.attributedPlaceholder
             }
 
-            let minHeight = 3 * ceil(noteTextView.font.lineHeight) + verticalInset
+            let textViewWidth = tableView.bounds.width - 2 * Constants.TextView.horizontalPadding
+            let boundingSize = CGSize(width: textViewWidth - horizontalInset, height: CGFloat.max)
+            let boundingRect = visibleText.boundingRectWithSize(boundingSize, options: .UsesLineFragmentOrigin, context: nil)
+
+            let height = ceil(boundingRect.height) + verticalInset
+            let minHeight = Constants.TextView.minimumHeightMultiple * ceil(noteTextView.font.lineHeightUsingCoreText) + verticalInset
             return max(minHeight, height) + 1 // 1 for separator
 
         default:
