@@ -121,6 +121,8 @@ public class MedicationsController {
     /**
         Saves the specified `Medication` value when the returned signal producer is started.
     
+        **NB:** Assigns the `Medication` value a `uuid` if it does not already have one.
+
         :param: medication The `Medication` to save.
     
         :returns: A signal producer that saves the argument when started.
