@@ -151,8 +151,8 @@ public class MedicationDetailViewModel {
     }()
 
     public lazy var updateStrength: Action<String?, Void, NoError> = {
+        let lens = MedicationDetailViewModelLenses.medication >>> MedicationLenses.strength
         return Action { strength in
-            let lens = MedicationDetailViewModelLenses.medication >>> MedicationLenses.strength
             return SignalProducer { [unowned self] (observer, _) in
                 set(lens, self, strength)
                 sendCompleted(observer)
