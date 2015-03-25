@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		830C80FE1ABB9D8700AE7E12 /* MedicationsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */; };
+		834AA77C1AC2E34F0091A9E4 /* ReactiveCocoaAdditionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834AA77B1AC2E34F0091A9E4 /* ReactiveCocoaAdditionsSpec.swift */; };
 		834E8AA41AC2208B00B8D597 /* CompactSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E8A9E1AC2208A00B8D597 /* CompactSpec.swift */; };
 		834E8AA51AC2208B00B8D597 /* CSSColorsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E8A9F1AC2208A00B8D597 /* CSSColorsSpec.swift */; };
 		834E8AA61AC2208B00B8D597 /* DirectoryMonitorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E8AA01AC2208A00B8D597 /* DirectoryMonitorSpec.swift */; };
@@ -38,6 +39,7 @@
 		4431E159D10B29C3175C1921 /* Pods-Arex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arex.release.xcconfig"; path = "Pods/Target Support Files/Pods-Arex/Pods-Arex.release.xcconfig"; sourceTree = "<group>"; };
 		6B0E337E3C92053979EFDED0 /* Pods-Arex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Arex/Pods-Arex.debug.xcconfig"; sourceTree = "<group>"; };
 		830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationsListCell.swift; sourceTree = "<group>"; };
+		834AA77B1AC2E34F0091A9E4 /* ReactiveCocoaAdditionsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveCocoaAdditionsSpec.swift; sourceTree = "<group>"; };
 		834E8A981AC21F7400B8D597 /* Pods-ArexTests.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-ArexTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArexTests/Pods-ArexTests.debug.xcconfig"; sourceTree = "<group>"; };
 		834E8A991AC21F7400B8D597 /* Pods-ArexTests.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-ArexTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArexTests/Pods-ArexTests.release.xcconfig"; sourceTree = "<group>"; };
 		834E8A9E1AC2208A00B8D597 /* CompactSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompactSpec.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				839047211AC2295B00E43392 /* FlushSpec.swift */,
 				839047231AC22B3400E43392 /* HelpersSpec.swift */,
 				834E8AA11AC2208B00B8D597 /* IndexPathSpec.swift */,
+				834AA77B1AC2E34F0091A9E4 /* ReactiveCocoaAdditionsSpec.swift */,
 				834E8AA21AC2208B00B8D597 /* Supporting Files */,
 			);
 			path = ArexTests;
@@ -387,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				834E8AA51AC2208B00B8D597 /* CSSColorsSpec.swift in Sources */,
+				834AA77C1AC2E34F0091A9E4 /* ReactiveCocoaAdditionsSpec.swift in Sources */,
 				834E8AA41AC2208B00B8D597 /* CompactSpec.swift in Sources */,
 				834E8AA71AC2208B00B8D597 /* IndexPathSpec.swift in Sources */,
 				839047221AC2295B00E43392 /* FlushSpec.swift in Sources */,

@@ -77,56 +77,62 @@ public class MedicationDetailViewModel: ViewModel {
         }
     }
 
-    public lazy var beginEditing: Action<Void, Void, NoError> = Action(enabledIf: map(self._editing, not)) { _ in
-        return SignalProducer { (observer, _) in
+    public lazy var beginEditing: Action<Void, Void, NoError> = {
+        let enabled = map(self._editing, not)
+        let onStart: Void -> Void = { [unowned self] in
             self._editing.value = true
-            sendCompleted(observer)
         }
-    }
+
+        return Action(enabledIf: enabled) { _ in SignalProducer.empty |> on(started: onStart) }
+    }()
 
     public lazy var revertChanges: Action<Void, Void, NoError> = {
         let enabled = MutableProperty<Bool>(true)
         self._editing.producer
             |> combineLatestWith(self.saveChanges.executing.producer)
             |> map { (editing, saving) in editing && !saving }
-            |> start(Event<Bool, NoError>.sink(next: enabled.put))
+            |> start(Event.sink(next: enabled.put))
 
-        return Action<Void, Void, NoError>(enabledIf: enabled) { _ in
-            return SignalProducer { (observer, _) in
-                self.medication = self.immutableMedication
-                self._editing.value = false
+        let onStart: Void -> Void = { [unowned self] in
+            self.medication = self.immutableMedication
+            self._editing.value = false
+        }
+
+        return Action(enabledIf: enabled) { _ in SignalProducer.empty |> on(started: onStart) }
+    }()
+
+    public lazy var saveChanges: Action<Void, Void, MedicationsControllerError> = {
+        let enabled = self.canSave
+        let onComplete: Void -> Void = { [unowned self] in
+            self._editing.value = false
+        }
+
+        return Action(enabledIf: enabled) { [unowned self] _ in
+            return self.medicationsController.save(medication: &self.medication)
+                |> on(completed: onComplete)
+        }
+    }()
+
+    public lazy var updateName: Action<String?, Void, NoError> = {
+        let lens = MedicationDetailViewModelLenses.medication >>> MedicationLenses.name
+        return Action { name in
+            return SignalProducer { [unowned self] (observer, _) in
+                set(lens, self, name)
+                self._name.value = name
                 sendCompleted(observer)
             }
         }
     }()
 
-    public lazy var saveChanges: Action<Void, Void, MedicationsControllerError> = Action(enabledIf: self.canSave) { _ in
-        return self.medicationsController.save(medication: &self.medication)
-            |> on(completed: { [weak self] in
-                if let _self = self {
-                    _self._editing.value = false
-                }
-            })
-    }
-
-    public lazy var updateName: Action<String?, Void, NoError> = Action<String?, Void, NoError> { name in
-        let lens = MedicationDetailViewModelLenses.medication >>> MedicationLenses.name
-        return SignalProducer { (observer, _) in
-            set(lens, self, name)
-            self._name.put(name)
-            sendCompleted(observer)
-        }
-    }
-
     private lazy var dosesLeftValueTransformer: ValueTransformer<String?, Int?, NoError> = {
-        let transformClosure: String? -> Result<Int?, NoError> = { (value: String?) in
+        let transformClosure: String? -> Result<Int?, NoError> = { [unowned self] value in
             let result = value
                 .flatMap(self.numberFormatter.numberFromString)
                 .map { $0.integerValue }
             return success(result)
         }
 
-        let reverseTransformClosure: Int? -> Result<String?, NoError> = { value in
+        let reverseTransformClosure: Int? -> Result<String?, NoError> = { [unowned self] value in
             let result = value
                 .map { NSNumber(integer: $0) }
                 .flatMap(self.numberFormatter.stringFromNumber)
@@ -136,21 +142,25 @@ public class MedicationDetailViewModel: ViewModel {
         return ValueTransformer(transformClosure: transformClosure, reverseTransformClosure: reverseTransformClosure)
     }()
 
-    public lazy var updateDosesLeft: Action<String?, Void, NoError> = Action<String?, Void, NoError> { dosesLeft in
+    public lazy var updateDosesLeft: Action<String?, Void, NoError> = {
         let lens = transform(MedicationDetailViewModelLenses.medication >>> MedicationLenses.dosesLeft, flip(self.dosesLeftValueTransformer))
-        return SignalProducer { (observer, _) in
-            set(lens, success(self), success(dosesLeft))
-            sendCompleted(observer)
+        return Action { dosesLeft in
+            return SignalProducer { [unowned self] (observer, _) in
+                set(lens, self, dosesLeft)
+                sendCompleted(observer)
+            }
         }
-    }
+    }()
 
-    public lazy var updateStrength: Action<String?, Void, NoError> = Action<String?, Void, NoError> { strength in
-        let lens = MedicationDetailViewModelLenses.medication >>> MedicationLenses.strength
-        return SignalProducer { (observer, _) in
-            set(lens, self, strength)
-            sendCompleted(observer)
+    public lazy var updateStrength: Action<String?, Void, NoError> = {
+        return Action { strength in
+            let lens = MedicationDetailViewModelLenses.medication >>> MedicationLenses.strength
+            return SignalProducer { [unowned self] (observer, _) in
+                set(lens, self, strength)
+                sendCompleted(observer)
+            }
         }
-    }
+    }()
 }
 
 private struct MedicationDetailViewModelLenses {
