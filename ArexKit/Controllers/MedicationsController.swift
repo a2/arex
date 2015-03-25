@@ -141,7 +141,7 @@ public class MedicationsController {
                 let url = self.directoryURL.URLByAppendingPathComponent("\(uuid.UUIDString).\(MedicationsController.fileExtension)")
 
                 var error: NSError? = nil
-                if data.writeToURL(url, options: .DataWritingAtomic, error: &error) {
+                if data.writeToURL(url, options: nil, error: &error) {
                     sendCompleted(observer)
                 } else {
                     sendError(observer, .CannotSave(name: name, underlying: error))
