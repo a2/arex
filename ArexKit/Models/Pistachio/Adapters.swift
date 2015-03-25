@@ -3,8 +3,8 @@ import LlamaKit
 import MessagePack_swift
 import Pistachio
 
-struct RepeatAdapter: Adapter {
-    func encode(model: Repeat) -> Result<MessagePackValue, NSError> {
+public struct RepeatAdapter: Adapter {
+    public func encode(model: Repeat) -> Result<MessagePackValue, NSError> {
         switch model {
         case let .Interval(repeat: repeat, calendarUnit: calendarUnit):
             return success([
@@ -31,7 +31,7 @@ struct RepeatAdapter: Adapter {
         }
     }
 
-    func decode(data: MessagePackValue) -> Result<Repeat, NSError> {
+    public func decode(data: MessagePackValue) -> Result<Repeat, NSError> {
         if let dictionary = data.dictionaryValue {
             let value = dictionary["type"]
             switch value?.stringValue {
@@ -66,13 +66,13 @@ struct RepeatAdapter: Adapter {
         }
     }
 
-    func decode(model: Repeat, from data: MessagePackValue) -> Result<Repeat, NSError> {
+    public func decode(model: Repeat, from data: MessagePackValue) -> Result<Repeat, NSError> {
         return decode(data)
     }
 }
 
-struct ScheduleAdapter: Adapter {
-    func encode(model: Schedule) -> Result<MessagePackValue, NSError> {
+public struct ScheduleAdapter: Adapter {
+    public func encode(model: Schedule) -> Result<MessagePackValue, NSError> {
         switch model {
         case let .Repeating(repeat: repeat, time: time):
             switch (Adapters.repeat.encode(repeat), Adapters.time.encode(time)) {
@@ -96,7 +96,7 @@ struct ScheduleAdapter: Adapter {
         }
     }
 
-    func decode(data: MessagePackValue) -> Result<Schedule, NSError> {
+    public func decode(data: MessagePackValue) -> Result<Schedule, NSError> {
         if let dictionary = data.dictionaryValue {
             let value = dictionary["type"]
             switch value?.stringValue {
@@ -134,12 +134,12 @@ struct ScheduleAdapter: Adapter {
         }
     }
 
-    func decode(model: Schedule, from data: MessagePackValue) -> Result<Schedule, NSError> {
+    public func decode(model: Schedule, from data: MessagePackValue) -> Result<Schedule, NSError> {
         return decode(data)
     }
 }
 
-struct Adapters {
+public struct Adapters {
     private static let dictionaryTransformer: ValueTransformer<[String : MessagePackValue], MessagePackValue, NSError> = {
         let transformClosure: [String : MessagePackValue] -> Result<MessagePackValue, NSError> = { dictionary in
             var messagePackDict = [MessagePackValue : MessagePackValue]()
@@ -168,7 +168,7 @@ struct Adapters {
         return ValueTransformer(transformClosure: transformClosure, reverseTransformClosure: reverseTransformClosure)
     }()
 
-    static let medication: DictionaryAdapter<Medication, MessagePackValue, NSError> = {
+    public static let medication: DictionaryAdapter<Medication, MessagePackValue, NSError> = {
         let lastFilledDate = transform(transform(MedicationLenses.lastFilledDate, lift(DateTransformers.timeIntervalSince1970(), 0.0)), MessagePackValueTransformers.double)
         let schedules = messagePackArray(MedicationLenses.schedules)(adapter: Adapters.schedule, model: Schedule.Once(fireDate: NSDate(), timeZone: NSTimeZone()))
 
@@ -185,11 +185,11 @@ struct Adapters {
         ], dictionaryTansformer: dictionaryTransformer)
     }()
 
-    static let repeat = RepeatAdapter()
+    public static let repeat = RepeatAdapter()
 
-    static let schedule = ScheduleAdapter()
+    public static let schedule = ScheduleAdapter()
 
-    static let time = DictionaryAdapter(specification: [
+    public static let time = DictionaryAdapter(specification: [
         "hour": messagePackInt(TimeLenses.hour),
         "minute": messagePackInt(TimeLenses.minute),
     ], dictionaryTansformer: dictionaryTransformer)

@@ -20,6 +20,9 @@
 		8390C43B1A8975490010D616 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8390C4391A8975490010D616 /* Main.storyboard */; };
 		8390C43D1A8975490010D616 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8390C43C1A8975490010D616 /* Images.xcassets */; };
 		8390C4401A8975490010D616 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8390C43E1A8975490010D616 /* LaunchScreen.xib */; };
+		83CF07231AC355E100C2EB81 /* RepeatAdapterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CF07221AC355E100C2EB81 /* RepeatAdapterSpec.swift */; };
+		83CF07251AC3599900C2EB81 /* ScheduleAdapterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CF07241AC3599900C2EB81 /* ScheduleAdapterSpec.swift */; };
+		83CF07271AC35B5900C2EB81 /* TimeAdapterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CF07261AC35B5900C2EB81 /* TimeAdapterSpec.swift */; };
 		83EFC9211ABC8DC400699EA2 /* MedicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */; };
 		935CEA98C3DF875D33E4DB2D /* Pods_Arex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D52CFFC6E1AE6FA3555DA010 /* Pods_Arex.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		CB7ADC282077D4C8A24F7DB4 /* Pods_ArexTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA90972EF0F864576D64B022 /* Pods_ArexTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -56,6 +59,9 @@
 		8390C43A1A8975490010D616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8390C43C1A8975490010D616 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8390C43F1A8975490010D616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		83CF07221AC355E100C2EB81 /* RepeatAdapterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatAdapterSpec.swift; sourceTree = "<group>"; };
+		83CF07241AC3599900C2EB81 /* ScheduleAdapterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleAdapterSpec.swift; sourceTree = "<group>"; };
+		83CF07261AC35B5900C2EB81 /* TimeAdapterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeAdapterSpec.swift; sourceTree = "<group>"; };
 		83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MedicationDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		83F7F9FE1AC033A000E57CB0 /* ArexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA90972EF0F864576D64B022 /* Pods_ArexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,7 +109,10 @@
 				839047231AC22B3400E43392 /* HelpersSpec.swift */,
 				834E8AA11AC2208B00B8D597 /* IndexPathSpec.swift */,
 				834AA77B1AC2E34F0091A9E4 /* ReactiveCocoaAdditionsSpec.swift */,
+				83CF07221AC355E100C2EB81 /* RepeatAdapterSpec.swift */,
+				83CF07241AC3599900C2EB81 /* ScheduleAdapterSpec.swift */,
 				834E8AA21AC2208B00B8D597 /* Supporting Files */,
+				83CF07261AC35B5900C2EB81 /* TimeAdapterSpec.swift */,
 			);
 			path = ArexTests;
 			sourceTree = "<group>";
@@ -390,9 +399,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				834E8AA51AC2208B00B8D597 /* CSSColorsSpec.swift in Sources */,
+				83CF07231AC355E100C2EB81 /* RepeatAdapterSpec.swift in Sources */,
 				834AA77C1AC2E34F0091A9E4 /* ReactiveCocoaAdditionsSpec.swift in Sources */,
 				834E8AA41AC2208B00B8D597 /* CompactSpec.swift in Sources */,
 				834E8AA71AC2208B00B8D597 /* IndexPathSpec.swift in Sources */,
+				83CF07271AC35B5900C2EB81 /* TimeAdapterSpec.swift in Sources */,
+				83CF07251AC3599900C2EB81 /* ScheduleAdapterSpec.swift in Sources */,
 				839047221AC2295B00E43392 /* FlushSpec.swift in Sources */,
 				839047241AC22B3400E43392 /* HelpersSpec.swift in Sources */,
 				834E8AA61AC2208B00B8D597 /* DirectoryMonitorSpec.swift in Sources */,
