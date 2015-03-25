@@ -123,7 +123,10 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
         }
 
         property.producer.start(next: { [weak self] title in
-            self?.title = title
+            // TODO #14: Remove workarounds for Xcode 6.3 beta 3 that were fixed in beta 4
+            if let _self = self {
+                _self.title = title
+            }
         })
     }
 
@@ -148,7 +151,10 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
         updateUI(editing)
 
         let editingDisposable = viewModel.editing.producer.start(next: { [weak self] editing in
-            self?.setEditing(editing, animated: true)
+            // TODO #14: Remove workarounds for Xcode 6.3 beta 3 that were fixed in beta 4
+            if let _self = self {
+                _self.setEditing(editing, animated: true)
+            }
         })
         disposable.addDisposable(editingDisposable)
     }
