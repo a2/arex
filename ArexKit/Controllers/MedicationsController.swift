@@ -114,7 +114,7 @@ public class MedicationsController {
             |> concat(monitorDirectory(directoryURL))
             |> observeOn(QueueScheduler(queue))
             |> mapError { (error: MonitorDirectoryError) in error.nsError }
-            |> tryMap { [unowned self] (x: NSURL) in self.loadMedications() }
+            |> tryMap { [unowned self] _ in self.loadMedications() }
             |> observeOn(QueueScheduler.mainQueueScheduler)
     }
 
