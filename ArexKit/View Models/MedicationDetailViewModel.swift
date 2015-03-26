@@ -7,7 +7,7 @@ public class MedicationDetailViewModel {
     private var medication: Medication
     private let medicationsController: MedicationsController
 
-    public lazy var numberFormatter: NSNumberFormatter = {
+    public lazy var dosesLeftFormatter: NSNumberFormatter = {
         var numberFormatter = NSNumberFormatter()
         numberFormatter.formattingContext = .Standalone
         numberFormatter.locale = NSLocale.currentLocale()
@@ -15,7 +15,7 @@ public class MedicationDetailViewModel {
         return numberFormatter
     }()
 
-    public lazy var dateFormatter: NSDateFormatter = {
+    public lazy var lastFilledDateFormatter: NSDateFormatter = {
         var dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = .LongStyle
         dateFormatter.doesRelativeDateFormatting = true
@@ -23,6 +23,31 @@ public class MedicationDetailViewModel {
         dateFormatter.locale = NSLocale.currentLocale()
         dateFormatter.timeStyle = .NoStyle
         return dateFormatter
+    }()
+
+    public lazy var schedulesTimeFormatter: NSDateFormatter = {
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .NoStyle
+        dateFormatter.locale = NSLocale.currentLocale()
+        dateFormatter.timeStyle = .ShortStyle
+        return dateFormatter
+    }()
+
+    public lazy var schedulesDateFormatter: NSDateFormatter = {
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .LongStyle
+        dateFormatter.doesRelativeDateFormatting = true
+        dateFormatter.formattingContext = .MiddleOfSentence
+        dateFormatter.locale = NSLocale.currentLocale()
+        dateFormatter.timeStyle = .NoStyle
+        return dateFormatter
+    }()
+
+    public lazy var schedulesDateComponentsFormatter: NSDateComponentsFormatter = {
+        var dateComponentsFormatter = NSDateComponentsFormatter()
+        dateComponentsFormatter.unitsStyle = .Full
+        dateComponentsFormatter.zeroFormattingBehavior = .DropAll
+        return dateComponentsFormatter
     }()
 
     public init(medicationsController: MedicationsController, medication: Medication) {
@@ -61,17 +86,19 @@ public class MedicationDetailViewModel {
 
     public var dosesLeft: String? {
         return get(MedicationLenses.dosesLeft, medication).flatMap { dosesLeft in
-            return numberFormatter.stringFromNumber(dosesLeft)
+            return dosesLeftFormatter.stringFromNumber(dosesLeft)
         }
     }
 
     public var schedules: LazyRandomAccessCollection<MapCollectionView<[Schedule], ScheduleViewModel>> {
-        return lazy(get(MedicationLenses.schedules, medication)).map({ ScheduleViewModel(schedule: $0) })
+        return lazy(get(MedicationLenses.schedules, medication)).map({ schedule in
+            return ScheduleViewModel(schedule: schedule, dateFormatter: self.schedulesDateFormatter, timeFormatter: self.schedulesTimeFormatter, dateComponentsFormatter: self.schedulesDateComponentsFormatter)
+        })
     }
 
     public var lastFilledDate: String? {
         return get(MedicationLenses.lastFilledDate, medication).flatMap { lastFilledDate in
-            return dateFormatter.stringFromDate(lastFilledDate)
+            return lastFilledDateFormatter.stringFromDate(lastFilledDate)
         }
     }
 
@@ -125,7 +152,7 @@ public class MedicationDetailViewModel {
     private lazy var dosesLeftValueTransformer: ValueTransformer<String?, Int?, NoError> = {
         let transformClosure: String? -> Result<Int?, NoError> = { [unowned self] value in
             let result = value
-                .flatMap(self.numberFormatter.numberFromString)
+                .flatMap(self.dosesLeftFormatter.numberFromString)
                 .map { $0.integerValue }
             return success(result)
         }
@@ -133,7 +160,7 @@ public class MedicationDetailViewModel {
         let reverseTransformClosure: Int? -> Result<String?, NoError> = { [unowned self] value in
             let result = value
                 .map { NSNumber(integer: $0) }
-                .flatMap(self.numberFormatter.stringFromNumber)
+                .flatMap(self.dosesLeftFormatter.stringFromNumber)
             return success(result)
         }
 

@@ -190,7 +190,7 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
             lastFilledLabel.textColor = Colors.rightDetailCellTextColor
         } else {
             lastFilledLabel.text = editing
-                ? viewModel.dateFormatter.stringFromDate(NSDate())
+                ? viewModel.lastFilledDateFormatter.stringFromDate(NSDate())
                 : NSLocalizedString("Never", comment: "Text field placeholder; no date")
             lastFilledLabel.textColor = Colors.textFieldPlaceholderColor
         }
