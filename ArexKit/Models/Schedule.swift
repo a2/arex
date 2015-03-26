@@ -65,7 +65,8 @@ public func ==(lhs: Schedule, rhs: Schedule) -> Bool {
     case let (.Repeating(repeat: lhr, time: lht), .Repeating(repeat: rhr, time: rht)):
         return lhr == rhr && lht == rht
     case let (.Once(fireDate: lhd, timeZone: lht), .Once(fireDate: rhd, timeZone: rht)):
-        return lhd == rhd && lht == rht
+        let datesEqual = abs(lhd.timeIntervalSinceDate(rhd)) < 1.0
+        return datesEqual && lht == rht
     default:
         return false
     }
