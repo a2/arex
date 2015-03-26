@@ -130,7 +130,6 @@
 		2F86C598933CF01B7AD1266E /* NSFileHandle+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BE0F1CEA500095A55415E2 /* NSFileHandle+RACSupport.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		2FC1CF9D1C681F378DD4D297 /* Pods-ArexTests-Nimble-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2254443191C3969A245D826E /* Pods-ArexTests-Nimble-dummy.m */; };
 		30F4B4E0B7EB12BC049603A9 /* RACIndexSetSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = A07CD559309DC5CE68C1DD6F /* RACIndexSetSequence.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
-		312CFE4B3052B88F0F3E3110 /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D5BAC7685AC77A7A1E0020 /* LlamaKit.framework */; };
 		315F6DEC241E4E0F0FE37D61 /* Pods-Arex-ReactiveCocoa-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A18424CA262862DE6003C65E /* Pods-Arex-ReactiveCocoa-dummy.m */; };
 		331CF513AAC70DC2D364B3E2 /* UIStepper+RACSignalSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CB9207980327C8789DA8B8 /* UIStepper+RACSignalSupport.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		348770F3974EDD258FDB0234 /* RACScheduler+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = C66D861BCE055EE263150EF9 /* RACScheduler+Private.h */; };
@@ -415,7 +414,6 @@
 		AEB35979AC405E5EF251B15D /* RACScheduler.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A23F88816778E82D78F465 /* RACScheduler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AEB43779215E624D8B365F5F /* RACGroupedSignal.h in Headers */ = {isa = PBXBuildFile; fileRef = 397AD3E24D3891896E4B0484 /* RACGroupedSignal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AF79633C48078B63CB49D1E3 /* ImageTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914EA21D823CD2A19BE4F6D8 /* ImageTransformers.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
-		AFA36A13DB079B6959BAAB40 /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D5BAC7685AC77A7A1E0020 /* LlamaKit.framework */; };
 		B025C30FB29F220261E6BB40 /* UITableViewCell+RACSignalSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F668A2BBF9ADD19B221470A /* UITableViewCell+RACSignalSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B05558112E382D4B80DEA006 /* RACKVOChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE7126AFE6C32FFA01B2571 /* RACKVOChannel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		B14F496A0B369FEDD97F9BE0 /* NSObject+RACLifting.m in Sources */ = {isa = PBXBuildFile; fileRef = 471C586AEFBA6738DBBA2DDD /* NSObject+RACLifting.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
@@ -427,7 +425,6 @@
 		B2D8493EE9CB1668FC21485F /* NMBExceptionCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 93E34771463EA20EC8DCCE38 /* NMBExceptionCapture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B300CB54D374AFAB59E6CAC7 /* NSFileHandle+RACSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = AF03C95C7F78B94B44919D94 /* NSFileHandle+RACSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B311111A9CA2A59DF9194018 /* RACScheduler+Subclass.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F48188B06A3E3BEE280C655 /* RACScheduler+Subclass.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B368C5BE66B9FD9428BEFE6C /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D5BAC7685AC77A7A1E0020 /* LlamaKit.framework */; };
 		B3C416B3AE4193ED6BFADE6B /* RACBlockTrampoline.m in Sources */ = {isa = PBXBuildFile; fileRef = 642A4DFB96D6DA6E1E7FCAB0 /* RACBlockTrampoline.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		B41CB15C69C3EFE04E782723 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76018F10A058FB629EAB645D /* Foundation.framework */; };
 		B41E13CCDF7FD0CAD8A33B05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76018F10A058FB629EAB645D /* Foundation.framework */; };
@@ -451,7 +448,6 @@
 		BA1DDBCEA087E8B1E110B30B /* RACImmediateScheduler.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F823F41107423C96F53390 /* RACImmediateScheduler.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		BA5333AF24610D80165D6DEB /* UIButton+RACCommandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E22B269CAB95ED3A66B925 /* UIButton+RACCommandSupport.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		BB00353C0167998963E7193B /* RACMulticastConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 551EB78BEA99B31D17BDFD92 /* RACMulticastConnection.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
-		BB926A64778A7306DB3A7A35 /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D5BAC7685AC77A7A1E0020 /* LlamaKit.framework */; };
 		BBDA46B43BEE6BA093B59D95 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C167700B1BAAF01DF4418D0 /* Schedule.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		BC5A6FBA8C1914FA7349C542 /* RACStringSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BEC941C23E4088C93DB719 /* RACStringSequence.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		BCECCA4052FD2A7D170DA623 /* RACGroupedSignal.m in Sources */ = {isa = PBXBuildFile; fileRef = 95C878C16BDC8BE2DE21ADB6 /* RACGroupedSignal.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
@@ -524,7 +520,6 @@
 		DA6630CED215939445974D95 /* BeAnInstanceOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7150AF7CD9C4BC86475240C0 /* BeAnInstanceOf.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		DAC3B9E35B1FB4C5FE27C632 /* Flush.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5CFF075686EFD1905C4EE1 /* Flush.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		DAD8B9BD94CDECB34080E4CC /* Pods-Arex-LlamaKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AE11E5750B41556569929A3 /* Pods-Arex-LlamaKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DB648D9BAA8A668BDE56648D /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D5BAC7685AC77A7A1E0020 /* LlamaKit.framework */; };
 		DB8EC30FA3A02388A3AC39DD /* SAMTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9174E7DF850EF88E763B9F /* SAMTextView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		DBB6F5F32A0BBAC7551443B2 /* UICollectionReusableView+RACSignalSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B98A64BC0F89E6C5BF23F1A /* UICollectionReusableView+RACSignalSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DBFA42D35B4E768274EF304C /* UITableViewCell+RACSignalSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F668A2BBF9ADD19B221470A /* UITableViewCell+RACSignalSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -615,7 +610,6 @@
 		FCE874D3A95D74D482B6651A /* NSUserDefaults+RACSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F935B66ADB993F08A980C /* NSUserDefaults+RACSupport.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		FD2128F5B6621D33DDFEF469 /* UIImagePickerController+RACSignalSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7191A89C8B4556F1823067 /* UIImagePickerController+RACSignalSupport.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		FD7905FB86B696F07FCE7859 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D090E7D3B0E6C96D8C9C3E6D /* UIKit.framework */; };
-		FDF021FD6C22476BD0E564AB /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D5BAC7685AC77A7A1E0020 /* LlamaKit.framework */; };
 		FE6CAFA6DB6645D6C9A0990A /* RACBlockTrampoline.m in Sources */ = {isa = PBXBuildFile; fileRef = 642A4DFB96D6DA6E1E7FCAB0 /* RACBlockTrampoline.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 		FEFC8413D2D2672FBFF7B802 /* Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFFAAFB07794EB559803475 /* Functional.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-checker -Xanalyzer deadcode"; }; };
 /* End PBXBuildFile section */
@@ -1270,9 +1264,6 @@
 			files = (
 				B41CB15C69C3EFE04E782723 /* Foundation.framework in Frameworks */,
 				F4117BF901BC1638D8CD28A9 /* LlamaKit.framework in Frameworks */,
-				BB926A64778A7306DB3A7A35 /* LlamaKit.framework in Frameworks */,
-				FDF021FD6C22476BD0E564AB /* LlamaKit.framework in Frameworks */,
-				DB648D9BAA8A668BDE56648D /* LlamaKit.framework in Frameworks */,
 				79D7DB641E64C54285A1265B /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1311,9 +1302,6 @@
 			files = (
 				B6E4FCBB47DC7D0D0B931073 /* Foundation.framework in Frameworks */,
 				AE30A2A026DB30D42B62ADD5 /* LlamaKit.framework in Frameworks */,
-				AFA36A13DB079B6959BAAB40 /* LlamaKit.framework in Frameworks */,
-				312CFE4B3052B88F0F3E3110 /* LlamaKit.framework in Frameworks */,
-				B368C5BE66B9FD9428BEFE6C /* LlamaKit.framework in Frameworks */,
 				F460E5B3BF3B97585BF57FA8 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2731,7 +2719,7 @@
 		ACF320C7FD0047B0923D1C7D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0630;
 			};
 			buildConfigurationList = 5D293DC80AA5CDCF2A05A391 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
