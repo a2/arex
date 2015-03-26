@@ -26,7 +26,7 @@ public struct Time: Comparable, DebugPrintable, Equatable, Hashable {
     }
 
     public var hashValue: Int {
-        return hour.hashValue ^ minute.hashValue
+        return hour.hashValue * 31 + minute.hashValue
     }
 
     public var debugDescription: String {
