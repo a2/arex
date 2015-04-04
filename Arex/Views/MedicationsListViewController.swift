@@ -51,10 +51,7 @@ class MedicationsListViewController: UITableViewController {
         super.viewDidLoad()
 
         let updatedDisposable = viewModel.medicationsUpdated.observe(next: { [weak self] in
-            // TODO #14: Remove workarounds for Xcode 6.3 beta 3 that were fixed in beta 4
-            if let _self = self {
-                _self.tableView.reloadData()
-            }
+            self?.tableView.reloadData()
         })
         disposable.addDisposable(updatedDisposable)
     }

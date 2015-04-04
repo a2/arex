@@ -94,10 +94,7 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
 
         var barButtonItem = UIBarButtonItem(barButtonSystemItem: type.systemItem, target: action, action: CocoaAction.selector)
         enabled.producer.start(next: { [weak barButtonItem] enabled in
-            // TODO #14: Remove workarounds for Xcode 6.3 beta 3 that were fixed in beta 4
-            if let _barButtonItem = barButtonItem {
-                _barButtonItem.enabled = enabled
-            }
+            barButtonItem?.enabled = enabled
         })
         return barButtonItem
     }
@@ -130,10 +127,7 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
         }
 
         property.producer.start(next: { [weak self] title in
-            // TODO #14: Remove workarounds for Xcode 6.3 beta 3 that were fixed in beta 4
-            if let _self = self {
-                _self.title = title
-            }
+            self?.title = title
         })
     }
 
@@ -158,10 +152,7 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
         updateUI(editing)
 
         let editingDisposable = viewModel.editing.producer.start(next: { [weak self] editing in
-            // TODO #14: Remove workarounds for Xcode 6.3 beta 3 that were fixed in beta 4
-            if let _self = self {
-                _self.setEditing(editing, animated: true)
-            }
+            self?.setEditing(editing, animated: true)
         })
         disposable.addDisposable(editingDisposable)
     }
