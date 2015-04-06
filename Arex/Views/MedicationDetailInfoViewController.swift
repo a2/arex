@@ -67,7 +67,7 @@ class MedicationDetailInfoViewController: UITableViewController, UITextFieldDele
     }
 
     private func barButtonItem(type: BarButtonItem) -> UIBarButtonItem {
-        precondition(viewModel != nil, "MedicationDetailViewController.viewModel was not assigned before \(type)BarButtonItem loaded")
+        precondition(viewModel != nil, "MedicationDetailInfoViewController.viewModel was not assigned before \(type)BarButtonItem loaded")
 
         let action: CocoaAction
         let enabled: PropertyOf<Bool>
@@ -261,7 +261,7 @@ class MedicationDetailInfoViewController: UITableViewController, UITextFieldDele
         super.viewDidLoad()
 
         // `precondition` the view model
-        precondition(viewModel != nil, "viewModel was not assigned before MedicationDetailViewController.viewDidLoad()")
+        precondition(viewModel != nil, "viewModel was not assigned before MedicationDetailInfoViewController.viewDidLoad()")
 
         // `precondition` the @IBOutlets
         let outlets: [(UIView?, String)] = [
@@ -275,7 +275,7 @@ class MedicationDetailInfoViewController: UITableViewController, UITextFieldDele
         ]
 
         for (view, name) in outlets {
-            precondition(view != nil, "\(name) was not assigned before MedicationDetailViewController.viewDidLoad(); is the IBOutlet configured correctly")
+            precondition(view != nil, "\(name) was not assigned before MedicationDetailInfoViewController.viewDidLoad(); is the IBOutlet configured correctly")
         }
 
         configureNavigationItem()
