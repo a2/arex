@@ -7,6 +7,15 @@ public class MedicationDetailInfoViewModel {
     private var medication: Medication
     private let medicationsController: MedicationsController
 
+    public init(medicationsController: MedicationsController, medication: Medication) {
+        self.immutableMedication = medication
+        self.medication = medication
+        self.medicationsController = medicationsController
+
+        // If `medication` is new, start in editing mode.
+        self._editing.value = self.isNew
+    }
+
     public lazy var dosesLeftFormatter: NSNumberFormatter = {
         var numberFormatter = NSNumberFormatter()
         numberFormatter.formattingContext = .Standalone
@@ -25,17 +34,7 @@ public class MedicationDetailInfoViewModel {
         return dateFormatter
     }()
 
-    public init(medicationsController: MedicationsController, medication: Medication) {
-        self.immutableMedication = medication
-        self.medication = medication
-        self.medicationsController = medicationsController
-
-        // If `medication` is new, start in editing mode.
-        self._editing.value = self.isNew
-    }
-
     private let _editing = MutableProperty<Bool>(false)
-
     public lazy var editing: PropertyOf<Bool> = PropertyOf(self._editing)
 
     public var isNew: Bool {
@@ -52,7 +51,6 @@ public class MedicationDetailInfoViewModel {
     }()
 
     private lazy var _name: MutableProperty<String?> = MutableProperty(get(MedicationLenses.name, self.medication))
-
     public lazy var name: PropertyOf<String?> = PropertyOf(self._name)
 
     public var strength: String? {
