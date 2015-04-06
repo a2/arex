@@ -12,6 +12,12 @@
 #define COCOAPODS_VERSION_MINOR_ArexKit 0
 #define COCOAPODS_VERSION_PATCH_ArexKit 1
 
+// Cartography
+#define COCOAPODS_POD_AVAILABLE_Cartography
+#define COCOAPODS_VERSION_MAJOR_Cartography 0
+#define COCOAPODS_VERSION_MINOR_Cartography 3
+#define COCOAPODS_VERSION_PATCH_Cartography 0
+
 // LlamaKit
 #define COCOAPODS_POD_AVAILABLE_LlamaKit
 #define COCOAPODS_VERSION_MAJOR_LlamaKit 0

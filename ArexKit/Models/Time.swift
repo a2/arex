@@ -49,6 +49,13 @@ public func <(lhs: Time, rhs: Time) -> Bool {
 }
 
 public struct TimeLenses {
-    public static let hour = Lens(get: { $0.hour }, set: { (inout time: Time, hour) in time.hour = hour })
-    public static let minute = Lens(get: { $0.minute }, set: { (inout time: Time, minute) in time.minute = minute })
+    public static let hour = Lens(
+        get: { $0.hour },
+        set: { (inout time: Time, hour) in time.hour = hour }
+    )
+
+    public static let minute = Lens(
+        get: { $0.minute },
+        set: { (inout time: Time, minute) in time.minute = minute }
+    )
 }

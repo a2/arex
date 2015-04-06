@@ -49,6 +49,7 @@ code_sign() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'ArexKit.framework'
+  install_framework 'Cartography.framework'
   install_framework 'LlamaKit.framework'
   install_framework 'MessagePack_swift.framework'
   install_framework 'Pistachio.framework'
@@ -57,6 +58,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'ArexKit.framework'
+  install_framework 'Cartography.framework'
   install_framework 'LlamaKit.framework'
   install_framework 'MessagePack_swift.framework'
   install_framework 'Pistachio.framework'

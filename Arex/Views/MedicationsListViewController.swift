@@ -9,8 +9,8 @@ class MedicationsListViewController: UITableViewController {
         }
 
         struct SegueIdentifiers {
-            static let AddMedication = "AddMedication"
-            static let EditMedication = "EditMedication"
+            static let NewMedication = "NewMedication"
+            static let ShowMedication = "ShowMedication"
         }
     }
 
@@ -31,17 +31,29 @@ class MedicationsListViewController: UITableViewController {
     // MARK: - View Life Cycle
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        func configureDestinationViewController(destinationViewController: AnyObject, viewModel: MedicationDetailViewModel) {
+            let navigationController = destinationViewController as! UINavigationController
+            let medicationDetailViewController = navigationController.viewControllers[0] as! MedicationDetailViewController
+            medicationDetailViewController.viewModel = viewModel
+
+            /*
+            let tabBarController = navigationController.viewControllers[0] as! UITabBarController
+            for viewController in tabBarController.viewControllers! {
+                if let info = viewController as? MedicationDetailInfoViewController {
+                    info.viewModel = viewModel.infoViewModel
+                }
+            }
+            */
+        }
+
         switch segue.identifier {
-        case .Some(Constants.SegueIdentifiers.AddMedication):
-            if let navigation = segue.destinationViewController as? UINavigationController,
-                detail = navigation.viewControllers.first as? MedicationDetailViewController {
-                detail.viewModel = viewModel.newDetailViewModel()
-            }
-        case .Some(Constants.SegueIdentifiers.EditMedication):
-            if let cell = sender as? UITableViewCell, indexPath = tableView.indexPathForCell(cell),
-                detail = segue.destinationViewController as? MedicationDetailViewController {
-                detail.viewModel = viewModel.detailViewModels[indexPath.row]
-            }
+        case .Some(Constants.SegueIdentifiers.NewMedication):
+            configureDestinationViewController(segue.destinationViewController, viewModel.newDetailViewModel())
+        case .Some(Constants.SegueIdentifiers.ShowMedication):
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)!
+            let detailViewModel = viewModel.detailViewModels[indexPath.row]
+            configureDestinationViewController(segue.destinationViewController, detailViewModel)
         default:
             super.prepareForSegue(segue, sender: sender)
         }

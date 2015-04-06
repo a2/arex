@@ -1,6 +1,7 @@
 import Foundation
 
 extension NSIndexPath {
+    @objc(arex_initWithIndexes:)
     public convenience init(indexes: [Int]) {
         self.init(indexes: indexes, length: indexes.count)
     }

@@ -3,131 +3,59 @@ import LlamaKit
 import MessagePack_swift
 import Pistachio
 
-public struct RepeatAdapter: Adapter {
-    public func encode(model: Repeat) -> Result<MessagePackValue, NSError> {
-        switch model {
-        case let .Interval(repeat: repeat, calendarUnit: calendarUnit):
-            return success([
-                "type": "interval",
-                "repeat": .Int(numericCast(repeat)),
-                "calendarUnit": .UInt(numericCast(calendarUnit.rawValue)),
-            ])
-        case let .MonthlyByDay(day: day):
-            return success([
-                "type": "monthly",
-                "day": .Int(numericCast(day)),
-            ])
-        case let .MonthlyByWeek(week: week, day: day):
-            return success([
-                "type": "monthly",
-                "week": .Int(numericCast(day)),
-                "day": .Int(numericCast(day)),
-            ])
-        case let .Weekly(weekdays: weekdays):
-            return success([
-                "type": "weekly",
-                "weekdays": .UInt(numericCast(weekdays.rawValue)),
-            ])
-        }
-    }
-
-    public func decode(data: MessagePackValue) -> Result<Repeat, NSError> {
-        if let dictionary = data.dictionaryValue {
-            let value = dictionary["type"]
-            switch value?.stringValue {
-            case .Some("interval"):
-                switch (dictionary["repeat"]?.integerValue, dictionary["calendarUnit"]?.unsignedIntegerValue) {
-                case let (.Some(repeat), .Some(calendarUnit)):
-                    return success(.Interval(repeat: numericCast(repeat), calendarUnit: NSCalendarUnit(rawValue: numericCast(calendarUnit))))
-                default:
-                    return failure("Expected \"repeat\" (Int) and  \"calendarUnit\" (UInt) in data for Repeat.Interval, got: \(dictionary.keys.map(toString))")
-                }
-            case .Some("monthly"):
-                switch (dictionary["week"]?.integerValue, dictionary["day"]?.integerValue) {
-                case let (.Some(week), .Some(day)):
-                    return success(.MonthlyByWeek(week: numericCast(week), day: numericCast(day)))
-                case let (.None, .Some(day)):
-                    return success(.MonthlyByDay(day: numericCast(day)))
-                default:
-                    return failure("Expected \"day\" (Int) and \"week\" (Int?) in data for Repeat.Monthly(ByDay|ByWeek), got: \(dictionary.keys.map(toString))")
-                }
-            case .Some("weekly"):
-                switch dictionary["weekdays"]?.unsignedIntegerValue {
-                case let .Some(weekdays):
-                    return success(.Weekly(weekdays: Weekdays(rawValue: numericCast(weekdays))))
-                default:
-                    return failure("Expected \"weekdays\" (UInt) in data for Repeat.Weekdays, got: \(dictionary.keys.map(toString))")
-                }
-            default:
-                return failure("Expected one of \"interval\", \"monthly\", \"weekly\" in \"type\" for Repeat, got: \(value)")
-            }
-        } else {
-            return failure("Expected MessagePackValue.Map, got: \(data)")
-        }
-    }
-
-    public func decode(model: Repeat, from data: MessagePackValue) -> Result<Repeat, NSError> {
-        return decode(data)
-    }
-}
-
 public struct ScheduleAdapter: Adapter {
     public func encode(model: Schedule) -> Result<MessagePackValue, NSError> {
         switch model {
-        case let .Repeating(repeat: repeat, time: time):
-            switch (Adapters.repeat.encode(repeat), Adapters.time.encode(time)) {
-            case let (.Success(repeatBox), .Success(timeBox)):
-                return success([
-                    "type": "repeating",
-                    "repeat": repeatBox.unbox,
-                    "time": timeBox.unbox,
-                ])
-            default:
-                return failure("Unexpected failure when encoding repeat and/or time for Schedule.Repeating")
-            }
-        case let .Once(fireDate: fireDate, timeZone: timeZone):
+        case .Daily:
             return success([
-                "type": "once",
-                "fireDate": .Double(fireDate.timeIntervalSince1970),
-                "timeZone": .String(timeZone.name),
+                "type": "daily",
             ])
-        default:
-            return failure("Unknown schedule type \(model)")
+        case let .EveryXDays(interval: interval, startDate: startDate):
+            return success([
+                "type": "everyXDays",
+                "interval": .Int(numericCast(interval)),
+                "startDate": .Double(startDate.timeIntervalSince1970),
+            ])
+        case let .Weekly(days: days):
+            return success([
+                "type": "weekly",
+                "days": .Int(numericCast(days)),
+            ])
+        case let .Monthly(days: days):
+            return success([
+                "type": "monthly",
+                "days": .Int(numericCast(days)),
+            ])
         }
     }
 
     public func decode(data: MessagePackValue) -> Result<Schedule, NSError> {
         if let dictionary = data.dictionaryValue {
-            let value = dictionary["type"]
-            switch value?.stringValue {
-            case .Some("repeating"):
-                switch (dictionary["repeat"], dictionary["time"]) {
-                case let (.Some(repeat), .Some(time)):
-                    let repeatResult = Adapters.repeat.decode(Repeat.Interval(repeat: 0,calendarUnit: nil), from: repeat)
-                    let timeResult = Adapters.time.decode(Time(hour: 0, minute: 0), from: time)
-                    switch (repeatResult, timeResult) {
-                    case let (.Success(repeatBox), .Success(timeBox)):
-                        return success(.Repeating(repeat: repeatBox.unbox, time: timeBox.unbox))
-                    default:
-                        return failure("Unexpected failure when decoding repeat and/or time for Schedule.Repeating")
-                    }
-                default:
-                    return failure("Expected \"repeat\" (Map) and \"time\" (Map) in data for Schedule.Repeating, got: \(dictionary.keys.map(toString))")
+            switch dictionary["type"]?.stringValue {
+            case .Some("daily"):
+                return success(.Daily)
+            case .Some("everyXDays"):
+                if let interval = dictionary["interval"]?.integerValue, startDateInterval = dictionary["startDate"]?.doubleValue {
+                    let startDate = NSDate(timeIntervalSince1970: startDateInterval)
+                    return success(.EveryXDays(interval: numericCast(interval), startDate: startDate))
+                } else {
+                    return failure("Expected \"interval\" (Int) and \"startDate\" (Double) in data for Schedule.EveryXDays, got: \(dictionary.keys.map(toString))")
                 }
-            case .Some("once"):
-                switch (dictionary["fireDate"]?.doubleValue, dictionary["timeZone"]?.stringValue) {
-                case let (.Some(fireDateTimeIntervalSince1970), .Some(timeZoneName)):
-                    let fireDate = NSDate(timeIntervalSince1970: fireDateTimeIntervalSince1970)
-                    if let timeZone = NSTimeZone(name: timeZoneName) {
-                        return success(.Once(fireDate: fireDate, timeZone: timeZone))
-                    } else {
-                        return failure("Unexpected \"timeZone\" in data for Schedule.Once, got: \(timeZoneName)")
-                    }
-                default:
-                    return failure("Expected")
+            case .Some("weekly"):
+                if let days = dictionary["days"]?.integerValue {
+                    return success(.Weekly(days: numericCast(days)))
+                } else {
+                    return failure("Expected \"days\" (Int) in data for Schedule.Weekly, got: \(dictionary.keys.map(toString))")
+                }
+            case .Some("monthly"):
+                if let days = dictionary["days"]?.integerValue {
+                    return success(.Monthly(days: numericCast(days)))
+                } else {
+                    return failure("Expected \"days\" (Int) in data for Schedule.Monthly, got: \(dictionary.keys.map(toString))")
                 }
             default:
-                return failure("Expected one of \"repeating\", \"once\" in \"type\" for Schedule data, got: \(value)")
+                let type = dictionary["type"]
+                return failure("Expected one of \"daily\", \"everyXDays\", \"weekly\", \"monthly\" as \"type\" in Schedule data, got: \(type)")
             }
         } else {
             return failure("Expected MessagePackValue.Map, got: \(data)")
@@ -170,8 +98,9 @@ public struct Adapters {
 
     public static let medication: DictionaryAdapter<Medication, MessagePackValue, NSError> = {
         let lastFilledDate = transform(transform(MedicationLenses.lastFilledDate, lift(DateTransformers.timeIntervalSince1970(), 0.0)), MessagePackValueTransformers.double)
-        let schedules = messagePackArray(MedicationLenses.schedules)(adapter: Adapters.schedule, model: Schedule.Once(fireDate: NSDate(), timeZone: NSTimeZone()))
-
+        let schedule = messagePackMap(MedicationLenses.schedule, defaultTransformedValue: .Nil)(adapter: Adapters.schedule, model: Schedule.Daily)
+        let times = messagePackArray(MedicationLenses.times)(adapter: Adapters.time, model: Time(hour: 0, minute: 0))
+        
         return DictionaryAdapter(specification: [
             "doctorRecordID": messagePackInt(MedicationLenses.doctorRecordID, defaultTransformedValue: .Nil),
             "dosesLeft": messagePackInt(MedicationLenses.dosesLeft, defaultTransformedValue: .Nil),
@@ -180,12 +109,11 @@ public struct Adapters {
             "note": messagePackString(MedicationLenses.note, defaultTransformedValue: .Nil),
             "pharmacyRecordID": messagePackInt(MedicationLenses.pharmacyRecordID, defaultTransformedValue: .Nil),
             "pictureData": messagePackBinary(MedicationLenses.pictureData, defaultTransformedValue: .Nil),
-            "schedules": schedules,
+            "schedule": schedule,
             "strength": messagePackString(MedicationLenses.strength, defaultTransformedValue: .Nil),
+            "times": times,
         ], dictionaryTansformer: dictionaryTransformer)
     }()
-
-    public static let repeat = RepeatAdapter()
 
     public static let schedule = ScheduleAdapter()
 

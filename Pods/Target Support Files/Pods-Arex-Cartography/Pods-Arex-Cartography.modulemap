@@ -1,0 +1,6 @@
+framework module Cartography {
+  umbrella header "Pods-Arex-Cartography-umbrella.h"
+
+  export *
+  module * { export * }
+}

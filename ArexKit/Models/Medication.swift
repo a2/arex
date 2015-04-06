@@ -1,7 +1,7 @@
 import AddressBook
 import Pistachio
 
-public struct Medication: Hashable {
+public struct Medication {
     private var doctorRecordID: ABRecordID?
     private var dosesLeft: Int?
     private var lastFilledDate: NSDate?
@@ -9,11 +9,12 @@ public struct Medication: Hashable {
     private var note: String?
     private var pharmacyRecordID: ABRecordID?
     private var pictureData: NSData?
-    private var schedules: [Schedule]
+    private var schedule: Schedule?
     private var strength: String?
+    private var times: [Time]
     private var uuid: NSUUID?
 
-    public init(doctorRecordID: ABRecordID? = nil, dosesLeft: Int? = nil, lastFilledDate: NSDate? = nil, name: String? = nil, note: String? = nil, pharmacyRecordID: ABRecordID? = nil, pictureData: NSData? = nil, schedules: [Schedule] = [], strength: String? = nil, uuid: NSUUID? = nil) {
+    public init(doctorRecordID: ABRecordID? = nil, dosesLeft: Int? = nil, lastFilledDate: NSDate? = nil, name: String? = nil, note: String? = nil, pharmacyRecordID: ABRecordID? = nil, pictureData: NSData? = nil, schedule: Schedule? = nil, strength: String? = nil, times: [Time] = [], uuid: NSUUID? = nil) {
         self.doctorRecordID = doctorRecordID
         self.dosesLeft = dosesLeft
         self.lastFilledDate = lastFilledDate
@@ -21,26 +22,10 @@ public struct Medication: Hashable {
         self.note = note
         self.pharmacyRecordID = pharmacyRecordID
         self.pictureData = pictureData
-        self.schedules = schedules
+        self.schedule = schedule
         self.strength = strength
+        self.times = times
         self.uuid = uuid
-    }
-
-    public var hashValue: Int {
-        if let uuid = uuid {
-            return uuid.hash
-        } else {
-            return (name?.hash ?? 0) ^ (strength?.hash ?? 0)
-        }
-    }
-}
-
-public func ==(lhs: Medication, rhs: Medication) -> Bool {
-    switch (lhs.uuid, rhs.uuid) {
-    case let (.Some(lhu), .Some(rhu)):
-        return lhu == rhu
-    default:
-        return lhs.name == rhs.name && lhs.strength ==  rhs.strength
     }
 }
 
@@ -80,14 +65,19 @@ public struct MedicationLenses {
         set: { (inout medication: Medication, pictureData) in medication.pictureData = pictureData }
     )
 
-    public static let schedules = Lens(
-        get: { $0.schedules },
-        set: { (inout medication: Medication, schedules) in medication.schedules = schedules }
+    public static let schedule = Lens(
+        get: { $0.schedule },
+        set: { (inout medication: Medication, schedule) in medication.schedule = schedule }
     )
 
     public static let strength = Lens(
         get: { $0.strength },
         set: { (inout medication: Medication, strength) in medication.strength = flush(strength, not(isEmpty)) }
+    )
+
+    public static let times = Lens(
+        get: { $0.times },
+        set: { (inout medication: Medication, times) in medication.times = times }
     )
 
     public static let uuid = Lens(
