@@ -288,6 +288,7 @@ class MedicationDetailInfoViewController: UITableViewController, UITextFieldDele
 
         if !editing && !viewModel.editing.value {
             navigationItem.rightBarButtonItem = editBarButtonItem
+            medicationDetailViewController?.updateNavigationItem(self)
         }
     }
 
