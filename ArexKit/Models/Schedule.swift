@@ -25,7 +25,7 @@ public func ==(lhs: Schedule, rhs: Schedule) -> Bool {
     case (.Daily, .Daily):
         return true
     case let (.EveryXDays(interval: leftInterval, startDate: leftStartDate), .EveryXDays(interval: rightInterval, startDate: rightStartDate)):
-        return leftInterval == rightInterval && leftStartDate == rightStartDate
+        return leftInterval == rightInterval && abs(leftStartDate.timeIntervalSinceDate(rightStartDate)) < 1.0
     case let (.Weekly(days: leftDays), .Weekly(days: rightDays)):
         return leftDays == rightDays
     case let (.Monthly(days: leftDays), .Monthly(days: rightDays)):
