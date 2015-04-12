@@ -15,7 +15,7 @@ target 'Arex', exclusive: true do
   pod 'ArexKit', path: '.'
   pod 'Cartography',
     git: 'https://github.com/robb/Cartography.git',
-    branch: 'xcode6-3'
+    tag: '0.5.0'
   pod 'SAMTextView', '~> 0.2.2'
 end
 

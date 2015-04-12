@@ -12,11 +12,23 @@
 #define COCOAPODS_VERSION_MINOR_ArexKit 0
 #define COCOAPODS_VERSION_PATCH_ArexKit 1
 
+// Gulliver
+#define COCOAPODS_POD_AVAILABLE_Gulliver
+#define COCOAPODS_VERSION_MAJOR_Gulliver 0
+#define COCOAPODS_VERSION_MINOR_Gulliver 0
+#define COCOAPODS_VERSION_PATCH_Gulliver 1
+
 // LlamaKit
 #define COCOAPODS_POD_AVAILABLE_LlamaKit
 #define COCOAPODS_VERSION_MAJOR_LlamaKit 0
 #define COCOAPODS_VERSION_MINOR_LlamaKit 6
 #define COCOAPODS_VERSION_PATCH_LlamaKit 0
+
+// Lustre
+#define COCOAPODS_POD_AVAILABLE_Lustre
+#define COCOAPODS_VERSION_MAJOR_Lustre 0
+#define COCOAPODS_VERSION_MINOR_Lustre 6
+#define COCOAPODS_VERSION_PATCH_Lustre 1
 
 // MessagePack.swift
 #define COCOAPODS_POD_AVAILABLE_MessagePack_swift
@@ -28,7 +40,7 @@
 #define COCOAPODS_POD_AVAILABLE_Nimble
 #define COCOAPODS_VERSION_MAJOR_Nimble 0
 #define COCOAPODS_VERSION_MINOR_Nimble 4
-#define COCOAPODS_VERSION_PATCH_Nimble 1
+#define COCOAPODS_VERSION_PATCH_Nimble 2
 
 // Pistachio
 #define COCOAPODS_POD_AVAILABLE_Pistachio

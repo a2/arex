@@ -1,12 +1,16 @@
 PODS:
   - ArexKit (0.0.1):
+    - Gulliver (= 0.0.1)
     - MessagePack.swift (= 0.1.0)
     - Pistachio (= 0.1.1-a2)
     - ReactiveCocoa (= 3.0-alpha.3)
-  - Cartography (0.3.0)
+  - Cartography (0.5.0)
+  - Gulliver (0.0.1):
+    - Lustre (~> 0.6.1)
   - LlamaKit (0.6.0)
+  - Lustre (0.6.1)
   - MessagePack.swift (0.1.0)
-  - Nimble (0.4.1)
+  - Nimble (0.4.2)
   - Pistachio (0.1.1-a2):
     - LlamaKit (~> 0.6.0)
   - Quick (0.3.0)
@@ -25,7 +29,7 @@ PODS:
 
 DEPENDENCIES:
   - ArexKit (from `.`)
-  - Cartography (from `https://github.com/robb/Cartography.git`, branch `xcode6-3`)
+  - Cartography (from `https://github.com/robb/Cartography.git`, tag `0.5.0`)
   - Nimble (~> 0.4.0)
   - Quick (~> 0.3.0)
   - SAMTextView (~> 0.2.2)
@@ -34,20 +38,22 @@ EXTERNAL SOURCES:
   ArexKit:
     :path: .
   Cartography:
-    :branch: xcode6-3
     :git: https://github.com/robb/Cartography.git
+    :tag: 0.5.0
 
 CHECKOUT OPTIONS:
   Cartography:
-    :commit: 973b23c2ffbed8aaaa4678fb4f5b19689f18a39b
     :git: https://github.com/robb/Cartography.git
+    :tag: 0.5.0
 
 SPEC CHECKSUMS:
-  ArexKit: 4a0d3718b4d72e2aa0a173f4ca080f2da536ae00
-  Cartography: cfaaaa04e68ecd5566368f99f01898a8eb0819d5
+  ArexKit: f24f595fb14659b75dad2d032d18649a4a32bb02
+  Cartography: 774e5cc446f5a6bca5d4345c5aa6af9a1fe74dc6
+  Gulliver: c6657da1fbd844a6f885b474826ef284e8cf0878
   LlamaKit: 972880acb028505ffc4dc3bc54167e6ce16556fc
+  Lustre: d9359cf119ba68543e0d1bc4e821dbd6d10fbf96
   MessagePack.swift: ba8ad7a73981cd22595599d90ca54623452912f8
-  Nimble: 36913d5c822a29b3ace4113c197c79eb766a3615
+  Nimble: 49b7a7da8919f42823d37c6d68cc6d15a7009f32
   Pistachio: 8af44040ef91c624256beb5fe4a83e0f75058845
   Quick: 295c961cb8cf2edc042f1d09cf31d72c850d8e93
   ReactiveCocoa: ec30c10aa6c6e3846546bfd25e0f30a874c4cf5d

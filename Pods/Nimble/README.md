@@ -1013,8 +1013,7 @@ extension NMBObjCMatcher {
   Quick and Nimble, follow [the installation instructions in the Quick
   README](https://github.com/Quick/Quick#how-to-install-quick).
 
-Nimble can currently be installed in one of two ways: using a pre-release 
-version of CocoaPods, or with git submodules. The master branch of
+Nimble can currently be installed in one of two ways: using CocoaPods, or with git submodules. The master branch of
 Nimble supports Swift 1.2. For Swift 1.1 support, use the `swift-1.1`
 branch.
 
@@ -1035,9 +1034,8 @@ install just Nimble.
 
 ## Installing Nimble via CocoaPods
 
-To use Nimble in CocoaPods to test your iOS or OS X applications, we'll need to 
-install 0.36 Beta 1 of CocoaPods. Do so using the command `[sudo] gem install cocoapods --pre`. 
-Then just add Nimble to your podfile.
+To use Nimble in CocoaPods to test your iOS or OS X applications, update CocoaPods to Version 0.36.0.
+Then add Nimble to your podfile and add the ```use_frameworks!``` line to enable Swift support for Cocoapods.
 
 ```ruby
 platform :ios, '8.0'
@@ -1047,8 +1045,12 @@ source 'https://github.com/CocoaPods/Specs.git'
 # Whatever pods you need for your app go here
 
 target 'YOUR_APP_NAME_HERE_Tests', :exclusive => true do
-  pod 'Nimble'
+  use_frameworks!
+  # If you're using Swift 1.2 (Xcode 6.3 beta), use this:
+  pod 'Nimble', '~> 0.4.0'
+  # Otherwise, use this commented out line for Swift 1.1 (Xcode 6.2):
+  # pod 'Nimble', '~> 0.3.0'
 end
 ```
 
-Finally run `bundle exec pod install`. 
+Finally run `pod install`. 

@@ -1,0 +1,6 @@
+framework module Lustre {
+  umbrella header "Pods-Arex-Lustre-umbrella.h"
+
+  export *
+  module * { export * }
+}

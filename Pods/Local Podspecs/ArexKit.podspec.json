@@ -18,6 +18,9 @@
   "requires_arc": true,
   "source_files": "ArexKit/**/*.swift",
   "dependencies": {
+    "Gulliver": [
+      "0.0.1"
+    ],
     "MessagePack.swift": [
       "0.1.0"
     ],

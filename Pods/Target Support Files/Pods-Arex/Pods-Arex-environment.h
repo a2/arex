@@ -15,14 +15,26 @@
 // Cartography
 #define COCOAPODS_POD_AVAILABLE_Cartography
 #define COCOAPODS_VERSION_MAJOR_Cartography 0
-#define COCOAPODS_VERSION_MINOR_Cartography 3
+#define COCOAPODS_VERSION_MINOR_Cartography 5
 #define COCOAPODS_VERSION_PATCH_Cartography 0
+
+// Gulliver
+#define COCOAPODS_POD_AVAILABLE_Gulliver
+#define COCOAPODS_VERSION_MAJOR_Gulliver 0
+#define COCOAPODS_VERSION_MINOR_Gulliver 0
+#define COCOAPODS_VERSION_PATCH_Gulliver 1
 
 // LlamaKit
 #define COCOAPODS_POD_AVAILABLE_LlamaKit
 #define COCOAPODS_VERSION_MAJOR_LlamaKit 0
 #define COCOAPODS_VERSION_MINOR_LlamaKit 6
 #define COCOAPODS_VERSION_PATCH_LlamaKit 0
+
+// Lustre
+#define COCOAPODS_POD_AVAILABLE_Lustre
+#define COCOAPODS_VERSION_MAJOR_Lustre 0
+#define COCOAPODS_VERSION_MINOR_Lustre 6
+#define COCOAPODS_VERSION_PATCH_Lustre 1
 
 // MessagePack.swift
 #define COCOAPODS_POD_AVAILABLE_MessagePack_swift
