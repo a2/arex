@@ -35,15 +35,6 @@ class MedicationsListViewController: UITableViewController {
             let navigationController = destinationViewController as! UINavigationController
             let medicationDetailViewController = navigationController.viewControllers[0] as! MedicationDetailViewController
             medicationDetailViewController.viewModel = viewModel
-
-            /*
-            let tabBarController = navigationController.viewControllers[0] as! UITabBarController
-            for viewController in tabBarController.viewControllers! {
-                if let info = viewController as? MedicationDetailInfoViewController {
-                    info.viewModel = viewModel.infoViewModel
-                }
-            }
-            */
         }
 
         switch segue.identifier {
