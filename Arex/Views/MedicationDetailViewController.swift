@@ -140,31 +140,4 @@ class MedicationDetailViewController: UIViewController, UIBarPositioningDelegate
             self.updateNavigationItem(self)
         })
     }
-
-    /*
-    private func changeMode(to mode: DetailMode) {
-        dismissViewControllerAnimated(true, completion: nil)
-
-        if currentMode == mode {
-            return
-        }
-
-        transitionFromViewController(embeddedViewController(currentMode), toViewController: embeddedViewController(mode), duration: 0.3, options: nil, animations: { [unowned self] in
-            self.currentMode = mode
-            self.navigationItem.leftBarButtonItem!.image = UIImage(named: mode.imageName)
-        }, completion: nil)
-    }
-
-    @IBAction private func displayInfo(segue: UIStoryboardSegue) {
-        changeMode(to: .Info)
-    }
-
-    @IBAction private func displaySchedule(segue: UIStoryboardSegue) {
-        changeMode(to: .Schedule)
-    }
-
-    @IBAction private func displayHistory(segue: UIStoryboardSegue) {
-        changeMode(to: .History)
-    }
-    */
 }
