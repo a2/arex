@@ -3,7 +3,7 @@ import Cartography
 import ReactiveCocoa
 import UIKit
 
-class MedicationDetailViewController: UIViewController, UIBarPositioningDelegate, UIPopoverPresentationControllerDelegate {
+class MedicationDetailViewController: UIViewController, UIBarPositioningDelegate {
     private enum DetailMode: Int {
         case Info = 0
         case Schedule
@@ -115,12 +115,6 @@ class MedicationDetailViewController: UIViewController, UIBarPositioningDelegate
 
     func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
         return .Top
-    }
-
-    // MARK: Popover Presentation
-
-    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
-        return .None
     }
 
     // MARK: Actions
