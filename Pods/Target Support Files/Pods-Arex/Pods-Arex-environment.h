@@ -34,7 +34,7 @@
 #define COCOAPODS_POD_AVAILABLE_Lustre
 #define COCOAPODS_VERSION_MAJOR_Lustre 0
 #define COCOAPODS_VERSION_MINOR_Lustre 6
-#define COCOAPODS_VERSION_PATCH_Lustre 1
+#define COCOAPODS_VERSION_PATCH_Lustre 3
 
 // MessagePack.swift
 #define COCOAPODS_POD_AVAILABLE_MessagePack_swift

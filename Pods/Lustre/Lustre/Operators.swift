@@ -15,6 +15,7 @@ infix operator >>== {
     precedence 150
 }
 
+/// An infix application of a function over a given result.
 public func >>==<IR: ResultType, RR: ResultType>(result: IR, @noescape transform: IR.Value -> RR) -> RR {
     return result.flatMap(transform)
 }

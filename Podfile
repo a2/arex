@@ -13,14 +13,12 @@ inhibit_all_warnings!
 
 target 'Arex', exclusive: true do
   pod 'ArexKit', path: '.'
-  pod 'Cartography',
-    git: 'https://github.com/robb/Cartography.git',
-    tag: '0.5.0'
+  pod 'Cartography', '~> 0.5.0'
   pod 'SAMTextView', '~> 0.2.2'
 end
 
 target 'ArexTests' do
   pod 'ArexKit', path: '.'
   pod 'Nimble', '~> 0.4.0'
-  pod 'Quick', '~> 0.3.0'
+  pod 'Quick', '~> 0.3.1'
 end

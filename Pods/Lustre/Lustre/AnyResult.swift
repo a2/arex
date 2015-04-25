@@ -18,10 +18,12 @@ public enum AnyResult<T> {
 
 extension AnyResult: ResultType {
 
+    /// Creates a result in a failure state
     public init(failure: NSError) {
         self = .Failure(failure)
     }
 
+    /// Returns `true` if the event succeeded.
     public var isSuccess: Bool {
         switch self {
         case .Success: return true
@@ -29,6 +31,8 @@ extension AnyResult: ResultType {
         }
     }
 
+    /// The value contained by this result. If `isSuccess` is `true`, this
+    /// should never be `nil`.
     public var value: T! {
         switch self {
         case .Success(let value): return (value as! T)
@@ -36,6 +40,7 @@ extension AnyResult: ResultType {
         }
     }
 
+    /// The error object iff the event failed and `isSuccess` is `false`.
     public var error: NSError? {
         switch self {
         case .Success: return nil
@@ -43,6 +48,7 @@ extension AnyResult: ResultType {
         }
     }
 
+    /// Return the result of mapping a result `transform` over `self`.
     public func flatMap<R: ResultType>(@noescape transform: T -> R) -> R {
         switch self {
             case Success(let value): return transform(value as! T)
@@ -68,6 +74,7 @@ extension AnyResult: Printable {
 
 extension VoidResult {
 
+    /// Return the result of mapping a value `transform` over `self`.
     public func map<U>(@noescape getValue: () -> U) -> AnyResult<U> {
         switch self {
         case Success(let value): return success(getValue())
@@ -79,6 +86,7 @@ extension VoidResult {
 
 extension ObjectResult {
 
+    /// Return the result of mapping a value `transform` over `self`.
     public func map<U>(@noescape transform: T -> U) -> AnyResult<U> {
         switch self {
         case Success(let value): return success(transform(value))
@@ -90,6 +98,7 @@ extension ObjectResult {
 
 extension AnyResult {
 
+    /// Return the result of mapping a value `transform` over `self`.
     public func map<U>(@noescape transform: T -> U) -> AnyResult<U> {
         switch self {
         case Success(let value): return success(transform(value as! T))
@@ -101,6 +110,17 @@ extension AnyResult {
 
 // MARK: Free try
 
+/**
+    Wrap the result of a Cocoa-style function signature into a result type,
+    either through currying or inline with a trailing closure.
+
+    :param: file A statically-known version of the calling file in the project.
+    :param: line A statically-known version of the calling line in code.
+    :param: makeError A transform to wrap the resulting error, such as in a
+                      custom domain or with extra context.
+    :param: fn A function with a Cocoa-style `NSErrorPointer` signature.
+    :returns: A result type created by wrapping the returned optional.
+**/
 public func try<T>(file: StaticString = __FILE__, line: UWord = __LINE__, @noescape makeError transform: (NSError -> NSError) = identityError, @noescape fn: NSErrorPointer -> T?) -> AnyResult<T> {
     var err: NSError?
     switch (fn(&err), err) {
@@ -113,6 +133,18 @@ public func try<T>(file: StaticString = __FILE__, line: UWord = __LINE__, @noesc
     }
 }
 
+/**
+    Wrap the result of a Cocoa-style function signature returning its value via
+    output parameter into a result type, either through currying or inline with
+    a trailing closure.
+
+    :param: file A statically-known version of the calling file in the project.
+    :param: line A statically-known version of the calling line in code.
+    :param: makeError A transform to wrap the resulting error, such as in a
+                      custom domain or with extra context.
+    :param: fn A function with a Cocoa-style signature of many output pointers.
+    :returns: A result type created by wrapping the returned byref value.
+**/
 public func try<T>(file: StaticString = __FILE__, line: UWord = __LINE__, @noescape makeError transform: (NSError -> NSError) = identityError, @noescape fn: (UnsafeMutablePointer<T>, NSErrorPointer) -> Bool) -> AnyResult<T> {
     var value: T!
     var err: NSError?
@@ -134,6 +166,7 @@ public func try<T>(file: StaticString = __FILE__, line: UWord = __LINE__, @noesc
 
 // MARK: Free maps
 
+/// Return the result of mapping a value `transform` over `result`.
 public func map<IR: ResultType, U>(result: IR, @noescape transform: IR.Value -> U) -> AnyResult<U> {
     if result.isSuccess {
         return success(transform(result.value))
@@ -144,6 +177,7 @@ public func map<IR: ResultType, U>(result: IR, @noescape transform: IR.Value -> 
 
 // MARK: Free constructors
 
+/// A success `AnyResult` returning `value`.
 public func success<T>(value: T) -> AnyResult<T> {
     return .Success(value)
 }

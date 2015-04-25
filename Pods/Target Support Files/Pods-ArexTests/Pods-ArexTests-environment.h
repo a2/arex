@@ -28,7 +28,7 @@
 #define COCOAPODS_POD_AVAILABLE_Lustre
 #define COCOAPODS_VERSION_MAJOR_Lustre 0
 #define COCOAPODS_VERSION_MINOR_Lustre 6
-#define COCOAPODS_VERSION_PATCH_Lustre 1
+#define COCOAPODS_VERSION_PATCH_Lustre 3
 
 // MessagePack.swift
 #define COCOAPODS_POD_AVAILABLE_MessagePack_swift
@@ -52,7 +52,7 @@
 #define COCOAPODS_POD_AVAILABLE_Quick
 #define COCOAPODS_VERSION_MAJOR_Quick 0
 #define COCOAPODS_VERSION_MINOR_Quick 3
-#define COCOAPODS_VERSION_PATCH_Quick 0
+#define COCOAPODS_VERSION_PATCH_Quick 1
 
 // ReactiveCocoa
 #define COCOAPODS_POD_AVAILABLE_ReactiveCocoa
