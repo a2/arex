@@ -1,11 +1,13 @@
 import Foundation
-import LlamaKit
-import MessagePack_swift
+import MessagePack
+import Monocle
 import Pistachio
+import Result
+import ValueTransformer
 
-struct MessagePackValueTransformers {
-    enum Error: Int, ErrorRepresentable {
-        static let domain = "MessagePackValueTransformersError"
+public struct MessagePackValueTransformers {
+    public enum Error: Int, ErrorRepresentable {
+        public static let domain = "MessagePackValueTransformersError"
 
         case InvalidBool
         case InvalidInt
@@ -19,11 +21,11 @@ struct MessagePackValueTransformers {
         case InvalidExtended
         case IncorrectExtendedType
 
-        var code: Int {
+        public var code: Int {
             return rawValue
         }
 
-        var description: String {
+        public var description: String {
             switch self {
             case .InvalidBool:
                 return "Could not decode Bool from MessagePackValue"
@@ -50,198 +52,198 @@ struct MessagePackValueTransformers {
             }
         }
 
-        var failureReason: String? {
+        public var failureReason: String? {
             return nil
         }
     }
 
-    static let bool: ValueTransformer<Bool, MessagePackValue, NSError> = ValueTransformer(transformClosure: { value in
-        return success(.Bool(value))
+    public static let bool: ReversibleValueTransformer<Bool, MessagePackValue, NSError> = ReversibleValueTransformer(transformClosure: { value in
+        return .success(.Bool(value))
     }, reverseTransformClosure: { value in
         if let value = value.boolValue {
-            return success(value)
+            return .success(value)
         } else {
-            return failure(error(code: Error.InvalidBool))
+            return .failure(error(code: Error.InvalidBool))
         }
     })
 
-    static func int<S: SignedIntegerType>() -> ValueTransformer<S, MessagePackValue, NSError> {
-        return ValueTransformer(transformClosure: { value in
-            return success(.Int(numericCast(value)))
+    public static func int<S: SignedIntegerType>() -> ReversibleValueTransformer<S, MessagePackValue, NSError> {
+        return ReversibleValueTransformer(transformClosure: { value in
+            return .success(.Int(numericCast(value)))
         }, reverseTransformClosure: { value in
             if let value = value.integerValue {
-                return success(numericCast(value))
+                return .success(numericCast(value))
             } else {
-                return failure(error(code: Error.InvalidInt))
+                return .failure(error(code: Error.InvalidInt))
             }
         })
     }
 
-    static func uint<U: UnsignedIntegerType>() -> ValueTransformer<U, MessagePackValue, NSError> {
-        return ValueTransformer(transformClosure: { value in
-            return success(.UInt(numericCast(value)))
+    public static func uint<U: UnsignedIntegerType>() -> ReversibleValueTransformer<U, MessagePackValue, NSError> {
+        return ReversibleValueTransformer(transformClosure: { value in
+            return .success(.UInt(numericCast(value)))
         }, reverseTransformClosure: { value in
             if let value = value.unsignedIntegerValue {
-                return success(numericCast(value))
+                return .success(numericCast(value))
             } else {
-                return failure(error(code: Error.InvalidUInt))
+                return .failure(error(code: Error.InvalidUInt))
             }
         })
     }
 
-    static let float: ValueTransformer<Float32, MessagePackValue, NSError> = ValueTransformer(transformClosure: { value in
-        return success(.Float(value))
+    public static let float: ReversibleValueTransformer<Float32, MessagePackValue, NSError> = ReversibleValueTransformer(transformClosure: { value in
+        return .success(.Float(value))
     }, reverseTransformClosure: { value in
         if let value = value.floatValue {
-            return success(value)
+            return .success(value)
         } else {
-            return failure(error(code: Error.InvalidFloat))
+            return .failure(error(code: Error.InvalidFloat))
         }
     })
 
-    static let double: ValueTransformer<Float64, MessagePackValue, NSError> = ValueTransformer(transformClosure: { value in
-        return success(.Double(value))
+    public static let double: ReversibleValueTransformer<Float64, MessagePackValue, NSError> = ReversibleValueTransformer(transformClosure: { value in
+        return .success(.Double(value))
     }, reverseTransformClosure: { value in
         if let value = value.doubleValue {
-            return success(value)
+            return .success(value)
         } else {
-            return failure(error(code: Error.InvalidDouble))
+            return .failure(error(code: Error.InvalidDouble))
         }
     })
 
-    static let string: ValueTransformer<String, MessagePackValue, NSError> = ValueTransformer(transformClosure: { value in
-        return success(.String(value))
+    public static let string: ReversibleValueTransformer<String, MessagePackValue, NSError> = ReversibleValueTransformer(transformClosure: { value in
+        return .success(.String(value))
     }, reverseTransformClosure: { value in
         if let value = value.stringValue {
-            return success(value)
+            return .success(value)
         } else {
-            return failure(error(code: Error.InvalidString))
+            return .failure(error(code: Error.InvalidString))
         }
     })
 
-    static let binary: ValueTransformer<NSData, MessagePackValue, NSError> = ValueTransformer(transformClosure: { value in
-        return success(.Binary(value))
+    public static let binary: ReversibleValueTransformer<NSData, MessagePackValue, NSError> = ReversibleValueTransformer(transformClosure: { value in
+        return .success(.Binary(value))
     }, reverseTransformClosure: { value in
         if let value = value.dataValue {
-            return success(value)
+            return .success(value)
         } else {
-            return failure(error(code: Error.InvalidBinary))
+            return .failure(error(code: Error.InvalidBinary))
         }
     })
 
-    static let array: ValueTransformer<[MessagePackValue], MessagePackValue, NSError> = ValueTransformer(transformClosure: { value in
-        return success(.Array(value))
+    public static let array: ReversibleValueTransformer<[MessagePackValue], MessagePackValue, NSError> = ReversibleValueTransformer(transformClosure: { value in
+        return .success(.Array(value))
     }, reverseTransformClosure: { value in
         if let value = value.arrayValue {
-            return success(value)
+            return .success(value)
         } else {
-            return failure(error(code: Error.InvalidArray))
+            return .failure(error(code: Error.InvalidArray))
         }
     })
 
-    static let map: ValueTransformer<[MessagePackValue : MessagePackValue], MessagePackValue, NSError> = ValueTransformer(transformClosure: { value in
-        return success(.Map(value))
+    public static let map: ReversibleValueTransformer<[MessagePackValue : MessagePackValue], MessagePackValue, NSError> = ReversibleValueTransformer(transformClosure: { value in
+        return .success(.Map(value))
     }, reverseTransformClosure: { value in
         if let value = value.dictionaryValue {
-            return success(value)
+            return .success(value)
         } else {
-            return failure(error(code: Error.InvalidMap))
+            return .failure(error(code: Error.InvalidMap))
         }
     })
 
-    static func extended(type: Int8) -> ValueTransformer<NSData, MessagePackValue, NSError> {
-        return ValueTransformer(transformClosure: { value in
-            return success(.Extended(type: type, data: value))
+    public static func extended(type: Int8) -> ReversibleValueTransformer<NSData, MessagePackValue, NSError> {
+        return ReversibleValueTransformer(transformClosure: { value in
+            return .success(.Extended(type: type, data: value))
         }, reverseTransformClosure: { value in
             if let (decodedType, data) = value.extendedValue {
                 if decodedType == type {
-                    return success(data)
+                    return .success(data)
                 } else {
-                    return failure(error(code: Error.IncorrectExtendedType))
+                    return .failure(error(code: Error.IncorrectExtendedType))
                 }
             } else {
-                return failure(error(code: Error.InvalidExtended))
+                return .failure(error(code: Error.InvalidExtended))
             }
         })
     }
 }
 
-func messagePackBool<A>(lens: Lens<A, Bool>) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return transform(lens, MessagePackValueTransformers.bool)
+public func messagePackBool<A>(lens: Lens<A, Bool>) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return map(lens, MessagePackValueTransformers.bool)
 }
 
-func messagePackBool<A>(lens: Lens<A, Bool?>, @autoclosure(escaping) defaultTransformedValue: () -> MessagePackValue = .Bool(false)) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return transform(lens, lift(MessagePackValueTransformers.bool, defaultTransformedValue))
+public func messagePackBool<A>(lens: Lens<A, Bool?>, defaultTransformedValue: MessagePackValue = .Bool(false)) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return map(lens, lift(MessagePackValueTransformers.bool, defaultTransformedValue: defaultTransformedValue))
 }
 
-func messagePackInt<A, S: SignedIntegerType>(lens: Lens<A, S>) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return transform(lens, MessagePackValueTransformers.int())
+public func messagePackInt<A, S: SignedIntegerType>(lens: Lens<A, S>) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return map(lens, MessagePackValueTransformers.int())
 }
 
-func messagePackInt<A, S: SignedIntegerType>(lens: Lens<A, S?>, @autoclosure(escaping) defaultTransformedValue: () -> MessagePackValue = .Int(0)) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return transform(lens, lift(MessagePackValueTransformers.int(), defaultTransformedValue))
+public func messagePackInt<A, S: SignedIntegerType>(lens: Lens<A, S?>, defaultTransformedValue: MessagePackValue = .Int(0)) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return map(lens, lift(MessagePackValueTransformers.int(), defaultTransformedValue: defaultTransformedValue))
 }
 
-func messagePackUInt<A, U: UnsignedIntegerType>(lens: Lens<A, U>) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return transform(lens, MessagePackValueTransformers.uint())
+public func messagePackUInt<A, U: UnsignedIntegerType>(lens: Lens<A, U>) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return map(lens, MessagePackValueTransformers.uint())
 }
 
-func messagePackUInt<A, U: UnsignedIntegerType>(lens: Lens<A, U?>, @autoclosure(escaping) defaultTransformedValue: () -> MessagePackValue = .UInt(0)) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return transform(lens, lift(MessagePackValueTransformers.uint(), defaultTransformedValue))
+public func messagePackUInt<A, U: UnsignedIntegerType>(lens: Lens<A, U?>, defaultTransformedValue: MessagePackValue = .UInt(0)) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return map(lens, lift(MessagePackValueTransformers.uint(), defaultTransformedValue: defaultTransformedValue))
 }
 
-func messagePackFloat<A>(lens: Lens<A, Float32>) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return transform(lens, MessagePackValueTransformers.float)
+public func messagePackFloat<A>(lens: Lens<A, Float32>) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return map(lens, MessagePackValueTransformers.float)
 }
 
-func messagePackFloat<A>(lens: Lens<A, Float32?>, @autoclosure(escaping) defaultTransformedValue: () -> MessagePackValue = .Float(0)) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return transform(lens, lift(MessagePackValueTransformers.float, defaultTransformedValue))
+public func messagePackFloat<A>(lens: Lens<A, Float32?>, defaultTransformedValue: MessagePackValue = .Float(0)) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return map(lens, lift(MessagePackValueTransformers.float, defaultTransformedValue: defaultTransformedValue))
 }
 
-func messagePackDouble<A>(lens: Lens<A, Float64>) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return transform(lens, MessagePackValueTransformers.double)
+public func messagePackDouble<A>(lens: Lens<A, Float64>) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return map(lens, MessagePackValueTransformers.double)
 }
 
-func messagePackDouble<A>(lens: Lens<A, Float64?>, @autoclosure(escaping) defaultTransformedValue: () -> MessagePackValue = .Double(0)) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return transform(lens, lift(MessagePackValueTransformers.double, defaultTransformedValue))
+public func messagePackDouble<A>(lens: Lens<A, Float64?>, defaultTransformedValue: MessagePackValue = .Double(0)) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return map(lens, lift(MessagePackValueTransformers.double, defaultTransformedValue: defaultTransformedValue))
 }
 
-func messagePackString<A>(lens: Lens<A, String>) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return transform(lens, MessagePackValueTransformers.string)
+public func messagePackString<A>(lens: Lens<A, String>) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return map(lens, MessagePackValueTransformers.string)
 }
 
-func messagePackString<A>(lens: Lens<A, String?>, @autoclosure(escaping) defaultTransformedValue: () -> MessagePackValue = .String("")) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return transform(lens, lift(MessagePackValueTransformers.string, defaultTransformedValue))
+public func messagePackString<A>(lens: Lens<A, String?>, defaultTransformedValue: MessagePackValue = .String("")) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return map(lens, lift(MessagePackValueTransformers.string, defaultTransformedValue: defaultTransformedValue))
 }
 
-func messagePackBinary<A>(lens: Lens<A, NSData>) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return transform(lens, MessagePackValueTransformers.binary)
+public func messagePackBinary<A>(lens: Lens<A, NSData>) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return map(lens, MessagePackValueTransformers.binary)
 }
 
-func messagePackBinary<A>(lens: Lens<A, NSData?>, @autoclosure(escaping) defaultTransformedValue: () -> MessagePackValue = .Binary(NSData())) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return transform(lens, lift(MessagePackValueTransformers.binary, defaultTransformedValue))
+public func messagePackBinary<A>(lens: Lens<A, NSData?>, defaultTransformedValue: MessagePackValue = .Binary(NSData())) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return map(lens, lift(MessagePackValueTransformers.binary, defaultTransformedValue: defaultTransformedValue))
 }
 
-func messagePackArray<A, B, T: Adapter where T.Model == B, T.Data == MessagePackValue, T.Error == NSError>(lens: Lens<A, [B]>)(adapter: T, @autoclosure(escaping) model: () -> B) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return transform(lens, lift(lift(adapter, model)) >>> MessagePackValueTransformers.array)
+public func messagePackArray<A, T: AdapterType where T.TransformedValueType == MessagePackValue, T.ErrorType == NSError>(lens: Lens<A, [T.ValueType]>)(adapter: T) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return map(lens, lift(adapter) >>> MessagePackValueTransformers.array)
 }
 
-func messagePackArray<A, B, T: Adapter where T.Model == B, T.Data == MessagePackValue, T.Error == NSError>(lens: Lens<A, [B]?>, @autoclosure(escaping) defaultTransformedValue: () -> MessagePackValue = .Nil)(adapter: T, @autoclosure(escaping) model: () -> B) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return transform(lens, lift(lift(lift(adapter, model)) >>> MessagePackValueTransformers.array, defaultTransformedValue))
+public func messagePackArray<A, T: AdapterType where T.TransformedValueType == MessagePackValue, T.ErrorType == NSError>(lens: Lens<A, [T.ValueType]?>, defaultTransformedValue: MessagePackValue = .Nil)(adapter: T) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return map(lens, lift(lift(adapter) >>> MessagePackValueTransformers.array, defaultTransformedValue: defaultTransformedValue))
 }
 
-func messagePackMap<A, B, T: Adapter where T.Model == B, T.Data == MessagePackValue, T.Error == NSError>(lens: Lens<A, B>)(adapter: T, @autoclosure(escaping) model: () -> B) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return transform(lens, lift(adapter, model))
+public func messagePackMap<A, T: AdapterType where T.TransformedValueType == MessagePackValue, T.ErrorType == NSError>(lens: Lens<A, T.ValueType>)(adapter: T) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return map(lens, adapter)
 }
 
-func messagePackMap<A, B, T: Adapter where T.Model == B, T.Data == MessagePackValue, T.Error == NSError>(lens: Lens<A, B?>, @autoclosure(escaping) defaultTransformedValue: () -> MessagePackValue = .Nil)(adapter: T, @autoclosure(escaping) model: () -> B) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return transform(lens, lift(lift(adapter, model), defaultTransformedValue))
+public func messagePackMap<A, T: AdapterType where T.TransformedValueType == MessagePackValue, T.ErrorType == NSError>(lens: Lens<A, T.ValueType?>, defaultTransformedValue: MessagePackValue = .Nil)(adapter: T) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return map(lens, lift(adapter, defaultTransformedValue: defaultTransformedValue))
 }
 
-func messagePackExtended<A, B, T: Adapter where T.Model == B, T.Data == NSData, T.Error == NSError>(lens: Lens<A, B>)(adapter: T, @autoclosure(escaping) model: () -> B, type: Int8) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return transform(transform(lens, lift(adapter, model)), MessagePackValueTransformers.extended(type))
+public func messagePackExtended<A, T: AdapterType where T.TransformedValueType == NSData, T.ErrorType == NSError>(lens: Lens<A, T.ValueType>)(adapter: T, type: Int8) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return map(map(lens, adapter), MessagePackValueTransformers.extended(type))
 }
 
-func messagePackExtended<A, B, T: Adapter where T.Model == B, T.Data == NSData, T.Error == NSError>(lens: Lens<A, B?>, @autoclosure(escaping) defaultTransformedValue: () -> NSData = NSData())(adapter: T, @autoclosure(escaping) model: () -> B, type: Int8) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return transform(transform(lens, lift(lift(adapter, model), defaultTransformedValue)), MessagePackValueTransformers.extended(type))
+public func messagePackExtended<A, T: AdapterType where T.TransformedValueType == NSData, T.ErrorType == NSError>(lens: Lens<A, T.ValueType?>, defaultTransformedValue: NSData = NSData())(adapter: T, type: Int8) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return map(map(lens, lift(adapter, defaultTransformedValue: defaultTransformedValue)), MessagePackValueTransformers.extended(type))
 }

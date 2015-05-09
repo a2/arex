@@ -1,0 +1,6 @@
+github "a2/Gulliver" ~> 0.1.0
+github "a2/MessagePack.swift" "0.1.0"
+github "felixjendrusch/Pistachio" ~> 0.2
+github "ReactiveCocoa/ReactiveCocoa" "v3.0-beta.4"
+github "robb/Cartography" ~> 0.2
+github "xmartlabs/XLForm" "514807c473f013211c14c65919846044d1f72da9"

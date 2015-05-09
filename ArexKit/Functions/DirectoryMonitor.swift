@@ -1,5 +1,4 @@
 import Foundation
-import LlamaKit
 import ReactiveCocoa
 
 /// The queue on which the internal `dispatch_source_t` in `monitorDirectory()` invokes its event handler.

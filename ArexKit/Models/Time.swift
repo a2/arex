@@ -1,4 +1,5 @@
 import Foundation
+import Monocle
 import Pistachio
 
 public struct Time: Comparable, Equatable, Hashable, Printable {

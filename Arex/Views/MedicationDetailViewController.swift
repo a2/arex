@@ -1,6 +1,5 @@
 import ArexKit
 import ReactiveCocoa
-import SAMTextView
 import UIKit
 
 class MedicationDetailViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate {
@@ -160,7 +159,7 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
             |> filter { !$0 }
             |> map(replace(false))
         disposable += SignalProducer(values: [beginEditing, saveChanges])
-            |> join(.Merge)
+            |> flatten(.Merge)
             |> start(next: { [unowned self] editing in
                 self.setEditing(editing, animated: true)
             })

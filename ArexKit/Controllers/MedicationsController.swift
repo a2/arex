@@ -1,7 +1,8 @@
 import Foundation
-import LlamaKit
-import MessagePack_swift
+import MessagePack
+import Monocle
 import Pistachio
+import Result
 import ReactiveCocoa
 
 public enum MedicationsControllerError: ErrorRepresentable, ErrorType {
@@ -68,11 +69,11 @@ public class MedicationsController {
     private func directoryURLContents() -> Result<[NSURL], NSError> {
         var error: NSError?
         if let contents = fileManager.contentsOfDirectoryAtURL(directoryURL, includingPropertiesForKeys: [], options: .SkipsHiddenFiles, error: &error) as? [NSURL] {
-            return success(contents)
+            return .success(contents)
         } else if let error = error {
-            return failure(error)
+            return .failure(error)
         } else {
-            return failure()
+            return .failure(Result<[NSURL], NSError>.error())
         }
     }
 
@@ -86,19 +87,23 @@ public class MedicationsController {
     private func loadMedications() -> Result<[Medication], NSError> {
         return directoryURLContents().map { URLs in
             return URLs.flatMap { fileURL in
+                let result: Array<Medication>
                 if let pathExtension = fileURL.pathExtension where pathExtension == MedicationsController.fileExtension,
                     let lastPathComponent = fileURL.lastPathComponent, uuid = NSUUID(UUIDString: lastPathComponent.stringByDeletingPathExtension),
                     data = NSData(contentsOfURL: fileURL), messagePackValue = unpack(data) {
 
-                    switch Adapters.medication.decode(Medication(uuid: uuid), from: messagePackValue) {
-                    case let .Success(valueBox):
-                        return [valueBox.unbox]
-                    case let .Failure(errorBox):
-                        println("\(__FUNCTION__) Failed to unpack Medication at \(fileURL): \(errorBox.unbox)")
-                    }
+                        let medication = Adapters.medication.reverseTransform(messagePackValue).map { set(MedicationLenses.uuid, $0, uuid) }
+                        result = medication.analysis(ifSuccess: {
+                            [$0]
+                        }, ifFailure: {
+                            println("\(__FUNCTION__) Failed to unpack Medication at \(fileURL): \($0)")
+                            return []
+                        })
+                } else {
+                    result = []
                 }
-
-                return []
+                
+                return result
             }
         }
     }
@@ -135,9 +140,8 @@ public class MedicationsController {
         }
 
         let producer = SignalProducer<Void, MedicationsControllerError> { (observer, disposable) in
-            switch Adapters.medication.encode(medication) {
-            case .Success(let valueBox):
-                let data = pack(valueBox.unbox)
+            Adapters.medication.transform(medication).analysis(ifSuccess: {
+                let data = pack($0)
                 let url = self.directoryURL.URLByAppendingPathComponent("\(uuid.UUIDString).\(MedicationsController.fileExtension)")
 
                 var error: NSError? = nil
@@ -146,9 +150,9 @@ public class MedicationsController {
                 } else {
                     sendError(observer, .CannotSave(name: name, underlying: error))
                 }
-            case .Failure(let errorBox):
-                sendError(observer, .CannotSave(name: name, underlying: errorBox.unbox))
-            }
+            }, ifFailure: {
+                sendError(observer, .CannotSave(name: name, underlying: $0))
+            })
         }
 
         return producer |> observeOn(QueueScheduler.mainQueueScheduler)

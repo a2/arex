@@ -1,29 +1,31 @@
-import LlamaKit
+import Monocle
 import Pistachio
 import ReactiveCocoa
+import Result
+import ValueTransformer
 
 public func lift<A, B>(lens: Lens<Result<A, NoError>, Result<B, NoError>>) -> Lens<A, B> {
-    let get: A -> B = { a in
-        return Pistachio.get(lens, success(a)).value ?? undefined("lens cannot return failures")
+    let getter: A -> B = { a in
+        return get(lens, Result(value: a)).value ?? undefined("lens cannot return failures")
     }
 
-    let set: (A, B) -> A = { a, b in
-        return Pistachio.set(lens, success(a), success(b)).value ?? undefined("lens cannot return failures")
+    let setter: (A, B) -> A = { a, b in
+        return set(lens, Result(value: a), Result(value: b)).value ?? undefined("lens cannot return failures")
     }
 
-    return Lens(get: get, set: set)
+    return Lens(get: getter, set: setter)
 }
 
-public func transform<A, B, C>(lens: Lens<A, B>, valueTransformer: ValueTransformer<B, C, NoError>) -> Lens<A, C> {
-    let get: A -> C = { a in
-        let b = Pistachio.get(lens, a)
-        return valueTransformer.transformedValue(b).value ?? undefined("valueTransformer cannot return failures")
+public func map<A, V: ReversibleValueTransformerType where V.ErrorType == NoError>(lens: Lens<A, V.ValueType>, reversibleValueTransformer: V) -> Lens<A, V.TransformedValueType> {
+    let getter: A -> V.TransformedValueType = { a in
+        let value = get(lens, a)
+        return reversibleValueTransformer.transform(value) ?? undefined("reversibleValueTransformer cannot fail")
     }
 
-    let set: (A, C) -> A = { a, c in
-        let b = valueTransformer.reverseTransformedValue(c) ?? undefined("valueTransformer cannot return failures")
-        return Pistachio.set(lens, a, b)
+    let setter: (A, V.TransformedValueType) -> A = { a, tv in
+        let value: V.ValueType = reversibleValueTransformer.reverseTransform(tv) ?? undefined("reversibleValueTransformer cannot fail")
+        return set(lens, a, value)
     }
 
-    return Lens(get: get, set: set)
+    return Lens(get: getter, set: setter)
 }

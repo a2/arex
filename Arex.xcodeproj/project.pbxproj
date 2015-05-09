@@ -9,35 +9,98 @@
 /* Begin PBXBuildFile section */
 		8304F71A1AEE0F2900324A35 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8304F7191AEE0F2900324A35 /* TextFieldCell.xib */; };
 		830C80FE1ABB9D8700AE7E12 /* MedicationsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */; };
-		834AA77C1AC2E34F0091A9E4 /* ReactiveCocoaAdditionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834AA77B1AC2E34F0091A9E4 /* ReactiveCocoaAdditionsSpec.swift */; };
-		834E8AA41AC2208B00B8D597 /* CompactSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E8A9E1AC2208A00B8D597 /* CompactSpec.swift */; };
-		834E8AA51AC2208B00B8D597 /* CSSColorsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E8A9F1AC2208A00B8D597 /* CSSColorsSpec.swift */; };
-		834E8AA61AC2208B00B8D597 /* DirectoryMonitorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E8AA01AC2208A00B8D597 /* DirectoryMonitorSpec.swift */; };
-		834E8AA71AC2208B00B8D597 /* IndexPathSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E8AA11AC2208B00B8D597 /* IndexPathSpec.swift */; };
+		833FACCE1AFE90470021873B /* SAMTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 833FACCD1AFE90470021873B /* SAMTextView.m */; };
+		833FACE01AFE90BD0021873B /* ArexKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACD51AFE90BD0021873B /* ArexKit.framework */; };
+		833FAD001AFE91090021873B /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC51AFE8FFF0021873B /* Quick.framework */; };
+		833FAD011AFE910B0021873B /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC31AFE8FFF0021873B /* Nimble.framework */; };
+		833FAD091AFE91670021873B /* ArexKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACD51AFE90BD0021873B /* ArexKit.framework */; };
+		833FAD0A1AFE91670021873B /* ArexKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACD51AFE90BD0021873B /* ArexKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		833FAD0E1AFE918F0021873B /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACBD1AFE8FFF0021873B /* Box.framework */; };
+		833FAD0F1AFE918F0021873B /* Gulliver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACBF1AFE8FFF0021873B /* Gulliver.framework */; };
+		833FAD101AFE918F0021873B /* Lustre.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC01AFE8FFF0021873B /* Lustre.framework */; };
+		833FAD111AFE918F0021873B /* MessagePack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC11AFE8FFF0021873B /* MessagePack.framework */; };
+		833FAD121AFE918F0021873B /* Monocle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC21AFE8FFF0021873B /* Monocle.framework */; };
+		833FAD131AFE918F0021873B /* Pistachio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC41AFE8FFF0021873B /* Pistachio.framework */; };
+		833FAD141AFE918F0021873B /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC61AFE8FFF0021873B /* ReactiveCocoa.framework */; };
+		833FAD151AFE918F0021873B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC71AFE8FFF0021873B /* Result.framework */; };
+		833FAD161AFE918F0021873B /* ValueTransformer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC81AFE8FFF0021873B /* ValueTransformer.framework */; };
+		833FAD171AFE919F0021873B /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACBE1AFE8FFF0021873B /* Cartography.framework */; };
+		833FAD211AFE91D30021873B /* CompactSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD181AFE91D30021873B /* CompactSpec.swift */; };
+		833FAD221AFE91D30021873B /* CSSColorsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD191AFE91D30021873B /* CSSColorsSpec.swift */; };
+		833FAD231AFE91D30021873B /* DirectoryMonitorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD1A1AFE91D30021873B /* DirectoryMonitorSpec.swift */; };
+		833FAD241AFE91D30021873B /* FlushSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD1B1AFE91D30021873B /* FlushSpec.swift */; };
+		833FAD251AFE91D30021873B /* HelpersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD1C1AFE91D30021873B /* HelpersSpec.swift */; };
+		833FAD261AFE91D30021873B /* IndexPathSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD1D1AFE91D30021873B /* IndexPathSpec.swift */; };
+		833FAD271AFE91D30021873B /* ReactiveCocoaAdditionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD1E1AFE91D30021873B /* ReactiveCocoaAdditionsSpec.swift */; };
+		833FAD281AFE91D30021873B /* ScheduleAdapterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD1F1AFE91D30021873B /* ScheduleAdapterSpec.swift */; };
+		833FAD291AFE91D30021873B /* TimeAdapterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD201AFE91D30021873B /* TimeAdapterSpec.swift */; };
+		833FAD491AFE91EF0021873B /* MedicationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD2B1AFE91EF0021873B /* MedicationsController.swift */; };
+		833FAD4A1AFE91EF0021873B /* Compact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD2D1AFE91EF0021873B /* Compact.swift */; };
+		833FAD4B1AFE91EF0021873B /* CSSColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD2E1AFE91EF0021873B /* CSSColors.swift */; };
+		833FAD4C1AFE91EF0021873B /* DirectoryMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD2F1AFE91EF0021873B /* DirectoryMonitor.swift */; };
+		833FAD4D1AFE91EF0021873B /* FilterByExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD301AFE91EF0021873B /* FilterByExtension.swift */; };
+		833FAD4E1AFE91EF0021873B /* Flush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD311AFE91EF0021873B /* Flush.swift */; };
+		833FAD4F1AFE91EF0021873B /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD321AFE91EF0021873B /* Helpers.swift */; };
+		833FAD501AFE91EF0021873B /* IndexPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD331AFE91EF0021873B /* IndexPath.swift */; };
+		833FAD511AFE91EF0021873B /* PistachioAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD341AFE91EF0021873B /* PistachioAdditions.swift */; };
+		833FAD521AFE91EF0021873B /* ReactiveCocoaAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD351AFE91EF0021873B /* ReactiveCocoaAdditions.swift */; };
+		833FAD531AFE91EF0021873B /* ArexError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD371AFE91EF0021873B /* ArexError.swift */; };
+		833FAD541AFE91EF0021873B /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD381AFE91EF0021873B /* Error.swift */; };
+		833FAD551AFE91EF0021873B /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD3A1AFE91EF0021873B /* Medication.swift */; };
+		833FAD561AFE91EF0021873B /* Adapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD3C1AFE91EF0021873B /* Adapters.swift */; };
+		833FAD571AFE91EF0021873B /* DateTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD3D1AFE91EF0021873B /* DateTransformers.swift */; };
+		833FAD581AFE91EF0021873B /* ImageTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD3E1AFE91EF0021873B /* ImageTransformers.swift */; };
+		833FAD591AFE91EF0021873B /* MessagePackValueTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD3F1AFE91EF0021873B /* MessagePackValueTransformers.swift */; };
+		833FAD5A1AFE91EF0021873B /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD401AFE91EF0021873B /* Schedule.swift */; };
+		833FAD5B1AFE91EF0021873B /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD411AFE91EF0021873B /* Time.swift */; };
+		833FAD5C1AFE91EF0021873B /* ArexKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 833FAD431AFE91EF0021873B /* ArexKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		833FAD5E1AFE91EF0021873B /* MedicationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD461AFE91EF0021873B /* MedicationDetailViewModel.swift */; };
+		833FAD5F1AFE91EF0021873B /* MedicationListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD471AFE91EF0021873B /* MedicationListCellViewModel.swift */; };
+		833FAD601AFE91EF0021873B /* MedicationsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD481AFE91EF0021873B /* MedicationsListViewModel.swift */; };
+		833FAD6A1AFE934B0021873B /* ArexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD691AFE934B0021873B /* ArexTests.swift */; };
+		833FAD711AFE9EA70021873B /* MessagePackAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD701AFE9EA70021873B /* MessagePackAdapter.swift */; };
+		835A58AA1AFEA3D600062D09 /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACBD1AFE8FFF0021873B /* Box.framework */; };
+		835A58AB1AFEA3D600062D09 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACBE1AFE8FFF0021873B /* Cartography.framework */; };
+		835A58AC1AFEA3D600062D09 /* Gulliver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACBF1AFE8FFF0021873B /* Gulliver.framework */; };
+		835A58AD1AFEA3D600062D09 /* Lustre.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC01AFE8FFF0021873B /* Lustre.framework */; };
+		835A58AE1AFEA3D600062D09 /* MessagePack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC11AFE8FFF0021873B /* MessagePack.framework */; };
+		835A58AF1AFEA3D600062D09 /* Monocle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC21AFE8FFF0021873B /* Monocle.framework */; };
+		835A58B01AFEA3D600062D09 /* Pistachio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC41AFE8FFF0021873B /* Pistachio.framework */; };
+		835A58B11AFEA3D600062D09 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC61AFE8FFF0021873B /* ReactiveCocoa.framework */; };
+		835A58B21AFEA3D600062D09 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC71AFE8FFF0021873B /* Result.framework */; };
+		835A58B31AFEA3D600062D09 /* ValueTransformer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC81AFE8FFF0021873B /* ValueTransformer.framework */; };
 		838512381AED04A7003A7442 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838512371AED04A7003A7442 /* TextFieldCell.swift */; };
 		838AD9B01AF3E08400CA636B /* StepperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838AD9AF1AF3E08400CA636B /* StepperCell.swift */; };
 		838AD9B21AF3E0A500CA636B /* StepperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838AD9B11AF3E0A500CA636B /* StepperCell.xib */; };
 		838AD9B61AF4C59F00CA636B /* EnclosingViewOfType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838AD9B51AF4C59F00CA636B /* EnclosingViewOfType.swift */; };
-		839047221AC2295B00E43392 /* FlushSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839047211AC2295B00E43392 /* FlushSpec.swift */; };
-		839047241AC22B3400E43392 /* HelpersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839047231AC22B3400E43392 /* HelpersSpec.swift */; };
 		8390C4331A8975490010D616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4321A8975490010D616 /* AppDelegate.swift */; };
 		8390C4381A8975490010D616 /* MedicationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4371A8975490010D616 /* MedicationsListViewController.swift */; };
 		8390C43B1A8975490010D616 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8390C4391A8975490010D616 /* Main.storyboard */; };
 		8390C43D1A8975490010D616 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8390C43C1A8975490010D616 /* Images.xcassets */; };
 		8390C4401A8975490010D616 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8390C43E1A8975490010D616 /* LaunchScreen.xib */; };
-		83CF07251AC3599900C2EB81 /* ScheduleAdapterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CF07241AC3599900C2EB81 /* ScheduleAdapterSpec.swift */; };
-		83CF07271AC35B5900C2EB81 /* TimeAdapterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CF07261AC35B5900C2EB81 /* TimeAdapterSpec.swift */; };
 		83CF072A1AC3632F00C2EB81 /* UIFontLineHeightUsingCoreText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CF07291AC3632F00C2EB81 /* UIFontLineHeightUsingCoreText.swift */; };
 		83CF072C1AC364A700C2EB81 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CF072B1AC364A700C2EB81 /* Colors.swift */; };
 		83DF6F621ACEC9B800CF454A /* EmptySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF6F611ACEC9B800CF454A /* EmptySelectionViewController.swift */; };
 		83EFC9211ABC8DC400699EA2 /* MedicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */; };
 		83F098CD1AEEA50B00F33458 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F098CC1AEEA50B00F33458 /* RightDetailCell.swift */; };
-		935CEA98C3DF875D33E4DB2D /* Pods_Arex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D52CFFC6E1AE6FA3555DA010 /* Pods_Arex.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		CB7ADC282077D4C8A24F7DB4 /* Pods_ArexTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA90972EF0F864576D64B022 /* Pods_ArexTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		83F7FA021AC033A000E57CB0 /* PBXContainerItemProxy */ = {
+		833FACE11AFE90BD0021873B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8390C4251A8975490010D616 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 833FACD41AFE90BD0021873B;
+			remoteInfo = ArexKit;
+		};
+		833FAD0B1AFE91670021873B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8390C4251A8975490010D616 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 833FACD41AFE90BD0021873B;
+			remoteInfo = ArexKit;
+		};
+		833FAD6B1AFE934B0021873B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8390C4251A8975490010D616 /* Project object */;
 			proxyType = 1;
@@ -46,26 +109,82 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		833FAD0D1AFE91670021873B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				833FAD0A1AFE91670021873B /* ArexKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		4431E159D10B29C3175C1921 /* Pods-Arex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arex.release.xcconfig"; path = "Pods/Target Support Files/Pods-Arex/Pods-Arex.release.xcconfig"; sourceTree = "<group>"; };
-		6B0E337E3C92053979EFDED0 /* Pods-Arex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Arex/Pods-Arex.debug.xcconfig"; sourceTree = "<group>"; };
 		8304F7191AEE0F2900324A35 /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
 		830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationsListCell.swift; sourceTree = "<group>"; };
-		83275BC11ACCAB6700581C1F /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
-		834AA77B1AC2E34F0091A9E4 /* ReactiveCocoaAdditionsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveCocoaAdditionsSpec.swift; sourceTree = "<group>"; };
-		834E8A981AC21F7400B8D597 /* Pods-ArexTests.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-ArexTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArexTests/Pods-ArexTests.debug.xcconfig"; sourceTree = "<group>"; };
-		834E8A991AC21F7400B8D597 /* Pods-ArexTests.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-ArexTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArexTests/Pods-ArexTests.release.xcconfig"; sourceTree = "<group>"; };
-		834E8A9E1AC2208A00B8D597 /* CompactSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompactSpec.swift; sourceTree = "<group>"; };
-		834E8A9F1AC2208A00B8D597 /* CSSColorsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSColorsSpec.swift; sourceTree = "<group>"; };
-		834E8AA01AC2208A00B8D597 /* DirectoryMonitorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryMonitorSpec.swift; sourceTree = "<group>"; };
-		834E8AA11AC2208B00B8D597 /* IndexPathSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexPathSpec.swift; sourceTree = "<group>"; };
-		834E8AA31AC2208B00B8D597 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		833FACBD1AFE8FFF0021873B /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = Carthage/Build/iOS/Box.framework; sourceTree = "<group>"; };
+		833FACBE1AFE8FFF0021873B /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
+		833FACBF1AFE8FFF0021873B /* Gulliver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gulliver.framework; path = Carthage/Build/iOS/Gulliver.framework; sourceTree = "<group>"; };
+		833FACC01AFE8FFF0021873B /* Lustre.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lustre.framework; path = Carthage/Build/iOS/Lustre.framework; sourceTree = "<group>"; };
+		833FACC11AFE8FFF0021873B /* MessagePack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessagePack.framework; path = Carthage/Build/iOS/MessagePack.framework; sourceTree = "<group>"; };
+		833FACC21AFE8FFF0021873B /* Monocle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Monocle.framework; path = Carthage/Build/iOS/Monocle.framework; sourceTree = "<group>"; };
+		833FACC31AFE8FFF0021873B /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		833FACC41AFE8FFF0021873B /* Pistachio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pistachio.framework; path = Carthage/Build/iOS/Pistachio.framework; sourceTree = "<group>"; };
+		833FACC51AFE8FFF0021873B /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		833FACC61AFE8FFF0021873B /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		833FACC71AFE8FFF0021873B /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		833FACC81AFE8FFF0021873B /* ValueTransformer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ValueTransformer.framework; path = Carthage/Build/iOS/ValueTransformer.framework; sourceTree = "<group>"; };
+		833FACCB1AFE90460021873B /* Arex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Arex-Bridging-Header.h"; sourceTree = "<group>"; };
+		833FACCC1AFE90470021873B /* SAMTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SAMTextView.h; path = Libraries/SAMTextView/SAMTextView/SAMTextView.h; sourceTree = "<group>"; };
+		833FACCD1AFE90470021873B /* SAMTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SAMTextView.m; path = Libraries/SAMTextView/SAMTextView/SAMTextView.m; sourceTree = "<group>"; };
+		833FACD51AFE90BD0021873B /* ArexKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ArexKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		833FACDF1AFE90BD0021873B /* ArexKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArexKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		833FACE51AFE90BD0021873B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		833FAD181AFE91D30021873B /* CompactSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompactSpec.swift; sourceTree = "<group>"; };
+		833FAD191AFE91D30021873B /* CSSColorsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSColorsSpec.swift; sourceTree = "<group>"; };
+		833FAD1A1AFE91D30021873B /* DirectoryMonitorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryMonitorSpec.swift; sourceTree = "<group>"; };
+		833FAD1B1AFE91D30021873B /* FlushSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlushSpec.swift; sourceTree = "<group>"; };
+		833FAD1C1AFE91D30021873B /* HelpersSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpersSpec.swift; sourceTree = "<group>"; };
+		833FAD1D1AFE91D30021873B /* IndexPathSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexPathSpec.swift; sourceTree = "<group>"; };
+		833FAD1E1AFE91D30021873B /* ReactiveCocoaAdditionsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveCocoaAdditionsSpec.swift; sourceTree = "<group>"; };
+		833FAD1F1AFE91D30021873B /* ScheduleAdapterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleAdapterSpec.swift; sourceTree = "<group>"; };
+		833FAD201AFE91D30021873B /* TimeAdapterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeAdapterSpec.swift; sourceTree = "<group>"; };
+		833FAD2B1AFE91EF0021873B /* MedicationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationsController.swift; sourceTree = "<group>"; };
+		833FAD2D1AFE91EF0021873B /* Compact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compact.swift; sourceTree = "<group>"; };
+		833FAD2E1AFE91EF0021873B /* CSSColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSColors.swift; sourceTree = "<group>"; };
+		833FAD2F1AFE91EF0021873B /* DirectoryMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryMonitor.swift; sourceTree = "<group>"; };
+		833FAD301AFE91EF0021873B /* FilterByExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterByExtension.swift; sourceTree = "<group>"; };
+		833FAD311AFE91EF0021873B /* Flush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flush.swift; sourceTree = "<group>"; };
+		833FAD321AFE91EF0021873B /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		833FAD331AFE91EF0021873B /* IndexPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexPath.swift; sourceTree = "<group>"; };
+		833FAD341AFE91EF0021873B /* PistachioAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PistachioAdditions.swift; sourceTree = "<group>"; };
+		833FAD351AFE91EF0021873B /* ReactiveCocoaAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveCocoaAdditions.swift; sourceTree = "<group>"; };
+		833FAD371AFE91EF0021873B /* ArexError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArexError.swift; sourceTree = "<group>"; };
+		833FAD381AFE91EF0021873B /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		833FAD3A1AFE91EF0021873B /* Medication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
+		833FAD3C1AFE91EF0021873B /* Adapters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adapters.swift; sourceTree = "<group>"; };
+		833FAD3D1AFE91EF0021873B /* DateTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTransformers.swift; sourceTree = "<group>"; };
+		833FAD3E1AFE91EF0021873B /* ImageTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTransformers.swift; sourceTree = "<group>"; };
+		833FAD3F1AFE91EF0021873B /* MessagePackValueTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePackValueTransformers.swift; sourceTree = "<group>"; };
+		833FAD401AFE91EF0021873B /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		833FAD411AFE91EF0021873B /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		833FAD431AFE91EF0021873B /* ArexKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArexKit.h; sourceTree = "<group>"; };
+		833FAD441AFE91EF0021873B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		833FAD461AFE91EF0021873B /* MedicationDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationDetailViewModel.swift; sourceTree = "<group>"; };
+		833FAD471AFE91EF0021873B /* MedicationListCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationListCellViewModel.swift; sourceTree = "<group>"; };
+		833FAD481AFE91EF0021873B /* MedicationsListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationsListViewModel.swift; sourceTree = "<group>"; };
+		833FAD651AFE934B0021873B /* ArexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		833FAD681AFE934B0021873B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		833FAD691AFE934B0021873B /* ArexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArexTests.swift; sourceTree = "<group>"; };
+		833FAD701AFE9EA70021873B /* MessagePackAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePackAdapter.swift; sourceTree = "<group>"; };
 		838512371AED04A7003A7442 /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		838AD9AF1AF3E08400CA636B /* StepperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepperCell.swift; sourceTree = "<group>"; };
 		838AD9B11AF3E0A500CA636B /* StepperCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StepperCell.xib; sourceTree = "<group>"; };
 		838AD9B51AF4C59F00CA636B /* EnclosingViewOfType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnclosingViewOfType.swift; sourceTree = "<group>"; };
-		839047211AC2295B00E43392 /* FlushSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlushSpec.swift; sourceTree = "<group>"; };
-		839047231AC22B3400E43392 /* HelpersSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpersSpec.swift; sourceTree = "<group>"; };
 		8390C42D1A8975490010D616 /* Arex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8390C4311A8975490010D616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8390C4321A8975490010D616 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,80 +192,231 @@
 		8390C43A1A8975490010D616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8390C43C1A8975490010D616 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8390C43F1A8975490010D616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		83CF07241AC3599900C2EB81 /* ScheduleAdapterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleAdapterSpec.swift; sourceTree = "<group>"; };
-		83CF07261AC35B5900C2EB81 /* TimeAdapterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeAdapterSpec.swift; sourceTree = "<group>"; };
 		83CF07291AC3632F00C2EB81 /* UIFontLineHeightUsingCoreText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontLineHeightUsingCoreText.swift; sourceTree = "<group>"; };
 		83CF072B1AC364A700C2EB81 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		83DF6F611ACEC9B800CF454A /* EmptySelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySelectionViewController.swift; sourceTree = "<group>"; };
 		83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MedicationDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		83F098CC1AEEA50B00F33458 /* RightDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightDetailCell.swift; sourceTree = "<group>"; };
-		83F7F9FE1AC033A000E57CB0 /* ArexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA90972EF0F864576D64B022 /* Pods_ArexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D52CFFC6E1AE6FA3555DA010 /* Pods_Arex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		833FACD11AFE90BD0021873B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				833FAD0E1AFE918F0021873B /* Box.framework in Frameworks */,
+				833FAD0F1AFE918F0021873B /* Gulliver.framework in Frameworks */,
+				833FAD101AFE918F0021873B /* Lustre.framework in Frameworks */,
+				833FAD111AFE918F0021873B /* MessagePack.framework in Frameworks */,
+				833FAD121AFE918F0021873B /* Monocle.framework in Frameworks */,
+				833FAD131AFE918F0021873B /* Pistachio.framework in Frameworks */,
+				833FAD141AFE918F0021873B /* ReactiveCocoa.framework in Frameworks */,
+				833FAD151AFE918F0021873B /* Result.framework in Frameworks */,
+				833FAD161AFE918F0021873B /* ValueTransformer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		833FACDC1AFE90BD0021873B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				833FACE01AFE90BD0021873B /* ArexKit.framework in Frameworks */,
+				835A58AA1AFEA3D600062D09 /* Box.framework in Frameworks */,
+				835A58AB1AFEA3D600062D09 /* Cartography.framework in Frameworks */,
+				835A58AC1AFEA3D600062D09 /* Gulliver.framework in Frameworks */,
+				835A58AD1AFEA3D600062D09 /* Lustre.framework in Frameworks */,
+				835A58AE1AFEA3D600062D09 /* MessagePack.framework in Frameworks */,
+				835A58AF1AFEA3D600062D09 /* Monocle.framework in Frameworks */,
+				833FAD011AFE910B0021873B /* Nimble.framework in Frameworks */,
+				835A58B01AFEA3D600062D09 /* Pistachio.framework in Frameworks */,
+				833FAD001AFE91090021873B /* Quick.framework in Frameworks */,
+				835A58B11AFEA3D600062D09 /* ReactiveCocoa.framework in Frameworks */,
+				835A58B21AFEA3D600062D09 /* Result.framework in Frameworks */,
+				835A58B31AFEA3D600062D09 /* ValueTransformer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		833FAD621AFE934B0021873B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8390C42A1A8975490010D616 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				935CEA98C3DF875D33E4DB2D /* Pods_Arex.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		83F7F9FB1AC033A000E57CB0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CB7ADC282077D4C8A24F7DB4 /* Pods_ArexTests.framework in Frameworks */,
+				833FAD091AFE91670021873B /* ArexKit.framework in Frameworks */,
+				833FAD171AFE919F0021873B /* Cartography.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D02BE287FEC05D6F32B5A72 /* Pods */ = {
+		833FACC91AFE90040021873B /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				6B0E337E3C92053979EFDED0 /* Pods-Arex.debug.xcconfig */,
-				4431E159D10B29C3175C1921 /* Pods-Arex.release.xcconfig */,
-				834E8A981AC21F7400B8D597 /* Pods-ArexTests.debug.xcconfig */,
-				834E8A991AC21F7400B8D597 /* Pods-ArexTests.release.xcconfig */,
+				833FACCA1AFE902D0021873B /* SAMTextView */,
 			);
-			name = Pods;
+			name = Libraries;
 			sourceTree = "<group>";
 		};
-		834E8A9C1AC2208A00B8D597 /* ArexTests */ = {
+		833FACCA1AFE902D0021873B /* SAMTextView */ = {
 			isa = PBXGroup;
 			children = (
-				834E8A9E1AC2208A00B8D597 /* CompactSpec.swift */,
-				834E8A9F1AC2208A00B8D597 /* CSSColorsSpec.swift */,
-				834E8AA01AC2208A00B8D597 /* DirectoryMonitorSpec.swift */,
-				839047211AC2295B00E43392 /* FlushSpec.swift */,
-				839047231AC22B3400E43392 /* HelpersSpec.swift */,
-				834E8AA11AC2208B00B8D597 /* IndexPathSpec.swift */,
-				834AA77B1AC2E34F0091A9E4 /* ReactiveCocoaAdditionsSpec.swift */,
-				83CF07241AC3599900C2EB81 /* ScheduleAdapterSpec.swift */,
-				834E8AA21AC2208B00B8D597 /* Supporting Files */,
-				83CF07261AC35B5900C2EB81 /* TimeAdapterSpec.swift */,
+				833FACCC1AFE90470021873B /* SAMTextView.h */,
+				833FACCD1AFE90470021873B /* SAMTextView.m */,
+			);
+			name = SAMTextView;
+			sourceTree = "<group>";
+		};
+		833FACD61AFE90BD0021873B /* ArexKit */ = {
+			isa = PBXGroup;
+			children = (
+				833FAD2A1AFE91EF0021873B /* Controllers */,
+				833FAD2C1AFE91EF0021873B /* Functions */,
+				833FAD361AFE91EF0021873B /* Helpers */,
+				833FAD391AFE91EF0021873B /* Models */,
+				833FAD421AFE91EF0021873B /* Supporting Files */,
+				833FAD451AFE91EF0021873B /* View Models */,
+			);
+			path = ArexKit;
+			sourceTree = "<group>";
+		};
+		833FACE31AFE90BD0021873B /* ArexKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				833FAD181AFE91D30021873B /* CompactSpec.swift */,
+				833FAD191AFE91D30021873B /* CSSColorsSpec.swift */,
+				833FAD1A1AFE91D30021873B /* DirectoryMonitorSpec.swift */,
+				833FAD1B1AFE91D30021873B /* FlushSpec.swift */,
+				833FAD1C1AFE91D30021873B /* HelpersSpec.swift */,
+				833FAD1D1AFE91D30021873B /* IndexPathSpec.swift */,
+				833FAD1E1AFE91D30021873B /* ReactiveCocoaAdditionsSpec.swift */,
+				833FAD1F1AFE91D30021873B /* ScheduleAdapterSpec.swift */,
+				833FAD201AFE91D30021873B /* TimeAdapterSpec.swift */,
+				833FACE41AFE90BD0021873B /* Supporting Files */,
+			);
+			path = ArexKitTests;
+			sourceTree = "<group>";
+		};
+		833FACE41AFE90BD0021873B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				833FACE51AFE90BD0021873B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		833FAD2A1AFE91EF0021873B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				833FAD2B1AFE91EF0021873B /* MedicationsController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		833FAD2C1AFE91EF0021873B /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				833FAD2D1AFE91EF0021873B /* Compact.swift */,
+				833FAD2E1AFE91EF0021873B /* CSSColors.swift */,
+				833FAD2F1AFE91EF0021873B /* DirectoryMonitor.swift */,
+				833FAD301AFE91EF0021873B /* FilterByExtension.swift */,
+				833FAD311AFE91EF0021873B /* Flush.swift */,
+				833FAD321AFE91EF0021873B /* Helpers.swift */,
+				833FAD331AFE91EF0021873B /* IndexPath.swift */,
+				833FAD341AFE91EF0021873B /* PistachioAdditions.swift */,
+				833FAD351AFE91EF0021873B /* ReactiveCocoaAdditions.swift */,
+			);
+			path = Functions;
+			sourceTree = "<group>";
+		};
+		833FAD361AFE91EF0021873B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				833FAD371AFE91EF0021873B /* ArexError.swift */,
+				833FAD381AFE91EF0021873B /* Error.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		833FAD391AFE91EF0021873B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				833FAD3A1AFE91EF0021873B /* Medication.swift */,
+				833FAD3B1AFE91EF0021873B /* Pistachio */,
+				833FAD401AFE91EF0021873B /* Schedule.swift */,
+				833FAD411AFE91EF0021873B /* Time.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		833FAD3B1AFE91EF0021873B /* Pistachio */ = {
+			isa = PBXGroup;
+			children = (
+				833FAD3C1AFE91EF0021873B /* Adapters.swift */,
+				833FAD3D1AFE91EF0021873B /* DateTransformers.swift */,
+				833FAD3E1AFE91EF0021873B /* ImageTransformers.swift */,
+				833FAD3F1AFE91EF0021873B /* MessagePackValueTransformers.swift */,
+				833FAD701AFE9EA70021873B /* MessagePackAdapter.swift */,
+			);
+			path = Pistachio;
+			sourceTree = "<group>";
+		};
+		833FAD421AFE91EF0021873B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				833FAD431AFE91EF0021873B /* ArexKit.h */,
+				833FAD441AFE91EF0021873B /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		833FAD451AFE91EF0021873B /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				833FAD461AFE91EF0021873B /* MedicationDetailViewModel.swift */,
+				833FAD471AFE91EF0021873B /* MedicationListCellViewModel.swift */,
+				833FAD481AFE91EF0021873B /* MedicationsListViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		833FAD661AFE934B0021873B /* ArexTests */ = {
+			isa = PBXGroup;
+			children = (
+				833FAD691AFE934B0021873B /* ArexTests.swift */,
+				833FAD671AFE934B0021873B /* Supporting Files */,
 			);
 			path = ArexTests;
 			sourceTree = "<group>";
 		};
-		834E8AA21AC2208B00B8D597 /* Supporting Files */ = {
+		833FAD671AFE934B0021873B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				834E8AA31AC2208B00B8D597 /* Info.plist */,
+				833FAD681AFE934B0021873B /* Info.plist */,
 			);
-			path = "Supporting Files";
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		83804A401A8EA3FD004D92DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				83275BC11ACCAB6700581C1F /* libicucore.dylib */,
-				D52CFFC6E1AE6FA3555DA010 /* Pods_Arex.framework */,
-				AA90972EF0F864576D64B022 /* Pods_ArexTests.framework */,
+				833FACBD1AFE8FFF0021873B /* Box.framework */,
+				833FACBE1AFE8FFF0021873B /* Cartography.framework */,
+				833FACBF1AFE8FFF0021873B /* Gulliver.framework */,
+				833FACC01AFE8FFF0021873B /* Lustre.framework */,
+				833FACC11AFE8FFF0021873B /* MessagePack.framework */,
+				833FACC21AFE8FFF0021873B /* Monocle.framework */,
+				833FACC31AFE8FFF0021873B /* Nimble.framework */,
+				833FACC41AFE8FFF0021873B /* Pistachio.framework */,
+				833FACC51AFE8FFF0021873B /* Quick.framework */,
+				833FACC61AFE8FFF0021873B /* ReactiveCocoa.framework */,
+				833FACC71AFE8FFF0021873B /* Result.framework */,
+				833FACC81AFE8FFF0021873B /* ValueTransformer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -176,9 +446,11 @@
 			isa = PBXGroup;
 			children = (
 				8390C42F1A8975490010D616 /* Arex */,
-				834E8A9C1AC2208A00B8D597 /* ArexTests */,
+				833FAD661AFE934B0021873B /* ArexTests */,
+				833FACD61AFE90BD0021873B /* ArexKit */,
+				833FACE31AFE90BD0021873B /* ArexKitTests */,
 				83804A401A8EA3FD004D92DA /* Frameworks */,
-				1D02BE287FEC05D6F32B5A72 /* Pods */,
+				833FACC91AFE90040021873B /* Libraries */,
 				8390C42E1A8975490010D616 /* Products */,
 			);
 			indentWidth = 4;
@@ -191,7 +463,9 @@
 			isa = PBXGroup;
 			children = (
 				8390C42D1A8975490010D616 /* Arex.app */,
-				83F7F9FE1AC033A000E57CB0 /* ArexTests.xctest */,
+				833FACD51AFE90BD0021873B /* ArexKit.framework */,
+				833FACDF1AFE90BD0021873B /* ArexKitTests.xctest */,
+				833FAD651AFE934B0021873B /* ArexTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -211,6 +485,7 @@
 		8390C4301A8975490010D616 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				833FACCB1AFE90460021873B /* Arex-Bridging-Header.h */,
 				8390C43C1A8975490010D616 /* Images.xcassets */,
 				8390C4311A8975490010D616 /* Info.plist */,
 				8390C43E1A8975490010D616 /* LaunchScreen.xib */,
@@ -249,47 +524,92 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		833FACD21AFE90BD0021873B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				833FAD5C1AFE91EF0021873B /* ArexKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		8390C42C1A8975490010D616 /* Arex */ = {
+		833FACD41AFE90BD0021873B /* ArexKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8390C44F1A8975490010D616 /* Build configuration list for PBXNativeTarget "Arex" */;
+			buildConfigurationList = 833FACE81AFE90BD0021873B /* Build configuration list for PBXNativeTarget "ArexKit" */;
 			buildPhases = (
-				63C8AE5381F432994B9F1C0D /* Check Pods Manifest.lock */,
-				8390C4291A8975490010D616 /* Sources */,
-				8390C42A1A8975490010D616 /* Frameworks */,
-				8390C42B1A8975490010D616 /* Resources */,
-				24A7E439817218A419792CFF /* Embed Pods Frameworks */,
-				FB39629669ADD6363DF82A6E /* Copy Pods Resources */,
+				833FACD01AFE90BD0021873B /* Sources */,
+				833FACD11AFE90BD0021873B /* Frameworks */,
+				833FACD21AFE90BD0021873B /* Headers */,
+				833FACD31AFE90BD0021873B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			name = ArexKit;
+			productName = ArexKit;
+			productReference = 833FACD51AFE90BD0021873B /* ArexKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		833FACDE1AFE90BD0021873B /* ArexKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 833FACEB1AFE90BD0021873B /* Build configuration list for PBXNativeTarget "ArexKitTests" */;
+			buildPhases = (
+				833FACDB1AFE90BD0021873B /* Sources */,
+				833FACDC1AFE90BD0021873B /* Frameworks */,
+				833FACDD1AFE90BD0021873B /* Resources */,
+				833FAD021AFE91130021873B /* Embed Carthage Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				833FACE21AFE90BD0021873B /* PBXTargetDependency */,
+			);
+			name = ArexKitTests;
+			productName = ArexKitTests;
+			productReference = 833FACDF1AFE90BD0021873B /* ArexKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		833FAD641AFE934B0021873B /* ArexTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 833FAD6D1AFE934B0021873B /* Build configuration list for PBXNativeTarget "ArexTests" */;
+			buildPhases = (
+				833FAD611AFE934B0021873B /* Sources */,
+				833FAD621AFE934B0021873B /* Frameworks */,
+				833FAD631AFE934B0021873B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				833FAD6C1AFE934B0021873B /* PBXTargetDependency */,
+			);
+			name = ArexTests;
+			productName = ArexTests;
+			productReference = 833FAD651AFE934B0021873B /* ArexTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8390C42C1A8975490010D616 /* Arex */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8390C44F1A8975490010D616 /* Build configuration list for PBXNativeTarget "Arex" */;
+			buildPhases = (
+				8390C4291A8975490010D616 /* Sources */,
+				8390C42A1A8975490010D616 /* Frameworks */,
+				8390C42B1A8975490010D616 /* Resources */,
+				833FAD0D1AFE91670021873B /* Embed Frameworks */,
+				833FACCF1AFE90830021873B /* Embed Carthage Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				833FAD0C1AFE91670021873B /* PBXTargetDependency */,
 			);
 			name = Arex;
 			productName = Arex;
 			productReference = 8390C42D1A8975490010D616 /* Arex.app */;
 			productType = "com.apple.product-type.application";
-		};
-		83F7F9FD1AC033A000E57CB0 /* ArexTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 83F7FA131AC033A000E57CB0 /* Build configuration list for PBXNativeTarget "ArexTests" */;
-			buildPhases = (
-				969AB3820E110522B8EAC97B /* Check Pods Manifest.lock */,
-				83F7F9FA1AC033A000E57CB0 /* Sources */,
-				83F7F9FB1AC033A000E57CB0 /* Frameworks */,
-				83F7F9FC1AC033A000E57CB0 /* Resources */,
-				B145806D2B39B5F71D03DBD4 /* Embed Pods Frameworks */,
-				5DBC0DCA25932A176855CDAC /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				83F7FA031AC033A000E57CB0 /* PBXTargetDependency */,
-			);
-			name = ArexTests;
-			productName = ArexKitTests;
-			productReference = 83F7F9FE1AC033A000E57CB0 /* ArexTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -300,10 +620,17 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Pandamonia LLC";
 				TargetAttributes = {
-					8390C42C1A8975490010D616 = {
-						CreatedOnToolsVersion = 6.3;
+					833FACD41AFE90BD0021873B = {
+						CreatedOnToolsVersion = 6.3.2;
 					};
-					83F7F9FD1AC033A000E57CB0 = {
+					833FACDE1AFE90BD0021873B = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					833FAD641AFE934B0021873B = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 8390C42C1A8975490010D616;
+					};
+					8390C42C1A8975490010D616 = {
 						CreatedOnToolsVersion = 6.3;
 					};
 				};
@@ -322,12 +649,35 @@
 			projectRoot = "";
 			targets = (
 				8390C42C1A8975490010D616 /* Arex */,
-				83F7F9FD1AC033A000E57CB0 /* ArexTests */,
+				833FAD641AFE934B0021873B /* ArexTests */,
+				833FACD41AFE90BD0021873B /* ArexKit */,
+				833FACDE1AFE90BD0021873B /* ArexKitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		833FACD31AFE90BD0021873B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		833FACDD1AFE90BD0021873B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		833FAD631AFE934B0021873B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8390C42B1A8975490010D616 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -340,114 +690,122 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		83F7F9FC1AC033A000E57CB0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		24A7E439817218A419792CFF /* Embed Pods Frameworks */ = {
+		833FACCF1AFE90830021873B /* Embed Carthage Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Box.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Gulliver.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Lustre.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MessagePack.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Monocle.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Pistachio.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ValueTransformer.framework",
 			);
-			name = "Embed Pods Frameworks";
+			name = "Embed Carthage Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Arex/Pods-Arex-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
-		5DBC0DCA25932A176855CDAC /* Copy Pods Resources */ = {
+		833FAD021AFE91130021873B /* Embed Carthage Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Box.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Gulliver.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Lustre.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MessagePack.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Monocle.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Pistachio.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ValueTransformer.framework",
 			);
-			name = "Copy Pods Resources";
+			name = "Embed Carthage Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ArexTests/Pods-ArexTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		63C8AE5381F432994B9F1C0D /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		969AB3820E110522B8EAC97B /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B145806D2B39B5F71D03DBD4 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ArexTests/Pods-ArexTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FB39629669ADD6363DF82A6E /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Arex/Pods-Arex-resources.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		833FACD01AFE90BD0021873B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				833FAD521AFE91EF0021873B /* ReactiveCocoaAdditions.swift in Sources */,
+				833FAD5B1AFE91EF0021873B /* Time.swift in Sources */,
+				833FAD5E1AFE91EF0021873B /* MedicationDetailViewModel.swift in Sources */,
+				833FAD531AFE91EF0021873B /* ArexError.swift in Sources */,
+				833FAD491AFE91EF0021873B /* MedicationsController.swift in Sources */,
+				833FAD551AFE91EF0021873B /* Medication.swift in Sources */,
+				833FAD511AFE91EF0021873B /* PistachioAdditions.swift in Sources */,
+				833FAD541AFE91EF0021873B /* Error.swift in Sources */,
+				833FAD4F1AFE91EF0021873B /* Helpers.swift in Sources */,
+				833FAD561AFE91EF0021873B /* Adapters.swift in Sources */,
+				833FAD4D1AFE91EF0021873B /* FilterByExtension.swift in Sources */,
+				833FAD601AFE91EF0021873B /* MedicationsListViewModel.swift in Sources */,
+				833FAD571AFE91EF0021873B /* DateTransformers.swift in Sources */,
+				833FAD4E1AFE91EF0021873B /* Flush.swift in Sources */,
+				833FAD581AFE91EF0021873B /* ImageTransformers.swift in Sources */,
+				833FAD5A1AFE91EF0021873B /* Schedule.swift in Sources */,
+				833FAD591AFE91EF0021873B /* MessagePackValueTransformers.swift in Sources */,
+				833FAD4B1AFE91EF0021873B /* CSSColors.swift in Sources */,
+				833FAD5F1AFE91EF0021873B /* MedicationListCellViewModel.swift in Sources */,
+				833FAD4C1AFE91EF0021873B /* DirectoryMonitor.swift in Sources */,
+				833FAD4A1AFE91EF0021873B /* Compact.swift in Sources */,
+				833FAD711AFE9EA70021873B /* MessagePackAdapter.swift in Sources */,
+				833FAD501AFE91EF0021873B /* IndexPath.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		833FACDB1AFE90BD0021873B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				833FAD211AFE91D30021873B /* CompactSpec.swift in Sources */,
+				833FAD251AFE91D30021873B /* HelpersSpec.swift in Sources */,
+				833FAD281AFE91D30021873B /* ScheduleAdapterSpec.swift in Sources */,
+				833FAD231AFE91D30021873B /* DirectoryMonitorSpec.swift in Sources */,
+				833FAD271AFE91D30021873B /* ReactiveCocoaAdditionsSpec.swift in Sources */,
+				833FAD291AFE91D30021873B /* TimeAdapterSpec.swift in Sources */,
+				833FAD241AFE91D30021873B /* FlushSpec.swift in Sources */,
+				833FAD221AFE91D30021873B /* CSSColorsSpec.swift in Sources */,
+				833FAD261AFE91D30021873B /* IndexPathSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		833FAD611AFE934B0021873B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				833FAD6A1AFE934B0021873B /* ArexTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8390C4291A8975490010D616 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8390C4381A8975490010D616 /* MedicationsListViewController.swift in Sources */,
+				833FACCE1AFE90470021873B /* SAMTextView.m in Sources */,
 				83CF072C1AC364A700C2EB81 /* Colors.swift in Sources */,
 				83EFC9211ABC8DC400699EA2 /* MedicationDetailViewController.swift in Sources */,
 				8390C4331A8975490010D616 /* AppDelegate.swift in Sources */,
@@ -461,29 +819,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		83F7F9FA1AC033A000E57CB0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				834E8AA51AC2208B00B8D597 /* CSSColorsSpec.swift in Sources */,
-				834AA77C1AC2E34F0091A9E4 /* ReactiveCocoaAdditionsSpec.swift in Sources */,
-				834E8AA41AC2208B00B8D597 /* CompactSpec.swift in Sources */,
-				834E8AA71AC2208B00B8D597 /* IndexPathSpec.swift in Sources */,
-				83CF07271AC35B5900C2EB81 /* TimeAdapterSpec.swift in Sources */,
-				83CF07251AC3599900C2EB81 /* ScheduleAdapterSpec.swift in Sources */,
-				839047221AC2295B00E43392 /* FlushSpec.swift in Sources */,
-				839047241AC22B3400E43392 /* HelpersSpec.swift in Sources */,
-				834E8AA61AC2208B00B8D597 /* DirectoryMonitorSpec.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		83F7FA031AC033A000E57CB0 /* PBXTargetDependency */ = {
+		833FACE21AFE90BD0021873B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 833FACD41AFE90BD0021873B /* ArexKit */;
+			targetProxy = 833FACE11AFE90BD0021873B /* PBXContainerItemProxy */;
+		};
+		833FAD0C1AFE91670021873B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 833FACD41AFE90BD0021873B /* ArexKit */;
+			targetProxy = 833FAD0B1AFE91670021873B /* PBXContainerItemProxy */;
+		};
+		833FAD6C1AFE934B0021873B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8390C42C1A8975490010D616 /* Arex */;
-			targetProxy = 83F7FA021AC033A000E57CB0 /* PBXContainerItemProxy */;
+			targetProxy = 833FAD6B1AFE934B0021873B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -509,6 +861,133 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		833FACE91AFE90BD0021873B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ArexKit/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		833FACEA1AFE90BD0021873B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "ArexKit/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		833FACEC1AFE90BD0021873B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ArexKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		833FACED1AFE90BD0021873B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = ArexKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		833FAD6E1AFE934B0021873B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ArexTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arex.app/Arex";
+			};
+			name = Debug;
+		};
+		833FAD6F1AFE934B0021873B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = ArexTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arex.app/Arex";
+			};
+			name = Release;
+		};
 		8390C44D1A8975490010D616 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -592,67 +1071,67 @@
 		};
 		8390C4501A8975490010D616 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B0E337E3C92053979EFDED0 /* Pods-Arex.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Arex/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Arex/Supporting Files/Arex-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		8390C4511A8975490010D616 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4431E159D10B29C3175C1921 /* Pods-Arex.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Arex/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		83F7FA0F1AC033A000E57CB0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 834E8A981AC21F7400B8D597 /* Pods-ArexTests.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "ArexTests/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		83F7FA101AC033A000E57CB0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 834E8A991AC21F7400B8D597 /* Pods-ArexTests.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "ArexTests/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Arex/Supporting Files/Arex-Bridging-Header.h";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		833FACE81AFE90BD0021873B /* Build configuration list for PBXNativeTarget "ArexKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				833FACE91AFE90BD0021873B /* Debug */,
+				833FACEA1AFE90BD0021873B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		833FACEB1AFE90BD0021873B /* Build configuration list for PBXNativeTarget "ArexKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				833FACEC1AFE90BD0021873B /* Debug */,
+				833FACED1AFE90BD0021873B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		833FAD6D1AFE934B0021873B /* Build configuration list for PBXNativeTarget "ArexTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				833FAD6E1AFE934B0021873B /* Debug */,
+				833FAD6F1AFE934B0021873B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8390C4281A8975490010D616 /* Build configuration list for PBXProject "Arex" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -667,15 +1146,6 @@
 			buildConfigurations = (
 				8390C4501A8975490010D616 /* Debug */,
 				8390C4511A8975490010D616 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		83F7FA131AC033A000E57CB0 /* Build configuration list for PBXNativeTarget "ArexTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				83F7FA0F1AC033A000E57CB0 /* Debug */,
-				83F7FA101AC033A000E57CB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

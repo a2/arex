@@ -1,6 +1,0 @@
-framework module SAMTextView {
-  umbrella header "Pods-Arex-SAMTextView-umbrella.h"
-
-  export *
-  module * { export * }
-}

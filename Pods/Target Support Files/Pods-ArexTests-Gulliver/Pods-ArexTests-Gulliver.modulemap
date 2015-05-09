@@ -1,6 +1,0 @@
-framework module Gulliver {
-  umbrella header "Pods-ArexTests-Gulliver-umbrella.h"
-
-  export *
-  module * { export * }
-}
