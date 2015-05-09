@@ -53,10 +53,9 @@ class MedicationsListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let updatedDisposable = viewModel.medicationsUpdated.observe(next: { [weak self] in
+        disposable += viewModel.medicationsUpdated.observe(next: { [weak self] in
             self?.tableView.reloadData()
         })
-        disposable.addDisposable(updatedDisposable)
     }
 
     // MARK: - Table View
@@ -68,6 +67,7 @@ class MedicationsListViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.CellIdentifiers.MedicationCell, forIndexPath: indexPath) as! MedicationsListCell
         cell.configure(viewModel: viewModel.cellViewModels[indexPath.row])
+        cell.layoutIfNeeded()
         return cell
     }
 }

@@ -1,21 +1,21 @@
 import Foundation
 
-public enum Schedule: DebugPrintable, Equatable {
+public enum Schedule: Equatable, Printable {
     case Daily
     case EveryXDays(interval: Int, startDate: NSDate)
     case Weekly(days: Int)
     case Monthly(days: Int)
 
-    public var debugDescription: String {
+    public var description: String {
         switch self {
         case .Daily:
-            return "Schedule.Daily"
+            return "Daily"
         case let .EveryXDays(interval: interval, startDate: startDate):
-            return "Schedule.EveryXDays(interval: \(interval), startDate: \(startDate))"
+            return "EveryXDays(interval: \(interval), startDate: \(startDate))"
         case let .Weekly(days: days):
-            return "Schedule.Weekly(days: \(days))"
+            return "Weekly(days: \(days))"
         case let .Monthly(days: days):
-            return "Schedule.Monthly(days: \(days))"
+            return "Monthly(days: \(days))"
         }
     }
 }

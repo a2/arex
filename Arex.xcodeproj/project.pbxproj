@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8304F71A1AEE0F2900324A35 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8304F7191AEE0F2900324A35 /* TextFieldCell.xib */; };
 		830C80FE1ABB9D8700AE7E12 /* MedicationsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */; };
-		8344B14C1AD270E400895AA1 /* MedicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8344B14B1AD270E400895AA1 /* MedicationDetailViewController.swift */; };
 		834AA77C1AC2E34F0091A9E4 /* ReactiveCocoaAdditionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834AA77B1AC2E34F0091A9E4 /* ReactiveCocoaAdditionsSpec.swift */; };
 		834E8AA41AC2208B00B8D597 /* CompactSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E8A9E1AC2208A00B8D597 /* CompactSpec.swift */; };
 		834E8AA51AC2208B00B8D597 /* CSSColorsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E8A9F1AC2208A00B8D597 /* CSSColorsSpec.swift */; };
 		834E8AA61AC2208B00B8D597 /* DirectoryMonitorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E8AA01AC2208A00B8D597 /* DirectoryMonitorSpec.swift */; };
 		834E8AA71AC2208B00B8D597 /* IndexPathSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834E8AA11AC2208B00B8D597 /* IndexPathSpec.swift */; };
+		838512381AED04A7003A7442 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838512371AED04A7003A7442 /* TextFieldCell.swift */; };
+		838AD9B01AF3E08400CA636B /* StepperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838AD9AF1AF3E08400CA636B /* StepperCell.swift */; };
+		838AD9B21AF3E0A500CA636B /* StepperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838AD9B11AF3E0A500CA636B /* StepperCell.xib */; };
+		838AD9B61AF4C59F00CA636B /* EnclosingViewOfType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838AD9B51AF4C59F00CA636B /* EnclosingViewOfType.swift */; };
 		839047221AC2295B00E43392 /* FlushSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839047211AC2295B00E43392 /* FlushSpec.swift */; };
 		839047241AC22B3400E43392 /* HelpersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839047231AC22B3400E43392 /* HelpersSpec.swift */; };
 		8390C4331A8975490010D616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4321A8975490010D616 /* AppDelegate.swift */; };
@@ -26,7 +30,8 @@
 		83CF072A1AC3632F00C2EB81 /* UIFontLineHeightUsingCoreText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CF07291AC3632F00C2EB81 /* UIFontLineHeightUsingCoreText.swift */; };
 		83CF072C1AC364A700C2EB81 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CF072B1AC364A700C2EB81 /* Colors.swift */; };
 		83DF6F621ACEC9B800CF454A /* EmptySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF6F611ACEC9B800CF454A /* EmptySelectionViewController.swift */; };
-		83EFC9211ABC8DC400699EA2 /* MedicationDetailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EFC9201ABC8DC400699EA2 /* MedicationDetailInfoViewController.swift */; };
+		83EFC9211ABC8DC400699EA2 /* MedicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */; };
+		83F098CD1AEEA50B00F33458 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F098CC1AEEA50B00F33458 /* RightDetailCell.swift */; };
 		935CEA98C3DF875D33E4DB2D /* Pods_Arex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D52CFFC6E1AE6FA3555DA010 /* Pods_Arex.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		CB7ADC282077D4C8A24F7DB4 /* Pods_ArexTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA90972EF0F864576D64B022 /* Pods_ArexTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -44,9 +49,9 @@
 /* Begin PBXFileReference section */
 		4431E159D10B29C3175C1921 /* Pods-Arex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arex.release.xcconfig"; path = "Pods/Target Support Files/Pods-Arex/Pods-Arex.release.xcconfig"; sourceTree = "<group>"; };
 		6B0E337E3C92053979EFDED0 /* Pods-Arex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arex.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Arex/Pods-Arex.debug.xcconfig"; sourceTree = "<group>"; };
+		8304F7191AEE0F2900324A35 /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
 		830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationsListCell.swift; sourceTree = "<group>"; };
 		83275BC11ACCAB6700581C1F /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
-		8344B14B1AD270E400895AA1 /* MedicationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationDetailViewController.swift; sourceTree = "<group>"; };
 		834AA77B1AC2E34F0091A9E4 /* ReactiveCocoaAdditionsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveCocoaAdditionsSpec.swift; sourceTree = "<group>"; };
 		834E8A981AC21F7400B8D597 /* Pods-ArexTests.debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-ArexTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArexTests/Pods-ArexTests.debug.xcconfig"; sourceTree = "<group>"; };
 		834E8A991AC21F7400B8D597 /* Pods-ArexTests.release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "Pods-ArexTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArexTests/Pods-ArexTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -55,6 +60,10 @@
 		834E8AA01AC2208A00B8D597 /* DirectoryMonitorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryMonitorSpec.swift; sourceTree = "<group>"; };
 		834E8AA11AC2208B00B8D597 /* IndexPathSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexPathSpec.swift; sourceTree = "<group>"; };
 		834E8AA31AC2208B00B8D597 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		838512371AED04A7003A7442 /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
+		838AD9AF1AF3E08400CA636B /* StepperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepperCell.swift; sourceTree = "<group>"; };
+		838AD9B11AF3E0A500CA636B /* StepperCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StepperCell.xib; sourceTree = "<group>"; };
+		838AD9B51AF4C59F00CA636B /* EnclosingViewOfType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnclosingViewOfType.swift; sourceTree = "<group>"; };
 		839047211AC2295B00E43392 /* FlushSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlushSpec.swift; sourceTree = "<group>"; };
 		839047231AC22B3400E43392 /* HelpersSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpersSpec.swift; sourceTree = "<group>"; };
 		8390C42D1A8975490010D616 /* Arex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +78,8 @@
 		83CF07291AC3632F00C2EB81 /* UIFontLineHeightUsingCoreText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontLineHeightUsingCoreText.swift; sourceTree = "<group>"; };
 		83CF072B1AC364A700C2EB81 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		83DF6F611ACEC9B800CF454A /* EmptySelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySelectionViewController.swift; sourceTree = "<group>"; };
-		83EFC9201ABC8DC400699EA2 /* MedicationDetailInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MedicationDetailInfoViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MedicationDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		83F098CC1AEEA50B00F33458 /* RightDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightDetailCell.swift; sourceTree = "<group>"; };
 		83F7F9FE1AC033A000E57CB0 /* ArexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA90972EF0F864576D64B022 /* Pods_ArexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D52CFFC6E1AE6FA3555DA010 /* Pods_Arex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +151,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		838AD9B31AF3E1CE00CA636B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */,
+				83F098CC1AEEA50B00F33458 /* RightDetailCell.swift */,
+				838AD9AF1AF3E08400CA636B /* StepperCell.swift */,
+				838512371AED04A7003A7442 /* TextFieldCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		838AD9B41AF3E1D300CA636B /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				83DF6F611ACEC9B800CF454A /* EmptySelectionViewController.swift */,
+				83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */,
+				8390C4371A8975490010D616 /* MedicationsListViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		8390C4241A8975490010D616 = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +215,8 @@
 				8390C4311A8975490010D616 /* Info.plist */,
 				8390C43E1A8975490010D616 /* LaunchScreen.xib */,
 				8390C4391A8975490010D616 /* Main.storyboard */,
+				838AD9B11AF3E0A500CA636B /* StepperCell.xib */,
+				8304F7191AEE0F2900324A35 /* TextFieldCell.xib */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -191,6 +224,7 @@
 		83DF6F5D1ACEC46C00CF454A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				838AD9B51AF4C59F00CA636B /* EnclosingViewOfType.swift */,
 				83CF07291AC3632F00C2EB81 /* UIFontLineHeightUsingCoreText.swift */,
 			);
 			path = Extensions;
@@ -207,11 +241,8 @@
 		83E1FC4F1AB5FD5A00333762 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				83DF6F611ACEC9B800CF454A /* EmptySelectionViewController.swift */,
-				83EFC9201ABC8DC400699EA2 /* MedicationDetailInfoViewController.swift */,
-				8344B14B1AD270E400895AA1 /* MedicationDetailViewController.swift */,
-				830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */,
-				8390C4371A8975490010D616 /* MedicationsListViewController.swift */,
+				838AD9B31AF3E1CE00CA636B /* Cells */,
+				838AD9B41AF3E1D300CA636B /* View Controllers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -304,6 +335,8 @@
 				8390C43B1A8975490010D616 /* Main.storyboard in Resources */,
 				8390C4401A8975490010D616 /* LaunchScreen.xib in Resources */,
 				8390C43D1A8975490010D616 /* Images.xcassets in Resources */,
+				838AD9B21AF3E0A500CA636B /* StepperCell.xib in Resources */,
+				8304F71A1AEE0F2900324A35 /* TextFieldCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,12 +449,15 @@
 			files = (
 				8390C4381A8975490010D616 /* MedicationsListViewController.swift in Sources */,
 				83CF072C1AC364A700C2EB81 /* Colors.swift in Sources */,
-				83EFC9211ABC8DC400699EA2 /* MedicationDetailInfoViewController.swift in Sources */,
+				83EFC9211ABC8DC400699EA2 /* MedicationDetailViewController.swift in Sources */,
 				8390C4331A8975490010D616 /* AppDelegate.swift in Sources */,
 				83DF6F621ACEC9B800CF454A /* EmptySelectionViewController.swift in Sources */,
+				838AD9B61AF4C59F00CA636B /* EnclosingViewOfType.swift in Sources */,
 				830C80FE1ABB9D8700AE7E12 /* MedicationsListCell.swift in Sources */,
-				8344B14C1AD270E400895AA1 /* MedicationDetailViewController.swift in Sources */,
+				83F098CD1AEEA50B00F33458 /* RightDetailCell.swift in Sources */,
+				838AD9B01AF3E08400CA636B /* StepperCell.swift in Sources */,
 				83CF072A1AC3632F00C2EB81 /* UIFontLineHeightUsingCoreText.swift in Sources */,
+				838512381AED04A7003A7442 /* TextFieldCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

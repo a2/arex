@@ -38,3 +38,13 @@ public func map<P: PropertyType, T>(property: P, transform: P.Value -> T) -> Pro
 public func replace<T, U>(replacement: T)(value: U) -> T {
     return replacement
 }
+
+/** Convenience function to add an optional Disposable to a CompositeDisposable. */
+public func +=(disposable: CompositeDisposable, d: Disposable?) -> CompositeDisposable.DisposableHandle {
+    return disposable.addDisposable(d)
+}
+
+/** Convenience function to add a disposal action to a CompositeDisposable. */
+public func +=(disposable: CompositeDisposable, action: Void -> Void) -> CompositeDisposable.DisposableHandle {
+    return disposable.addDisposable(action)
+}

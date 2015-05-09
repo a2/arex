@@ -74,10 +74,8 @@ public func monitorDirectory(directoryURL: NSURL) -> SignalProducer<NSURL, Monit
             return
         }
 
-        disposable.addDisposable {
-            if let source = source {
-                dispatch_source_cancel(source)
-            }
+        disposable += {
+            source.map(dispatch_source_cancel)
         }
 
         dispatch_source_set_event_handler(source!) {
