@@ -21,7 +21,7 @@
 	url = https://github.com/Quick/Quick.git
 [submodule "Carthage/Checkouts/XLForm"]
 	path = Carthage/Checkouts/XLForm
-	url = https://github.com/xmartlabs/XLForm.git
+	url = https://github.com/a2/XLForm.git
 [submodule "Carthage/Checkouts/ValueTransformer"]
 	path = Carthage/Checkouts/ValueTransformer
 	url = https://github.com/felixjendrusch/ValueTransformer.git
