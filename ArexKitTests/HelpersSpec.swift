@@ -26,15 +26,6 @@ class HelpersSpec: QuickSpec {
             }
         }
 
-        describe("not()") {
-            it("should negate the truthinesss of a BooleanType") {
-                expect(not(true)) == false
-                expect(not(false)) == true
-                expect(not(MyTrue())) == false
-                expect(not(MyFalse())) == true
-            }
-        }
-
         describe("not()()") {
             it("should negate a BooleanType returning validator predicate") {
                 let empty = [Int]()

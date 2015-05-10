@@ -9,18 +9,6 @@ public func boolValue<T: BooleanType>(value: T) -> Bool {
     return value.boolValue
 }
 
-
-/**
-    Negates the input.
-
-    :param: value A Boolean type.
-
-    :returns: The negated Boolean value.
-*/
-public func not<T: BooleanType>(value: T) -> Bool {
-    return !value.boolValue
-}
-
 /**
     Negates a Boolean-returning transformer.
 

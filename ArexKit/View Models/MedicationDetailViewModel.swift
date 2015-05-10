@@ -239,7 +239,7 @@ public class MedicationDetailViewModel {
     // MARK: Actions
 
     public lazy var beginEditing: Action<Void, Void, NoError> = {
-        let enabled = map(self._editing, not)
+        let enabled = map(self._editing, !)
         let onStart: Void -> Void = { [unowned self] in
             self._editing.value = true
         }

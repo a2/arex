@@ -152,11 +152,11 @@ class MedicationDetailViewController: UITableViewController, UITextFieldDelegate
 
         let beginEditing = viewModel.beginEditing.executing.producer
             |> skip(1)
-            |> filter { !$0 }
+            |> filter(!)
             |> map(replace(true))
         let saveChanges = viewModel.saveChanges.executing.producer
             |> skip(1)
-            |> filter { !$0 }
+            |> filter(!)
             |> map(replace(false))
         disposable += SignalProducer(values: [beginEditing, saveChanges])
             |> flatten(.Merge)
