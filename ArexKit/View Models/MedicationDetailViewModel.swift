@@ -1,7 +1,6 @@
 import Monocle
 import Pistachio
 import ReactiveCocoa
-import XLForm
 
 public class MedicationDetailViewModel {
     public enum ScheduleType: Int, Printable {
@@ -160,6 +159,7 @@ public class MedicationDetailViewModel {
 
     // MARK: Table View
 
+    /*
     public func formDescriptor() -> XLFormDescriptor {
         let form = XLFormDescriptor()
 
@@ -278,6 +278,157 @@ public class MedicationDetailViewModel {
 
         return form
     }
+    */
+
+    private class Form: NSObject, FXForm {
+        class MonthDayStepperCell: FXFormStepperCell {
+            override func setUp() {
+                super.setUp()
+
+                stepper.maximumValue = 28
+                stepper.minimumValue = 1
+                stepper.wraps = true
+            }
+        }
+
+        weak var viewModel: MedicationDetailViewModel!
+        let dateFormatter: NSDateFormatter = {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.locale = NSLocale.currentLocale()
+            return dateFormatter
+        }()
+
+        dynamic var name: String?
+        dynamic var strength: String?
+        dynamic var scheduleType: Int = ScheduleType.NotCurrentlyTaken.rawValue
+
+        // Every X Days
+        dynamic var daysBetweenDoses: Int = 1
+        dynamic var startingDate: NSDate?
+
+        // Weekly / Monthly
+        dynamic var days: Int = 0
+
+        dynamic var times: NSArray?
+        
+        func generalFields() -> [AnyObject] {
+            let localizedScheduleTypes = [
+                NSLocalizedString("Daily", comment: "Medication schedule type; name"),
+                NSLocalizedString("Every X Days", comment: "Medication schedule type; name"),
+                NSLocalizedString("Weekly", comment: "Medication schedule type; name"),
+                NSLocalizedString("Monthly", comment: "Medication schedule type; name"),
+                NSLocalizedString("Not Currently Taken", comment: "Medication schedule type; name"),
+            ]
+
+            return [
+                [
+                    FXFormFieldHeader: "",
+                    FXFormFieldKey: "name",
+                    "textField.autocapitalizationType": UITextAutocapitalizationType.Words.rawValue,
+                ],
+                "strength",
+                [
+                    FXFormFieldAction: "updateFields",
+                    FXFormFieldKey: "scheduleType",
+                    FXFormFieldOptions: localizedScheduleTypes,
+                    FXFormFieldType: FXFormFieldTypeOption,
+                ],
+            ]
+        }
+
+        func scheduleTypeDependentFields() -> [AnyObject] {
+            func everyXDaysFields() -> [AnyObject] {
+                return [
+                    [
+                        FXFormFieldCell: MonthDayStepperCell.self,
+                        FXFormFieldHeader: NSLocalizedString("Every X Days", comment: "Medication schedule type; name"),
+                        FXFormFieldKey: "daysBetweenDoses",
+                    ],
+                    [
+                        FXFormFieldDefaultValue: NSDate(),
+                        FXFormFieldKey: "startingDate",
+                    ]
+                ]
+            }
+
+            func weeklyFields() -> [AnyObject] {
+                return [
+
+                ]
+            }
+
+            func monthlyFields() -> [AnyObject] {
+                return [
+                ]
+            }
+
+            let scheduleType = ScheduleType(rawValue: self.scheduleType) ?? undefined("rawValue \(self.scheduleType) unsupported by ScheduleType")
+            switch scheduleType {
+            case .EveryXDays:
+                return everyXDaysFields()
+            case .Weekly:
+                return weeklyFields()
+            case .Monthly:
+                return monthlyFields()
+            case .Daily, .NotCurrentlyTaken:
+                return []
+            }
+        }
+
+        func timeFields() -> [AnyObject] {
+            class ValueTransformer: NSValueTransformer {
+                let dateFormatter: NSDateFormatter = {
+                    let dateFormatter = NSDateFormatter()
+                    dateFormatter.dateStyle = .NoStyle
+                    dateFormatter.locale = NSLocale.currentLocale()
+                    dateFormatter.timeStyle = .ShortStyle
+                    return dateFormatter
+                }()
+
+                class override func allowsReverseTransformation() -> Bool {
+                    return true
+                }
+
+                override func transformedValue(value: AnyObject?) -> AnyObject? {
+                    return (value as? NSDate).map(dateFormatter.stringFromDate)
+                }
+
+                override func reverseTransformedValue(value: AnyObject?) -> AnyObject? {
+                    return (value as? String).flatMap(dateFormatter.dateFromString)
+                }
+            }
+
+            let valueTransformer = ValueTransformer()
+            var template = [NSObject : AnyObject]()
+            template[FXFormFieldPlaceholder] = valueTransformer.transformedValue(NSDate())
+            template[FXFormFieldTitle] = NSLocalizedString("Add Time", comment: "Medication alert times; add button title")
+            template[FXFormFieldType] = FXFormFieldTypeTime
+            template[FXFormFieldValueTransformer] = valueTransformer
+            template["datePicker.minuteInterval"] = 5
+
+            return [
+                [
+                    FXFormFieldHeader: NSLocalizedString("Times", comment: "Medication alert times; section title"),
+                    FXFormFieldInline: true,
+                    FXFormFieldKey: "times",
+                    FXFormFieldTemplate: template,
+                ],
+            ]
+        }
+
+        @objc func fields() -> [AnyObject]! {
+            return generalFields() + scheduleTypeDependentFields() + timeFields()
+        }
+
+        @objc func excludedFields() -> [AnyObject]! {
+            return [
+                "dateFormatter",
+                "viewModel",
+            ]
+        }
+    }
+
+    public let form: FXForm
 }
 
 private struct MedicationDetailViewModelLenses {
@@ -285,4 +436,8 @@ private struct MedicationDetailViewModelLenses {
         get: { $0.medication },
         set: { (inout viewModel: MedicationDetailViewModel, medication) in viewModel.medication = medication }
     )
+}
+
+public protocol MedicationDetailViewModelActions {
+    func updateFields()
 }

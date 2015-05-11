@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8304F71A1AEE0F2900324A35 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8304F7191AEE0F2900324A35 /* TextFieldCell.xib */; };
 		830C80FE1ABB9D8700AE7E12 /* MedicationsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */; };
+		83335B531B01350A00C41DE2 /* FXForms.h in Headers */ = {isa = PBXBuildFile; fileRef = 83335B511B01350A00C41DE2 /* FXForms.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		83335B541B01350A00C41DE2 /* FXForms.m in Sources */ = {isa = PBXBuildFile; fileRef = 83335B521B01350A00C41DE2 /* FXForms.m */; };
 		833FACCE1AFE90470021873B /* SAMTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 833FACCD1AFE90470021873B /* SAMTextView.m */; };
 		833FACE01AFE90BD0021873B /* ArexKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACD51AFE90BD0021873B /* ArexKit.framework */; };
 		833FAD001AFE91090021873B /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC51AFE8FFF0021873B /* Quick.framework */; };
@@ -69,7 +71,6 @@
 		835A58B11AFEA3D600062D09 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC61AFE8FFF0021873B /* ReactiveCocoa.framework */; };
 		835A58B21AFEA3D600062D09 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC71AFE8FFF0021873B /* Result.framework */; };
 		835A58B31AFEA3D600062D09 /* ValueTransformer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC81AFE8FFF0021873B /* ValueTransformer.framework */; };
-		835A5A631B00217F00062D09 /* XLForm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 835A5A621B00217F00062D09 /* XLForm.framework */; };
 		838512381AED04A7003A7442 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838512371AED04A7003A7442 /* TextFieldCell.swift */; };
 		838AD9B01AF3E08400CA636B /* StepperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838AD9AF1AF3E08400CA636B /* StepperCell.swift */; };
 		838AD9B21AF3E0A500CA636B /* StepperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838AD9B11AF3E0A500CA636B /* StepperCell.xib */; };
@@ -127,6 +128,8 @@
 /* Begin PBXFileReference section */
 		8304F7191AEE0F2900324A35 /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
 		830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationsListCell.swift; sourceTree = "<group>"; };
+		83335B511B01350A00C41DE2 /* FXForms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXForms.h; sourceTree = "<group>"; };
+		83335B521B01350A00C41DE2 /* FXForms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXForms.m; sourceTree = "<group>"; };
 		833FACBD1AFE8FFF0021873B /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = Carthage/Build/iOS/Box.framework; sourceTree = "<group>"; };
 		833FACBE1AFE8FFF0021873B /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
 		833FACBF1AFE8FFF0021873B /* Gulliver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gulliver.framework; path = Carthage/Build/iOS/Gulliver.framework; sourceTree = "<group>"; };
@@ -182,7 +185,6 @@
 		833FAD681AFE934B0021873B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		833FAD691AFE934B0021873B /* ArexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArexTests.swift; sourceTree = "<group>"; };
 		833FAD701AFE9EA70021873B /* MessagePackAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePackAdapter.swift; sourceTree = "<group>"; };
-		835A5A621B00217F00062D09 /* XLForm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XLForm.framework; path = Carthage/Build/iOS/XLForm.framework; sourceTree = "<group>"; };
 		838512371AED04A7003A7442 /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		838AD9AF1AF3E08400CA636B /* StepperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepperCell.swift; sourceTree = "<group>"; };
 		838AD9B11AF3E0A500CA636B /* StepperCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StepperCell.xib; sourceTree = "<group>"; };
@@ -250,7 +252,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				833FAD091AFE91670021873B /* ArexKit.framework in Frameworks */,
-				835A5A631B00217F00062D09 /* XLForm.framework in Frameworks */,
 				833FAD171AFE919F0021873B /* Cartography.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,9 +259,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		83335B501B01350A00C41DE2 /* FXForms */ = {
+			isa = PBXGroup;
+			children = (
+				83335B511B01350A00C41DE2 /* FXForms.h */,
+				83335B521B01350A00C41DE2 /* FXForms.m */,
+			);
+			name = FXForms;
+			path = Libraries/FXForms/FXForms;
+			sourceTree = "<group>";
+		};
 		833FACC91AFE90040021873B /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				83335B501B01350A00C41DE2 /* FXForms */,
 				833FACCA1AFE902D0021873B /* SAMTextView */,
 			);
 			name = Libraries;
@@ -420,7 +432,6 @@
 				833FACC61AFE8FFF0021873B /* ReactiveCocoa.framework */,
 				833FACC71AFE8FFF0021873B /* Result.framework */,
 				833FACC81AFE8FFF0021873B /* ValueTransformer.framework */,
-				835A5A621B00217F00062D09 /* XLForm.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -533,6 +544,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83335B531B01350A00C41DE2 /* FXForms.h in Headers */,
 				833FAD5C1AFE91EF0021873B /* ArexKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -713,7 +725,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ValueTransformer.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/XLForm.framework",
 			);
 			name = "Embed Carthage Frameworks";
 			outputPaths = (
@@ -755,6 +766,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				833FAD521AFE91EF0021873B /* ReactiveCocoaAdditions.swift in Sources */,
+				83335B541B01350A00C41DE2 /* FXForms.m in Sources */,
 				833FAD5B1AFE91EF0021873B /* Time.swift in Sources */,
 				833FAD5E1AFE91EF0021873B /* MedicationDetailViewModel.swift in Sources */,
 				833FAD531AFE91EF0021873B /* ArexError.swift in Sources */,

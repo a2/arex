@@ -19,9 +19,6 @@
 [submodule "Carthage/Checkouts/Quick"]
 	path = Carthage/Checkouts/Quick
 	url = https://github.com/Quick/Quick.git
-[submodule "Carthage/Checkouts/XLForm"]
-	path = Carthage/Checkouts/XLForm
-	url = https://github.com/a2/XLForm.git
 [submodule "Carthage/Checkouts/ValueTransformer"]
 	path = Carthage/Checkouts/ValueTransformer
 	url = https://github.com/felixjendrusch/ValueTransformer.git
@@ -40,3 +37,6 @@
 [submodule "Libraries/SAMTextView"]
 	path = Libraries/SAMTextView
 	url = https://github.com/soffes/SAMTextView.git
+[submodule "Libraries/FXForms"]
+	path = Libraries/FXForms
+	url = https://github.com/nicklockwood/FXForms.git

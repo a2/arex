@@ -1,9 +1,8 @@
 import ArexKit
 import ReactiveCocoa
 import UIKit
-import XLForm
 
-class MedicationDetailViewController: XLFormViewController {
+class MedicationDetailViewController: FXFormViewController, MedicationDetailViewModelActions {
     private struct Constants {
         struct CellIdentifiers {
             static let DefaultCell = "DefaultCell"
@@ -16,11 +15,6 @@ class MedicationDetailViewController: XLFormViewController {
         struct SegueIdentifiers {
             static let DismissModalEditor = "DismissModalEditor"
         }
-    }
-
-    private enum StepperTag: Int {
-        case Integer = 1000
-        case Date
     }
 
     var viewModel: MedicationDetailViewModel!
@@ -87,46 +81,6 @@ class MedicationDetailViewController: XLFormViewController {
         disposable.dispose()
     }
 
-    private lazy var listItemNumberFormatter: NSNumberFormatter = {
-        let numberFormatter = NSNumberFormatter()
-        numberFormatter.formattingContext = .ListItem
-        numberFormatter.locale = NSLocale.currentLocale()
-        numberFormatter.numberStyle = .DecimalStyle
-        return numberFormatter
-    }()
-
-    private lazy var standaloneNumberFormatter: NSNumberFormatter = {
-        let numberFormatter = NSNumberFormatter()
-        numberFormatter.formattingContext = .Standalone
-        numberFormatter.locale = NSLocale.currentLocale()
-        numberFormatter.numberStyle = .DecimalStyle
-        return numberFormatter
-    }()
-
-    // MARK: - Calendar
-
-    private let calendar = NSCalendar.currentCalendar()
-
-    private func daysSinceReferenceDate(date: NSDate) -> Double {
-        let components = calendar.components(.CalendarUnitDay, fromDate: NSDate(timeIntervalSinceReferenceDate: 0), toDate: date, options: nil)
-        return Double(components.day)
-    }
-
-    private func date(daysSinceReferenceDate days: Double) -> NSDate {
-        return calendar.dateByAddingUnit(.CalendarUnitDay, value: Int(days), toDate: NSDate(timeIntervalSinceReferenceDate: 0), options: nil) ?? undefined("Could not create NSDate instance with \(Int(days)) day(s) since reference date")
-    }
-
-    private lazy var dateFormatter: NSDateFormatter = {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.calendar = self.calendar
-        dateFormatter.dateStyle = .MediumStyle
-        dateFormatter.doesRelativeDateFormatting = true
-        dateFormatter.formattingContext = .Standalone
-        dateFormatter.locale = NSLocale.currentLocale()
-        dateFormatter.timeStyle = .NoStyle
-        return dateFormatter
-    }()
-
     // MARK: - Configuration
 
     private func configureNavigationItem() {
@@ -141,7 +95,7 @@ class MedicationDetailViewController: XLFormViewController {
     }
 
     private func configureTableView() {
-        form = viewModel.formDescriptor()
+        formController.form = viewModel.form
     }
 
     private func configureEditing() {
@@ -232,5 +186,12 @@ class MedicationDetailViewController: XLFormViewController {
         if !editing && !viewModel.editing.value {
             navigationItem.rightBarButtonItem = editBarButtonItem
         }
+    }
+
+    // MARK: - Form
+
+    func updateFields() {
+        formController.form = formController.form
+        tableView.reloadData()
     }
 }
