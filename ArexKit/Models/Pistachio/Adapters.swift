@@ -103,10 +103,10 @@ public struct ScheduleAdapter: AdapterType {
 
 public struct Adapters {
     public static let medication = MessagePackAdapter<Medication>(specification: [
-        "name": messagePackString(MedicationLenses.name, defaultTransformedValue: .Nil),
-        "pictureData": messagePackBinary(MedicationLenses.pictureData, defaultTransformedValue: .Nil),
-        "schedule": messagePackMap(MedicationLenses.schedule, defaultTransformedValue: .Nil)(adapter: Adapters.schedule),
-        "strength": messagePackString(MedicationLenses.strength, defaultTransformedValue: .Nil),
+        "name": messagePackString(MedicationLenses.name),
+        "pictureData": messagePackBinary(MedicationLenses.pictureData),
+        "schedule": messagePackMap(MedicationLenses.schedule)(adapter: Adapters.schedule),
+        "strength": messagePackString(MedicationLenses.strength),
         "times": messagePackArray(MedicationLenses.times)(adapter: Adapters.time),
     ], value: Medication())
 

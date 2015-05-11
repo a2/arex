@@ -224,26 +224,38 @@ public func messagePackBinary<A>(lens: Lens<A, NSData?>, defaultTransformedValue
     return map(lens, lift(MessagePackValueTransformers.binary, defaultTransformedValue: defaultTransformedValue))
 }
 
-public func messagePackArray<A, T: AdapterType where T.TransformedValueType == MessagePackValue, T.ErrorType == NSError>(lens: Lens<A, [T.ValueType]>)(adapter: T) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return map(lens, lift(adapter) >>> MessagePackValueTransformers.array)
+public func messagePackArray<A, T: AdapterType where T.TransformedValueType == MessagePackValue, T.ErrorType == NSError>(lens: Lens<A, [T.ValueType]>) -> (adapter: T) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return { adapter in
+        return map(lens, lift(adapter) >>> MessagePackValueTransformers.array)
+    }
 }
 
-public func messagePackArray<A, T: AdapterType where T.TransformedValueType == MessagePackValue, T.ErrorType == NSError>(lens: Lens<A, [T.ValueType]?>, defaultTransformedValue: MessagePackValue = .Nil)(adapter: T) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return map(lens, lift(lift(adapter) >>> MessagePackValueTransformers.array, defaultTransformedValue: defaultTransformedValue))
+public func messagePackArray<A, T: AdapterType where T.TransformedValueType == MessagePackValue, T.ErrorType == NSError>(lens: Lens<A, [T.ValueType]?>, defaultTransformedValue: MessagePackValue = .Nil) -> (adapter: T) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return { adapter in
+        return map(lens, lift(lift(adapter) >>> MessagePackValueTransformers.array, defaultTransformedValue: defaultTransformedValue))
+    }
 }
 
-public func messagePackMap<A, T: AdapterType where T.TransformedValueType == MessagePackValue, T.ErrorType == NSError>(lens: Lens<A, T.ValueType>)(adapter: T) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return map(lens, adapter)
+public func messagePackMap<A, T: AdapterType where T.TransformedValueType == MessagePackValue, T.ErrorType == NSError>(lens: Lens<A, T.ValueType>) -> (adapter: T) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return { adapter in
+        return map(lens, adapter)
+    }
 }
 
-public func messagePackMap<A, T: AdapterType where T.TransformedValueType == MessagePackValue, T.ErrorType == NSError>(lens: Lens<A, T.ValueType?>, defaultTransformedValue: MessagePackValue = .Nil)(adapter: T) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return map(lens, lift(adapter, defaultTransformedValue: defaultTransformedValue))
+public func messagePackMap<A, T: AdapterType where T.TransformedValueType == MessagePackValue, T.ErrorType == NSError>(lens: Lens<A, T.ValueType?>, defaultTransformedValue: MessagePackValue = .Nil) -> (adapter: T) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return { adapter in
+        return map(lens, lift(adapter, defaultTransformedValue: defaultTransformedValue))
+    }
 }
 
-public func messagePackExtended<A, T: AdapterType where T.TransformedValueType == NSData, T.ErrorType == NSError>(lens: Lens<A, T.ValueType>)(adapter: T, type: Int8) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return map(map(lens, adapter), MessagePackValueTransformers.extended(type))
+public func messagePackExtended<A, T: AdapterType where T.TransformedValueType == NSData, T.ErrorType == NSError>(lens: Lens<A, T.ValueType>) -> (adapter: T, type: Int8) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return { adapter, type in
+        return map(map(lens, adapter), MessagePackValueTransformers.extended(type))
+    }
 }
 
-public func messagePackExtended<A, T: AdapterType where T.TransformedValueType == NSData, T.ErrorType == NSError>(lens: Lens<A, T.ValueType?>, defaultTransformedValue: NSData = NSData())(adapter: T, type: Int8) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
-    return map(map(lens, lift(adapter, defaultTransformedValue: defaultTransformedValue)), MessagePackValueTransformers.extended(type))
+public func messagePackExtended<A, T: AdapterType where T.TransformedValueType == NSData, T.ErrorType == NSError>(lens: Lens<A, T.ValueType?>, defaultTransformedValue: NSData = NSData()) -> (adapter: T, type: Int8) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+    return { adapter, type in
+        return map(map(lens, lift(adapter, defaultTransformedValue: defaultTransformedValue)), MessagePackValueTransformers.extended(type))
+    }
 }

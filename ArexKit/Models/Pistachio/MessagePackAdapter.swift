@@ -29,7 +29,7 @@ private let stringKeyedMap: ReversibleValueTransformer<[String : MessagePackValu
     }
 
     return ReversibleValueTransformer(transformClosure: transformClosure, reverseTransformClosure: reverseTransformClosure)
-    }()
+}()
 
 public struct MessagePackAdapter<Value>: AdapterType {
     private typealias Adapter = DictionaryAdapter<String, Value, MessagePackValue, NSError>
