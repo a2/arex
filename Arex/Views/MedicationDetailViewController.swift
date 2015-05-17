@@ -99,6 +99,7 @@ class MedicationDetailViewController: FXFormViewController, MedicationDetailView
     }
 
     private func configureEditing() {
+        editing = viewModel.editing.value
         updateUI(editing)
 
         let beginEditing = viewModel.beginEditing.executing.producer
@@ -161,12 +162,8 @@ class MedicationDetailViewController: FXFormViewController, MedicationDetailView
             view.endEditing(true)
         }
 
-        tableView.beginUpdates()
-
         super.setEditing(editing, animated: animated)
         updateUI(editing)
-
-        tableView.endUpdates()
     }
 
     override func viewDidLoad() {

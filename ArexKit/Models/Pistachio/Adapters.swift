@@ -38,6 +38,8 @@ public enum ScheduleAdapterError: ErrorRepresentable, ErrorType {
 }
 
 public struct ScheduleAdapter: AdapterType {
+    public init() {}
+
     private func error(string: String) -> NSError {
         return ScheduleAdapterError.InvalidInput(description: string).nsError
     }
@@ -64,47 +66,51 @@ public struct ScheduleAdapter: AdapterType {
                 "type": "monthly",
                 "days": .Int(numericCast(days)),
             ])
+        case .NotCurrentlyTaken:
+            return .success([
+                "type": "notCurrentlyTaken",
+            ])
         }
     }
 
     public func reverseTransform(data: MessagePackValue) -> Result<Schedule, NSError> {
-        if let dictionary = data.dictionaryValue {
-            switch dictionary["type"]?.stringValue {
-            case .Some("daily"):
+        if let dictionary = data.dictionaryValue, type = dictionary["type"]?.stringValue {
+            switch type {
+            case "daily":
                 return .success(.Daily)
-            case .Some("everyXDays"):
+            case "everyXDays":
                 if let interval = dictionary["interval"]?.integerValue, startDateInterval = dictionary["startDate"]?.doubleValue {
                     let startDate = NSDate(timeIntervalSince1970: startDateInterval)
                     return .success(.EveryXDays(interval: numericCast(interval), startDate: startDate))
                 } else {
                     return .failure(error("Expected \"interval\" (Int) and \"startDate\" (Double) in data for Schedule.EveryXDays, got: \(dictionary.keys.map(toString))"))
                 }
-            case .Some("weekly"):
+            case "weekly":
                 if let days = dictionary["days"]?.integerValue {
                     return .success(.Weekly(days: numericCast(days)))
                 } else {
                     return .failure(error("Expected \"days\" (Int) in data for Schedule.Weekly, got: \(dictionary.keys.map(toString))"))
                 }
-            case .Some("monthly"):
+            case "monthly":
                 if let days = dictionary["days"]?.integerValue {
                     return .success(.Monthly(days: numericCast(days)))
                 } else {
                     return .failure(error("Expected \"days\" (Int) in data for Schedule.Monthly, got: \(dictionary.keys.map(toString))"))
                 }
+            case "notCurrentlyTaken":
+                return .success(.NotCurrentlyTaken)
             default:
-                let type = dictionary["type"]
-                return .failure(error("Expected one of \"daily\", \"everyXDays\", \"weekly\", \"monthly\" as \"type\" in Schedule data, got: \(type)"))
+                break
             }
-        } else {
-            return .failure(error("Expected MessagePackValue.Map, got: \(data)"))
         }
+
+        return .failure(error("Expected MessagePackValue.Map with one of \"daily\", \"everyXDays\", \"weekly\", \"monthly\", \"notCurrentlyTaken\" as \"type\" (String) in Schedule data , got: \(data)"))
     }
 }
 
 public struct Adapters {
     public static let medication = MessagePackAdapter<Medication>(specification: [
         "name": messagePackString(MedicationLenses.name),
-        "pictureData": messagePackBinary(MedicationLenses.pictureData),
         "schedule": messagePackMap(MedicationLenses.schedule)(adapter: Adapters.schedule),
         "strength": messagePackString(MedicationLenses.strength),
         "times": messagePackArray(MedicationLenses.times)(adapter: Adapters.time),
