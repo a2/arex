@@ -113,7 +113,7 @@ public class MedicationsController {
     public func medications() -> SignalProducer<[Medication], NSError> {
         return SignalProducer(value: directoryURL)
             |> concat(monitorDirectory(directoryURL))
-            |> observeOn(QueueScheduler(queue))
+            |> observeOn(QueueScheduler(queue: queue))
             |> mapError { $0.nsError }
             |> tryMap { [unowned self] _ in self.loadMedications() }
             |> observeOn(QueueScheduler.mainQueueScheduler)

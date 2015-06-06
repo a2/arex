@@ -39,12 +39,10 @@ public func replace<T, U>(replacement: T)(value: U) -> T {
     return replacement
 }
 
-/** Convenience function to add an optional Disposable to a CompositeDisposable. */
-public func +=(disposable: CompositeDisposable, d: Disposable?) -> CompositeDisposable.DisposableHandle {
-    return disposable.addDisposable(d)
-}
-
-/** Convenience function to add a disposal action to a CompositeDisposable. */
-public func +=(disposable: CompositeDisposable, action: Void -> Void) -> CompositeDisposable.DisposableHandle {
-    return disposable.addDisposable(action)
+/// Promotes a signal that does not generate values into one that can.
+///
+/// This does not actually cause values to be generated for the given signal,
+/// but makes it easier to combine with other signals that may send values.
+public func promoteValues<T, E: ErrorType>(_: T.Type)(signal: Signal<Void, E>) -> Signal<T, E> {
+    return signal |> map { return undefined("Did not expect signal to send a next event") }
 }

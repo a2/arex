@@ -38,7 +38,7 @@ public class MedicationsListViewModel {
     }
 
     deinit {
-        self.medicationsDisposable.dispose()
+        medicationsDisposable.dispose()
     }
 
     public var isEmpty: Bool {

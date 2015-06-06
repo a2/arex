@@ -1,5 +1,5 @@
 github "a2/Gulliver" ~> 0.1.1
 github "a2/MessagePack.swift" ~> 0.1.2
 github "felixjendrusch/Pistachio" ~> 0.2.2
-github "ReactiveCocoa/ReactiveCocoa" "v3.0-beta.4"
+github "ReactiveCocoa/ReactiveCocoa" "v3.0-beta.7"
 github "robb/Cartography" ~> 0.5.0
