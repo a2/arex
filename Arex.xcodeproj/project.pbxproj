@@ -40,7 +40,6 @@
 		833FAD501AFE91EF0021873B /* IndexPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD331AFE91EF0021873B /* IndexPath.swift */; };
 		833FAD511AFE91EF0021873B /* PistachioAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD341AFE91EF0021873B /* PistachioAdditions.swift */; };
 		833FAD521AFE91EF0021873B /* ReactiveCocoaAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD351AFE91EF0021873B /* ReactiveCocoaAdditions.swift */; };
-		833FAD531AFE91EF0021873B /* ArexError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD371AFE91EF0021873B /* ArexError.swift */; };
 		833FAD541AFE91EF0021873B /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD381AFE91EF0021873B /* Error.swift */; };
 		833FAD551AFE91EF0021873B /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD3A1AFE91EF0021873B /* Medication.swift */; };
 		833FAD561AFE91EF0021873B /* Adapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD3C1AFE91EF0021873B /* Adapters.swift */; };
@@ -153,7 +152,6 @@
 		833FAD331AFE91EF0021873B /* IndexPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexPath.swift; sourceTree = "<group>"; };
 		833FAD341AFE91EF0021873B /* PistachioAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PistachioAdditions.swift; sourceTree = "<group>"; };
 		833FAD351AFE91EF0021873B /* ReactiveCocoaAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveCocoaAdditions.swift; sourceTree = "<group>"; };
-		833FAD371AFE91EF0021873B /* ArexError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArexError.swift; sourceTree = "<group>"; };
 		833FAD381AFE91EF0021873B /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		833FAD3A1AFE91EF0021873B /* Medication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
 		833FAD3C1AFE91EF0021873B /* Adapters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adapters.swift; sourceTree = "<group>"; };
@@ -330,7 +328,6 @@
 		833FAD361AFE91EF0021873B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				833FAD371AFE91EF0021873B /* ArexError.swift */,
 				833FAD381AFE91EF0021873B /* Error.swift */,
 			);
 			path = Helpers;
@@ -739,7 +736,6 @@
 				83335B541B01350A00C41DE2 /* FXForms.m in Sources */,
 				833FAD5B1AFE91EF0021873B /* Time.swift in Sources */,
 				833FAD5E1AFE91EF0021873B /* MedicationDetailViewModel.swift in Sources */,
-				833FAD531AFE91EF0021873B /* ArexError.swift in Sources */,
 				833FAD491AFE91EF0021873B /* MedicationsController.swift in Sources */,
 				833FAD551AFE91EF0021873B /* Medication.swift in Sources */,
 				83D2D4E91B2B40C000A15CA6 /* DictionaryAddition.swift in Sources */,
