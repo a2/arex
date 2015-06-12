@@ -61,7 +61,7 @@
 		8390C4401A8975490010D616 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8390C43E1A8975490010D616 /* LaunchScreen.xib */; };
 		83BE348E1B2B91EE000CFE09 /* TimeAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE348D1B2B91EE000CFE09 /* TimeAdapterTests.swift */; };
 		83BE34901B2B9926000CFE09 /* PropertyMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE348F1B2B9926000CFE09 /* PropertyMap.swift */; };
-		83BE34921B2B9C03000CFE09 /* PropertyMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE34911B2B9C03000CFE09 /* PropertyMapTests.swift */; };
+		83BE34971B2B9E9E000CFE09 /* PropertyMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE34961B2B9E9E000CFE09 /* PropertyMapTests.swift */; };
 		83CF072A1AC3632F00C2EB81 /* UIFontLineHeightUsingCoreText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CF07291AC3632F00C2EB81 /* UIFontLineHeightUsingCoreText.swift */; };
 		83CF072C1AC364A700C2EB81 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CF072B1AC364A700C2EB81 /* Colors.swift */; };
 		83D2D4E91B2B40C000A15CA6 /* DictionaryAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2D4E81B2B40C000A15CA6 /* DictionaryAddition.swift */; };
@@ -171,7 +171,7 @@
 		8390C43F1A8975490010D616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		83BE348D1B2B91EE000CFE09 /* TimeAdapterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeAdapterTests.swift; sourceTree = "<group>"; };
 		83BE348F1B2B9926000CFE09 /* PropertyMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyMap.swift; sourceTree = "<group>"; };
-		83BE34911B2B9C03000CFE09 /* PropertyMapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyMapTests.swift; sourceTree = "<group>"; };
+		83BE34961B2B9E9E000CFE09 /* PropertyMapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyMapTests.swift; sourceTree = "<group>"; };
 		83CF07291AC3632F00C2EB81 /* UIFontLineHeightUsingCoreText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontLineHeightUsingCoreText.swift; sourceTree = "<group>"; };
 		83CF072B1AC364A700C2EB81 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		83D2D4E81B2B40C000A15CA6 /* DictionaryAddition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryAddition.swift; sourceTree = "<group>"; };
@@ -280,6 +280,7 @@
 				83D2D4EE1B2B702E00A15CA6 /* DirectoryMonitorTests.swift */,
 				83D2D4F01B2B881200A15CA6 /* HelpersTests.swift */,
 				83D2D4F21B2B88BF00A15CA6 /* IndexPathTests.swift */,
+				83BE34961B2B9E9E000CFE09 /* PropertyMapTests.swift */,
 				83D2D4F41B2B8A1500A15CA6 /* ReactiveCocoaAdditionsTests.swift */,
 				83D2D4F81B2B8C5C00A15CA6 /* ScheduleAdapterTests.swift */,
 				833FACE41AFE90BD0021873B /* Supporting Files */,
@@ -294,7 +295,7 @@
 			children = (
 				833FACE51AFE90BD0021873B /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		833FAD2A1AFE91EF0021873B /* Controllers */ = {
@@ -379,7 +380,7 @@
 			children = (
 				833FAD681AFE934B0021873B /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		83804A401A8EA3FD004D92DA /* Frameworks */ = {
@@ -403,7 +404,7 @@
 				838AD9AF1AF3E08400CA636B /* StepperCell.swift */,
 				838512371AED04A7003A7442 /* TextFieldCell.swift */,
 			);
-			name = Cells;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		838AD9B41AF3E1D300CA636B /* View Controllers */ = {
@@ -413,7 +414,7 @@
 				83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */,
 				8390C4371A8975490010D616 /* MedicationsListViewController.swift */,
 			);
-			name = "View Controllers";
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		8390C4241A8975490010D616 = {
@@ -468,22 +469,6 @@
 				8304F7191AEE0F2900324A35 /* TextFieldCell.xib */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		83BE34931B2B9CAE000CFE09 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				83D2D4EA1B2B6CEA00A15CA6 /* CSSColorsTests.swift */,
-				83D2D4EE1B2B702E00A15CA6 /* DirectoryMonitorTests.swift */,
-				83D2D4F01B2B881200A15CA6 /* HelpersTests.swift */,
-				83D2D4F21B2B88BF00A15CA6 /* IndexPathTests.swift */,
-				83BE34911B2B9C03000CFE09 /* PropertyMapTests.swift */,
-				83D2D4F41B2B8A1500A15CA6 /* ReactiveCocoaAdditionsTests.swift */,
-				83D2D4F81B2B8C5C00A15CA6 /* ScheduleAdapterTests.swift */,
-				83BE348D1B2B91EE000CFE09 /* TimeAdapterTests.swift */,
-				83D2D4F61B2B8A4B00A15CA6 /* XCTestAdditions.swift */,
-			);
-			name = Source;
 			sourceTree = "<group>";
 		};
 		83DF6F5D1ACEC46C00CF454A /* Extensions */ = {
@@ -764,12 +749,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				83D2D4F51B2B8A1500A15CA6 /* ReactiveCocoaAdditionsTests.swift in Sources */,
+				83BE34971B2B9E9E000CFE09 /* PropertyMapTests.swift in Sources */,
 				83D2D4F11B2B881200A15CA6 /* HelpersTests.swift in Sources */,
 				83D2D4F91B2B8C5C00A15CA6 /* ScheduleAdapterTests.swift in Sources */,
 				83D2D4EB1B2B6CEA00A15CA6 /* CSSColorsTests.swift in Sources */,
 				83D2D4EF1B2B702E00A15CA6 /* DirectoryMonitorTests.swift in Sources */,
 				83D2D4F71B2B8A4B00A15CA6 /* XCTestAdditions.swift in Sources */,
-				83BE34921B2B9C03000CFE09 /* PropertyMapTests.swift in Sources */,
 				83D2D4F31B2B88BF00A15CA6 /* IndexPathTests.swift in Sources */,
 				83BE348E1B2B91EE000CFE09 /* TimeAdapterTests.swift in Sources */,
 			);
@@ -911,7 +896,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = ArexKitTests/Info.plist;
+				INFOPLIST_FILE = "ArexKitTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "us.pandamonia.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -927,7 +912,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = ArexKitTests/Info.plist;
+				INFOPLIST_FILE = "ArexKitTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "us.pandamonia.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -948,7 +933,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = ArexTests/Info.plist;
+				INFOPLIST_FILE = "ArexTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "us.pandamonia.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -965,7 +950,7 @@
 					"$(inherited)",
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = ArexTests/Info.plist;
+				INFOPLIST_FILE = "ArexTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "us.pandamonia.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
