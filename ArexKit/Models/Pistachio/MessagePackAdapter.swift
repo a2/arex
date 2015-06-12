@@ -3,7 +3,7 @@ import Pistachio
 import Result
 import ValueTransformer
 
-private let stringKeyedMap: ReversibleValueTransformer<[String : MessagePackValue], MessagePackValue, NSError> = {
+private let dictionaryTransformer: ReversibleValueTransformer<[String : MessagePackValue], MessagePackValue, NSError> = {
     let transformClosure: [String : MessagePackValue] -> Result<MessagePackValue, NSError> = { dictionary in
         var messagePackDict = [MessagePackValue : MessagePackValue]()
         for (key, value) in dictionary {
@@ -35,9 +35,8 @@ public struct MessagePackAdapter<Value>: AdapterType {
     private typealias Adapter = DictionaryAdapter<String, Value, MessagePackValue, NSError>
     private let adapter: Adapter
 
-
     public init(specification: Adapter.Specification, valueClosure: MessagePackValue -> Result<Value, NSError>) {
-        adapter = DictionaryAdapter(specification: specification, dictionaryTransformer: stringKeyedMap, valueClosure: valueClosure)
+        adapter = DictionaryAdapter(specification: specification, dictionaryTransformer: dictionaryTransformer, valueClosure: valueClosure)
     }
 
     public init(specification: Adapter.Specification, @autoclosure(escaping) value: () -> Value) {
