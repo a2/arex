@@ -2,7 +2,7 @@ import ArexKit
 import ReactiveCocoa
 import UIKit
 
-class MedicationDetailViewController: FXFormViewController, MedicationDetailViewModelActions {
+class MedicationDetailViewController: FXFormViewController {
     private struct Constants {
         struct CellIdentifiers {
             static let DefaultCell = "DefaultCell"

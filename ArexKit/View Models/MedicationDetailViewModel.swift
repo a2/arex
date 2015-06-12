@@ -91,7 +91,3 @@ private struct MedicationDetailViewModelLenses {
         set: { (inout viewModel: MedicationDetailViewModel, medication) in viewModel.medication = medication }
     )
 }
-
-public protocol MedicationDetailViewModelActions {
-    func updateFields()
-}
