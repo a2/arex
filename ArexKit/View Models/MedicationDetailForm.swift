@@ -76,7 +76,7 @@ public class MedicationDetailForm: NSObject, FXForm {
         let dates = times as! [NSDate]
         return dates.map { time in
             let components = calendar.components([.Hour, .Minute], fromDate: time)
-            return Time(dateComponents: components)
+            return Time(dateComponents: components) ?? undefined("Either .Hour or .Minute component was undefined")
         }
     }
 

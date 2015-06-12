@@ -6,6 +6,10 @@ public struct Time {
     var hour: Int
     var minute: Int
 
+    public init() {
+        self.init(hour: 0, minute: 0)
+    }
+
     public init(hour: Int, minute: Int) {
         self.hour = hour
         self.minute = minute
@@ -45,11 +49,12 @@ extension Time: CustomStringConvertible {
 // MARK: - Date Components
 
 extension Time {
-    public init(dateComponents: NSDateComponents) {
-        precondition(dateComponents.hour != Int(NSDateComponentUndefined), "dateComponents.hour must not be undefined")
-        self.hour = dateComponents.hour
+    public init?(dateComponents: NSDateComponents) {
+        if dateComponents.hour == Int(NSDateComponentUndefined) || dateComponents.minute == Int(NSDateComponentUndefined) {
+            return nil
+        }
 
-        precondition(dateComponents.minute != Int(NSDateComponentUndefined), "dateComponents.minute must not be undefined")
+        self.hour = dateComponents.hour
         self.minute = dateComponents.minute
     }
 
