@@ -7,8 +7,8 @@ class ReactiveCocoaAdditionsSpec: QuickSpec {
     override func spec() {
         describe("catchAll()") {
             it("should catch errors to an empty signal") {
-                let result = SignalProducer<String, NSError>(error: NSError())
-                    |> catch(catchAll)
+                let result = SignalProducer<String, NSError>(error: NSError(domain: "", code: 0, userInfo: nil))
+                    |> flatMapError(catchAll)
                     |> concat(SignalProducer(value: "Hello, world!"))
                     |> first
 
@@ -21,13 +21,13 @@ class ReactiveCocoaAdditionsSpec: QuickSpec {
         describe("map()") {
             it("should map a ConstantProperty from one type to another") {
                 let property = ConstantProperty("Hello, world!")
-                let newProperty = map(property, count)
+                let newProperty = map(property) { $0.characters.count }
                 expect(newProperty.value) == 13
             }
 
             it("should map a Property from one type to another") {
                 let property = MutableProperty("Hello, world!")
-                let newProperty = map(property, count)
+                let newProperty = map(property) { $0.characters.count }
                 expect(newProperty.value) == 13
 
                 property.value = "Good night, moon!"

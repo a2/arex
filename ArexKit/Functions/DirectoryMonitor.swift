@@ -4,52 +4,14 @@ import ReactiveCocoa
 /// The queue on which the internal `dispatch_source_t` in `monitorDirectory()` invokes its event handler.
 private let queue = dispatch_queue_create("us.pandamonia.Arex.MonitorDirectory", DISPATCH_QUEUE_CONCURRENT)
 
-public enum MonitorDirectoryError: Swift.ErrorType, ErrorRepresentable, ReactiveCocoa.ErrorType {
-    public static let domain = "MonitorDirectoryError"
-
+public enum MonitorDirectoryError: Swift.ErrorType {
     case CannotOpenDirectory(Int32)
     case CannotMonitorDirectory
+}
 
-    public var code: Int {
-        switch self {
-        case .CannotOpenDirectory(_):
-            return 1
-        case .CannotMonitorDirectory:
-            return 2
-        }
-    }
-
-    public var description: String {
-        switch self {
-        case .CannotOpenDirectory:
-            return NSLocalizedString("Unable not open() the directory.", comment: "")
-        case .CannotMonitorDirectory:
-            return NSLocalizedString("Unable to create source to monitor the directory.", comment: "")
-        }
-    }
-
-    public var failureReason: String? {
-        return nil
-    }
-
+extension MonitorDirectoryError: ReactiveCocoa.ErrorType {
     public var nsError: NSError {
-        let posixErrno: Int32?
-        switch self {
-        case .CannotOpenDirectory(let e):
-            posixErrno = e
-        case .CannotMonitorDirectory:
-            posixErrno = nil
-        }
-
-        let underlying = posixErrno.map { posixErrno -> NSError in
-            var userInfo = [NSObject : AnyObject]()
-            if let errorString = String.fromCString(strerror(posixErrno)) {
-                userInfo[NSLocalizedDescriptionKey] = errorString
-            }
-            return NSError(domain: NSPOSIXErrorDomain, code: numericCast(posixErrno), userInfo: userInfo)
-        }
-
-        return error(code: self, underlying: underlying)
+        return self as NSError
     }
 }
 

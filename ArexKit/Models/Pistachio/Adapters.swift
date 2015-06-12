@@ -6,34 +6,13 @@ import ReactiveCocoa
 import Result
 import ValueTransformer
 
-public enum ScheduleAdapterError: Swift.ErrorType, ErrorRepresentable, ReactiveCocoa.ErrorType {
-    public static let domain = "ScheduleAdapterError"
+public enum ScheduleAdapterError: Swift.ErrorType {
+    case InvalidInput(String)
+}
 
-    case InvalidInput(description: String)
-
-    public var code: Int {
-        switch self {
-        case .InvalidInput:
-            return 1
-        }
-    }
-
-    public var description: String {
-        switch self {
-        case .InvalidInput:
-            return NSLocalizedString("Unable to reverse transform value.", comment: "")
-        }
-    }
-
-    public var failureReason: String? {
-        switch self {
-        case let .InvalidInput(description: description):
-            return description
-        }
-    }
-
+extension ScheduleAdapterError: ReactiveCocoa.ErrorType {
     public var nsError: NSError {
-        return error(code: self)
+        return self as NSError
     }
 }
 
@@ -84,11 +63,11 @@ private extension ScheduleType {
 public struct ScheduleAdapter: AdapterType {
     public init() {}
 
-    private func error(string: String) -> NSError {
-        return ScheduleAdapterError.InvalidInput(description: string).nsError
+    private func error(string: String) -> Swift.ErrorType {
+        return ScheduleAdapterError.InvalidInput(string)
     }
 
-    public func transform(model: Schedule) -> Result<MessagePackValue, NSError> {
+    public func transform(model: Schedule) -> Result<MessagePackValue, Swift.ErrorType> {
         var encoded: [MessagePackValue : MessagePackValue] = [
             "type": .String(model.scheduleType.typeString),
         ]
@@ -110,7 +89,7 @@ public struct ScheduleAdapter: AdapterType {
         return .success(.Map(encoded))
     }
 
-    public func reverseTransform(data: MessagePackValue) -> Result<Schedule, NSError> {
+    public func reverseTransform(data: MessagePackValue) -> Result<Schedule, Swift.ErrorType> {
         if let dictionary = data.dictionaryValue,
             typeString = dictionary["type"]?.stringValue,
             scheduleType = ScheduleType(typeString: typeString) {

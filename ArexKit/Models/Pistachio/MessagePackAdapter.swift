@@ -3,8 +3,8 @@ import Pistachio
 import Result
 import ValueTransformer
 
-private let dictionaryTransformer: ReversibleValueTransformer<[String : MessagePackValue], MessagePackValue, NSError> = {
-    let transformClosure: [String : MessagePackValue] -> Result<MessagePackValue, NSError> = { dictionary in
+private let dictionaryTransformer: ReversibleValueTransformer<[String : MessagePackValue], MessagePackValue, ErrorType> = {
+    let transformClosure: [String : MessagePackValue] -> Result<MessagePackValue, ErrorType> = { dictionary in
         var messagePackDict = [MessagePackValue : MessagePackValue]()
         for (key, value) in dictionary {
             messagePackDict[.String(key)] = value
@@ -13,14 +13,14 @@ private let dictionaryTransformer: ReversibleValueTransformer<[String : MessageP
         return MessagePackValueTransformers.map.transform(messagePackDict)
     }
 
-    let reverseTransformClosure: MessagePackValue -> Result<[String : MessagePackValue], NSError> = { value in
+    let reverseTransformClosure: MessagePackValue -> Result<[String : MessagePackValue], ErrorType> = { value in
         return MessagePackValueTransformers.map.reverseTransform(value).flatMap { dictionary in
             var stringDict = [String : MessagePackValue]()
             for (key, value) in dictionary {
                 if let string = key.stringValue {
                     stringDict[string] = value
                 } else {
-                    return .failure(Result<[String : MessagePackValue], NSError>.error())
+                    return .failure(MessagePackValueTransformersError.ExpectedStringKey)
                 }
             }
 
@@ -32,10 +32,10 @@ private let dictionaryTransformer: ReversibleValueTransformer<[String : MessageP
 }()
 
 public struct MessagePackAdapter<Value>: AdapterType {
-    private typealias Adapter = DictionaryAdapter<String, Value, MessagePackValue, NSError>
+    private typealias Adapter = DictionaryAdapter<String, Value, MessagePackValue, ErrorType>
     private let adapter: Adapter
 
-    public init(specification: Adapter.Specification, valueClosure: MessagePackValue -> Result<Value, NSError>) {
+    public init(specification: Adapter.Specification, valueClosure: MessagePackValue -> Result<Value, ErrorType>) {
         adapter = DictionaryAdapter(specification: specification, dictionaryTransformer: dictionaryTransformer, valueClosure: valueClosure)
     }
 
@@ -45,11 +45,11 @@ public struct MessagePackAdapter<Value>: AdapterType {
         })
     }
 
-    public func transform(value: Value) -> Result<MessagePackValue, NSError> {
+    public func transform(value: Value) -> Result<MessagePackValue, ErrorType> {
         return adapter.transform(value)
     }
 
-    public func reverseTransform(transformedValue: MessagePackValue) -> Result<Value, NSError> {
+    public func reverseTransform(transformedValue: MessagePackValue) -> Result<Value, ErrorType> {
         return adapter.reverseTransform(transformedValue)
     }
 }

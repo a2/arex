@@ -5,37 +5,13 @@ import Pistachio
 import Result
 import ReactiveCocoa
 
-public enum MedicationsControllerError: ErrorRepresentable, ReactiveCocoa.ErrorType {
-    public static let domain = "MedicationsControllerError"
+public enum MedicationsControllerError: Swift.ErrorType {
+    case CannotSave(name: String, underlying: Swift.ErrorType?)
+}
 
-    case CannotSave(name: String, underlying: NSError?)
-
-    public var code: Int {
-        switch self {
-        case .CannotSave:
-            return 1
-        }
-    }
-
-    public var description: String {
-        switch self {
-        case .CannotSave(name: let name, underlying: _):
-            return String(format: NSLocalizedString("Could not save medication “%@”. ", comment: ""), arguments: [name])
-        }
-    }
-
-    public var failureReason: String? {
-        switch self {
-        case .CannotSave(name: _, underlying: let underlying):
-            return underlying?.localizedFailureReason ?? underlying?.localizedDescription
-        }
-    }
-
+extension MedicationsControllerError: ReactiveCocoa.ErrorType {
     public var nsError: NSError {
-        switch self {
-        case .CannotSave(name: _, underlying: let underlying):
-            return error(code: self, underlying: underlying)
-        }
+        return self as NSError
     }
 }
 

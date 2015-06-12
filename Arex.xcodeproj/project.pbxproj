@@ -24,7 +24,6 @@
 		833FAD141AFE918F0021873B /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC61AFE8FFF0021873B /* ReactiveCocoa.framework */; };
 		833FAD151AFE918F0021873B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC71AFE8FFF0021873B /* Result.framework */; };
 		833FAD161AFE918F0021873B /* ValueTransformer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC81AFE8FFF0021873B /* ValueTransformer.framework */; };
-		833FAD211AFE91D30021873B /* CompactSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD181AFE91D30021873B /* CompactSpec.swift */; };
 		833FAD221AFE91D30021873B /* CSSColorsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD191AFE91D30021873B /* CSSColorsSpec.swift */; };
 		833FAD231AFE91D30021873B /* DirectoryMonitorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD1A1AFE91D30021873B /* DirectoryMonitorSpec.swift */; };
 		833FAD251AFE91D30021873B /* HelpersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD1C1AFE91D30021873B /* HelpersSpec.swift */; };
@@ -40,7 +39,6 @@
 		833FAD501AFE91EF0021873B /* IndexPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD331AFE91EF0021873B /* IndexPath.swift */; };
 		833FAD511AFE91EF0021873B /* PistachioAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD341AFE91EF0021873B /* PistachioAdditions.swift */; };
 		833FAD521AFE91EF0021873B /* ReactiveCocoaAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD351AFE91EF0021873B /* ReactiveCocoaAdditions.swift */; };
-		833FAD541AFE91EF0021873B /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD381AFE91EF0021873B /* Error.swift */; };
 		833FAD551AFE91EF0021873B /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD3A1AFE91EF0021873B /* Medication.swift */; };
 		833FAD561AFE91EF0021873B /* Adapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD3C1AFE91EF0021873B /* Adapters.swift */; };
 		833FAD571AFE91EF0021873B /* DateTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD3D1AFE91EF0021873B /* DateTransformers.swift */; };
@@ -136,7 +134,6 @@
 		833FACD51AFE90BD0021873B /* ArexKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ArexKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		833FACDF1AFE90BD0021873B /* ArexKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArexKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		833FACE51AFE90BD0021873B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		833FAD181AFE91D30021873B /* CompactSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompactSpec.swift; sourceTree = "<group>"; };
 		833FAD191AFE91D30021873B /* CSSColorsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSColorsSpec.swift; sourceTree = "<group>"; };
 		833FAD1A1AFE91D30021873B /* DirectoryMonitorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryMonitorSpec.swift; sourceTree = "<group>"; };
 		833FAD1C1AFE91D30021873B /* HelpersSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpersSpec.swift; sourceTree = "<group>"; };
@@ -152,7 +149,6 @@
 		833FAD331AFE91EF0021873B /* IndexPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexPath.swift; sourceTree = "<group>"; };
 		833FAD341AFE91EF0021873B /* PistachioAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PistachioAdditions.swift; sourceTree = "<group>"; };
 		833FAD351AFE91EF0021873B /* ReactiveCocoaAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveCocoaAdditions.swift; sourceTree = "<group>"; };
-		833FAD381AFE91EF0021873B /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		833FAD3A1AFE91EF0021873B /* Medication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
 		833FAD3C1AFE91EF0021873B /* Adapters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adapters.swift; sourceTree = "<group>"; };
 		833FAD3D1AFE91EF0021873B /* DateTransformers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTransformers.swift; sourceTree = "<group>"; };
@@ -270,7 +266,6 @@
 			children = (
 				833FAD2A1AFE91EF0021873B /* Controllers */,
 				833FAD2C1AFE91EF0021873B /* Functions */,
-				833FAD361AFE91EF0021873B /* Helpers */,
 				833FAD391AFE91EF0021873B /* Models */,
 				833FAD421AFE91EF0021873B /* Supporting Files */,
 				833FAD451AFE91EF0021873B /* View Models */,
@@ -281,7 +276,6 @@
 		833FACE31AFE90BD0021873B /* ArexKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				833FAD181AFE91D30021873B /* CompactSpec.swift */,
 				833FAD191AFE91D30021873B /* CSSColorsSpec.swift */,
 				833FAD1A1AFE91D30021873B /* DirectoryMonitorSpec.swift */,
 				833FAD1C1AFE91D30021873B /* HelpersSpec.swift */,
@@ -323,14 +317,6 @@
 				833FAD351AFE91EF0021873B /* ReactiveCocoaAdditions.swift */,
 			);
 			path = Functions;
-			sourceTree = "<group>";
-		};
-		833FAD361AFE91EF0021873B /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				833FAD381AFE91EF0021873B /* Error.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		833FAD391AFE91EF0021873B /* Models */ = {
@@ -740,7 +726,6 @@
 				833FAD551AFE91EF0021873B /* Medication.swift in Sources */,
 				83D2D4E91B2B40C000A15CA6 /* DictionaryAddition.swift in Sources */,
 				833FAD511AFE91EF0021873B /* PistachioAdditions.swift in Sources */,
-				833FAD541AFE91EF0021873B /* Error.swift in Sources */,
 				833FAD4F1AFE91EF0021873B /* Helpers.swift in Sources */,
 				833FAD561AFE91EF0021873B /* Adapters.swift in Sources */,
 				833FAD4D1AFE91EF0021873B /* FilterByExtension.swift in Sources */,
@@ -763,7 +748,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				833FAD211AFE91D30021873B /* CompactSpec.swift in Sources */,
 				833FAD251AFE91D30021873B /* HelpersSpec.swift in Sources */,
 				833FAD281AFE91D30021873B /* ScheduleAdapterSpec.swift in Sources */,
 				833FAD231AFE91D30021873B /* DirectoryMonitorSpec.swift in Sources */,
@@ -911,7 +895,6 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ArexKitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "us.pandamonia.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -928,7 +911,6 @@
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = ArexKitTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "us.pandamonia.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -950,7 +932,6 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = ArexTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "us.pandamonia.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -968,7 +949,6 @@
 				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = ArexTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "us.pandamonia.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
