@@ -6,7 +6,7 @@ import ReactiveCocoa
 import Result
 import ValueTransformer
 
-public enum ScheduleAdapterError: ErrorRepresentable, ErrorType {
+public enum ScheduleAdapterError: Swift.ErrorType, ErrorRepresentable, ReactiveCocoa.ErrorType {
     public static let domain = "ScheduleAdapterError"
 
     case InvalidInput(description: String)
@@ -83,19 +83,22 @@ public struct ScheduleAdapter: AdapterType {
                     let startDate = NSDate(timeIntervalSince1970: startDateInterval)
                     return .success(.EveryXDays(interval: numericCast(interval), startDate: startDate))
                 } else {
-                    return .failure(error("Expected \"interval\" (Int) and \"startDate\" (Double) in data for Schedule.EveryXDays, got: \(dictionary.keys.map(toString))"))
+                    let stringKeys = dictionary.keys.map { String($0) }
+                    return .failure(error("Expected \"interval\" (Int) and \"startDate\" (Double) in data for Schedule.EveryXDays, got: \(stringKeys)"))
                 }
             case "weekly":
                 if let days = dictionary["days"]?.integerValue {
                     return .success(.Weekly(days: numericCast(days)))
                 } else {
-                    return .failure(error("Expected \"days\" (Int) in data for Schedule.Weekly, got: \(dictionary.keys.map(toString))"))
+                    let stringKeys = dictionary.keys.map { String($0) }
+                    return .failure(error("Expected \"days\" (Int) in data for Schedule.Weekly, got: \(stringKeys)"))
                 }
             case "monthly":
                 if let days = dictionary["days"]?.integerValue {
                     return .success(.Monthly(days: numericCast(days)))
                 } else {
-                    return .failure(error("Expected \"days\" (Int) in data for Schedule.Monthly, got: \(dictionary.keys.map(toString))"))
+                    let stringKeys = dictionary.keys.map { String($0) }
+                    return .failure(error("Expected \"days\" (Int) in data for Schedule.Monthly, got: \(stringKeys)"))
                 }
             case "notCurrentlyTaken":
                 return .success(.NotCurrentlyTaken)

@@ -11,37 +11,31 @@
 		830C80FE1ABB9D8700AE7E12 /* MedicationsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */; };
 		83335B531B01350A00C41DE2 /* FXForms.h in Headers */ = {isa = PBXBuildFile; fileRef = 83335B511B01350A00C41DE2 /* FXForms.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		83335B541B01350A00C41DE2 /* FXForms.m in Sources */ = {isa = PBXBuildFile; fileRef = 83335B521B01350A00C41DE2 /* FXForms.m */; };
+		8334F1D31B2A3E1C00BDE13D /* ScheduleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8334F1D21B2A3E1C00BDE13D /* ScheduleType.swift */; };
 		833FACCE1AFE90470021873B /* SAMTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 833FACCD1AFE90470021873B /* SAMTextView.m */; };
 		833FACE01AFE90BD0021873B /* ArexKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACD51AFE90BD0021873B /* ArexKit.framework */; };
 		833FAD001AFE91090021873B /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC51AFE8FFF0021873B /* Quick.framework */; };
 		833FAD011AFE910B0021873B /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC31AFE8FFF0021873B /* Nimble.framework */; };
 		833FAD091AFE91670021873B /* ArexKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACD51AFE90BD0021873B /* ArexKit.framework */; };
 		833FAD0A1AFE91670021873B /* ArexKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACD51AFE90BD0021873B /* ArexKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		833FAD0E1AFE918F0021873B /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACBD1AFE8FFF0021873B /* Box.framework */; };
-		833FAD0F1AFE918F0021873B /* Gulliver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACBF1AFE8FFF0021873B /* Gulliver.framework */; };
-		833FAD101AFE918F0021873B /* Lustre.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC01AFE8FFF0021873B /* Lustre.framework */; };
 		833FAD111AFE918F0021873B /* MessagePack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC11AFE8FFF0021873B /* MessagePack.framework */; };
 		833FAD121AFE918F0021873B /* Monocle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC21AFE8FFF0021873B /* Monocle.framework */; };
 		833FAD131AFE918F0021873B /* Pistachio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC41AFE8FFF0021873B /* Pistachio.framework */; };
 		833FAD141AFE918F0021873B /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC61AFE8FFF0021873B /* ReactiveCocoa.framework */; };
 		833FAD151AFE918F0021873B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC71AFE8FFF0021873B /* Result.framework */; };
 		833FAD161AFE918F0021873B /* ValueTransformer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC81AFE8FFF0021873B /* ValueTransformer.framework */; };
-		833FAD171AFE919F0021873B /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACBE1AFE8FFF0021873B /* Cartography.framework */; };
 		833FAD211AFE91D30021873B /* CompactSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD181AFE91D30021873B /* CompactSpec.swift */; };
 		833FAD221AFE91D30021873B /* CSSColorsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD191AFE91D30021873B /* CSSColorsSpec.swift */; };
 		833FAD231AFE91D30021873B /* DirectoryMonitorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD1A1AFE91D30021873B /* DirectoryMonitorSpec.swift */; };
-		833FAD241AFE91D30021873B /* FlushSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD1B1AFE91D30021873B /* FlushSpec.swift */; };
 		833FAD251AFE91D30021873B /* HelpersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD1C1AFE91D30021873B /* HelpersSpec.swift */; };
 		833FAD261AFE91D30021873B /* IndexPathSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD1D1AFE91D30021873B /* IndexPathSpec.swift */; };
 		833FAD271AFE91D30021873B /* ReactiveCocoaAdditionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD1E1AFE91D30021873B /* ReactiveCocoaAdditionsSpec.swift */; };
 		833FAD281AFE91D30021873B /* ScheduleAdapterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD1F1AFE91D30021873B /* ScheduleAdapterSpec.swift */; };
 		833FAD291AFE91D30021873B /* TimeAdapterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD201AFE91D30021873B /* TimeAdapterSpec.swift */; };
 		833FAD491AFE91EF0021873B /* MedicationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD2B1AFE91EF0021873B /* MedicationsController.swift */; };
-		833FAD4A1AFE91EF0021873B /* Compact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD2D1AFE91EF0021873B /* Compact.swift */; };
 		833FAD4B1AFE91EF0021873B /* CSSColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD2E1AFE91EF0021873B /* CSSColors.swift */; };
 		833FAD4C1AFE91EF0021873B /* DirectoryMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD2F1AFE91EF0021873B /* DirectoryMonitor.swift */; };
 		833FAD4D1AFE91EF0021873B /* FilterByExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD301AFE91EF0021873B /* FilterByExtension.swift */; };
-		833FAD4E1AFE91EF0021873B /* Flush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD311AFE91EF0021873B /* Flush.swift */; };
 		833FAD4F1AFE91EF0021873B /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD321AFE91EF0021873B /* Helpers.swift */; };
 		833FAD501AFE91EF0021873B /* IndexPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD331AFE91EF0021873B /* IndexPath.swift */; };
 		833FAD511AFE91EF0021873B /* PistachioAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD341AFE91EF0021873B /* PistachioAdditions.swift */; };
@@ -61,10 +55,6 @@
 		833FAD601AFE91EF0021873B /* MedicationsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD481AFE91EF0021873B /* MedicationsListViewModel.swift */; };
 		833FAD6A1AFE934B0021873B /* ArexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD691AFE934B0021873B /* ArexTests.swift */; };
 		833FAD711AFE9EA70021873B /* MessagePackAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD701AFE9EA70021873B /* MessagePackAdapter.swift */; };
-		835A58AA1AFEA3D600062D09 /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACBD1AFE8FFF0021873B /* Box.framework */; };
-		835A58AB1AFEA3D600062D09 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACBE1AFE8FFF0021873B /* Cartography.framework */; };
-		835A58AC1AFEA3D600062D09 /* Gulliver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACBF1AFE8FFF0021873B /* Gulliver.framework */; };
-		835A58AD1AFEA3D600062D09 /* Lustre.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC01AFE8FFF0021873B /* Lustre.framework */; };
 		835A58AE1AFEA3D600062D09 /* MessagePack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC11AFE8FFF0021873B /* MessagePack.framework */; };
 		835A58AF1AFEA3D600062D09 /* Monocle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC21AFE8FFF0021873B /* Monocle.framework */; };
 		835A58B01AFEA3D600062D09 /* Pistachio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC41AFE8FFF0021873B /* Pistachio.framework */; };
@@ -131,10 +121,7 @@
 		830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationsListCell.swift; sourceTree = "<group>"; };
 		83335B511B01350A00C41DE2 /* FXForms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXForms.h; sourceTree = "<group>"; };
 		83335B521B01350A00C41DE2 /* FXForms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXForms.m; sourceTree = "<group>"; };
-		833FACBD1AFE8FFF0021873B /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = Carthage/Build/iOS/Box.framework; sourceTree = "<group>"; };
-		833FACBE1AFE8FFF0021873B /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
-		833FACBF1AFE8FFF0021873B /* Gulliver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gulliver.framework; path = Carthage/Build/iOS/Gulliver.framework; sourceTree = "<group>"; };
-		833FACC01AFE8FFF0021873B /* Lustre.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lustre.framework; path = Carthage/Build/iOS/Lustre.framework; sourceTree = "<group>"; };
+		8334F1D21B2A3E1C00BDE13D /* ScheduleType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleType.swift; sourceTree = "<group>"; };
 		833FACC11AFE8FFF0021873B /* MessagePack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessagePack.framework; path = Carthage/Build/iOS/MessagePack.framework; sourceTree = "<group>"; };
 		833FACC21AFE8FFF0021873B /* Monocle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Monocle.framework; path = Carthage/Build/iOS/Monocle.framework; sourceTree = "<group>"; };
 		833FACC31AFE8FFF0021873B /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
@@ -152,18 +139,15 @@
 		833FAD181AFE91D30021873B /* CompactSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompactSpec.swift; sourceTree = "<group>"; };
 		833FAD191AFE91D30021873B /* CSSColorsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSColorsSpec.swift; sourceTree = "<group>"; };
 		833FAD1A1AFE91D30021873B /* DirectoryMonitorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryMonitorSpec.swift; sourceTree = "<group>"; };
-		833FAD1B1AFE91D30021873B /* FlushSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlushSpec.swift; sourceTree = "<group>"; };
 		833FAD1C1AFE91D30021873B /* HelpersSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpersSpec.swift; sourceTree = "<group>"; };
 		833FAD1D1AFE91D30021873B /* IndexPathSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexPathSpec.swift; sourceTree = "<group>"; };
 		833FAD1E1AFE91D30021873B /* ReactiveCocoaAdditionsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveCocoaAdditionsSpec.swift; sourceTree = "<group>"; };
 		833FAD1F1AFE91D30021873B /* ScheduleAdapterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleAdapterSpec.swift; sourceTree = "<group>"; };
 		833FAD201AFE91D30021873B /* TimeAdapterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeAdapterSpec.swift; sourceTree = "<group>"; };
 		833FAD2B1AFE91EF0021873B /* MedicationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationsController.swift; sourceTree = "<group>"; };
-		833FAD2D1AFE91EF0021873B /* Compact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compact.swift; sourceTree = "<group>"; };
 		833FAD2E1AFE91EF0021873B /* CSSColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSColors.swift; sourceTree = "<group>"; };
 		833FAD2F1AFE91EF0021873B /* DirectoryMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryMonitor.swift; sourceTree = "<group>"; };
 		833FAD301AFE91EF0021873B /* FilterByExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterByExtension.swift; sourceTree = "<group>"; };
-		833FAD311AFE91EF0021873B /* Flush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flush.swift; sourceTree = "<group>"; };
 		833FAD321AFE91EF0021873B /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		833FAD331AFE91EF0021873B /* IndexPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexPath.swift; sourceTree = "<group>"; };
 		833FAD341AFE91EF0021873B /* PistachioAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PistachioAdditions.swift; sourceTree = "<group>"; };
@@ -210,9 +194,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				833FAD0E1AFE918F0021873B /* Box.framework in Frameworks */,
-				833FAD0F1AFE918F0021873B /* Gulliver.framework in Frameworks */,
-				833FAD101AFE918F0021873B /* Lustre.framework in Frameworks */,
 				833FAD111AFE918F0021873B /* MessagePack.framework in Frameworks */,
 				833FAD121AFE918F0021873B /* Monocle.framework in Frameworks */,
 				833FAD131AFE918F0021873B /* Pistachio.framework in Frameworks */,
@@ -227,10 +208,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				833FACE01AFE90BD0021873B /* ArexKit.framework in Frameworks */,
-				835A58AA1AFEA3D600062D09 /* Box.framework in Frameworks */,
-				835A58AB1AFEA3D600062D09 /* Cartography.framework in Frameworks */,
-				835A58AC1AFEA3D600062D09 /* Gulliver.framework in Frameworks */,
-				835A58AD1AFEA3D600062D09 /* Lustre.framework in Frameworks */,
 				835A58AE1AFEA3D600062D09 /* MessagePack.framework in Frameworks */,
 				835A58AF1AFEA3D600062D09 /* Monocle.framework in Frameworks */,
 				833FAD011AFE910B0021873B /* Nimble.framework in Frameworks */,
@@ -254,7 +231,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				833FAD091AFE91670021873B /* ArexKit.framework in Frameworks */,
-				833FAD171AFE919F0021873B /* Cartography.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +284,6 @@
 				833FAD181AFE91D30021873B /* CompactSpec.swift */,
 				833FAD191AFE91D30021873B /* CSSColorsSpec.swift */,
 				833FAD1A1AFE91D30021873B /* DirectoryMonitorSpec.swift */,
-				833FAD1B1AFE91D30021873B /* FlushSpec.swift */,
 				833FAD1C1AFE91D30021873B /* HelpersSpec.swift */,
 				833FAD1D1AFE91D30021873B /* IndexPathSpec.swift */,
 				833FAD1E1AFE91D30021873B /* ReactiveCocoaAdditionsSpec.swift */,
@@ -338,11 +313,9 @@
 		833FAD2C1AFE91EF0021873B /* Functions */ = {
 			isa = PBXGroup;
 			children = (
-				833FAD2D1AFE91EF0021873B /* Compact.swift */,
 				833FAD2E1AFE91EF0021873B /* CSSColors.swift */,
 				833FAD2F1AFE91EF0021873B /* DirectoryMonitor.swift */,
 				833FAD301AFE91EF0021873B /* FilterByExtension.swift */,
-				833FAD311AFE91EF0021873B /* Flush.swift */,
 				833FAD321AFE91EF0021873B /* Helpers.swift */,
 				833FAD331AFE91EF0021873B /* IndexPath.swift */,
 				833FAD341AFE91EF0021873B /* PistachioAdditions.swift */,
@@ -363,9 +336,10 @@
 		833FAD391AFE91EF0021873B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				833FAD3A1AFE91EF0021873B /* Medication.swift */,
 				833FAD3B1AFE91EF0021873B /* Pistachio */,
+				833FAD3A1AFE91EF0021873B /* Medication.swift */,
 				833FAD401AFE91EF0021873B /* Schedule.swift */,
+				8334F1D21B2A3E1C00BDE13D /* ScheduleType.swift */,
 				833FAD411AFE91EF0021873B /* Time.swift */,
 			);
 			path = Models;
@@ -423,10 +397,6 @@
 		83804A401A8EA3FD004D92DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				833FACBD1AFE8FFF0021873B /* Box.framework */,
-				833FACBE1AFE8FFF0021873B /* Cartography.framework */,
-				833FACBF1AFE8FFF0021873B /* Gulliver.framework */,
-				833FACC01AFE8FFF0021873B /* Lustre.framework */,
 				833FACC11AFE8FFF0021873B /* MessagePack.framework */,
 				833FACC21AFE8FFF0021873B /* Monocle.framework */,
 				833FACC31AFE8FFF0021873B /* Nimble.framework */,
@@ -636,7 +606,8 @@
 		8390C4251A8975490010D616 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Pandamonia LLC";
 				TargetAttributes = {
 					833FACD41AFE90BD0021873B = {
@@ -718,10 +689,6 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Box.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Gulliver.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Lustre.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/MessagePack.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Monocle.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Pistachio.framework",
@@ -742,9 +709,6 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Box.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Gulliver.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Lustre.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/MessagePack.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Monocle.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
@@ -783,14 +747,13 @@
 				833FAD601AFE91EF0021873B /* MedicationsListViewModel.swift in Sources */,
 				833FAD571AFE91EF0021873B /* DateTransformers.swift in Sources */,
 				835A89C31B0197A200C7847C /* MedicationDetailForm.swift in Sources */,
-				833FAD4E1AFE91EF0021873B /* Flush.swift in Sources */,
 				833FAD581AFE91EF0021873B /* ImageTransformers.swift in Sources */,
 				833FAD5A1AFE91EF0021873B /* Schedule.swift in Sources */,
 				833FAD591AFE91EF0021873B /* MessagePackValueTransformers.swift in Sources */,
 				833FAD4B1AFE91EF0021873B /* CSSColors.swift in Sources */,
 				833FAD5F1AFE91EF0021873B /* MedicationListCellViewModel.swift in Sources */,
 				833FAD4C1AFE91EF0021873B /* DirectoryMonitor.swift in Sources */,
-				833FAD4A1AFE91EF0021873B /* Compact.swift in Sources */,
+				8334F1D31B2A3E1C00BDE13D /* ScheduleType.swift in Sources */,
 				833FAD711AFE9EA70021873B /* MessagePackAdapter.swift in Sources */,
 				833FAD501AFE91EF0021873B /* IndexPath.swift in Sources */,
 			);
@@ -806,7 +769,6 @@
 				833FAD231AFE91D30021873B /* DirectoryMonitorSpec.swift in Sources */,
 				833FAD271AFE91D30021873B /* ReactiveCocoaAdditionsSpec.swift in Sources */,
 				833FAD291AFE91D30021873B /* TimeAdapterSpec.swift in Sources */,
-				833FAD241AFE91D30021873B /* FlushSpec.swift in Sources */,
 				833FAD221AFE91D30021873B /* CSSColorsSpec.swift in Sources */,
 				833FAD261AFE91D30021873B /* IndexPathSpec.swift in Sources */,
 			);
@@ -902,6 +864,7 @@
 				INFOPLIST_FILE = "ArexKit/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "us.pandamonia.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -925,6 +888,7 @@
 				INFOPLIST_FILE = "ArexKit/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "us.pandamonia.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -949,6 +913,7 @@
 				INFOPLIST_FILE = ArexKitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "us.pandamonia.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -965,6 +930,7 @@
 				INFOPLIST_FILE = ArexKitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "us.pandamonia.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -986,6 +952,7 @@
 				INFOPLIST_FILE = ArexTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "us.pandamonia.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arex.app/Arex";
 			};
@@ -1003,6 +970,7 @@
 				INFOPLIST_FILE = ArexTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "us.pandamonia.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arex.app/Arex";
 			};
@@ -1029,6 +997,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1043,7 +1012,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1081,7 +1050,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1100,6 +1069,7 @@
 				);
 				INFOPLIST_FILE = "Arex/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "us.pandamonia.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Arex/Supporting Files/Arex-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1117,6 +1087,7 @@
 				);
 				INFOPLIST_FILE = "Arex/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "us.pandamonia.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Arex/Supporting Files/Arex-Bridging-Header.h";
 			};

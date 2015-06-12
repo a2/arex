@@ -31,7 +31,7 @@ public class MedicationsListViewModel {
         // We snatch the Medication values from the signal and map to void.
         // This prevents leaking the Medication instances.
         self.medicationsDisposable.innerDisposable = self.medicationsController.medications()
-            |> catch(catchAll)
+            |> flatMapError(catchAll)
             |> on(next: { [unowned self] in self.medications = $0 })
             |> map(void)
             |> start(observer)

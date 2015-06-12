@@ -1,6 +1,16 @@
 import Monocle
 import Pistachio
 
+private func makeDateFormatter() -> NSDateFormatter {
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateStyle = .NoStyle
+    dateFormatter.formattingContext = .Standalone
+    dateFormatter.locale = NSLocale.currentLocale()
+    dateFormatter.timeStyle = .ShortStyle
+    dateFormatter.timeZone = NSTimeZone(name: "UTC")
+    return dateFormatter
+}
+
 public class MedicationDetailForm: NSObject, FXForm {
     private class ValueTransformer: NSValueTransformer {
         let dateFormatter: NSDateFormatter
@@ -34,18 +44,7 @@ public class MedicationDetailForm: NSObject, FXForm {
         }
     }
 
-    private class func makeDateFormatter() -> NSDateFormatter {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = .NoStyle
-        dateFormatter.formattingContext = .Standalone
-        dateFormatter.locale = NSLocale.currentLocale()
-        dateFormatter.timeStyle = .ShortStyle
-        dateFormatter.timeZone = NSTimeZone(name: "UTC")
-        return dateFormatter
-    }
-    
     public init(medication: Medication) {
-        self.dateFormatter = MedicationDetailForm.makeDateFormatter()
         self.valueTransformer = ValueTransformer(dateFormatter: dateFormatter)
 
         super.init()
@@ -53,36 +52,36 @@ public class MedicationDetailForm: NSObject, FXForm {
         self.medication = medication
     }
 
-    private let dateFormatter: NSDateFormatter
+    private let dateFormatter: NSDateFormatter = makeDateFormatter()
     private let valueTransformer: ValueTransformer
+
+    private func makeSchedule() -> Schedule {
+        let enumValue = ScheduleType(rawValue: scheduleType) ?? undefined("Unexpected rawValue \(self.scheduleType) for ScheduleType")
+        switch enumValue {
+        case .Daily:
+            return .Daily
+        case .EveryXDays:
+            return .EveryXDays(interval: daysBetweenDoses, startDate: self.startDate)
+        case .Weekly:
+            return .Weekly(days: weeklyDays)
+        case .Monthly:
+            return .Monthly(days: monthlyDays)
+        case .NotCurrentlyTaken:
+            return .NotCurrentlyTaken
+        }
+    }
+
+    private func makeTimes() -> [Time] {
+        let calendar = dateFormatter.calendar
+        let dates = times as! [NSDate]
+        return dates.map { time in
+            let components = calendar.components([.Hour, .Minute], fromDate: time)
+            return Time(dateComponents: components)
+        }
+    }
 
     public var medication: Medication {
         get {
-            func makeSchedule() -> Schedule {
-                let scheduleTypeEnum = ScheduleType(rawValue: scheduleType) ?? undefined("Unexpected rawValue \(scheduleType) for ScheduleType")
-                switch scheduleTypeEnum {
-                case .Daily:
-                    return .Daily
-                case .EveryXDays:
-                    return .EveryXDays(interval: daysBetweenDoses, startDate: startDate)
-                case .Weekly:
-                    return .Weekly(days: weeklyDays)
-                case .Monthly:
-                    return .Monthly(days: monthlyDays)
-                case .NotCurrentlyTaken:
-                    return .NotCurrentlyTaken
-                }
-            }
-
-            func makeTimes() -> [Time] {
-                let calendar = dateFormatter.calendar
-                let dates = times as! [NSDate]
-                return dates.map { time in
-                    let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute, fromDate: time)
-                    return Time(dateComponents: components)
-                }
-            }
-
             return Medication(name: name, schedule: makeSchedule(), strength: strength, times: makeTimes(), uuid: uuid)
         }
         set {
@@ -167,7 +166,7 @@ public class MedicationDetailForm: NSObject, FXForm {
             FXFormFieldHeader: NSLocalizedString("Monthly", comment: "Medication schedule type; name"),
             FXFormFieldTitle: NSLocalizedString("Days Doses Are Taken", comment: "'Weekly'/'Monthly' schedule type; cell prompt"),
             FXFormFieldType: FXFormFieldTypeBitfield,
-            FXFormFieldOptions: Array(1...28).map(toString),
+            FXFormFieldOptions: localizedMonthlyDays,
         ]
     }
 
@@ -179,6 +178,17 @@ public class MedicationDetailForm: NSObject, FXForm {
             NSLocalizedString("Monthly", comment: "Medication schedule type; name"),
             NSLocalizedString("Not Currently Taken", comment: "Medication schedule type; name"),
         ]
+    }
+
+    public var localizedMonthlyDays: [String] {
+        let numberFormatter = NSNumberFormatter()
+        numberFormatter.formattingContext = .Standalone
+        numberFormatter.locale = NSLocale.currentLocale()
+        numberFormatter.numberStyle = .OrdinalStyle
+
+        return (1...28).map { (i: Int) -> String in
+            return numberFormatter.stringFromNumber(i) ?? undefined("Could not create ordinal string from number \(i)")
+        }
     }
 
     public var localizedTimeOptions: [String] {

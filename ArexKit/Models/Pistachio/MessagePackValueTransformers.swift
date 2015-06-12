@@ -121,7 +121,7 @@ public struct MessagePackValueTransformers {
         }
     })
 
-    public static let binary: ReversibleValueTransformer<NSData, MessagePackValue, NSError> = ReversibleValueTransformer(transformClosure: { value in
+    public static let binary: ReversibleValueTransformer<Data, MessagePackValue, NSError> = ReversibleValueTransformer(transformClosure: { value in
         return .success(.Binary(value))
     }, reverseTransformClosure: { value in
         if let value = value.dataValue {
@@ -151,9 +151,9 @@ public struct MessagePackValueTransformers {
         }
     })
 
-    public static func extended(type: Int8) -> ReversibleValueTransformer<NSData, MessagePackValue, NSError> {
+    public static func extended(type: Int8) -> ReversibleValueTransformer<Data, MessagePackValue, NSError> {
         return ReversibleValueTransformer(transformClosure: { value in
-            return .success(.Extended(type: type, data: value))
+            return .success(.Extended(type, value))
         }, reverseTransformClosure: { value in
             if let (decodedType, data) = value.extendedValue {
                 if decodedType == type {
@@ -216,11 +216,11 @@ public func messagePackString<A>(lens: Lens<A, String?>, defaultTransformedValue
     return map(lens, lift(MessagePackValueTransformers.string, defaultTransformedValue: defaultTransformedValue))
 }
 
-public func messagePackBinary<A>(lens: Lens<A, NSData>) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+public func messagePackBinary<A>(lens: Lens<A, Data>) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
     return map(lens, MessagePackValueTransformers.binary)
 }
 
-public func messagePackBinary<A>(lens: Lens<A, NSData?>, defaultTransformedValue: MessagePackValue = .Binary(NSData())) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+public func messagePackBinary<A>(lens: Lens<A, Data?>, defaultTransformedValue: MessagePackValue = .Binary([])) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
     return map(lens, lift(MessagePackValueTransformers.binary, defaultTransformedValue: defaultTransformedValue))
 }
 
@@ -248,13 +248,13 @@ public func messagePackMap<A, T: AdapterType where T.TransformedValueType == Mes
     }
 }
 
-public func messagePackExtended<A, T: AdapterType where T.TransformedValueType == NSData, T.ErrorType == NSError>(lens: Lens<A, T.ValueType>) -> (adapter: T, type: Int8) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+public func messagePackExtended<A, T: AdapterType where T.TransformedValueType == Data, T.ErrorType == NSError>(lens: Lens<A, T.ValueType>) -> (adapter: T, type: Int8) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
     return { adapter, type in
         return map(map(lens, adapter), MessagePackValueTransformers.extended(type))
     }
 }
 
-public func messagePackExtended<A, T: AdapterType where T.TransformedValueType == NSData, T.ErrorType == NSError>(lens: Lens<A, T.ValueType?>, defaultTransformedValue: NSData = NSData()) -> (adapter: T, type: Int8) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
+public func messagePackExtended<A, T: AdapterType where T.TransformedValueType == Data, T.ErrorType == NSError>(lens: Lens<A, T.ValueType?>, defaultTransformedValue: Data = Data()) -> (adapter: T, type: Int8) -> Lens<Result<A, NSError>, Result<MessagePackValue, NSError>> {
     return { adapter, type in
         return map(map(lens, lift(adapter, defaultTransformedValue: defaultTransformedValue)), MessagePackValueTransformers.extended(type))
     }

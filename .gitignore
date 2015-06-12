@@ -16,3 +16,11 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
+
+# CocoaPods
+#
+Pods/
+
+# Carthage
+#
+Carthage/Build/

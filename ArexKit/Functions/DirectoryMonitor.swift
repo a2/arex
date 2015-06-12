@@ -4,7 +4,7 @@ import ReactiveCocoa
 /// The queue on which the internal `dispatch_source_t` in `monitorDirectory()` invokes its event handler.
 private let queue = dispatch_queue_create("us.pandamonia.Arex.MonitorDirectory", DISPATCH_QUEUE_CONCURRENT)
 
-public enum MonitorDirectoryError: ErrorRepresentable, ErrorType {
+public enum MonitorDirectoryError: Swift.ErrorType, ErrorRepresentable, ReactiveCocoa.ErrorType {
     public static let domain = "MonitorDirectoryError"
 
     case CannotOpenDirectory(Int32)
@@ -53,13 +53,11 @@ public enum MonitorDirectoryError: ErrorRepresentable, ErrorType {
     }
 }
 
-/**
-    Monitors the specified directory for file system changes.
-
-    :param: directoryURL The file URL of the directory to monitor.
-
-    :returns: A `SignalProducer` that, when started, sends the directory URL whenever a change occurs.
-*/
+/// Monitors the specified directory for file system changes.
+///
+/// - parameter directoryURL: The file URL of the directory to monitor.
+///
+/// - returns: A `SignalProducer` that, when started, sends the directory URL whenever a change occurs.
 public func monitorDirectory(directoryURL: NSURL) -> SignalProducer<NSURL, MonitorDirectoryError> {
     return SignalProducer { (observer, disposable) in
         let fileDescriptor = open(directoryURL.fileSystemRepresentation, O_EVTONLY)

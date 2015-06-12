@@ -2,7 +2,7 @@ import Foundation
 import Monocle
 import Pistachio
 
-public struct Time: Comparable, Equatable, Hashable, Printable {
+public struct Time {
     var hour: Int
     var minute: Int
 
@@ -10,7 +10,41 @@ public struct Time: Comparable, Equatable, Hashable, Printable {
         self.hour = hour
         self.minute = minute
     }
+}
 
+// MARK: - CustomStringConvertible
+
+extension Time: CustomStringConvertible {
+    public var description: String {
+        let hourString: String = {
+            let prefix: String
+            if hour < 10 {
+                prefix = "0"
+            } else {
+                prefix = ""
+            }
+
+            return prefix + String(hour)
+        }()
+
+        let minuteString: String = {
+            let prefix: String
+            if minute < 10 {
+                prefix = "0"
+            } else {
+                prefix = ""
+            }
+
+            return prefix + String(minute)
+        }()
+
+        return "\(hourString):\(minuteString)"
+    }
+}
+
+// MARK: - Date Components
+
+extension Time {
     public init(dateComponents: NSDateComponents) {
         precondition(dateComponents.hour != Int(NSDateComponentUndefined), "dateComponents.hour must not be undefined")
         self.hour = dateComponents.hour
@@ -25,27 +59,27 @@ public struct Time: Comparable, Equatable, Hashable, Printable {
         dateComponents.minute = minute
         return dateComponents
     }
+}
 
+// MARK: - Hashable
+
+extension Time: Hashable {
     public var hashValue: Int {
         return hour.hashValue * 31 + minute.hashValue
     }
-
-    public var description: String {
-        let hourString = (hour < 10 ? "0" : "") + toString(hour)
-        let minuteString: String
-        if minute == 0 {
-            minuteString = "00"
-        } else {
-            minuteString = (minute < 10 ? "0" : "") + toString(minute)
-        }
-
-        return "\(hourString):\(minuteString)"
-    }
 }
+
+// MARK: - Equatable
+
+extension Time: Equatable {}
 
 public func ==(lhs: Time, rhs: Time) -> Bool {
     return lhs.hour == rhs.hour && lhs.minute == rhs.minute
 }
+
+// MARK: - Comparable
+
+extension Time: Comparable {}
 
 public func <(lhs: Time, rhs: Time) -> Bool {
     if lhs.hour < rhs.hour {

@@ -39,12 +39,12 @@ class MedicationsListViewController: UITableViewController {
 
         switch segue.identifier {
         case .Some(Constants.SegueIdentifiers.NewMedication):
-            configureDestinationViewController(segue.destinationViewController, viewModel.newDetailViewModel())
+            configureDestinationViewController(segue.destinationViewController, viewModel: viewModel.newDetailViewModel())
         case .Some(Constants.SegueIdentifiers.ShowMedication):
             let cell = sender as! UITableViewCell
             let indexPath = tableView.indexPathForCell(cell)!
             let detailViewModel = viewModel.detailViewModels[indexPath.row]
-            configureDestinationViewController(segue.destinationViewController, detailViewModel)
+            configureDestinationViewController(segue.destinationViewController, viewModel: detailViewModel)
         default:
             super.prepareForSegue(segue, sender: sender)
         }

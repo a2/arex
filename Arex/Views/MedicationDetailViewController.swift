@@ -23,7 +23,7 @@ class MedicationDetailViewController: FXFormViewController, MedicationDetailView
 
     // MARK: Bar Button Items
 
-    private enum BarButtonItem: Printable {
+    private enum BarButtonItem: CustomStringConvertible {
         case Edit
         case Save
         case Cancel
@@ -65,7 +65,7 @@ class MedicationDetailViewController: FXFormViewController, MedicationDetailView
 
         barButtonItemCocoaActions.insert(action)
 
-        var barButtonItem = UIBarButtonItem(barButtonSystemItem: type.systemItem, target: action, action: CocoaAction.selector)
+        let barButtonItem = UIBarButtonItem(barButtonSystemItem: type.systemItem, target: action, action: CocoaAction.selector)
         enabled.producer.start(next: { [weak barButtonItem] enabled in
             barButtonItem?.enabled = enabled
         })
@@ -84,9 +84,12 @@ class MedicationDetailViewController: FXFormViewController, MedicationDetailView
     // MARK: - Configuration
 
     private func configureNavigationItem() {
-        let property = map(viewModel.name) { name in
-            return flush(name, not(isEmpty))
-                ?? NSLocalizedString("New Medication", comment: "Medication detail view title if medication has empty name")
+        let property = map(viewModel.name) { (name: String?) -> String in
+            if let name = name where !name.isEmpty {
+                return name
+            } else {
+                return NSLocalizedString("New Medication", comment: "Medication detail view title if medication has empty name")
+            }
         }
 
         disposable += property.producer.start(next: { [unowned self] title in

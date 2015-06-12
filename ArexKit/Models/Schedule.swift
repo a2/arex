@@ -1,12 +1,14 @@
-import Foundation
-
-public enum Schedule: Equatable, Printable {
+public enum Schedule {
     case Daily
     case EveryXDays(interval: Int, startDate: NSDate)
     case Weekly(days: Int)
     case Monthly(days: Int)
     case NotCurrentlyTaken
+}
 
+// MARK: - CustomStringConvertible
+
+extension Schedule: CustomStringConvertible {
     public var description: String {
         switch self {
         case .Daily:
@@ -21,45 +23,11 @@ public enum Schedule: Equatable, Printable {
             return "NotCurrentlyTaken"
         }
     }
-
-    public var scheduleType: ScheduleType {
-        switch self {
-        case .Daily:
-            return .Daily
-        case .EveryXDays:
-            return .EveryXDays
-        case .Weekly:
-            return .Weekly
-        case .Monthly:
-            return .Monthly
-        case .NotCurrentlyTaken:
-            return .NotCurrentlyTaken
-        }
-    }
 }
 
-public enum ScheduleType: Int, Printable {
-    case Daily
-    case EveryXDays
-    case Weekly
-    case Monthly
-    case NotCurrentlyTaken
+// MARK: - Equatable
 
-    public var description: String {
-        switch self {
-        case .Daily:
-            return "Daily"
-        case .EveryXDays:
-            return "EveryXDays"
-        case .Weekly:
-            return "Weekly"
-        case .Monthly:
-            return "Monthly"
-        case .NotCurrentlyTaken:
-            return "NotCurrentlyTaken"
-        }
-    }
-}
+extension Schedule: Equatable {}
 
 public func ==(lhs: Schedule, rhs: Schedule) -> Bool {
     switch (lhs, rhs) {

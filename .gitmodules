@@ -9,7 +9,7 @@
 	url = https://github.com/a2/Gulliver.git
 [submodule "Carthage/Checkouts/Monocle"]
 	path = Carthage/Checkouts/Monocle
-	url = https://github.com/robb/Monocle.git
+	url = https://github.com/a2/Monocle.git
 [submodule "Carthage/Checkouts/Nimble"]
 	path = Carthage/Checkouts/Nimble
 	url = https://github.com/Quick/Nimble.git
@@ -21,7 +21,7 @@
 	url = https://github.com/Quick/Quick.git
 [submodule "Carthage/Checkouts/ValueTransformer"]
 	path = Carthage/Checkouts/ValueTransformer
-	url = https://github.com/felixjendrusch/ValueTransformer.git
+	url = https://github.com/a2/ValueTransformer.git
 [submodule "Carthage/Checkouts/ReactiveCocoa"]
 	path = Carthage/Checkouts/ReactiveCocoa
 	url = https://github.com/ReactiveCocoa/ReactiveCocoa.git
@@ -30,7 +30,7 @@
 	url = https://github.com/antitypical/Result.git
 [submodule "Carthage/Checkouts/Pistachio"]
 	path = Carthage/Checkouts/Pistachio
-	url = https://github.com/felixjendrusch/Pistachio.git
+	url = https://github.com/a2/Pistachio.git
 [submodule "Carthage/Checkouts/Lustre"]
 	path = Carthage/Checkouts/Lustre
 	url = https://github.com/zwaldowski/Lustre.git

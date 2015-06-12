@@ -3,7 +3,7 @@
 
 import Foundation
 
-public protocol ErrorRepresentable: Printable {
+public protocol ErrorRepresentable: CustomStringConvertible {
     typealias ErrorCode: SignedIntegerType
 
     static var domain: String { get }
@@ -11,7 +11,7 @@ public protocol ErrorRepresentable: Printable {
     var failureReason: String? { get }
 }
 
-public func error<T: ErrorRepresentable>(#code: T, underlying: NSError? = nil) -> NSError {
+public func error<T: ErrorRepresentable>(code code: T, underlying: NSError? = nil) -> NSError {
     var userInfo = [NSObject: AnyObject]()
     userInfo[NSLocalizedDescriptionKey] = code.description
     

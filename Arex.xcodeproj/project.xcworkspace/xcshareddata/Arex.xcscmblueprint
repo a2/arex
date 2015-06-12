@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E193A287964B37F87C94C7AD24F5757017C3E0F5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A56AE1C25D4462246D1F204B93EAA99F5B3B6D9B" : 0,
+    "E193A287964B37F87C94C7AD24F5757017C3E0F5" : 0,
+    "E6ED3CB6BB070917312B0E7D16CDDE6AC88A8357" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4D8CB301-4363-4FD0-9F2F-149BB4894E7A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A56AE1C25D4462246D1F204B93EAA99F5B3B6D9B" : "arex-7\/Libraries\/FXForms\/",
+    "E193A287964B37F87C94C7AD24F5757017C3E0F5" : "arex-7\/",
+    "E6ED3CB6BB070917312B0E7D16CDDE6AC88A8357" : "arex-7\/Libraries\/SAMTextView\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Arex",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 203,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Arex.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nicklockwood\/FXForms.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A56AE1C25D4462246D1F204B93EAA99F5B3B6D9B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/a2\/arex-7.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E193A287964B37F87C94C7AD24F5757017C3E0F5"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/soffes\/SAMTextView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E6ED3CB6BB070917312B0E7D16CDDE6AC88A8357"
+    }
+  ]
+}

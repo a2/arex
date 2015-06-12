@@ -5,7 +5,7 @@ import Pistachio
 import Result
 import ReactiveCocoa
 
-public enum MedicationsControllerError: ErrorRepresentable, ErrorType {
+public enum MedicationsControllerError: ErrorRepresentable, ReactiveCocoa.ErrorType {
     public static let domain = "MedicationsControllerError"
 
     case CannotSave(name: String, underlying: NSError?)
@@ -44,8 +44,8 @@ public class MedicationsController {
     public static let fileExtension = "rx"
 
     /// The default directory URL is ~/Documents directory.
-    public static let defaultDirectoryURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last as! NSURL
-    
+    public static let defaultDirectoryURL: NSURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last!
+
     /// The directory in which to save `Medication` values.
     public let directoryURL: NSURL
 
@@ -58,77 +58,77 @@ public class MedicationsController {
         return dispatch_queue_create("us.pandamonia.Arex.MedicationsController", attr)
     }()
 
-    /**
-        :param: directoryURL The URL of the directory in which to load `Medication` values.
-    */
+    /// - parameter directoryURL: The URL of the directory in which to load `Medication` values.
     public init(directoryURL: NSURL = MedicationsController.defaultDirectoryURL) {
         self.directoryURL = directoryURL
     }
 
     /// Returns the array of URLs contained in `directoryURL`. Returns an error upon failure.
     private func directoryURLContents() -> Result<[NSURL], NSError> {
-        var error: NSError?
-        if let contents = fileManager.contentsOfDirectoryAtURL(directoryURL, includingPropertiesForKeys: [], options: .SkipsHiddenFiles, error: &error) as? [NSURL] {
+        do {
+            let contents = try fileManager.contentsOfDirectoryAtURL(directoryURL, includingPropertiesForKeys: [], options: .SkipsHiddenFiles)
             return .success(contents)
-        } else if let error = error {
-            return .failure(error)
-        } else {
-            return .failure(Result<[NSURL], NSError>.error())
+        } catch let error {
+            return .failure(error as NSError)
         }
     }
 
-    /**
-        Returns an array of the `Medication` values contained in `directoryURL`.
-        If `directoryURL` cannot be loaded, returns the resulting error.
-    
-        **Note:** An error is not returned if no `Medication` values can be loaded or
-        if a file URL in `directoryURL` does not contain a  `Medication` value.
-    */
+    /// Returns an array of the `Medication` values contained in `directoryURL`.
+    /// If `directoryURL` cannot be loaded, returns the resulting error.
+    ///
+    /// **Note:** An error is not returned if no `Medication` values can be loaded or
+    /// if a file URL in `directoryURL` does not contain a  `Medication` value.
     private func loadMedications() -> Result<[Medication], NSError> {
         return directoryURLContents().map { URLs in
             return URLs.flatMap { fileURL in
-                let result: Array<Medication>
+                let result: Medication?
                 if let pathExtension = fileURL.pathExtension where pathExtension == MedicationsController.fileExtension,
-                    let lastPathComponent = fileURL.lastPathComponent, uuid = NSUUID(UUIDString: lastPathComponent.stringByDeletingPathExtension),
-                    data = NSData(contentsOfURL: fileURL), messagePackValue = unpack(data) {
+                    let lastPathComponent = fileURL.lastPathComponent,
+                    uuid = NSUUID(UUIDString: lastPathComponent.stringByDeletingPathExtension),
+                    data = NSData(contentsOfURL: fileURL) {
+                        do {
+                            let messagePackValue = try unpack(data)
+                            let medication = Adapters.medication.reverseTransform(messagePackValue).map { medication in
+                                set(MedicationLenses.uuid, medication, uuid)
+                            }
 
-                        let medication = Adapters.medication.reverseTransform(messagePackValue).map { set(MedicationLenses.uuid, $0, uuid) }
-                        result = medication.analysis(ifSuccess: {
-                            [$0]
-                        }, ifFailure: {
-                            println("\(__FUNCTION__) Failed to unpack Medication at \(fileURL): \($0)")
-                            return []
-                        })
+                            result = medication.analysis(ifSuccess: {
+                                $0
+                            }, ifFailure: {
+                                print("\(__FUNCTION__) Failed to unpack Medication at \(fileURL): \($0)")
+                                return nil
+                            })
+                        } catch {
+                            result = nil
+                        }
                 } else {
-                    result = []
+                    result = nil
                 }
-                
+
                 return result
             }
         }
     }
 
-    /// Returns a signal producer that watches the contents of `directoryURL` 
+    /// Returns a signal producer that watches the contents of `directoryURL`
     /// and sends an `Array[Medication]` when the directory's contents change.
     public func medications() -> SignalProducer<[Medication], NSError> {
         return SignalProducer(value: directoryURL)
             |> concat(monitorDirectory(directoryURL))
             |> observeOn(QueueScheduler(queue: queue))
             |> mapError { $0.nsError }
-            |> tryMap { [unowned self] _ in self.loadMedications() }
+            |> attemptMap { [unowned self] _ in self.loadMedications() }
             |> observeOn(QueueScheduler.mainQueueScheduler)
     }
 
-    /**
-        Saves the specified `Medication` value when the returned signal producer is started.
-    
-        **NB:** Assigns the `Medication` value a `uuid` if it does not already have one.
-
-        :param: medication The `Medication` to save.
-    
-        :returns: A signal producer that saves the argument when started.
-    */
-    public func save(inout #medication: Medication) -> SignalProducer<Void, MedicationsControllerError> {
+    /// Saves the specified `Medication` value when the returned signal producer is started.
+    ///
+    /// **NB:** Assigns the `Medication` value a `uuid` if it does not already have one.
+    ///
+    /// - parameter medication: The `Medication` to save.
+    ///
+    /// - returns: A signal producer that saves the argument when started.
+    public func save(inout medication medication: Medication) -> SignalProducer<Void, MedicationsControllerError> {
         let name = get(MedicationLenses.name, medication) ?? undefined("You cannot save a Medication without a name")
         let uuid: NSUUID
 
@@ -141,14 +141,16 @@ public class MedicationsController {
 
         let producer = SignalProducer<Void, MedicationsControllerError> { (observer, disposable) in
             Adapters.medication.transform(medication).analysis(ifSuccess: {
-                let data = pack($0)
                 let url = self.directoryURL.URLByAppendingPathComponent("\(uuid.UUIDString).\(MedicationsController.fileExtension)")
 
-                var error: NSError? = nil
-                if data.writeToURL(url, options: .DataWritingAtomic, error: &error) {
+                var packed = pack($0)
+                let data = NSData(bytes: &packed, length: packed.count)
+
+                do {
+                    try data.writeToURL(url, options: .DataWritingAtomic)
                     sendCompleted(observer)
-                } else {
-                    sendError(observer, .CannotSave(name: name, underlying: error))
+                } catch let error {
+                    sendError(observer, .CannotSave(name: name, underlying: error as NSError))
                 }
             }, ifFailure: {
                 sendError(observer, .CannotSave(name: name, underlying: $0))

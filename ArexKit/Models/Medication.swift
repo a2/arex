@@ -2,7 +2,7 @@ import AddressBook
 import Monocle
 import Pistachio
 
-public struct Medication: Printable {
+public struct Medication {
     private var name: String?
     private var schedule: Schedule
     private var strength: String?
@@ -16,20 +16,28 @@ public struct Medication: Printable {
         self.times = times
         self.uuid = uuid
     }
+}
 
+extension Medication: CustomStringConvertible {
     public var description: String {
         let nameDescription = name.map { "\"" + $0 + "\"" } ?? "nil"
         let strengthDescription = strength.map { "\"" + $0 + "\"" } ?? "nil"
-        let timesDescription = "[" + ", ".join(times.map(toString)) + "]"
+        let timesDescription = "[" + ", ".join(times.map { String($0) }) + "]"
         let uuidDescription = uuid.map { $0.UUIDString } ?? "nil"
-        return "Medication(name: \(nameDescription), schedule: \(toString(schedule)), strength: \(strengthDescription), times: \(timesDescription), uuid: \(uuidDescription))"
+        return "Medication(name: \(nameDescription), schedule: \(String(schedule)), strength: \(strengthDescription), times: \(timesDescription), uuid: \(uuidDescription))"
     }
 }
 
 public struct MedicationLenses {
     public static let name = Lens(
         get: { $0.name },
-        set: { (inout medication: Medication, name) in medication.name = flush(name, not(isEmpty)) }
+        set: { (inout medication: Medication, name) in
+            if let name = name where !name.isEmpty {
+                medication.name = name
+            } else {
+                medication.name = nil
+            }
+        }
     )
 
     public static let schedule = Lens(
@@ -39,7 +47,13 @@ public struct MedicationLenses {
 
     public static let strength = Lens(
         get: { $0.strength },
-        set: { (inout medication: Medication, strength) in medication.strength = flush(strength, not(isEmpty)) }
+        set: { (inout medication: Medication, strength) in
+            if let strength = strength where !strength.isEmpty {
+                medication.strength = strength
+            } else {
+                medication.strength = nil
+            }
+        }
     )
 
     public static let times = Lens(

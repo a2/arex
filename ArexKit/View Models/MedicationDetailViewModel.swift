@@ -2,10 +2,6 @@ import Monocle
 import Pistachio
 import ReactiveCocoa
 
-private func notEmpty<C: CollectionType>(x: C?) -> Bool {
-    return x.map(not(isEmpty)) ?? false
-}
-
 public class MedicationDetailViewModel {
     public let isNew: Bool
     private var medication: Medication
@@ -25,7 +21,9 @@ public class MedicationDetailViewModel {
         self.name = map(name) { $0 as? String }
 
         // If `medication` is new, start in editing mode.
-        self.canSave = map(self.name, notEmpty)
+        self.canSave = map(self.name) { name in
+            return name.map { !$0.isEmpty } ?? false
+        }
 
         self.beginEditing = Action(enabledIf: map(self._editing, !)) { _ in SignalProducer.empty }
 
