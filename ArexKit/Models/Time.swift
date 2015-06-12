@@ -96,6 +96,8 @@ public func <(lhs: Time, rhs: Time) -> Bool {
     }
 }
 
+// MARK: - Lenses
+
 public struct TimeLenses {
     public static let hour = Lens(
         get: { $0.hour },

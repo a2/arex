@@ -83,6 +83,8 @@ public class MedicationDetailViewModel {
     }()
 }
 
+// MARK: - Lenses
+
 private struct MedicationDetailViewModelLenses {
     static let medication = Lens(
         get: { $0.medication },

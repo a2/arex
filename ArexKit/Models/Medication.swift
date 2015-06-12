@@ -18,6 +18,8 @@ public struct Medication {
     }
 }
 
+// MARK: - CustomStringConvertible
+
 extension Medication: CustomStringConvertible {
     public var description: String {
         let nameDescription = name.map { "\"" + $0 + "\"" } ?? "nil"
@@ -27,6 +29,8 @@ extension Medication: CustomStringConvertible {
         return "Medication(name: \(nameDescription), schedule: \(String(schedule)), strength: \(strengthDescription), times: \(timesDescription), uuid: \(uuidDescription))"
     }
 }
+
+// MARK: - Lenses
 
 public struct MedicationLenses {
     public static let name = Lens(
