@@ -1,7 +1,5 @@
 github "a2/MessagePack.swift" "ecf6baf92229c42aceb7db6b5f71e7bd64c945f2"
 github "a2/Monocle" "0b1d10b0783c62a885e3c5030d10d6769f76aecb"
-github "Quick/Nimble" "dbc5bb3e2bd7e7ce322b128d674983937bbffd57"
-github "Quick/Quick" "v0.4.0"
 github "antitypical/Result" "0.5"
 github "ReactiveCocoa/ReactiveCocoa" "84b7fdd08cd1e49d09876a491695db261e5599b7"
 github "a2/ValueTransformer" "d7e178752f6911c1036928f74c9e0b74ceae1a34"

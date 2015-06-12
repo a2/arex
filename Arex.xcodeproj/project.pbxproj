@@ -14,8 +14,6 @@
 		8334F1D31B2A3E1C00BDE13D /* ScheduleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8334F1D21B2A3E1C00BDE13D /* ScheduleType.swift */; };
 		833FACCE1AFE90470021873B /* SAMTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 833FACCD1AFE90470021873B /* SAMTextView.m */; };
 		833FACE01AFE90BD0021873B /* ArexKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACD51AFE90BD0021873B /* ArexKit.framework */; };
-		833FAD001AFE91090021873B /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC51AFE8FFF0021873B /* Quick.framework */; };
-		833FAD011AFE910B0021873B /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC31AFE8FFF0021873B /* Nimble.framework */; };
 		833FAD091AFE91670021873B /* ArexKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACD51AFE90BD0021873B /* ArexKit.framework */; };
 		833FAD0A1AFE91670021873B /* ArexKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACD51AFE90BD0021873B /* ArexKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		833FAD111AFE918F0021873B /* MessagePack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC11AFE8FFF0021873B /* MessagePack.framework */; };
@@ -24,13 +22,6 @@
 		833FAD141AFE918F0021873B /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC61AFE8FFF0021873B /* ReactiveCocoa.framework */; };
 		833FAD151AFE918F0021873B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC71AFE8FFF0021873B /* Result.framework */; };
 		833FAD161AFE918F0021873B /* ValueTransformer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC81AFE8FFF0021873B /* ValueTransformer.framework */; };
-		833FAD221AFE91D30021873B /* CSSColorsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD191AFE91D30021873B /* CSSColorsSpec.swift */; };
-		833FAD231AFE91D30021873B /* DirectoryMonitorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD1A1AFE91D30021873B /* DirectoryMonitorSpec.swift */; };
-		833FAD251AFE91D30021873B /* HelpersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD1C1AFE91D30021873B /* HelpersSpec.swift */; };
-		833FAD261AFE91D30021873B /* IndexPathSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD1D1AFE91D30021873B /* IndexPathSpec.swift */; };
-		833FAD271AFE91D30021873B /* ReactiveCocoaAdditionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD1E1AFE91D30021873B /* ReactiveCocoaAdditionsSpec.swift */; };
-		833FAD281AFE91D30021873B /* ScheduleAdapterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD1F1AFE91D30021873B /* ScheduleAdapterSpec.swift */; };
-		833FAD291AFE91D30021873B /* TimeAdapterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD201AFE91D30021873B /* TimeAdapterSpec.swift */; };
 		833FAD491AFE91EF0021873B /* MedicationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD2B1AFE91EF0021873B /* MedicationsController.swift */; };
 		833FAD4B1AFE91EF0021873B /* CSSColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD2E1AFE91EF0021873B /* CSSColors.swift */; };
 		833FAD4C1AFE91EF0021873B /* DirectoryMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD2F1AFE91EF0021873B /* DirectoryMonitor.swift */; };
@@ -68,9 +59,17 @@
 		8390C43B1A8975490010D616 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8390C4391A8975490010D616 /* Main.storyboard */; };
 		8390C43D1A8975490010D616 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8390C43C1A8975490010D616 /* Images.xcassets */; };
 		8390C4401A8975490010D616 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8390C43E1A8975490010D616 /* LaunchScreen.xib */; };
+		83BE348E1B2B91EE000CFE09 /* TimeAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE348D1B2B91EE000CFE09 /* TimeAdapterTests.swift */; };
 		83CF072A1AC3632F00C2EB81 /* UIFontLineHeightUsingCoreText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CF07291AC3632F00C2EB81 /* UIFontLineHeightUsingCoreText.swift */; };
 		83CF072C1AC364A700C2EB81 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CF072B1AC364A700C2EB81 /* Colors.swift */; };
 		83D2D4E91B2B40C000A15CA6 /* DictionaryAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2D4E81B2B40C000A15CA6 /* DictionaryAddition.swift */; };
+		83D2D4EB1B2B6CEA00A15CA6 /* CSSColorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2D4EA1B2B6CEA00A15CA6 /* CSSColorsTests.swift */; };
+		83D2D4EF1B2B702E00A15CA6 /* DirectoryMonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2D4EE1B2B702E00A15CA6 /* DirectoryMonitorTests.swift */; };
+		83D2D4F11B2B881200A15CA6 /* HelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2D4F01B2B881200A15CA6 /* HelpersTests.swift */; };
+		83D2D4F31B2B88BF00A15CA6 /* IndexPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2D4F21B2B88BF00A15CA6 /* IndexPathTests.swift */; };
+		83D2D4F51B2B8A1500A15CA6 /* ReactiveCocoaAdditionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2D4F41B2B8A1500A15CA6 /* ReactiveCocoaAdditionsTests.swift */; };
+		83D2D4F71B2B8A4B00A15CA6 /* XCTestAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2D4F61B2B8A4B00A15CA6 /* XCTestAdditions.swift */; };
+		83D2D4F91B2B8C5C00A15CA6 /* ScheduleAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2D4F81B2B8C5C00A15CA6 /* ScheduleAdapterTests.swift */; };
 		83DF6F621ACEC9B800CF454A /* EmptySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF6F611ACEC9B800CF454A /* EmptySelectionViewController.swift */; };
 		83EFC9211ABC8DC400699EA2 /* MedicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */; };
 		83F098CD1AEEA50B00F33458 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F098CC1AEEA50B00F33458 /* RightDetailCell.swift */; };
@@ -122,9 +121,7 @@
 		8334F1D21B2A3E1C00BDE13D /* ScheduleType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleType.swift; sourceTree = "<group>"; };
 		833FACC11AFE8FFF0021873B /* MessagePack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessagePack.framework; path = Carthage/Build/iOS/MessagePack.framework; sourceTree = "<group>"; };
 		833FACC21AFE8FFF0021873B /* Monocle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Monocle.framework; path = Carthage/Build/iOS/Monocle.framework; sourceTree = "<group>"; };
-		833FACC31AFE8FFF0021873B /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		833FACC41AFE8FFF0021873B /* Pistachio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pistachio.framework; path = Carthage/Build/iOS/Pistachio.framework; sourceTree = "<group>"; };
-		833FACC51AFE8FFF0021873B /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		833FACC61AFE8FFF0021873B /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		833FACC71AFE8FFF0021873B /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		833FACC81AFE8FFF0021873B /* ValueTransformer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ValueTransformer.framework; path = Carthage/Build/iOS/ValueTransformer.framework; sourceTree = "<group>"; };
@@ -134,13 +131,6 @@
 		833FACD51AFE90BD0021873B /* ArexKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ArexKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		833FACDF1AFE90BD0021873B /* ArexKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArexKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		833FACE51AFE90BD0021873B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		833FAD191AFE91D30021873B /* CSSColorsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSColorsSpec.swift; sourceTree = "<group>"; };
-		833FAD1A1AFE91D30021873B /* DirectoryMonitorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryMonitorSpec.swift; sourceTree = "<group>"; };
-		833FAD1C1AFE91D30021873B /* HelpersSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpersSpec.swift; sourceTree = "<group>"; };
-		833FAD1D1AFE91D30021873B /* IndexPathSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexPathSpec.swift; sourceTree = "<group>"; };
-		833FAD1E1AFE91D30021873B /* ReactiveCocoaAdditionsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveCocoaAdditionsSpec.swift; sourceTree = "<group>"; };
-		833FAD1F1AFE91D30021873B /* ScheduleAdapterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleAdapterSpec.swift; sourceTree = "<group>"; };
-		833FAD201AFE91D30021873B /* TimeAdapterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeAdapterSpec.swift; sourceTree = "<group>"; };
 		833FAD2B1AFE91EF0021873B /* MedicationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationsController.swift; sourceTree = "<group>"; };
 		833FAD2E1AFE91EF0021873B /* CSSColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSColors.swift; sourceTree = "<group>"; };
 		833FAD2F1AFE91EF0021873B /* DirectoryMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryMonitor.swift; sourceTree = "<group>"; };
@@ -177,9 +167,17 @@
 		8390C43A1A8975490010D616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8390C43C1A8975490010D616 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8390C43F1A8975490010D616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		83BE348D1B2B91EE000CFE09 /* TimeAdapterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeAdapterTests.swift; sourceTree = "<group>"; };
 		83CF07291AC3632F00C2EB81 /* UIFontLineHeightUsingCoreText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontLineHeightUsingCoreText.swift; sourceTree = "<group>"; };
 		83CF072B1AC364A700C2EB81 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		83D2D4E81B2B40C000A15CA6 /* DictionaryAddition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryAddition.swift; sourceTree = "<group>"; };
+		83D2D4EA1B2B6CEA00A15CA6 /* CSSColorsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSColorsTests.swift; sourceTree = "<group>"; };
+		83D2D4EE1B2B702E00A15CA6 /* DirectoryMonitorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryMonitorTests.swift; sourceTree = "<group>"; };
+		83D2D4F01B2B881200A15CA6 /* HelpersTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpersTests.swift; sourceTree = "<group>"; };
+		83D2D4F21B2B88BF00A15CA6 /* IndexPathTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexPathTests.swift; sourceTree = "<group>"; };
+		83D2D4F41B2B8A1500A15CA6 /* ReactiveCocoaAdditionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveCocoaAdditionsTests.swift; sourceTree = "<group>"; };
+		83D2D4F61B2B8A4B00A15CA6 /* XCTestAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestAdditions.swift; sourceTree = "<group>"; };
+		83D2D4F81B2B8C5C00A15CA6 /* ScheduleAdapterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleAdapterTests.swift; sourceTree = "<group>"; };
 		83DF6F611ACEC9B800CF454A /* EmptySelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySelectionViewController.swift; sourceTree = "<group>"; };
 		83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MedicationDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		83F098CC1AEEA50B00F33458 /* RightDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightDetailCell.swift; sourceTree = "<group>"; };
@@ -206,9 +204,7 @@
 				833FACE01AFE90BD0021873B /* ArexKit.framework in Frameworks */,
 				835A58AE1AFEA3D600062D09 /* MessagePack.framework in Frameworks */,
 				835A58AF1AFEA3D600062D09 /* Monocle.framework in Frameworks */,
-				833FAD011AFE910B0021873B /* Nimble.framework in Frameworks */,
 				835A58B01AFEA3D600062D09 /* Pistachio.framework in Frameworks */,
-				833FAD001AFE91090021873B /* Quick.framework in Frameworks */,
 				835A58B11AFEA3D600062D09 /* ReactiveCocoa.framework in Frameworks */,
 				835A58B21AFEA3D600062D09 /* Result.framework in Frameworks */,
 				835A58B31AFEA3D600062D09 /* ValueTransformer.framework in Frameworks */,
@@ -276,14 +272,15 @@
 		833FACE31AFE90BD0021873B /* ArexKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				833FAD191AFE91D30021873B /* CSSColorsSpec.swift */,
-				833FAD1A1AFE91D30021873B /* DirectoryMonitorSpec.swift */,
-				833FAD1C1AFE91D30021873B /* HelpersSpec.swift */,
-				833FAD1D1AFE91D30021873B /* IndexPathSpec.swift */,
-				833FAD1E1AFE91D30021873B /* ReactiveCocoaAdditionsSpec.swift */,
-				833FAD1F1AFE91D30021873B /* ScheduleAdapterSpec.swift */,
-				833FAD201AFE91D30021873B /* TimeAdapterSpec.swift */,
+				83D2D4EA1B2B6CEA00A15CA6 /* CSSColorsTests.swift */,
+				83D2D4EE1B2B702E00A15CA6 /* DirectoryMonitorTests.swift */,
+				83D2D4F01B2B881200A15CA6 /* HelpersTests.swift */,
+				83D2D4F21B2B88BF00A15CA6 /* IndexPathTests.swift */,
+				83D2D4F41B2B8A1500A15CA6 /* ReactiveCocoaAdditionsTests.swift */,
+				83D2D4F81B2B8C5C00A15CA6 /* ScheduleAdapterTests.swift */,
 				833FACE41AFE90BD0021873B /* Supporting Files */,
+				83BE348D1B2B91EE000CFE09 /* TimeAdapterTests.swift */,
+				83D2D4F61B2B8A4B00A15CA6 /* XCTestAdditions.swift */,
 			);
 			path = ArexKitTests;
 			sourceTree = "<group>";
@@ -385,9 +382,7 @@
 			children = (
 				833FACC11AFE8FFF0021873B /* MessagePack.framework */,
 				833FACC21AFE8FFF0021873B /* Monocle.framework */,
-				833FACC31AFE8FFF0021873B /* Nimble.framework */,
 				833FACC41AFE8FFF0021873B /* Pistachio.framework */,
-				833FACC51AFE8FFF0021873B /* Quick.framework */,
 				833FACC61AFE8FFF0021873B /* ReactiveCocoa.framework */,
 				833FACC71AFE8FFF0021873B /* Result.framework */,
 				833FACC81AFE8FFF0021873B /* ValueTransformer.framework */,
@@ -697,9 +692,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/MessagePack.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Monocle.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Pistachio.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ValueTransformer.framework",
@@ -748,13 +741,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				833FAD251AFE91D30021873B /* HelpersSpec.swift in Sources */,
-				833FAD281AFE91D30021873B /* ScheduleAdapterSpec.swift in Sources */,
-				833FAD231AFE91D30021873B /* DirectoryMonitorSpec.swift in Sources */,
-				833FAD271AFE91D30021873B /* ReactiveCocoaAdditionsSpec.swift in Sources */,
-				833FAD291AFE91D30021873B /* TimeAdapterSpec.swift in Sources */,
-				833FAD221AFE91D30021873B /* CSSColorsSpec.swift in Sources */,
-				833FAD261AFE91D30021873B /* IndexPathSpec.swift in Sources */,
+				83D2D4F51B2B8A1500A15CA6 /* ReactiveCocoaAdditionsTests.swift in Sources */,
+				83D2D4F11B2B881200A15CA6 /* HelpersTests.swift in Sources */,
+				83D2D4F91B2B8C5C00A15CA6 /* ScheduleAdapterTests.swift in Sources */,
+				83D2D4EB1B2B6CEA00A15CA6 /* CSSColorsTests.swift in Sources */,
+				83D2D4EF1B2B702E00A15CA6 /* DirectoryMonitorTests.swift in Sources */,
+				83D2D4F71B2B8A4B00A15CA6 /* XCTestAdditions.swift in Sources */,
+				83D2D4F31B2B88BF00A15CA6 /* IndexPathTests.swift in Sources */,
+				83BE348E1B2B91EE000CFE09 /* TimeAdapterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
