@@ -73,6 +73,7 @@
 		8390C4401A8975490010D616 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8390C43E1A8975490010D616 /* LaunchScreen.xib */; };
 		83CF072A1AC3632F00C2EB81 /* UIFontLineHeightUsingCoreText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CF07291AC3632F00C2EB81 /* UIFontLineHeightUsingCoreText.swift */; };
 		83CF072C1AC364A700C2EB81 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CF072B1AC364A700C2EB81 /* Colors.swift */; };
+		83D2D4E91B2B40C000A15CA6 /* DictionaryAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2D4E81B2B40C000A15CA6 /* DictionaryAddition.swift */; };
 		83DF6F621ACEC9B800CF454A /* EmptySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF6F611ACEC9B800CF454A /* EmptySelectionViewController.swift */; };
 		83EFC9211ABC8DC400699EA2 /* MedicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */; };
 		83F098CD1AEEA50B00F33458 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F098CC1AEEA50B00F33458 /* RightDetailCell.swift */; };
@@ -184,6 +185,7 @@
 		8390C43F1A8975490010D616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		83CF07291AC3632F00C2EB81 /* UIFontLineHeightUsingCoreText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontLineHeightUsingCoreText.swift; sourceTree = "<group>"; };
 		83CF072B1AC364A700C2EB81 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		83D2D4E81B2B40C000A15CA6 /* DictionaryAddition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryAddition.swift; sourceTree = "<group>"; };
 		83DF6F611ACEC9B800CF454A /* EmptySelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySelectionViewController.swift; sourceTree = "<group>"; };
 		83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MedicationDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		83F098CC1AEEA50B00F33458 /* RightDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightDetailCell.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				833FAD2E1AFE91EF0021873B /* CSSColors.swift */,
+				83D2D4E81B2B40C000A15CA6 /* DictionaryAddition.swift */,
 				833FAD2F1AFE91EF0021873B /* DirectoryMonitor.swift */,
 				833FAD301AFE91EF0021873B /* FilterByExtension.swift */,
 				833FAD321AFE91EF0021873B /* Helpers.swift */,
@@ -351,8 +354,8 @@
 				833FAD3C1AFE91EF0021873B /* Adapters.swift */,
 				833FAD3D1AFE91EF0021873B /* DateTransformers.swift */,
 				833FAD3E1AFE91EF0021873B /* ImageTransformers.swift */,
-				833FAD3F1AFE91EF0021873B /* MessagePackValueTransformers.swift */,
 				833FAD701AFE9EA70021873B /* MessagePackAdapter.swift */,
+				833FAD3F1AFE91EF0021873B /* MessagePackValueTransformers.swift */,
 			);
 			path = Pistachio;
 			sourceTree = "<group>";
@@ -739,6 +742,7 @@
 				833FAD531AFE91EF0021873B /* ArexError.swift in Sources */,
 				833FAD491AFE91EF0021873B /* MedicationsController.swift in Sources */,
 				833FAD551AFE91EF0021873B /* Medication.swift in Sources */,
+				83D2D4E91B2B40C000A15CA6 /* DictionaryAddition.swift in Sources */,
 				833FAD511AFE91EF0021873B /* PistachioAdditions.swift in Sources */,
 				833FAD541AFE91EF0021873B /* Error.swift in Sources */,
 				833FAD4F1AFE91EF0021873B /* Helpers.swift in Sources */,
