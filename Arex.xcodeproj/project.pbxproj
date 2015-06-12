@@ -60,6 +60,8 @@
 		8390C43D1A8975490010D616 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8390C43C1A8975490010D616 /* Images.xcassets */; };
 		8390C4401A8975490010D616 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8390C43E1A8975490010D616 /* LaunchScreen.xib */; };
 		83BE348E1B2B91EE000CFE09 /* TimeAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE348D1B2B91EE000CFE09 /* TimeAdapterTests.swift */; };
+		83BE34901B2B9926000CFE09 /* PropertyMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE348F1B2B9926000CFE09 /* PropertyMap.swift */; };
+		83BE34921B2B9C03000CFE09 /* PropertyMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE34911B2B9C03000CFE09 /* PropertyMapTests.swift */; };
 		83CF072A1AC3632F00C2EB81 /* UIFontLineHeightUsingCoreText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CF07291AC3632F00C2EB81 /* UIFontLineHeightUsingCoreText.swift */; };
 		83CF072C1AC364A700C2EB81 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CF072B1AC364A700C2EB81 /* Colors.swift */; };
 		83D2D4E91B2B40C000A15CA6 /* DictionaryAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2D4E81B2B40C000A15CA6 /* DictionaryAddition.swift */; };
@@ -168,6 +170,8 @@
 		8390C43C1A8975490010D616 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8390C43F1A8975490010D616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		83BE348D1B2B91EE000CFE09 /* TimeAdapterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeAdapterTests.swift; sourceTree = "<group>"; };
+		83BE348F1B2B9926000CFE09 /* PropertyMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyMap.swift; sourceTree = "<group>"; };
+		83BE34911B2B9C03000CFE09 /* PropertyMapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyMapTests.swift; sourceTree = "<group>"; };
 		83CF07291AC3632F00C2EB81 /* UIFontLineHeightUsingCoreText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontLineHeightUsingCoreText.swift; sourceTree = "<group>"; };
 		83CF072B1AC364A700C2EB81 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		83D2D4E81B2B40C000A15CA6 /* DictionaryAddition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryAddition.swift; sourceTree = "<group>"; };
@@ -312,6 +316,7 @@
 				833FAD331AFE91EF0021873B /* IndexPath.swift */,
 				833FAD341AFE91EF0021873B /* PistachioAdditions.swift */,
 				833FAD351AFE91EF0021873B /* ReactiveCocoaAdditions.swift */,
+				83BE348F1B2B9926000CFE09 /* PropertyMap.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -463,6 +468,22 @@
 				8304F7191AEE0F2900324A35 /* TextFieldCell.xib */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		83BE34931B2B9CAE000CFE09 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				83D2D4EA1B2B6CEA00A15CA6 /* CSSColorsTests.swift */,
+				83D2D4EE1B2B702E00A15CA6 /* DirectoryMonitorTests.swift */,
+				83D2D4F01B2B881200A15CA6 /* HelpersTests.swift */,
+				83D2D4F21B2B88BF00A15CA6 /* IndexPathTests.swift */,
+				83BE34911B2B9C03000CFE09 /* PropertyMapTests.swift */,
+				83D2D4F41B2B8A1500A15CA6 /* ReactiveCocoaAdditionsTests.swift */,
+				83D2D4F81B2B8C5C00A15CA6 /* ScheduleAdapterTests.swift */,
+				83BE348D1B2B91EE000CFE09 /* TimeAdapterTests.swift */,
+				83D2D4F61B2B8A4B00A15CA6 /* XCTestAdditions.swift */,
+			);
+			name = Source;
 			sourceTree = "<group>";
 		};
 		83DF6F5D1ACEC46C00CF454A /* Extensions */ = {
@@ -732,6 +753,7 @@
 				833FAD5F1AFE91EF0021873B /* MedicationListCellViewModel.swift in Sources */,
 				833FAD4C1AFE91EF0021873B /* DirectoryMonitor.swift in Sources */,
 				8334F1D31B2A3E1C00BDE13D /* ScheduleType.swift in Sources */,
+				83BE34901B2B9926000CFE09 /* PropertyMap.swift in Sources */,
 				833FAD711AFE9EA70021873B /* MessagePackAdapter.swift in Sources */,
 				833FAD501AFE91EF0021873B /* IndexPath.swift in Sources */,
 			);
@@ -747,6 +769,7 @@
 				83D2D4EB1B2B6CEA00A15CA6 /* CSSColorsTests.swift in Sources */,
 				83D2D4EF1B2B702E00A15CA6 /* DirectoryMonitorTests.swift in Sources */,
 				83D2D4F71B2B8A4B00A15CA6 /* XCTestAdditions.swift in Sources */,
+				83BE34921B2B9C03000CFE09 /* PropertyMapTests.swift in Sources */,
 				83D2D4F31B2B88BF00A15CA6 /* IndexPathTests.swift in Sources */,
 				83BE348E1B2B91EE000CFE09 /* TimeAdapterTests.swift in Sources */,
 			);

@@ -84,7 +84,7 @@ class MedicationDetailViewController: FXFormViewController {
     // MARK: - Configuration
 
     private func configureNavigationItem() {
-        let property = map(viewModel.name) { (name: String?) -> String in
+        let property = viewModel.name.map { (name: String?) -> String in
             if let name = name where !name.isEmpty {
                 return name
             } else {

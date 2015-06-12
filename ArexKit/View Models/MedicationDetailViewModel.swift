@@ -18,14 +18,14 @@ public class MedicationDetailViewModel {
         self.editing = PropertyOf(self._editing)
 
         let name = DynamicProperty(object: self.form, keyPath: "name")
-        self.name = map(name) { $0 as? String }
+        self.name = name.map { $0 as? String }
 
         // If `medication` is new, start in editing mode.
-        self.canSave = map(self.name) { name in
+        self.canSave = self.name.map { name in
             return name.map { !$0.isEmpty } ?? false
         }
 
-        self.beginEditing = Action(enabledIf: map(self._editing, !)) { _ in SignalProducer.empty }
+        self.beginEditing = Action(enabledIf: self._editing.map(!)) { _ in SignalProducer.empty }
 
         let revertEnabled = MutableProperty(true)
         self.revertChanges = Action(enabledIf: revertEnabled) { _ in SignalProducer.empty }

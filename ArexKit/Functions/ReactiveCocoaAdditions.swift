@@ -9,27 +9,13 @@ public func catchAll<T, E>(error: E) -> SignalProducer<T, NoError> {
     return .empty
 }
 
-/// Maps a `PropertyType` from one type to another.
-///
-/// - parameter property: The property to map.
-/// - parameter transform: The transform to apply.
-///
-/// - returns: A property of a new type.
-public func map<P: PropertyType, T>(property: P, _ transform: P.Value -> T) -> PropertyOf<T> {
-    let mutableProperty = MutableProperty<T>(transform(property.value))
-    property.producer
-        |> map(transform)
-        |> start(Event.sink(next: mutableProperty.put))
-    return PropertyOf(mutableProperty)
-}
-
 /// A function that accepts a parameter of arbitrary type and replaces it with a second value of arbitrary type.
 ///
-/// - parameter value: A value to ignore.
+/// - parameter value: An ignored value.
 /// - parameter replacement: A constant value to return.
 ///
-/// - returns: `replacement`
-public func replace<T, U>(replacement: T)(value: U) -> T {
+/// - returns: The replacement value.
+public func replace<T, U>(replacement: T)(_: U) -> T {
     return replacement
 }
 
