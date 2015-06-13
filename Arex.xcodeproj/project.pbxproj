@@ -72,7 +72,8 @@
 		83D2D4F51B2B8A1500A15CA6 /* ReactiveCocoaAdditionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2D4F41B2B8A1500A15CA6 /* ReactiveCocoaAdditionsTests.swift */; };
 		83D2D4F71B2B8A4B00A15CA6 /* XCTestAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2D4F61B2B8A4B00A15CA6 /* XCTestAdditions.swift */; };
 		83D2D4F91B2B8C5C00A15CA6 /* ScheduleAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2D4F81B2B8C5C00A15CA6 /* ScheduleAdapterTests.swift */; };
-		83DF6F621ACEC9B800CF454A /* EmptySelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DF6F611ACEC9B800CF454A /* EmptySelectionViewController.swift */; };
+		83D45E0B1B2BB04600B2E7AE /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D45E0A1B2BB04600B2E7AE /* TodayViewController.swift */; };
+		83D45E0D1B2BB09000B2E7AE /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D45E0C1B2BB09000B2E7AE /* TodayViewModel.swift */; };
 		83EFC9211ABC8DC400699EA2 /* MedicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */; };
 		83F098CD1AEEA50B00F33458 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F098CC1AEEA50B00F33458 /* RightDetailCell.swift */; };
 /* End PBXBuildFile section */
@@ -182,7 +183,8 @@
 		83D2D4F41B2B8A1500A15CA6 /* ReactiveCocoaAdditionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveCocoaAdditionsTests.swift; sourceTree = "<group>"; };
 		83D2D4F61B2B8A4B00A15CA6 /* XCTestAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestAdditions.swift; sourceTree = "<group>"; };
 		83D2D4F81B2B8C5C00A15CA6 /* ScheduleAdapterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleAdapterTests.swift; sourceTree = "<group>"; };
-		83DF6F611ACEC9B800CF454A /* EmptySelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySelectionViewController.swift; sourceTree = "<group>"; };
+		83D45E0A1B2BB04600B2E7AE /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		83D45E0C1B2BB09000B2E7AE /* TodayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MedicationDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		83F098CC1AEEA50B00F33458 /* RightDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightDetailCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -362,6 +364,7 @@
 				833FAD461AFE91EF0021873B /* MedicationDetailViewModel.swift */,
 				833FAD471AFE91EF0021873B /* MedicationListCellViewModel.swift */,
 				833FAD481AFE91EF0021873B /* MedicationsListViewModel.swift */,
+				83D45E0C1B2BB09000B2E7AE /* TodayViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -410,9 +413,9 @@
 		838AD9B41AF3E1D300CA636B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				83DF6F611ACEC9B800CF454A /* EmptySelectionViewController.swift */,
 				83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */,
 				8390C4371A8975490010D616 /* MedicationsListViewController.swift */,
+				83D45E0A1B2BB04600B2E7AE /* TodayViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -729,6 +732,7 @@
 				833FAD561AFE91EF0021873B /* Adapters.swift in Sources */,
 				833FAD4D1AFE91EF0021873B /* FilterByExtension.swift in Sources */,
 				833FAD601AFE91EF0021873B /* MedicationsListViewModel.swift in Sources */,
+				83D45E0D1B2BB09000B2E7AE /* TodayViewModel.swift in Sources */,
 				833FAD571AFE91EF0021873B /* DateTransformers.swift in Sources */,
 				835A89C31B0197A200C7847C /* MedicationDetailForm.swift in Sources */,
 				833FAD581AFE91EF0021873B /* ImageTransformers.swift in Sources */,
@@ -777,10 +781,10 @@
 				83CF072C1AC364A700C2EB81 /* Colors.swift in Sources */,
 				83EFC9211ABC8DC400699EA2 /* MedicationDetailViewController.swift in Sources */,
 				8390C4331A8975490010D616 /* AppDelegate.swift in Sources */,
-				83DF6F621ACEC9B800CF454A /* EmptySelectionViewController.swift in Sources */,
 				838AD9B61AF4C59F00CA636B /* EnclosingViewOfType.swift in Sources */,
 				830C80FE1ABB9D8700AE7E12 /* MedicationsListCell.swift in Sources */,
 				83F098CD1AEEA50B00F33458 /* RightDetailCell.swift in Sources */,
+				83D45E0B1B2BB04600B2E7AE /* TodayViewController.swift in Sources */,
 				838AD9B01AF3E08400CA636B /* StepperCell.swift in Sources */,
 				83CF072A1AC3632F00C2EB81 /* UIFontLineHeightUsingCoreText.swift in Sources */,
 				838512381AED04A7003A7442 /* TextFieldCell.swift in Sources */,

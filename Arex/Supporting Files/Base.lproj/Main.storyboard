@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="t1c-xz-fak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KG5-Ha-1yZ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
     </dependencies>
     <scenes>
         <!--Medications List-->
@@ -14,17 +14,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MedicationCell" textLabel="k9Q-DW-vSD" detailTextLabel="u62-3d-wAE" style="IBUITableViewCellStyleSubtitle" id="LhZ-j6-6Yc" customClass="MedicationsListCell" customModule="Arex" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="86" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LhZ-j6-6Yc" id="7ap-3D-tNY">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="{Medication Name}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="k9Q-DW-vSD">
+                                            <rect key="frame" x="15" y="12" width="145.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="{Medication Dosage}" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="u62-3d-wAE">
+                                            <rect key="frame" x="15" y="31.5" width="135.5" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -32,9 +36,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="tIB-P2-OOA" kind="showDetail" identifier="ShowMedication" id="EMn-fA-e5L"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -43,16 +44,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Medications" id="CUX-eA-ypC">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8VL-tu-pOp">
-                            <connections>
-                                <segue destination="tIB-P2-OOA" kind="presentation" identifier="NewMedication" modalPresentationStyle="formSheet" id="pCq-Ac-cQt"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="Onb-by-a1j"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="ZuJ-o7-Wfy"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Nxf-tI-WOL" kind="unwind" identifier="DismissMedications" unwindAction="dismissMedications:" id="nhq-xs-OhN"/>
+                        <segue destination="tIB-P2-OOA" kind="presentation" identifier="ShowMedicationDetail" id="fbn-hv-AdR"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s0x-D5-lgu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Nxf-tI-WOL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2018" y="1567"/>
+            <point key="canvasLocation" x="2724" y="1539"/>
         </scene>
         <!--{Medication Name}-->
         <scene sceneID="kvI-PZ-qA9">
@@ -80,48 +83,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="{Medication Name}" id="z6v-6r-EHE"/>
+                    <keyCommands/>
                     <connections>
                         <outlet property="tableView" destination="lun-4W-Ttx" id="rdD-wq-EDM"/>
+                        <segue destination="oUE-gN-uBp" kind="unwind" identifier="DismissMedicationDetail" unwindAction="dismissMedicationDetail:" id="1zu-02-5Vb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yHk-KL-KnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="oUE-gN-uBp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2728" y="2285"/>
-        </scene>
-        <!--Empty Selection View Controller-->
-        <scene sceneID="q7S-XR-fdD">
-            <objects>
-                <viewController id="jOF-vq-Dr1" customClass="EmptySelectionViewController" customModule="Arex" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Frs-z6-RDQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="dwZ-Uu-q5t"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wsa-H6-Feb">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Medication Selected." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8BY-lN-hXA">
-                                <rect key="frame" x="209" y="290" width="183" height="20"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="8BY-lN-hXA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wsa-H6-Feb" secondAttribute="leading" constant="20" symbolic="YES" id="J4l-70-57X"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8BY-lN-hXA" secondAttribute="trailing" constant="20" symbolic="YES" id="aV1-rr-hT8"/>
-                            <constraint firstAttribute="centerX" secondItem="8BY-lN-hXA" secondAttribute="centerX" id="aal-Ml-qBS"/>
-                            <constraint firstAttribute="centerY" secondItem="8BY-lN-hXA" secondAttribute="centerY" id="hkx-f2-2nH"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="textLabel" destination="8BY-lN-hXA" id="GLJ-M6-uf8"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="F9s-R1-IQr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1312" y="2284"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qYc-tK-yxF">
@@ -153,23 +124,48 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Msf-mC-W1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1312" y="1566"/>
+            <point key="canvasLocation" x="2018" y="1538"/>
         </scene>
-        <!--Split View Controller-->
-        <scene sceneID="U8B-xF-wjW">
+        <!--Today-->
+        <scene sceneID="ver-Kg-tgb">
             <objects>
-                <splitViewController id="t1c-xz-fak" sceneMemberID="viewController">
-                    <connections>
-                        <segue destination="iDM-ht-FTZ" kind="relationship" relationship="masterViewController" id="pC5-Cm-pFj"/>
-                        <segue destination="jOF-vq-Dr1" kind="relationship" relationship="detailViewController" id="k3X-YT-dBL"/>
-                    </connections>
-                </splitViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5r8-6P-QSX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="cZ6-sp-Muw" customClass="TodayViewController" customModule="Arex" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="KwO-tL-Q0W">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="cZ6-sp-Muw" id="W5y-iM-Vdo"/>
+                            <outlet property="delegate" destination="cZ6-sp-Muw" id="NN2-i8-v8z"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Today" id="EPb-wK-gic">
+                        <barButtonItem key="rightBarButtonItem" title="Medications" id="FTC-qZ-Goa">
+                            <connections>
+                                <segue destination="iDM-ht-FTZ" kind="presentation" identifier="ShowMedicationsList" id="Skw-Sz-KTm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hao-tw-FD1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="496" y="1926"/>
+            <point key="canvasLocation" x="1280" y="1539"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vv5-cp-Ap6">
+            <objects>
+                <navigationController id="KG5-Ha-1yZ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HyU-1V-1ku">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cZ6-sp-Muw" kind="relationship" relationship="rootViewController" id="KxO-MF-dst"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GAN-Jq-haA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="528" y="1539"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="pCq-Ac-cQt"/>
-    </inferredMetricsTieBreakers>
 </document>

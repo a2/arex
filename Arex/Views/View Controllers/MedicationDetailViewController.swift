@@ -2,7 +2,7 @@ import ArexKit
 import ReactiveCocoa
 import UIKit
 
-class MedicationDetailViewController: FXFormViewController {
+class MedicationDetailViewController: FXFormViewController, MedicationDetailViewModelActions {
     private struct Constants {
         struct CellIdentifiers {
             static let DefaultCell = "DefaultCell"
@@ -12,8 +12,8 @@ class MedicationDetailViewController: FXFormViewController {
             static let StepperCell = "StepperCell"
         }
 
-        struct SegueIdentifiers {
-            static let DismissModalEditor = "DismissModalEditor"
+        enum SegueIdentifiers: String {
+            case DismissMedicationDetail = "DismissMedicationDetail"
         }
     }
 
@@ -24,12 +24,14 @@ class MedicationDetailViewController: FXFormViewController {
     // MARK: Bar Button Items
 
     private enum BarButtonItem: CustomStringConvertible {
+        case Done
         case Edit
         case Save
         case Cancel
 
         var description: String {
             switch self {
+            case .Done: return "done"
             case .Edit: return "edit"
             case .Save: return "save"
             case .Cancel: return "cancel"
@@ -38,6 +40,7 @@ class MedicationDetailViewController: FXFormViewController {
 
         var systemItem: UIBarButtonSystemItem {
             switch self {
+            case .Done: return .Done
             case .Edit: return .Edit
             case .Save: return .Save
             case .Cancel: return .Cancel
@@ -45,27 +48,35 @@ class MedicationDetailViewController: FXFormViewController {
         }
     }
 
-    private func barButtonItem(type: BarButtonItem) -> UIBarButtonItem {
+    private func makeBarButtonItem(type: BarButtonItem) -> UIBarButtonItem {
         precondition(viewModel != nil, "MedicationDetailViewController.viewModel was not assigned before \(type)BarButtonItem loaded")
 
-        let action: CocoaAction
+        let buttonAction: CocoaAction
         let enabled: PropertyOf<Bool>
 
         switch type {
+        case .Done:
+            let action: Action<Void, Void, NoError> = Action { _ in
+                self.performSegueWithIdentifier(Constants.SegueIdentifiers.DismissMedicationDetail.rawValue, sender: nil)
+                return .empty
+            }
+
+            buttonAction = CocoaAction(action, void)
+            enabled = PropertyOf(ConstantProperty(true))
         case .Edit:
-            action = CocoaAction(viewModel.beginEditing, void)
+            buttonAction = CocoaAction(viewModel.beginEditing, void)
             enabled = viewModel.beginEditing.enabled
         case .Save:
-            action = CocoaAction(viewModel.saveChanges, void)
+            buttonAction = CocoaAction(viewModel.saveChanges, void)
             enabled = viewModel.saveChanges.enabled
         case .Cancel:
-            action = CocoaAction(viewModel.revertChanges, void)
+            buttonAction = CocoaAction(viewModel.revertChanges, void)
             enabled = viewModel.revertChanges.enabled
         }
 
-        barButtonItemCocoaActions.insert(action)
+        barButtonItemCocoaActions.insert(buttonAction)
 
-        let barButtonItem = UIBarButtonItem(barButtonSystemItem: type.systemItem, target: action, action: CocoaAction.selector)
+        let barButtonItem = UIBarButtonItem(barButtonSystemItem: type.systemItem, target: buttonAction, action: CocoaAction.selector)
         enabled.producer.start(next: { [weak barButtonItem] enabled in
             barButtonItem?.enabled = enabled
         })
@@ -73,9 +84,10 @@ class MedicationDetailViewController: FXFormViewController {
     }
 
     private var barButtonItemCocoaActions = Set<CocoaAction>()
-    private lazy var saveBarButtonItem: UIBarButtonItem = self.barButtonItem(.Save)
-    private lazy var cancelBarButtonItem: UIBarButtonItem = self.barButtonItem(.Cancel)
-    private lazy var editBarButtonItem: UIBarButtonItem = self.barButtonItem(.Edit)
+    private lazy var doneBarButtonItem: UIBarButtonItem = self.makeBarButtonItem(.Done)
+    private lazy var editBarButtonItem: UIBarButtonItem = self.makeBarButtonItem(.Edit)
+    private lazy var saveBarButtonItem: UIBarButtonItem = self.makeBarButtonItem(.Save)
+    private lazy var cancelBarButtonItem: UIBarButtonItem = self.makeBarButtonItem(.Cancel)
 
     deinit {
         disposable.dispose()
@@ -103,7 +115,7 @@ class MedicationDetailViewController: FXFormViewController {
 
     private func configureEditing() {
         editing = viewModel.editing.value
-        updateUI(editing)
+        updateUI(editing, false)
 
         let beginEditing = viewModel.beginEditing.executing.producer
             |> skip(1)
@@ -133,11 +145,11 @@ class MedicationDetailViewController: FXFormViewController {
 
     // MARK: - UI Update
 
-    private func updateUI(editing: Bool) {
-        updateNavigationItem(editing)
+    private func updateUI(editing: Bool, _ animated: Bool) {
+        updateNavigationItem(editing, animated)
     }
 
-    private func updateNavigationItem(editing: Bool) {
+    private func updateNavigationItem(editing: Bool, _ animated: Bool) {
         let rightBarButtonItem, leftBarButtonItem: UIBarButtonItem?
 
         if editing {
@@ -145,10 +157,9 @@ class MedicationDetailViewController: FXFormViewController {
             leftBarButtonItem = cancelBarButtonItem
         } else {
             rightBarButtonItem = editBarButtonItem
-            leftBarButtonItem = nil
+            leftBarButtonItem = doneBarButtonItem
         }
 
-        let animated = true
         navigationItem.setRightBarButtonItem(rightBarButtonItem, animated: animated)
         navigationItem.setLeftBarButtonItem(leftBarButtonItem, animated: animated)
     }
@@ -166,7 +177,7 @@ class MedicationDetailViewController: FXFormViewController {
         }
 
         super.setEditing(editing, animated: animated)
-        updateUI(editing)
+        updateUI(editing, animated)
     }
 
     override func viewDidLoad() {

@@ -3,7 +3,6 @@ import Pistachio
 import ReactiveCocoa
 
 public class MedicationDetailViewModel {
-    public let isNew: Bool
     private var medication: Medication
     private let medicationsController: MedicationsController
     public let form: MedicationDetailForm
@@ -13,8 +12,8 @@ public class MedicationDetailViewModel {
         self.medicationsController = medicationsController
         self.form = MedicationDetailForm(medication: medication)
 
-        self.isNew = get(MedicationLenses.uuid, medication) == nil
-        self._editing = MutableProperty(self.isNew)
+        self.isNew = !get(MedicationLenses.isPersisted, medication)
+        self._editing = MutableProperty(true)
         self.editing = PropertyOf(self._editing)
 
         let name = DynamicProperty(object: self.form, keyPath: "name")
@@ -32,6 +31,7 @@ public class MedicationDetailViewModel {
 
         // All properties have been initialized.
 
+        self._editing.value = self.isNew
         self._editing.producer
             |> combineLatestWith(self.saveChanges.executing.producer)
             |> map { (editing, saving) in editing && !saving }
@@ -53,13 +53,14 @@ public class MedicationDetailViewModel {
 
     // MARK: Properties
 
+    public let isNew: Bool
     private let _editing: MutableProperty<Bool>
     public let editing: PropertyOf<Bool>
     public let canSave: PropertyOf<Bool>
     public let name: PropertyOf<String?>
 
-    public var hasSaved: Bool {
-        return get(MedicationLenses.uuid, medication) != nil
+    public var isPersisted: Bool {
+        return get(MedicationLenses.isPersisted, medication)
     }
 
     // MARK: Actions
@@ -75,7 +76,7 @@ public class MedicationDetailViewModel {
         return Action(enabledIf: self.canSave) { [unowned self] _ in
             var medication = self.form.medication
             return self.medicationsController.save(medication: &medication)
-                |> map { return undefined("Did not expect MedicationsController.save(medication:) to send a next event") }
+                |> map { return undefined("Did not expect MedicationsController.save(_:) to send a next event") }
                 |> concat(SignalProducer { observer, disposable in disposable += SignalProducer(value: medication).start(observer) })
                 |> on(completed: onComplete, next: onNext)
                 |> map(void)

@@ -129,12 +129,14 @@ public struct ScheduleAdapter: AdapterType {
 }
 
 public struct Adapters {
-    public static let medication = MessagePackAdapter<Medication>(specification: [
-        "name": messagePackString(MedicationLenses.name),
-        "schedule": messagePackMap(MedicationLenses.schedule)(adapter: Adapters.schedule),
-        "strength": messagePackString(MedicationLenses.strength),
-        "times": messagePackArray(MedicationLenses.times)(adapter: Adapters.time),
-    ], value: Medication())
+    public static func medication(UUID UUID: NSUUID? = nil) -> MessagePackAdapter<Medication> {
+        return MessagePackAdapter(specification: [
+            "name": messagePackString(MedicationLenses.name),
+            "schedule": messagePackMap(MedicationLenses.schedule)(adapter: Adapters.schedule),
+            "strength": messagePackString(MedicationLenses.strength),
+            "times": messagePackArray(MedicationLenses.times)(adapter: Adapters.time),
+        ], value: Medication(UUID: UUID))
+    }
 
     public static let schedule = ScheduleAdapter()
 

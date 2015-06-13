@@ -60,13 +60,11 @@ public class MedicationsController {
                 let result: Medication?
                 if let pathExtension = fileURL.pathExtension where pathExtension == MedicationsController.fileExtension,
                     let lastPathComponent = fileURL.lastPathComponent,
-                    uuid = NSUUID(UUIDString: lastPathComponent.stringByDeletingPathExtension),
+                    UUID = NSUUID(UUIDString: lastPathComponent.stringByDeletingPathExtension),
                     data = NSData(contentsOfURL: fileURL) {
                         do {
                             let messagePackValue = try unpack(data)
-                            let medication = Adapters.medication.reverseTransform(messagePackValue).map { medication in
-                                set(MedicationLenses.uuid, medication, uuid)
-                            }
+                            let medication = Adapters.medication(UUID: UUID).reverseTransform(messagePackValue)
 
                             result = medication.analysis(ifSuccess: {
                                 $0
@@ -106,17 +104,10 @@ public class MedicationsController {
     /// - returns: A signal producer that saves the argument when started.
     public func save(inout medication medication: Medication) -> SignalProducer<Void, MedicationsControllerError> {
         let name = get(MedicationLenses.name, medication) ?? undefined("You cannot save a Medication without a name")
-        let uuid: NSUUID
-
-        if let _uuid = get(MedicationLenses.uuid, medication) {
-            uuid = _uuid
-        } else {
-            uuid = NSUUID()
-            medication = set(MedicationLenses.uuid, medication, uuid)
-        }
+        let uuid = get(MedicationLenses.UUID, medication)
 
         let producer = SignalProducer<Void, MedicationsControllerError> { (observer, disposable) in
-            Adapters.medication.transform(medication).analysis(ifSuccess: {
+            Adapters.medication().transform(medication).analysis(ifSuccess: {
                 let url = self.directoryURL.URLByAppendingPathComponent("\(uuid.UUIDString).\(MedicationsController.fileExtension)")
 
                 var packed = pack($0)
@@ -124,6 +115,11 @@ public class MedicationsController {
 
                 do {
                     try data.writeToURL(url, options: .DataWritingAtomic)
+
+                    if !get(MedicationLenses.isPersisted, medication) {
+                        set(MedicationLenses.isPersisted, medication, true)
+                    }
+
                     sendCompleted(observer)
                 } catch let error {
                     sendError(observer, .CannotSave(name: name, underlying: error as NSError))

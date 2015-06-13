@@ -55,34 +55,34 @@ public class MedicationDetailForm: NSObject, FXForm {
     private let dateFormatter: NSDateFormatter = makeDateFormatter()
     private let valueTransformer: ValueTransformer
 
-    private func makeSchedule() -> Schedule {
-        let enumValue = ScheduleType(rawValue: scheduleType) ?? undefined("Unexpected rawValue \(self.scheduleType) for ScheduleType")
-        switch enumValue {
-        case .Daily:
-            return .Daily
-        case .EveryXDays:
-            return .EveryXDays(interval: daysBetweenDoses, startDate: self.startDate)
-        case .Weekly:
-            return .Weekly(days: weeklyDays)
-        case .Monthly:
-            return .Monthly(days: monthlyDays)
-        case .NotCurrentlyTaken:
-            return .NotCurrentlyTaken
-        }
-    }
-
-    private func makeTimes() -> [Time] {
-        let calendar = dateFormatter.calendar
-        let dates = times as! [NSDate]
-        return dates.map { time in
-            let components = calendar.components([.Hour, .Minute], fromDate: time)
-            return Time(dateComponents: components) ?? undefined("Either .Hour or .Minute component was undefined")
-        }
-    }
-
     public var medication: Medication {
         get {
-            return Medication(name: name, schedule: makeSchedule(), strength: strength, times: makeTimes(), uuid: uuid)
+            func makeSchedule() -> Schedule {
+                let enumValue = ScheduleType(rawValue: scheduleType) ?? undefined("Unexpected rawValue \(self.scheduleType) for ScheduleType")
+                switch enumValue {
+                case .Daily:
+                    return .Daily
+                case .EveryXDays:
+                    return .EveryXDays(interval: daysBetweenDoses, startDate: self.startDate)
+                case .Weekly:
+                    return .Weekly(days: weeklyDays)
+                case .Monthly:
+                    return .Monthly(days: monthlyDays)
+                case .NotCurrentlyTaken:
+                    return .NotCurrentlyTaken
+                }
+            }
+
+            func makeTimes() -> [Time] {
+                let calendar = dateFormatter.calendar
+                let dates = times as! [NSDate]
+                return dates.map { time in
+                    let components = calendar.components([.Hour, .Minute], fromDate: time)
+                    return Time(dateComponents: components) ?? undefined("Either .Hour or .Minute component was undefined")
+                }
+            }
+
+            return Medication(name: name, schedule: makeSchedule(), strength: strength, times: makeTimes(), UUID: UUID)
         }
         set {
             name = get(MedicationLenses.name, newValue)
@@ -92,11 +92,11 @@ public class MedicationDetailForm: NSObject, FXForm {
             times = get(MedicationLenses.times, newValue).map { time in
                 return calendar.dateFromComponents(time.dateComponents) ?? undefined("Unable to create date from time \(time)")
             }
-            uuid = get(MedicationLenses.uuid, newValue)
+            UUID = get(MedicationLenses.UUID, newValue)
         }
     }
 
-    public var uuid: NSUUID?
+    public var UUID = NSUUID()
 
     public internal(set) var name: String?
     public func nameField() -> [NSObject : AnyObject] {
@@ -219,4 +219,8 @@ public class MedicationDetailForm: NSObject, FXForm {
         
         return fields
     }
+}
+
+public protocol MedicationDetailViewModelActions {
+    func updateFields()
 }
