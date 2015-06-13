@@ -82,7 +82,18 @@
                             <constraint firstItem="lun-4W-Ttx" firstAttribute="top" secondItem="DBf-6T-VlN" secondAttribute="top" id="dPY-WC-wIu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="{Medication Name}" id="z6v-6r-EHE"/>
+                    <navigationItem key="navigationItem" title="{Medication Name}" id="z6v-6r-EHE">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="hpT-4X-ErF">
+                            <connections>
+                                <action selector="cancel:" destination="mxM-Pg-dEn" id="FZb-FO-pgg"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="sY9-4G-l1q">
+                            <connections>
+                                <action selector="save:" destination="mxM-Pg-dEn" id="hSs-UN-UUu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <keyCommands/>
                     <connections>
                         <outlet property="tableView" destination="lun-4W-Ttx" id="rdD-wq-EDM"/>
