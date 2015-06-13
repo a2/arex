@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8304F71A1AEE0F2900324A35 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8304F7191AEE0F2900324A35 /* TextFieldCell.xib */; };
 		830C80FE1ABB9D8700AE7E12 /* MedicationsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */; };
 		83335B531B01350A00C41DE2 /* FXForms.h in Headers */ = {isa = PBXBuildFile; fileRef = 83335B511B01350A00C41DE2 /* FXForms.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		83335B541B01350A00C41DE2 /* FXForms.m in Sources */ = {isa = PBXBuildFile; fileRef = 83335B521B01350A00C41DE2 /* FXForms.m */; };
@@ -50,9 +49,6 @@
 		835A58B21AFEA3D600062D09 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC71AFE8FFF0021873B /* Result.framework */; };
 		835A58B31AFEA3D600062D09 /* ValueTransformer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC81AFE8FFF0021873B /* ValueTransformer.framework */; };
 		835A89C31B0197A200C7847C /* MedicationDetailForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835A89C21B0197A200C7847C /* MedicationDetailForm.swift */; };
-		838512381AED04A7003A7442 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838512371AED04A7003A7442 /* TextFieldCell.swift */; };
-		838AD9B01AF3E08400CA636B /* StepperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838AD9AF1AF3E08400CA636B /* StepperCell.swift */; };
-		838AD9B21AF3E0A500CA636B /* StepperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838AD9B11AF3E0A500CA636B /* StepperCell.xib */; };
 		838AD9B61AF4C59F00CA636B /* EnclosingViewOfType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838AD9B51AF4C59F00CA636B /* EnclosingViewOfType.swift */; };
 		8390C4331A8975490010D616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4321A8975490010D616 /* AppDelegate.swift */; };
 		8390C4381A8975490010D616 /* MedicationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4371A8975490010D616 /* MedicationsListViewController.swift */; };
@@ -75,7 +71,6 @@
 		83D45E0B1B2BB04600B2E7AE /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D45E0A1B2BB04600B2E7AE /* TodayViewController.swift */; };
 		83D45E0D1B2BB09000B2E7AE /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D45E0C1B2BB09000B2E7AE /* TodayViewModel.swift */; };
 		83EFC9211ABC8DC400699EA2 /* MedicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */; };
-		83F098CD1AEEA50B00F33458 /* RightDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F098CC1AEEA50B00F33458 /* RightDetailCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,7 +112,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8304F7191AEE0F2900324A35 /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
 		830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationsListCell.swift; sourceTree = "<group>"; };
 		83335B511B01350A00C41DE2 /* FXForms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXForms.h; sourceTree = "<group>"; };
 		83335B521B01350A00C41DE2 /* FXForms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXForms.m; sourceTree = "<group>"; };
@@ -159,9 +153,6 @@
 		833FAD691AFE934B0021873B /* ArexTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArexTests.swift; sourceTree = "<group>"; };
 		833FAD701AFE9EA70021873B /* MessagePackAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePackAdapter.swift; sourceTree = "<group>"; };
 		835A89C21B0197A200C7847C /* MedicationDetailForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationDetailForm.swift; sourceTree = "<group>"; };
-		838512371AED04A7003A7442 /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
-		838AD9AF1AF3E08400CA636B /* StepperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepperCell.swift; sourceTree = "<group>"; };
-		838AD9B11AF3E0A500CA636B /* StepperCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StepperCell.xib; sourceTree = "<group>"; };
 		838AD9B51AF4C59F00CA636B /* EnclosingViewOfType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnclosingViewOfType.swift; sourceTree = "<group>"; };
 		8390C42D1A8975490010D616 /* Arex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8390C4311A8975490010D616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -186,7 +177,6 @@
 		83D45E0A1B2BB04600B2E7AE /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		83D45E0C1B2BB09000B2E7AE /* TodayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MedicationDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		83F098CC1AEEA50B00F33458 /* RightDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightDetailCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -403,9 +393,6 @@
 			isa = PBXGroup;
 			children = (
 				830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */,
-				83F098CC1AEEA50B00F33458 /* RightDetailCell.swift */,
-				838AD9AF1AF3E08400CA636B /* StepperCell.swift */,
-				838512371AED04A7003A7442 /* TextFieldCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -468,8 +455,6 @@
 				8390C4311A8975490010D616 /* Info.plist */,
 				8390C43E1A8975490010D616 /* LaunchScreen.xib */,
 				8390C4391A8975490010D616 /* Main.storyboard */,
-				838AD9B11AF3E0A500CA636B /* StepperCell.xib */,
-				8304F7191AEE0F2900324A35 /* TextFieldCell.xib */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -665,8 +650,6 @@
 				8390C43B1A8975490010D616 /* Main.storyboard in Resources */,
 				8390C4401A8975490010D616 /* LaunchScreen.xib in Resources */,
 				8390C43D1A8975490010D616 /* Images.xcassets in Resources */,
-				838AD9B21AF3E0A500CA636B /* StepperCell.xib in Resources */,
-				8304F71A1AEE0F2900324A35 /* TextFieldCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -783,11 +766,8 @@
 				8390C4331A8975490010D616 /* AppDelegate.swift in Sources */,
 				838AD9B61AF4C59F00CA636B /* EnclosingViewOfType.swift in Sources */,
 				830C80FE1ABB9D8700AE7E12 /* MedicationsListCell.swift in Sources */,
-				83F098CD1AEEA50B00F33458 /* RightDetailCell.swift in Sources */,
 				83D45E0B1B2BB04600B2E7AE /* TodayViewController.swift in Sources */,
-				838AD9B01AF3E08400CA636B /* StepperCell.swift in Sources */,
 				83CF072A1AC3632F00C2EB81 /* UIFontLineHeightUsingCoreText.swift in Sources */,
-				838512381AED04A7003A7442 /* TextFieldCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

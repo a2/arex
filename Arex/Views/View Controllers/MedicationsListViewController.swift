@@ -25,8 +25,8 @@ class MedicationsListViewController: UITableViewController {
     // MARK: - Actions
 
     @IBAction func newMedication(sender: AnyObject?) {
-        let newSender = viewModel.newDetailViewModel()
-        performSegueWithIdentifier(Constants.SegueIdentifier.ShowMedicationDetail.rawValue, sender: newSender)
+        let senderViewModel = viewModel.newDetailViewModel()
+        performSegueWithIdentifier(Constants.SegueIdentifier.ShowMedicationDetail.rawValue, sender: senderViewModel)
     }
 
     @IBAction func dismiss(sender: AnyObject?) {
@@ -99,13 +99,14 @@ class MedicationsListViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.CellIdentifiers.MedicationCell.rawValue, forIndexPath: indexPath) as? MedicationsListCell ?? undefined("Expected cell with reuse identifier \(Constants.CellIdentifiers.MedicationCell) to be kind of class \(MedicationsListCell.self)")
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.CellIdentifiers.MedicationCell.rawValue, forIndexPath: indexPath) as? MedicationsListCell
+            ?? undefined("Unexpected cell class for reuse identifier \(Constants.CellIdentifiers.MedicationCell)")
         cell.configure(viewModel: viewModel.cellViewModels[indexPath.row])
         return cell
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let sender = viewModel.detailViewModels[indexPath.row]
-        performSegueWithIdentifier(Constants.SegueIdentifier.ShowMedicationDetail.rawValue, sender: sender)
+        let senderViewModel = viewModel.detailViewModels[indexPath.row]
+        performSegueWithIdentifier(Constants.SegueIdentifier.ShowMedicationDetail.rawValue, sender: senderViewModel)
     }
 }

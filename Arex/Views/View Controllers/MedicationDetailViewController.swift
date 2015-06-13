@@ -4,14 +4,6 @@ import UIKit
 
 class MedicationDetailViewController: FXFormViewController, MedicationDetailViewModelActions {
     private struct Constants {
-        struct CellIdentifiers {
-            static let DefaultCell = "DefaultCell"
-            static let RightDetailCell = "RightDetailCell"
-            static let TextFieldCell = "TextFieldCell"
-            static let SelectableCell = "SelectableCell"
-            static let StepperCell = "StepperCell"
-        }
-
         enum SegueIdentifiers: String {
             case DismissMedicationDetail = "DismissMedicationDetail"
         }
