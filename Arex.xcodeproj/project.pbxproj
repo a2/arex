@@ -55,6 +55,7 @@
 		8390C43B1A8975490010D616 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8390C4391A8975490010D616 /* Main.storyboard */; };
 		8390C43D1A8975490010D616 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8390C43C1A8975490010D616 /* Images.xcassets */; };
 		8390C4401A8975490010D616 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8390C43E1A8975490010D616 /* LaunchScreen.xib */; };
+		83B2EB731B2DB335003B81E4 /* MainStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B2EB721B2DB335003B81E4 /* MainStoryboard.swift */; };
 		83BE348E1B2B91EE000CFE09 /* TimeAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE348D1B2B91EE000CFE09 /* TimeAdapterTests.swift */; };
 		83BE34901B2B9926000CFE09 /* PropertyMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE348F1B2B9926000CFE09 /* PropertyMap.swift */; };
 		83BE34971B2B9E9E000CFE09 /* PropertyMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE34961B2B9E9E000CFE09 /* PropertyMapTests.swift */; };
@@ -161,6 +162,7 @@
 		8390C43A1A8975490010D616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8390C43C1A8975490010D616 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8390C43F1A8975490010D616 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		83B2EB721B2DB335003B81E4 /* MainStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainStoryboard.swift; sourceTree = "<group>"; };
 		83BE348D1B2B91EE000CFE09 /* TimeAdapterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeAdapterTests.swift; sourceTree = "<group>"; };
 		83BE348F1B2B9926000CFE09 /* PropertyMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyMap.swift; sourceTree = "<group>"; };
 		83BE34961B2B9E9E000CFE09 /* PropertyMapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyMapTests.swift; sourceTree = "<group>"; };
@@ -472,6 +474,7 @@
 			isa = PBXGroup;
 			children = (
 				83CF072B1AC364A700C2EB81 /* Colors.swift */,
+				83B2EB721B2DB335003B81E4 /* MainStoryboard.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8390C44F1A8975490010D616 /* Build configuration list for PBXNativeTarget "Arex" */;
 			buildPhases = (
+				83B2EB741B2DB343003B81E4 /* Run Natalie */,
 				8390C4291A8975490010D616 /* Sources */,
 				8390C42A1A8975490010D616 /* Frameworks */,
 				8390C42B1A8975490010D616 /* Resources */,
@@ -696,6 +700,20 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
+		83B2EB741B2DB343003B81E4 /* Run Natalie */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Natalie";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/Libraries/Natalie/natalie.swift\" \"$SRCROOT/Arex/Supporting Files/Base.lproj/Main.storyboard\" > \"$SRCROOT/Arex/Helpers/MainStoryboard.swift\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -766,6 +784,7 @@
 				8390C4331A8975490010D616 /* AppDelegate.swift in Sources */,
 				838AD9B61AF4C59F00CA636B /* EnclosingViewOfType.swift in Sources */,
 				830C80FE1ABB9D8700AE7E12 /* MedicationsListCell.swift in Sources */,
+				83B2EB731B2DB335003B81E4 /* MainStoryboard.swift in Sources */,
 				83D45E0B1B2BB04600B2E7AE /* TodayViewController.swift in Sources */,
 				83CF072A1AC3632F00C2EB81 /* UIFontLineHeightUsingCoreText.swift in Sources */,
 			);

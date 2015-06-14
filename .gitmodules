@@ -22,3 +22,6 @@
 [submodule "Libraries/FXForms"]
 	path = Libraries/FXForms
 	url = https://github.com/nicklockwood/FXForms.git
+[submodule "Libraries/Natalie"]
+	path = Libraries/Natalie
+	url = https://github.com/a2/Natalie.git

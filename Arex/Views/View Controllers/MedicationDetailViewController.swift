@@ -3,12 +3,6 @@ import ReactiveCocoa
 import UIKit
 
 class MedicationDetailViewController: FXFormViewController, MedicationDetailViewModelActions {
-    private struct Constants {
-        enum SegueIdentifiers: String {
-            case DismissMedicationDetail = "DismissMedicationDetail"
-        }
-    }
-
     var viewModel: MedicationDetailViewModel!
 
     private let disposable = CompositeDisposable()
@@ -29,7 +23,7 @@ class MedicationDetailViewController: FXFormViewController, MedicationDetailView
     }
 
     @IBAction private func cancel(sender: UIBarButtonItem?) {
-        performSegueWithIdentifier(Constants.SegueIdentifiers.DismissMedicationDetail.rawValue, sender: sender)
+        performSegue(Segue.DismissMedicationDetail, sender: sender)
     }
 
     // MARK: - Configuration

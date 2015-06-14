@@ -2,24 +2,18 @@ import ArexKit
 import UIKit
 
 class TodayViewController: UITableViewController {
-    private struct Constants {
-        enum SegueIdentifier: String {
-            case ShowMedicationsList = "ShowMedicationsList"
-        }
-    }
-
     var viewModel = TodayViewModel(medicationsController: MedicationsController())
 
     // MARK: - View Controller
 
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        func segueIdentifier(segue: UIStoryboardSegue) -> Constants.SegueIdentifier? {
-            return segue.identifier.flatMap { Constants.SegueIdentifier(rawValue: $0) }
+        func segueValue(segue: UIStoryboardSegue) -> Segue? {
+            return segue.identifier.flatMap { Segue(rawValue: $0) }
         }
 
-        if let identifier = segueIdentifier(segue) {
-            switch identifier {
+        if let segueValue = segueValue(segue) {
+            switch segueValue {
             case .ShowMedicationsList:
                 let navigation = segue.destinationViewController as! UINavigationController
                 let list = navigation.viewControllers[0] as! MedicationsListViewController

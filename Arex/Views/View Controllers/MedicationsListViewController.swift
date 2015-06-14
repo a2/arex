@@ -3,17 +3,6 @@ import ReactiveCocoa
 import UIKit
 
 class MedicationsListViewController: UITableViewController {
-    private struct Constants {
-        enum CellIdentifiers: String {
-            case MedicationCell = "MedicationCell"
-        }
-
-        enum SegueIdentifier: String {
-            case DismissMedications = "DismissMedications"
-            case ShowMedicationDetail = "ShowMedicationDetail"
-        }
-    }
-
     var viewModel: MedicationsListViewModel!
 
     private let disposable = CompositeDisposable()
@@ -26,11 +15,11 @@ class MedicationsListViewController: UITableViewController {
 
     @IBAction func newMedication(sender: AnyObject?) {
         let senderViewModel = viewModel.newDetailViewModel()
-        performSegueWithIdentifier(Constants.SegueIdentifier.ShowMedicationDetail.rawValue, sender: senderViewModel)
+        performSegue(Segue.ShowMedicationDetail, sender: senderViewModel)
     }
 
     @IBAction func dismiss(sender: AnyObject?) {
-        performSegueWithIdentifier(Constants.SegueIdentifier.DismissMedications.rawValue, sender: sender)
+        performSegue(Segue.DismissMedications, sender: sender)
     }
 
     @IBAction func dismissMedicationDetail(segue: UIStoryboardSegue) {
@@ -64,12 +53,12 @@ class MedicationsListViewController: UITableViewController {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        func segueIdentifier(segue: UIStoryboardSegue) -> Constants.SegueIdentifier? {
-            return segue.identifier.flatMap { Constants.SegueIdentifier(rawValue: $0) }
+        func segueValue(segue: UIStoryboardSegue) -> Segue? {
+            return segue.identifier.flatMap { Segue(rawValue: $0) }
         }
 
-        if let identifier = segueIdentifier(segue) {
-            switch identifier {
+        if let segueValue = segueValue(segue) {
+            switch segueValue {
             case .DismissMedications:
                 break
             case .ShowMedicationDetail:
@@ -99,15 +88,15 @@ class MedicationsListViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.CellIdentifiers.MedicationCell.rawValue, forIndexPath: indexPath) as? MedicationsListCell
-            ?? undefined("Unexpected cell class for reuse identifier \(Constants.CellIdentifiers.MedicationCell)")
+        let cell = dequeueReusableCell(Reusable.MedicationCell, forIndexPath: indexPath) as? MedicationsListCell
+            ?? undefined("Unexpected cell class for reuse identifier \(Reusable.MedicationCell)")
         cell.configure(viewModel: viewModel.cellViewModels[indexPath.row])
         return cell
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let senderViewModel = viewModel.detailViewModels[indexPath.row]
-        performSegueWithIdentifier(Constants.SegueIdentifier.ShowMedicationDetail.rawValue, sender: senderViewModel)
+        performSegue(Segue.ShowMedicationDetail, sender: senderViewModel)
     }
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
