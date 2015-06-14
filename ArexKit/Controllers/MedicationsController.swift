@@ -7,6 +7,7 @@ import ReactiveCocoa
 
 public enum MedicationsControllerError: Swift.ErrorType {
     case CannotSave(name: String, underlying: Swift.ErrorType?)
+    case CannotDelete(name: String, underlying: Swift.ErrorType?)
 }
 
 extension MedicationsControllerError: ReactiveCocoa.ErrorType {
@@ -95,40 +96,70 @@ public class MedicationsController {
             |> observeOn(QueueScheduler.mainQueueScheduler)
     }
 
+    /// Returns the file URL for the `Medication` value in the directory URL.
+    private func fileURL(medication: Medication) -> NSURL {
+        let uuid = get(MedicationLenses.UUID, medication)
+        return directoryURL
+            .URLByAppendingPathComponent(uuid.UUIDString)
+            .URLByAppendingPathExtension(MedicationsController.fileExtension)
+    }
+
     /// Saves the specified `Medication` value when the returned signal producer is started.
     ///
-    /// **NB:** Assigns the `Medication` value a `uuid` if it does not already have one.
+    /// **NB:** Sets the `Medication`'s `isPersisted` value to true.
     ///
     /// - parameter medication: The `Medication` to save.
     ///
     /// - returns: A signal producer that saves the argument when started.
     public func save(inout medication medication: Medication) -> SignalProducer<Void, MedicationsControllerError> {
-        let name = get(MedicationLenses.name, medication) ?? undefined("You cannot save a Medication without a name")
-        let uuid = get(MedicationLenses.UUID, medication)
-
+        let name = get(MedicationLenses.name, medication) ?? undefined("Cannot save Medication without name")
+        let medicationURL = fileURL(medication)
         let producer = SignalProducer<Void, MedicationsControllerError> { (observer, disposable) in
             Adapters.medication().transform(medication).analysis(ifSuccess: {
-                let url = self.directoryURL.URLByAppendingPathComponent("\(uuid.UUIDString).\(MedicationsController.fileExtension)")
-
                 var packed = pack($0)
                 let data = NSData(bytes: &packed, length: packed.count)
 
                 do {
-                    try data.writeToURL(url, options: .DataWritingAtomic)
-
-                    if !get(MedicationLenses.isPersisted, medication) {
-                        set(MedicationLenses.isPersisted, medication, true)
-                    }
+                    try data.writeToURL(medicationURL, options: .DataWritingAtomic)
+                    set(MedicationLenses.isPersisted, medication, true)
 
                     sendCompleted(observer)
                 } catch let error {
-                    sendError(observer, .CannotSave(name: name, underlying: error as NSError))
+                    sendError(observer, .CannotSave(name: name, underlying: error))
                 }
             }, ifFailure: {
                 sendError(observer, .CannotSave(name: name, underlying: $0))
             })
         }
 
-        return producer |> observeOn(QueueScheduler.mainQueueScheduler)
+        return producer
+            |> startOn(QueueScheduler(queue: queue))
+            |> observeOn(QueueScheduler.mainQueueScheduler)
+    }
+
+    /// Deletes the specified `Medication` value when the returned signal producer is started.
+    ///
+    /// **NB:** Sets the `Medication`'s `isPersisted` value to false.
+    ///
+    /// - parameter medication: The `Medication` to delete.
+    ///
+    /// - returns: A signal producer that deletes the argument when started.
+    public func delete(inout medication medication: Medication) -> SignalProducer<Void, MedicationsControllerError> {
+        let name = get(MedicationLenses.name, medication) ?? undefined("Cannot save Medication without name")
+        let medicationURL = fileURL(medication)
+        let producer = SignalProducer<Void, MedicationsControllerError> { (observer, disposable) in
+            do {
+                try NSFileManager().removeItemAtURL(medicationURL)
+                set(MedicationLenses.isPersisted, medication, false)
+
+                sendCompleted(observer)
+            } catch let error {
+                sendError(observer, .CannotDelete(name: name, underlying: error as NSError))
+            }
+        }
+
+        return producer
+            |> startOn(QueueScheduler(queue: queue))
+            |> observeOn(QueueScheduler.mainQueueScheduler)
     }
 }

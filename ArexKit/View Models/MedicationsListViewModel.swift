@@ -52,4 +52,8 @@ public class MedicationsListViewModel {
     public func newDetailViewModel() -> MedicationDetailViewModel {
         return MedicationDetailViewModel(medicationsController: medicationsController, medication: Medication())
     }
+
+    public func deleteViewModel(atIndex index: Int) -> SignalProducer<Void, MedicationsControllerError> {
+        return medicationsController.delete(medication: &medications[index])
+    }
 }

@@ -109,4 +109,15 @@ class MedicationsListViewController: UITableViewController {
         let senderViewModel = viewModel.detailViewModels[indexPath.row]
         performSegueWithIdentifier(Constants.SegueIdentifier.ShowMedicationDetail.rawValue, sender: senderViewModel)
     }
+
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        precondition(editingStyle == .Delete)
+
+        viewModel.deleteViewModel(atIndex: indexPath.row)
+            |> start({ error in
+                // Handle error
+            }, completed: {
+
+            })
+    }
 }
