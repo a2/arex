@@ -31,7 +31,7 @@ public class MedicationsController {
 
     /// The queue on which `directoryURL` is loaded and its `Medication` contents are unpacked.
     private lazy var queue: dispatch_queue_t = {
-        let attr = dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_SERIAL, QOS_CLASS_DEFAULT, 0)
+        let attr = dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_SERIAL, QOS_CLASS_USER_INITIATED, 0)
         return dispatch_queue_create("us.pandamonia.Arex.MedicationsController", attr)
     }()
 
