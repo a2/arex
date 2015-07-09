@@ -8,7 +8,7 @@ The following commands will set up an Arex checkout. You'll need Xcode or the
 Command Line Tools installed.
 
 ```sh
-git clone https://github.com/a2/arex-7.git
+git clone --recursive https://github.com/a2/arex-7.git
 cd arex-7
 carthage bootstrap
 ```
