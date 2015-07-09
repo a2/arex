@@ -10,28 +10,25 @@ Command Line Tools installed.
 ```sh
 git clone https://github.com/a2/arex-7.git
 cd arex-7
-pod install
+carthage bootstrap
 ```
 ## Getting Started
 
-Arex must be built with [Xcode](https://developer.apple.com/xcode/downloads/)
-6.3 or better. Development must be done using `Arex.xcworkspace`, rather than
-`Arex.xcodeproj`.
+Arex must be built with [Xcode](https://developer.apple.com/xcode/downloads/) 7.0 or better.
 
 The project may also be built from the command line:
 
 ```sh
-xcodebuild -workspace Arex.xcworkspace -scheme Arex
+xcodebuild -project Arex.xcodeproj -scheme Arex
 ```
 
 ## Tech Stack
 
-* [Swift](https://developer.apple.com/swift/) 1.2 or better.
-* [CocoaPods](http://cocoapods.org)
+* [Swift](https://developer.apple.com/swift/) 2.0 or better.
+* [Carthage](https://github.com/Carthage/Carthage)
 * [MessagePack.swift](https://github.com/a2/MessagePack.swift)
 * [Pistachio](https://github.com/felixjendrusch/Pistachio)
 * [ReactiveCocoa](https://github.com/reactivecocoa/reactivecocoa)
-* [LlamaKit](https://github.com/LlamaKit/LlamaKit)
 
 ## Story
 
