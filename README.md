@@ -37,7 +37,7 @@ xcodebuild -workspace Arex.xcworkspace -scheme Arex
 
 The repository is officially `arex-7`, as it is the seventh complete rewrite with the same goals. It began and continues as a side project, and was open-sourced to make its progress visible and accountable.
 
-Arex was open-sourced live on stage at [Swift Summit](https://www.swiftsummit.com) 2015, one of the first conferences devoted to Swift's community and practices. You can view Alex's talk, "Death by Indecision", when it is made available.
+Arex was open-sourced live on stage at [Swift Summit](https://www.swiftsummit.com) 2015, one of the first conferences devoted to Swift's community and practices. You can view Alex's talk, ["Death by Indecision"](https://realm.io/news/alexsander-akers-death-by-indecision/).
 
 ## Roadmap
 
