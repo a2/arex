@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		830C80FE1ABB9D8700AE7E12 /* MedicationsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830C80FD1ABB9D8700AE7E12 /* MedicationsListCell.swift */; };
 		83335B531B01350A00C41DE2 /* FXForms.h in Headers */ = {isa = PBXBuildFile; fileRef = 83335B511B01350A00C41DE2 /* FXForms.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		83335B541B01350A00C41DE2 /* FXForms.m in Sources */ = {isa = PBXBuildFile; fileRef = 83335B521B01350A00C41DE2 /* FXForms.m */; };
+		83335B541B01350A00C41DE2 /* FXForms.m in Sources */ = {isa = PBXBuildFile; fileRef = 83335B521B01350A00C41DE2 /* FXForms.m */; settings = {COMPILER_FLAGS = "-Wno-deprecated-declarations -Wno-nonnull"; }; };
 		8334F1D31B2A3E1C00BDE13D /* ScheduleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8334F1D21B2A3E1C00BDE13D /* ScheduleType.swift */; };
 		833FACCE1AFE90470021873B /* SAMTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 833FACCD1AFE90470021873B /* SAMTextView.m */; };
 		833FACE01AFE90BD0021873B /* ArexKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACD51AFE90BD0021873B /* ArexKit.framework */; };
