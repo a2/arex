@@ -88,7 +88,7 @@ class MedicationsListViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = dequeueReusableCell(Reusable.MedicationCell, forIndexPath: indexPath) as? MedicationsListCell
+        let cell = tableView.dequeueReusableCell(Reusable.MedicationCell, forIndexPath: indexPath) as? MedicationsListCell
             ?? undefined("Unexpected cell class for reuse identifier \(Reusable.MedicationCell)")
         cell.configure(viewModel: viewModel.cellViewModels[indexPath.row])
         return cell
