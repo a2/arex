@@ -1,4 +1,4 @@
-# Arex [![Build Status](https://www.bitrise.io/app/2e8eb12873752ec7.svg?token=2FwLIVmg-ByzIgdfN9JgIw)](https://www.bitrise.io/app/2e8eb12873752ec7)
+# Arex
 
 An iOS application for remembering to take your medications.
 
