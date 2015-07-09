@@ -52,7 +52,7 @@ class DirectoryMonitorTests: XCTestCase {
         let serialDisposable = SerialDisposable()
         serialDisposable.innerDisposable = monitorDirectory(directoryURL)
             |> observeOn(QueueScheduler())
-            |> start({ error in
+            |> start(error: { error in
                 XCTFail("Unexpected failure: \(error)")
             }, next: { value in
                 XCTAssertEqual(value, directoryURL)
