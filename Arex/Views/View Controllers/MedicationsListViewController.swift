@@ -103,7 +103,7 @@ class MedicationsListViewController: UITableViewController {
         precondition(editingStyle == .Delete)
 
         viewModel.deleteViewModel(atIndex: indexPath.row)
-            |> start({ error in
+            |> start(error: { error in
                 // Handle error
             }, completed: {
 
