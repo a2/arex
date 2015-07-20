@@ -322,8 +322,8 @@
 		833FAD391AFE91EF0021873B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				833FAD3B1AFE91EF0021873B /* Pistachio */,
 				833FAD3A1AFE91EF0021873B /* Medication.swift */,
+				833FAD3B1AFE91EF0021873B /* Pistachio */,
 				833FAD401AFE91EF0021873B /* Schedule.swift */,
 				8334F1D21B2A3E1C00BDE13D /* ScheduleType.swift */,
 				833FAD411AFE91EF0021873B /* Time.swift */,
