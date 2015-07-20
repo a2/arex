@@ -5,15 +5,9 @@ import Pistachio
 import Result
 import ReactiveCocoa
 
-public enum MedicationsControllerError: Swift.ErrorType {
-    case CannotSave(name: String, underlying: Swift.ErrorType?)
-    case CannotDelete(name: String, underlying: Swift.ErrorType?)
-}
-
-extension MedicationsControllerError: ReactiveCocoa.ErrorType {
-    public var nsError: NSError {
-        return self as NSError
-    }
+public enum MedicationsControllerError: ErrorType {
+    case CannotSave(name: String, underlying: ErrorType?)
+    case CannotDelete(name: String, underlying: ErrorType?)
 }
 
 public class MedicationsController {
@@ -89,11 +83,11 @@ public class MedicationsController {
     /// and sends an `Array[Medication]` when the directory's contents change.
     public func medications() -> SignalProducer<[Medication], NSError> {
         return SignalProducer(value: directoryURL)
-            |> concat(monitorDirectory(directoryURL))
-            |> observeOn(QueueScheduler(queue: queue))
-            |> mapError { $0.nsError }
-            |> attemptMap { [unowned self] _ in self.loadMedications() }
-            |> observeOn(QueueScheduler.mainQueueScheduler)
+            .concat(monitorDirectory(directoryURL))
+            .observeOn(QueueScheduler(queue: queue))
+            .mapError { $0 as NSError }
+            .attemptMap { [unowned self] _ in self.loadMedications() }
+            .observeOn(QueueScheduler.mainQueueScheduler)
     }
 
     /// Returns the file URL for the `Medication` value in the directory URL.
@@ -133,8 +127,8 @@ public class MedicationsController {
         }
 
         return producer
-            |> startOn(QueueScheduler(queue: queue))
-            |> observeOn(QueueScheduler.mainQueueScheduler)
+            .startOn(QueueScheduler(queue: queue))
+            .observeOn(QueueScheduler.mainQueueScheduler)
     }
 
     /// Deletes the specified `Medication` value when the returned signal producer is started.
@@ -159,7 +153,7 @@ public class MedicationsController {
         }
 
         return producer
-            |> startOn(QueueScheduler(queue: queue))
-            |> observeOn(QueueScheduler.mainQueueScheduler)
+            .startOn(QueueScheduler(queue: queue))
+            .observeOn(QueueScheduler.mainQueueScheduler)
     }
 }

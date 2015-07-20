@@ -16,7 +16,7 @@ class MedicationDetailViewController: FXFormViewController, MedicationDetailView
     @IBAction private func save(sender: UIBarButtonItem?) {
         sender?.enabled = false
         viewModel.saveChanges.apply(())
-            |> start(completed: { [unowned self, weak sender] in
+            .start(completed: { [unowned self, weak sender] in
                 sender?.enabled = true
                 self.cancel(sender)
             })

@@ -4,15 +4,9 @@ import ReactiveCocoa
 /// The queue on which the internal `dispatch_source_t` in `monitorDirectory()` invokes its event handler.
 private let queue = dispatch_queue_create("us.pandamonia.Arex.MonitorDirectory", DISPATCH_QUEUE_CONCURRENT)
 
-public enum MonitorDirectoryError: Swift.ErrorType {
+public enum MonitorDirectoryError: ErrorType {
     case CannotOpenDirectory(Int32)
     case CannotMonitorDirectory
-}
-
-extension MonitorDirectoryError: ReactiveCocoa.ErrorType {
-    public var nsError: NSError {
-        return self as NSError
-    }
 }
 
 /// Monitors the specified directory for file system changes.

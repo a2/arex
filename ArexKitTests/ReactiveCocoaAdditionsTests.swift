@@ -5,9 +5,9 @@ import XCTest
 class ReactiveCocoaAdditionsTests: XCTestCase {
     func testCatchAll() {
         let result = SignalProducer<String, NSError>(error: NSError(domain: "", code: 0, userInfo: nil))
-            |> flatMapError(catchAll)
-            |> concat(SignalProducer(value: "Hello, world!"))
-            |> first
+            .flatMapError(catchAll)
+            .concat(SignalProducer(value: "Hello, world!"))
+            .first()
 
         XCTAssertNotNil(result)
         XCTAssertNil(result!.error)
@@ -24,8 +24,8 @@ class ReactiveCocoaAdditionsTests: XCTestCase {
 
         do {
             let result = SignalProducer<String, NSError>(value: "Hello, world!")
-                |> map(replace("Good night, moon!"))
-                |> first
+                .map(replace("Good night, moon!"))
+                .first()
 
             XCTAssertNotNil(result)
             XCTAssertNil(result!.error)

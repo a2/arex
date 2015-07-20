@@ -14,7 +14,7 @@ private struct MappedProperty<T>: PropertyType {
 
     init<P: PropertyType>(property: P, transform: P.Value -> T) {
         _value = { transform(property.value) }
-        _producer = { property.producer |> ReactiveCocoa.map(transform) }
+        _producer = { property.producer.map(transform) }
     }
 }
 

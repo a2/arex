@@ -6,14 +6,8 @@ import ReactiveCocoa
 import Result
 import ValueTransformer
 
-public enum ScheduleAdapterError: Swift.ErrorType {
+public enum ScheduleAdapterError: ErrorType {
     case InvalidInput(String)
-}
-
-extension ScheduleAdapterError: ReactiveCocoa.ErrorType {
-    public var nsError: NSError {
-        return self as NSError
-    }
 }
 
 private extension ScheduleType {
@@ -63,11 +57,11 @@ private extension ScheduleType {
 public struct ScheduleAdapter: AdapterType {
     public init() {}
 
-    private func error(string: String) -> Swift.ErrorType {
+    private func error(string: String) -> ErrorType {
         return ScheduleAdapterError.InvalidInput(string)
     }
 
-    public func transform(model: Schedule) -> Result<MessagePackValue, Swift.ErrorType> {
+    public func transform(model: Schedule) -> Result<MessagePackValue, ErrorType> {
         var encoded: [MessagePackValue : MessagePackValue] = [
             "type": .String(model.scheduleType.typeString),
         ]
@@ -89,7 +83,7 @@ public struct ScheduleAdapter: AdapterType {
         return .success(.Map(encoded))
     }
 
-    public func reverseTransform(data: MessagePackValue) -> Result<Schedule, Swift.ErrorType> {
+    public func reverseTransform(data: MessagePackValue) -> Result<Schedule, ErrorType> {
         if let dictionary = data.dictionaryValue,
             typeString = dictionary["type"]?.stringValue,
             scheduleType = ScheduleType(typeString: typeString) {

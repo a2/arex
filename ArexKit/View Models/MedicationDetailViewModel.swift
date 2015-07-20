@@ -39,9 +39,9 @@ public class MedicationDetailViewModel {
         return Action(enabledIf: self.canSave) { [unowned self] _ in
             var medication = self.form.medication
             return self.medicationsController.save(medication: &medication)
-                |> map { return undefined("Did not expect MedicationsController.save(_:) to send a next event") }
-                |> concat(SignalProducer { observer, disposable in disposable += SignalProducer(value: medication).start(observer) })
-                |> map(void)
+                .map { return undefined("Did not expect MedicationsController.save(_:) to send a next event") }
+                .concat(SignalProducer { observer, disposable in disposable += SignalProducer(value: medication).start(observer) })
+                .map(void)
         }
     }
 }

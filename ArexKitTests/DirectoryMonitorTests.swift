@@ -35,7 +35,7 @@ class DirectoryMonitorTests: XCTestCase {
         let expectation = expectationWithDescription("")
 
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0)) {
-            let result = monitorDirectory(directoryURL) |> first
+            let result = monitorDirectory(directoryURL).first()
             XCTAssertNotNil(result?.error)
             expectation.fulfill()
         }
@@ -51,8 +51,8 @@ class DirectoryMonitorTests: XCTestCase {
 
         let serialDisposable = SerialDisposable()
         serialDisposable.innerDisposable = monitorDirectory(directoryURL)
-            |> observeOn(QueueScheduler())
-            |> start(error: { error in
+            .observeOn(QueueScheduler())
+            .start(error: { error in
                 XCTFail("Unexpected failure: \(error)")
             }, next: { value in
                 XCTAssertEqual(value, directoryURL)
