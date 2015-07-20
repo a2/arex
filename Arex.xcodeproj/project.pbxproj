@@ -49,6 +49,7 @@
 		835A58B31AFEA3D600062D09 /* ValueTransformer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC81AFE8FFF0021873B /* ValueTransformer.framework */; };
 		835A89C31B0197A200C7847C /* MedicationDetailForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835A89C21B0197A200C7847C /* MedicationDetailForm.swift */; };
 		838AD9B61AF4C59F00CA636B /* EnclosingViewOfType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838AD9B51AF4C59F00CA636B /* EnclosingViewOfType.swift */; };
+		838F47161B4F0D6400D31AA5 /* NSDate+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838F47151B4F0D6400D31AA5 /* NSDate+Comparable.swift */; };
 		838F471A1B50418300D31AA5 /* ScheduleTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838F47191B50418300D31AA5 /* ScheduleTypeTests.swift */; };
 		838F471C1B5043EA00D31AA5 /* ScheduleDescriptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838F471B1B5043EA00D31AA5 /* ScheduleDescriptionTests.swift */; };
 		8390C4331A8975490010D616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4321A8975490010D616 /* AppDelegate.swift */; };
@@ -70,6 +71,7 @@
 		83D2D4F51B2B8A1500A15CA6 /* ReactiveCocoaAdditionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2D4F41B2B8A1500A15CA6 /* ReactiveCocoaAdditionsTests.swift */; };
 		83D2D4F71B2B8A4B00A15CA6 /* XCTestAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2D4F61B2B8A4B00A15CA6 /* XCTestAdditions.swift */; };
 		83D2D4F91B2B8C5C00A15CA6 /* ScheduleAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2D4F81B2B8C5C00A15CA6 /* ScheduleAdapterTests.swift */; };
+		83D4489C1B5D77DD00B0F923 /* NSDateComparableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D4489B1B5D77DD00B0F923 /* NSDateComparableTests.swift */; };
 		83D45E0B1B2BB04600B2E7AE /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D45E0A1B2BB04600B2E7AE /* TodayViewController.swift */; };
 		83D45E0D1B2BB09000B2E7AE /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D45E0C1B2BB09000B2E7AE /* TodayViewModel.swift */; };
 		83EFC9211ABC8DC400699EA2 /* MedicationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */; };
@@ -155,6 +157,7 @@
 		833FAD701AFE9EA70021873B /* MessagePackAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePackAdapter.swift; sourceTree = "<group>"; };
 		835A89C21B0197A200C7847C /* MedicationDetailForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationDetailForm.swift; sourceTree = "<group>"; };
 		838AD9B51AF4C59F00CA636B /* EnclosingViewOfType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnclosingViewOfType.swift; sourceTree = "<group>"; };
+		838F47151B4F0D6400D31AA5 /* NSDate+Comparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Comparable.swift"; sourceTree = "<group>"; };
 		838F47191B50418300D31AA5 /* ScheduleTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTypeTests.swift; sourceTree = "<group>"; };
 		838F471B1B5043EA00D31AA5 /* ScheduleDescriptionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDescriptionTests.swift; sourceTree = "<group>"; };
 		8390C42D1A8975490010D616 /* Arex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +181,7 @@
 		83D2D4F41B2B8A1500A15CA6 /* ReactiveCocoaAdditionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveCocoaAdditionsTests.swift; sourceTree = "<group>"; };
 		83D2D4F61B2B8A4B00A15CA6 /* XCTestAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestAdditions.swift; sourceTree = "<group>"; };
 		83D2D4F81B2B8C5C00A15CA6 /* ScheduleAdapterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleAdapterTests.swift; sourceTree = "<group>"; };
+		83D4489B1B5D77DD00B0F923 /* NSDateComparableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateComparableTests.swift; sourceTree = "<group>"; };
 		83D45E0A1B2BB04600B2E7AE /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		83D45E0C1B2BB09000B2E7AE /* TodayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MedicationDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -261,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				833FAD2A1AFE91EF0021873B /* Controllers */,
+				838F47141B4F0D5800D31AA5 /* Extensions */,
 				833FAD2C1AFE91EF0021873B /* Functions */,
 				833FAD391AFE91EF0021873B /* Models */,
 				833FAD421AFE91EF0021873B /* Supporting Files */,
@@ -276,6 +281,7 @@
 				83D2D4EE1B2B702E00A15CA6 /* DirectoryMonitorTests.swift */,
 				83D2D4F01B2B881200A15CA6 /* HelpersTests.swift */,
 				83D2D4F21B2B88BF00A15CA6 /* IndexPathTests.swift */,
+				83D4489B1B5D77DD00B0F923 /* NSDateComparableTests.swift */,
 				83BE34961B2B9E9E000CFE09 /* PropertyMapTests.swift */,
 				83D2D4F41B2B8A1500A15CA6 /* ReactiveCocoaAdditionsTests.swift */,
 				83D2D4F81B2B8C5C00A15CA6 /* ScheduleAdapterTests.swift */,
@@ -410,6 +416,14 @@
 				83D45E0A1B2BB04600B2E7AE /* TodayViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		838F47141B4F0D5800D31AA5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				838F47151B4F0D6400D31AA5 /* NSDate+Comparable.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8390C4241A8975490010D616 = {
@@ -729,6 +743,7 @@
 				833FAD5B1AFE91EF0021873B /* Time.swift in Sources */,
 				833FAD5E1AFE91EF0021873B /* MedicationDetailViewModel.swift in Sources */,
 				833FAD491AFE91EF0021873B /* MedicationsController.swift in Sources */,
+				838F47161B4F0D6400D31AA5 /* NSDate+Comparable.swift in Sources */,
 				833FAD551AFE91EF0021873B /* Medication.swift in Sources */,
 				83D2D4E91B2B40C000A15CA6 /* DictionaryAddition.swift in Sources */,
 				833FAD511AFE91EF0021873B /* PistachioAdditions.swift in Sources */,
@@ -760,6 +775,7 @@
 				838F471A1B50418300D31AA5 /* ScheduleTypeTests.swift in Sources */,
 				83BE34971B2B9E9E000CFE09 /* PropertyMapTests.swift in Sources */,
 				83D2D4F11B2B881200A15CA6 /* HelpersTests.swift in Sources */,
+				83D4489C1B5D77DD00B0F923 /* NSDateComparableTests.swift in Sources */,
 				83D2D4F91B2B8C5C00A15CA6 /* ScheduleAdapterTests.swift in Sources */,
 				83D2D4EB1B2B6CEA00A15CA6 /* CSSColorsTests.swift in Sources */,
 				83D2D4EF1B2B702E00A15CA6 /* DirectoryMonitorTests.swift in Sources */,
