@@ -24,7 +24,6 @@
 		833FAD491AFE91EF0021873B /* MedicationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD2B1AFE91EF0021873B /* MedicationsController.swift */; };
 		833FAD4B1AFE91EF0021873B /* CSSColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD2E1AFE91EF0021873B /* CSSColors.swift */; };
 		833FAD4C1AFE91EF0021873B /* DirectoryMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD2F1AFE91EF0021873B /* DirectoryMonitor.swift */; };
-		833FAD4D1AFE91EF0021873B /* FilterByExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD301AFE91EF0021873B /* FilterByExtension.swift */; };
 		833FAD4F1AFE91EF0021873B /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD321AFE91EF0021873B /* Helpers.swift */; };
 		833FAD501AFE91EF0021873B /* IndexPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD331AFE91EF0021873B /* IndexPath.swift */; };
 		833FAD511AFE91EF0021873B /* PistachioAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833FAD341AFE91EF0021873B /* PistachioAdditions.swift */; };
@@ -132,7 +131,6 @@
 		833FAD2B1AFE91EF0021873B /* MedicationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationsController.swift; sourceTree = "<group>"; };
 		833FAD2E1AFE91EF0021873B /* CSSColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSColors.swift; sourceTree = "<group>"; };
 		833FAD2F1AFE91EF0021873B /* DirectoryMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryMonitor.swift; sourceTree = "<group>"; };
-		833FAD301AFE91EF0021873B /* FilterByExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterByExtension.swift; sourceTree = "<group>"; };
 		833FAD321AFE91EF0021873B /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		833FAD331AFE91EF0021873B /* IndexPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexPath.swift; sourceTree = "<group>"; };
 		833FAD341AFE91EF0021873B /* PistachioAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PistachioAdditions.swift; sourceTree = "<group>"; };
@@ -306,7 +304,6 @@
 				833FAD2E1AFE91EF0021873B /* CSSColors.swift */,
 				83D2D4E81B2B40C000A15CA6 /* DictionaryAddition.swift */,
 				833FAD2F1AFE91EF0021873B /* DirectoryMonitor.swift */,
-				833FAD301AFE91EF0021873B /* FilterByExtension.swift */,
 				833FAD321AFE91EF0021873B /* Helpers.swift */,
 				833FAD331AFE91EF0021873B /* IndexPath.swift */,
 				833FAD341AFE91EF0021873B /* PistachioAdditions.swift */,
@@ -731,7 +728,6 @@
 				833FAD511AFE91EF0021873B /* PistachioAdditions.swift in Sources */,
 				833FAD4F1AFE91EF0021873B /* Helpers.swift in Sources */,
 				833FAD561AFE91EF0021873B /* Adapters.swift in Sources */,
-				833FAD4D1AFE91EF0021873B /* FilterByExtension.swift in Sources */,
 				833FAD601AFE91EF0021873B /* MedicationsListViewModel.swift in Sources */,
 				83D45E0D1B2BB09000B2E7AE /* TodayViewModel.swift in Sources */,
 				833FAD571AFE91EF0021873B /* DateTransformers.swift in Sources */,
