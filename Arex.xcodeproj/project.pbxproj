@@ -49,6 +49,7 @@
 		835A58B31AFEA3D600062D09 /* ValueTransformer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC81AFE8FFF0021873B /* ValueTransformer.framework */; };
 		835A89C31B0197A200C7847C /* MedicationDetailForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835A89C21B0197A200C7847C /* MedicationDetailForm.swift */; };
 		838AD9B61AF4C59F00CA636B /* EnclosingViewOfType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838AD9B51AF4C59F00CA636B /* EnclosingViewOfType.swift */; };
+		838F471C1B5043EA00D31AA5 /* ScheduleDescriptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838F471B1B5043EA00D31AA5 /* ScheduleDescriptionTests.swift */; };
 		8390C4331A8975490010D616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4321A8975490010D616 /* AppDelegate.swift */; };
 		8390C4381A8975490010D616 /* MedicationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4371A8975490010D616 /* MedicationsListViewController.swift */; };
 		8390C43B1A8975490010D616 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8390C4391A8975490010D616 /* Main.storyboard */; };
@@ -153,6 +154,7 @@
 		833FAD701AFE9EA70021873B /* MessagePackAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePackAdapter.swift; sourceTree = "<group>"; };
 		835A89C21B0197A200C7847C /* MedicationDetailForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationDetailForm.swift; sourceTree = "<group>"; };
 		838AD9B51AF4C59F00CA636B /* EnclosingViewOfType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnclosingViewOfType.swift; sourceTree = "<group>"; };
+		838F471B1B5043EA00D31AA5 /* ScheduleDescriptionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDescriptionTests.swift; sourceTree = "<group>"; };
 		8390C42D1A8975490010D616 /* Arex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8390C4311A8975490010D616 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8390C4321A8975490010D616 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				83BE34961B2B9E9E000CFE09 /* PropertyMapTests.swift */,
 				83D2D4F41B2B8A1500A15CA6 /* ReactiveCocoaAdditionsTests.swift */,
 				83D2D4F81B2B8C5C00A15CA6 /* ScheduleAdapterTests.swift */,
+				838F471B1B5043EA00D31AA5 /* ScheduleDescriptionTests.swift */,
 				833FACE41AFE90BD0021873B /* Supporting Files */,
 				83BE348D1B2B91EE000CFE09 /* TimeAdapterTests.swift */,
 				83D2D4F61B2B8A4B00A15CA6 /* XCTestAdditions.swift */,
@@ -750,6 +753,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83D2D4F51B2B8A1500A15CA6 /* ReactiveCocoaAdditionsTests.swift in Sources */,
+				838F471C1B5043EA00D31AA5 /* ScheduleDescriptionTests.swift in Sources */,
 				83BE34971B2B9E9E000CFE09 /* PropertyMapTests.swift in Sources */,
 				83D2D4F11B2B881200A15CA6 /* HelpersTests.swift in Sources */,
 				83D2D4F91B2B8C5C00A15CA6 /* ScheduleAdapterTests.swift in Sources */,

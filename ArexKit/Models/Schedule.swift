@@ -16,9 +16,9 @@ extension Schedule: CustomStringConvertible {
         case let .EveryXDays(interval: interval, startDate: startDate):
             return "EveryXDays(interval: \(interval), startDate: \(startDate))"
         case let .Weekly(days: days):
-            return "Weekly(days: \(days))"
+            return "Weekly(days: 0b\(String(days, radix: 2)))"
         case let .Monthly(days: days):
-            return "Monthly(days: \(days))"
+            return "Monthly(days: 0b\(String(days, radix: 2)))"
         case .NotCurrentlyTaken:
             return "NotCurrentlyTaken"
         }
