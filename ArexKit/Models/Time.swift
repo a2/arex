@@ -3,8 +3,8 @@ import Monocle
 import Pistachio
 
 public struct Time {
-    var hour: Int
-    var minute: Int
+    private var hour: Int
+    private var minute: Int
 
     public init() {
         self.init(hour: 0, minute: 0)
