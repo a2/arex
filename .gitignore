@@ -24,7 +24,3 @@ Pods/
 # Carthage
 #
 Carthage/Build/
-
-# Generated Files
-#
-Arex/Helpers/MainStoryboard.swift
