@@ -1,6 +1,6 @@
-github "a2/MessagePack.swift" "ecf6baf92229c42aceb7db6b5f71e7bd64c945f2"
+github "a2/MessagePack.swift" "fd039ef66de968512f95084205fbac688bfd489d"
 github "robb/Monocle" "0b1d10b0783c62a885e3c5030d10d6769f76aecb"
 github "antitypical/Result" "0.5"
-github "ReactiveCocoa/ReactiveCocoa" "59a1b6faf9fb93ea8ece35f0ce7512502848bc19"
+github "ReactiveCocoa/ReactiveCocoa" "ee29c84fdb2142e3862fd198ec9625a7719d632b"
 github "felixjendrusch/ValueTransformer" "2.3.0"
 github "felixjendrusch/Pistachio" "ace210d505b608292b8205956189eeb02d1bccac"
