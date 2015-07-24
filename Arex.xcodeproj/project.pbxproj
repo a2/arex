@@ -49,7 +49,9 @@
 		835A58B31AFEA3D600062D09 /* ValueTransformer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 833FACC81AFE8FFF0021873B /* ValueTransformer.framework */; };
 		835A89C31B0197A200C7847C /* MedicationDetailForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835A89C21B0197A200C7847C /* MedicationDetailForm.swift */; };
 		838AD9B61AF4C59F00CA636B /* EnclosingViewOfType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838AD9B51AF4C59F00CA636B /* EnclosingViewOfType.swift */; };
+		838F47131B4F096300D31AA5 /* Medication+Scheduling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838F47121B4F096300D31AA5 /* Medication+Scheduling.swift */; };
 		838F47161B4F0D6400D31AA5 /* NSDate+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838F47151B4F0D6400D31AA5 /* NSDate+Comparable.swift */; };
+		838F47181B5040EC00D31AA5 /* MedicationSchedulingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838F47171B5040EC00D31AA5 /* MedicationSchedulingTests.swift */; };
 		838F471A1B50418300D31AA5 /* ScheduleTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838F47191B50418300D31AA5 /* ScheduleTypeTests.swift */; };
 		838F471C1B5043EA00D31AA5 /* ScheduleDescriptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838F471B1B5043EA00D31AA5 /* ScheduleDescriptionTests.swift */; };
 		8390C4331A8975490010D616 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390C4321A8975490010D616 /* AppDelegate.swift */; };
@@ -157,7 +159,9 @@
 		833FAD701AFE9EA70021873B /* MessagePackAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagePackAdapter.swift; sourceTree = "<group>"; };
 		835A89C21B0197A200C7847C /* MedicationDetailForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationDetailForm.swift; sourceTree = "<group>"; };
 		838AD9B51AF4C59F00CA636B /* EnclosingViewOfType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnclosingViewOfType.swift; sourceTree = "<group>"; };
+		838F47121B4F096300D31AA5 /* Medication+Scheduling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Medication+Scheduling.swift"; sourceTree = "<group>"; };
 		838F47151B4F0D6400D31AA5 /* NSDate+Comparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Comparable.swift"; sourceTree = "<group>"; };
+		838F47171B5040EC00D31AA5 /* MedicationSchedulingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationSchedulingTests.swift; sourceTree = "<group>"; };
 		838F47191B50418300D31AA5 /* ScheduleTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTypeTests.swift; sourceTree = "<group>"; };
 		838F471B1B5043EA00D31AA5 /* ScheduleDescriptionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDescriptionTests.swift; sourceTree = "<group>"; };
 		8390C42D1A8975490010D616 /* Arex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,7 +188,7 @@
 		83D45E0A1B2BB04600B2E7AE /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		83D45E0C1B2BB09000B2E7AE /* TodayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		83EFC9201ABC8DC400699EA2 /* MedicationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MedicationDetailViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		83FAC0CB1B5D830C001B75EB /* MainStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainStoryboard.swift; path = MainStoryboard.swift; sourceTree = DERIVED_SOURCES_DIR; };
+		83FAC0CB1B5D830C001B75EB /* MainStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainStoryboard.swift; sourceTree = DERIVED_SOURCES_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +285,7 @@
 				83D2D4EE1B2B702E00A15CA6 /* DirectoryMonitorTests.swift */,
 				83D2D4F01B2B881200A15CA6 /* HelpersTests.swift */,
 				83D2D4F21B2B88BF00A15CA6 /* IndexPathTests.swift */,
+				838F47171B5040EC00D31AA5 /* MedicationSchedulingTests.swift */,
 				83D4489B1B5D77DD00B0F923 /* NSDateComparableTests.swift */,
 				83BE34961B2B9E9E000CFE09 /* PropertyMapTests.swift */,
 				83D2D4F41B2B8A1500A15CA6 /* ReactiveCocoaAdditionsTests.swift */,
@@ -329,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				833FAD3A1AFE91EF0021873B /* Medication.swift */,
+				838F47121B4F096300D31AA5 /* Medication+Scheduling.swift */,
 				833FAD3B1AFE91EF0021873B /* Pistachio */,
 				833FAD401AFE91EF0021873B /* Schedule.swift */,
 				8334F1D21B2A3E1C00BDE13D /* ScheduleType.swift */,
@@ -740,6 +746,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				838F47131B4F096300D31AA5 /* Medication+Scheduling.swift in Sources */,
 				833FAD521AFE91EF0021873B /* ReactiveCocoaAdditions.swift in Sources */,
 				83335B541B01350A00C41DE2 /* FXForms.m in Sources */,
 				833FAD5B1AFE91EF0021873B /* Time.swift in Sources */,
@@ -783,6 +790,7 @@
 				83D2D4EF1B2B702E00A15CA6 /* DirectoryMonitorTests.swift in Sources */,
 				83D2D4F71B2B8A4B00A15CA6 /* XCTestAdditions.swift in Sources */,
 				83D2D4F31B2B88BF00A15CA6 /* IndexPathTests.swift in Sources */,
+				838F47181B5040EC00D31AA5 /* MedicationSchedulingTests.swift in Sources */,
 				83BE348E1B2B91EE000CFE09 /* TimeAdapterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
