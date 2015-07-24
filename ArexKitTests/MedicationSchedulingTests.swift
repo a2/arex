@@ -39,11 +39,6 @@ class MedicationSchedulingTests: XCTestCase {
         return dateComponents
     }
 
-    func date(month: Int, _ day: Int, _ year: Int) -> NSDate {
-        let components = dateComponents(month, day, year)
-        return calendar.dateFromComponents(components)!
-    }
-
     func date(month: Int, _ day: Int, _ year: Int, _ hour: Int, _ minute: Int) -> NSDate {
         let components = dateComponents(month, day, year, hour, minute)
         return calendar.dateFromComponents(components)!
