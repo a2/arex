@@ -25,7 +25,7 @@ public func monitorDirectory(directoryURL: NSURL) -> SignalProducer<NSURL, Monit
             return sendError(observer, .CannotOpenDirectory(errno))
         }
 
-        let source: dispatch_queue_t? = dispatch_source_create(DISPATCH_SOURCE_TYPE_VNODE, UInt(fileDescriptor), DISPATCH_VNODE_WRITE, queue)
+        let source: dispatch_source_t? = dispatch_source_create(DISPATCH_SOURCE_TYPE_VNODE, UInt(fileDescriptor), DISPATCH_VNODE_WRITE, queue)
         if source == nil {
             sendError(observer, .CannotMonitorDirectory)
             return

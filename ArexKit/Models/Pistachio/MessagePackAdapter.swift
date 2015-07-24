@@ -41,7 +41,7 @@ public struct MessagePackAdapter<Value>: AdapterType {
 
     public init(specification: Adapter.Specification, @autoclosure(escaping) value: () -> Value) {
         self.init(specification: specification, valueClosure: { _ in
-            return Result.success(value())
+            return Result.Success(value())
         })
     }
 

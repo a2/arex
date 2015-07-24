@@ -38,9 +38,9 @@ public class MedicationsController {
     private func directoryURLContents() -> Result<[NSURL], NSError> {
         do {
             let contents = try fileManager.contentsOfDirectoryAtURL(directoryURL, includingPropertiesForKeys: [], options: .SkipsHiddenFiles)
-            return .success(contents)
+            return .Success(contents)
         } catch let error {
-            return .failure(error as NSError)
+            return .Failure(error as NSError)
         }
     }
 

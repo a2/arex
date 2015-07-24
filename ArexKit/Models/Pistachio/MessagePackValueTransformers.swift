@@ -13,10 +13,10 @@ public enum MessagePackValueTransformersError: ErrorType {
 
 public struct MessagePackValueTransformers {
     public static let bool: ReversibleValueTransformer<Bool, MessagePackValue, ErrorType> = ReversibleValueTransformer(transformClosure: { value in
-        return .success(.Bool(value))
+        return .Success(.Bool(value))
     }, reverseTransformClosure: { value in
         if let value = value.boolValue {
-            return .success(value)
+            return .Success(value)
         } else {
             return .failure(MessagePackValueTransformersError.InvalidType("Bool"))
         }
@@ -24,10 +24,10 @@ public struct MessagePackValueTransformers {
 
     public static func int<S: SignedIntegerType>() -> ReversibleValueTransformer<S, MessagePackValue, ErrorType> {
         return ReversibleValueTransformer(transformClosure: { value in
-            return .success(.Int(numericCast(value)))
+            return .Success(.Int(numericCast(value)))
         }, reverseTransformClosure: { value in
             if let value = value.integerValue {
-                return .success(numericCast(value))
+                return .Success(numericCast(value))
             } else {
                 return .failure(MessagePackValueTransformersError.InvalidType("Int"))
             }
@@ -36,10 +36,10 @@ public struct MessagePackValueTransformers {
 
     public static func uint<U: UnsignedIntegerType>() -> ReversibleValueTransformer<U, MessagePackValue, ErrorType> {
         return ReversibleValueTransformer(transformClosure: { value in
-            return .success(.UInt(numericCast(value)))
+            return .Success(.UInt(numericCast(value)))
         }, reverseTransformClosure: { value in
             if let value = value.unsignedIntegerValue {
-                return .success(numericCast(value))
+                return .Success(numericCast(value))
             } else {
                 return .failure(MessagePackValueTransformersError.InvalidType("UInt"))
             }
@@ -47,60 +47,60 @@ public struct MessagePackValueTransformers {
     }
 
     public static let float: ReversibleValueTransformer<Float32, MessagePackValue, ErrorType> = ReversibleValueTransformer(transformClosure: { value in
-        return .success(.Float(value))
+        return .Success(.Float(value))
     }, reverseTransformClosure: { value in
         if let value = value.floatValue {
-            return .success(value)
+            return .Success(value)
         } else {
             return .failure(MessagePackValueTransformersError.InvalidType("Float"))
         }
     })
 
     public static let double: ReversibleValueTransformer<Float64, MessagePackValue, ErrorType> = ReversibleValueTransformer(transformClosure: { value in
-        return .success(.Double(value))
+        return .Success(.Double(value))
     }, reverseTransformClosure: { value in
         if let value = value.doubleValue {
-            return .success(value)
+            return .Success(value)
         } else {
             return .failure(MessagePackValueTransformersError.InvalidType("Double"))
         }
     })
 
     public static let string: ReversibleValueTransformer<String, MessagePackValue, ErrorType> = ReversibleValueTransformer(transformClosure: { value in
-        return .success(.String(value))
+        return .Success(.String(value))
     }, reverseTransformClosure: { value in
         if let value = value.stringValue {
-            return .success(value)
+            return .Success(value)
         } else {
             return .failure(MessagePackValueTransformersError.InvalidType("String"))
         }
     })
 
     public static let binary: ReversibleValueTransformer<Data, MessagePackValue, ErrorType> = ReversibleValueTransformer(transformClosure: { value in
-        return .success(.Binary(value))
+        return .Success(.Binary(value))
     }, reverseTransformClosure: { value in
         if let value = value.dataValue {
-            return .success(value)
+            return .Success(value)
         } else {
             return .failure(MessagePackValueTransformersError.InvalidType("Binary"))
         }
     })
 
     public static let array: ReversibleValueTransformer<[MessagePackValue], MessagePackValue, ErrorType> = ReversibleValueTransformer(transformClosure: { value in
-        return .success(.Array(value))
+        return .Success(.Array(value))
     }, reverseTransformClosure: { value in
         if let value = value.arrayValue {
-            return .success(value)
+            return .Success(value)
         } else {
             return .failure(MessagePackValueTransformersError.InvalidType("Array"))
         }
     })
 
     public static let map: ReversibleValueTransformer<[MessagePackValue : MessagePackValue], MessagePackValue, ErrorType> = ReversibleValueTransformer(transformClosure: { value in
-        return .success(.Map(value))
+        return .Success(.Map(value))
     }, reverseTransformClosure: { value in
         if let value = value.dictionaryValue {
-            return .success(value)
+            return .Success(value)
         } else {
             return .failure(MessagePackValueTransformersError.InvalidType("Map"))
         }
@@ -108,11 +108,11 @@ public struct MessagePackValueTransformers {
 
     public static func extended(type: Int8) -> ReversibleValueTransformer<Data, MessagePackValue, ErrorType> {
         return ReversibleValueTransformer(transformClosure: { value in
-            return .success(.Extended(type, value))
+            return .Success(.Extended(type, value))
         }, reverseTransformClosure: { value in
             if let (decodedType, data) = value.extendedValue {
                 if decodedType == type {
-                    return .success(data)
+                    return .Success(data)
                 } else {
                     return .failure(MessagePackValueTransformersError.IncorrectExtendedType)
                 }

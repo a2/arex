@@ -5,17 +5,17 @@ import ValueTransformer
 struct DateTransformers {
     static func timeIntervalSinceReferenceDate<E>() -> ReversibleValueTransformer<NSDate, NSTimeInterval, E> {
         return ReversibleValueTransformer(transformClosure: { value in
-            return .success(value.timeIntervalSinceReferenceDate)
+            return .Success(value.timeIntervalSinceReferenceDate)
         }, reverseTransformClosure: { value in
-            return .success(NSDate(timeIntervalSinceReferenceDate: value))
+            return .Success(NSDate(timeIntervalSinceReferenceDate: value))
         })
     }
 
     static func timeIntervalSince1970<E>() -> ReversibleValueTransformer<NSDate, NSTimeInterval, E> {
         return ReversibleValueTransformer(transformClosure: { value in
-            return .success(value.timeIntervalSince1970)
+            return .Success(value.timeIntervalSince1970)
         }, reverseTransformClosure: { value in
-            return .success(NSDate(timeIntervalSince1970: value))
+            return .Success(NSDate(timeIntervalSince1970: value))
         })
     }
 }
