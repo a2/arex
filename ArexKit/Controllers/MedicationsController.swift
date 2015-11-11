@@ -39,7 +39,7 @@ public class MedicationsController {
         do {
             let contents = try fileManager.contentsOfDirectoryAtURL(directoryURL, includingPropertiesForKeys: [], options: .SkipsHiddenFiles)
             return .Success(contents)
-        } catch let error {
+        } catch {
             return .Failure(error as NSError)
         }
     }
@@ -54,8 +54,8 @@ public class MedicationsController {
             return URLs.flatMap { fileURL in
                 let result: Medication?
                 if let pathExtension = fileURL.pathExtension where pathExtension == MedicationsController.fileExtension,
-                    let lastPathComponent = fileURL.lastPathComponent,
-                    UUID = NSUUID(UUIDString: lastPathComponent.stringByDeletingPathExtension),
+                    let lastPathComponent = fileURL.URLByDeletingPathExtension?.lastPathComponent,
+                    UUID = NSUUID(UUIDString: lastPathComponent),
                     data = NSData(contentsOfURL: fileURL) {
                         do {
                             let messagePackValue = try unpack(data)
@@ -117,12 +117,12 @@ public class MedicationsController {
                     try data.writeToURL(medicationURL, options: .DataWritingAtomic)
                     set(MedicationLenses.isPersisted, medication, true)
 
-                    sendCompleted(observer)
-                } catch let error {
-                    sendError(observer, .CannotSave(name: name, underlying: error))
+                    observer.sendCompleted()
+                } catch {
+                    observer.sendFailed(.CannotSave(name: name, underlying: error))
                 }
             }, ifFailure: {
-                sendError(observer, .CannotSave(name: name, underlying: $0))
+                observer.sendFailed(.CannotSave(name: name, underlying: $0))
             })
         }
 
@@ -146,9 +146,9 @@ public class MedicationsController {
                 try NSFileManager().removeItemAtURL(medicationURL)
                 set(MedicationLenses.isPersisted, medication, false)
 
-                sendCompleted(observer)
-            } catch let error {
-                sendError(observer, .CannotDelete(name: name, underlying: error as NSError))
+                observer.sendCompleted()
+            } catch {
+                observer.sendFailed(.CannotDelete(name: name, underlying: error as NSError))
             }
         }
 

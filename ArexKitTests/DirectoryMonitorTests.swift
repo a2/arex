@@ -23,7 +23,7 @@ class DirectoryMonitorTests: XCTestCase {
     func removeTemporaryURL(directoryURL: NSURL) {
         do {
             try NSFileManager.defaultManager().removeItemAtURL(directoryURL)
-        } catch let error  {
+        } catch  {
             XCTFail("Could not remove directory \(directoryURL): \(error)")
         }
     }
@@ -62,7 +62,7 @@ class DirectoryMonitorTests: XCTestCase {
         do {
             let fileURL = directoryURL.URLByAppendingPathComponent("output.txt")
             try "Hello, world!".writeToURL(fileURL, atomically: true, encoding: NSUTF8StringEncoding)
-        } catch let error {
+        } catch {
             XCTFail("Unexpected error: \(error)")
         }
     }

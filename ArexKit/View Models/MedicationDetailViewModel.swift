@@ -26,8 +26,8 @@ public class MedicationDetailViewModel {
     // MARK: Properties
 
     public let isNew: Bool
-    public let canSave: PropertyOf<Bool>
-    public let name: PropertyOf<String?>
+    public let canSave: AnyProperty<Bool>
+    public let name: AnyProperty<String?>
 
     public var isPersisted: Bool {
         return get(MedicationLenses.isPersisted, medication)

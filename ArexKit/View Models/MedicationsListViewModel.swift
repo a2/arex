@@ -3,12 +3,12 @@ import ReactiveCocoa
 public class MedicationsListViewModel {
     public let medicationsUpdated: Signal<Void, NoError>
 
-    public var cellViewModels: LazyRandomAccessCollection<MapCollection<[Medication], MedicationListCellViewModel>> {
-        return lazy(medications).map({ MedicationListCellViewModel(medication: $0) })
+    public var cellViewModels: LazyMapCollection<[Medication], MedicationListCellViewModel> {
+        return medications.lazy.map({ MedicationListCellViewModel(medication: $0) })
     }
 
-    public var detailViewModels: LazyRandomAccessCollection<MapCollection<[Medication], MedicationDetailViewModel>> {
-        return lazy(medications).map({ [unowned self] in
+    public var detailViewModels: LazyMapCollection<[Medication], MedicationDetailViewModel> {
+        return medications.lazy.map({ [unowned self] in
             MedicationDetailViewModel(medicationsController: self.medicationsController, medication: $0)
         })
     }

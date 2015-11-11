@@ -15,11 +15,12 @@ class MedicationDetailViewController: FXFormViewController, MedicationDetailView
 
     @IBAction private func save(sender: UIBarButtonItem?) {
         sender?.enabled = false
-        viewModel.saveChanges.apply(())
-            .start(completed: { [unowned self, weak sender] in
-                sender?.enabled = true
-                self.cancel(sender)
-            })
+
+        let observer = Observer<(), ActionError<MedicationsControllerError>>(completed: { [unowned self, weak sender] in
+            sender?.enabled = true
+            self.cancel(sender)
+        })
+        viewModel.saveChanges.apply().start(observer)
     }
 
     @IBAction private func cancel(sender: UIBarButtonItem?) {
@@ -38,16 +39,15 @@ class MedicationDetailViewController: FXFormViewController, MedicationDetailView
                 }
             }
 
-            disposable += property.producer.start(next: { [unowned self] title in
-                self.navigationItem.title = title
-            })
+            let observer = Observer<String, NoError>(next: { [unowned self] title in self.navigationItem.title = title })
+            disposable += property.producer.start(observer)
         }
 
         func configureBarButtonItems() {
             let save = navigationItem.rightBarButtonItem ?? undefined("Navigation item's right bar button item not set")
-            disposable += viewModel.canSave.producer.start(next: { [weak save] canSave in
-                save?.enabled = canSave
-            })
+
+            let observer = Observer<Bool, NoError>(next: { [weak save] canSave in save?.enabled = canSave })
+            disposable += viewModel.canSave.producer.start(observer)
         }
 
         configureTitle()

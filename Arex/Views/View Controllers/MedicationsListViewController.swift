@@ -76,9 +76,8 @@ class MedicationsListViewController: UITableViewController {
 
         configureNavigationItem()
 
-        disposable += viewModel.medicationsUpdated.observe(next: { [weak self] in
-            self?.tableView.reloadData()
-        })
+        let observer = Observer<(), NoError>(next: { [weak self] () -> () in self?.tableView.reloadData() })
+        disposable += viewModel.medicationsUpdated.observe(observer)
     }
 
     // MARK: - Table View
@@ -102,11 +101,12 @@ class MedicationsListViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         precondition(editingStyle == .Delete)
 
-        viewModel.deleteViewModel(atIndex: indexPath.row)
-            .start(error: { error in
-                // Handle error
-            }, completed: {
+        let observer = Observer<Void, MedicationsControllerError>(failed: { error in
+            // Handle error
+        }, completed: {
 
-            })
+        })
+        viewModel.deleteViewModel(atIndex: indexPath.row)
+            .start(observer)
     }
 }

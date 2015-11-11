@@ -192,7 +192,7 @@ public class MedicationDetailForm: NSObject, FXForm {
     }
 
     public var localizedTimeOptions: [String] {
-        return Array(stride(from: 0, to: 24 * 60 * 60, by: 30 * 60)).map { (timeInterval: NSTimeInterval) -> String in
+        return 0.stride(to: 24 * 60 * 60, by: 30 * 60).map { (timeInterval: NSTimeInterval) -> String in
             let date = NSDate(timeIntervalSinceReferenceDate: timeInterval)
             return self.valueTransformer.transformedValue(date) as! String
         }

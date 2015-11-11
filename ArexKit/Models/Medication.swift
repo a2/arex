@@ -24,9 +24,9 @@ public struct Medication {
 
 extension Medication: CustomStringConvertible {
     public var description: String {
-        let nameDescription = name.map { "\"" + $0 + "\"" } ?? "nil"
-        let strengthDescription = strength.map { "\"" + $0 + "\"" } ?? "nil"
-        let timesDescription = "[" + ", ".join(times.map { String($0) }) + "]"
+        let nameDescription = name.map { "\"\($0)\"" } ?? "nil"
+        let strengthDescription = strength.map { "\"\($0)\"" } ?? "nil"
+        let timesDescription = "[\(times.map { String($0) }.joinWithSeparator(", "))]"
         return "Medication(name: \(nameDescription), schedule: \(String(schedule)), strength: \(strengthDescription), times: \(timesDescription), UUID: \(UUID.UUIDString))"
     }
 }

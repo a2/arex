@@ -24,7 +24,7 @@ extension PropertyType {
     /// - parameter transform: The transform to apply.
     ///
     /// - returns: A property of the new type.
-    public func map<T>(transform: Value -> T) -> PropertyOf<T> {
-        return PropertyOf(MappedProperty(property: self, transform: transform))
+    public func map<T>(transform: Value -> T) -> AnyProperty<T> {
+        return AnyProperty(MappedProperty(property: self, transform: transform))
     }
 }
