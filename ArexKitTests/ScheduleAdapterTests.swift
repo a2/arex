@@ -34,7 +34,12 @@ class ScheduleAdapterTests: XCTestCase {
         XCTAssertNotNil(value.dictionaryValue)
         XCTAssertEqual(value["type"], expected["type"])
         XCTAssertEqual(value["interval"], expected["interval"])
-        XCTAssertEqualWithAccuracy(value["startDate"]?.doubleValue, expected["startDate"]?.doubleValue, accuracy: 0.0001)
+        
+        if let doubleValue = value["startDate"]?.doubleValue, expectedValue = expected["startDate"]?.doubleValue {
+            XCTAssertEqualWithAccuracy(doubleValue, expectedValue, accuracy: 0.0001)
+        } else {
+            XCTFail()
+        }
     }
 
     func testEveryXDaysDecode() {

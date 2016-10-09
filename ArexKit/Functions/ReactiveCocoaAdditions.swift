@@ -15,6 +15,8 @@ public func catchAll<T, E>(error: E) -> SignalProducer<T, NoError> {
 /// - parameter replacement: A constant value to return.
 ///
 /// - returns: The replacement value.
-public func replace<T, U>(replacement: T)(_: U) -> T {
-    return replacement
+public func replace<T, U>(replacement: T) -> (U) -> T {
+    return { _ in
+        return replacement
+    }
 }

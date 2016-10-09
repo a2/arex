@@ -49,7 +49,7 @@ class MedicationSchedulingTests: XCTestCase {
         let dates = medication.dates(inCalendar: calendar, from: date_1JAN2015, to: date_10JAN2015)
 
         let expectedDates = (1...10).flatMap { day in
-            (1...4).map { hour in date(1, day, 2015, hour, 0) }
+            (1...4).map { hour in self.date(1, day, 2015, hour, 0) }
         }
         XCTAssertEqual(dates, expectedDates)
     }
@@ -62,7 +62,7 @@ class MedicationSchedulingTests: XCTestCase {
             let dates = medication.dates(inCalendar: calendar, from: date_1JAN2015, to: date_10JAN2015)
 
             let expectedDates = days.flatMap { day in
-                (1...4).map { hour in date(1, day, 2015, hour, 0) }
+                (1...4).map { hour in self.date(1, day, 2015, hour, 0) }
             }
             XCTAssertEqual(dates, expectedDates)
         }
@@ -90,7 +90,7 @@ class MedicationSchedulingTests: XCTestCase {
             let dates = medication.dates(inCalendar: calendar, from: date_1JAN2015, to: date_10JAN2015)
 
             let expectedDates = days.flatMap { day in
-                (1...4).map { hour in date(1, day, 2015, hour, 0) }
+                (1...4).map { hour in self.date(1, day, 2015, hour, 0) }
             }
             XCTAssertEqual(dates, expectedDates)
         }
@@ -112,7 +112,7 @@ class MedicationSchedulingTests: XCTestCase {
             let dates = medication.dates(inCalendar: calendar, from: date_1JAN2015, to: date_10JAN2015)
 
             let expectedDates = days.flatMap { day in
-                (1...4).map { hour in date(1, day, 2015, hour, 0) }
+                (1...4).map { hour in self.date(1, day, 2015, hour, 0) }
             }
             XCTAssertEqual(dates, expectedDates)
         }

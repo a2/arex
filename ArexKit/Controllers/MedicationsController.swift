@@ -64,7 +64,7 @@ public class MedicationsController {
                             result = medication.analysis(ifSuccess: {
                                 $0
                             }, ifFailure: {
-                                print("\(__FUNCTION__) Failed to unpack Medication at \(fileURL): \($0)")
+                                print("\(#function) Failed to unpack Medication at \(fileURL): \($0)")
                                 return nil
                             })
                         } catch {
