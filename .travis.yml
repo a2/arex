@@ -4,4 +4,4 @@ osx_image: xcode7.3
 before_install:
   - carthage bootstrap --platform ios
 script:
-  - xctool -project Arex.xcodeproj -scheme Arex -sdk iphonesimulator9.3 -destination "platform=iOS Simulator,name=iPhone 6 Plus" build test ONLY_ACTIVE_ARCH=NO CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+  - xctool -project Arex.xcodeproj -scheme Arex -sdk iphonesimulator9.3 -destination "platform=iOS Simulator,name=iPhone 6s" build test ONLY_ACTIVE_ARCH=NO CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
