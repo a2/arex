@@ -1,9 +1,10 @@
-public func +<K, V>(var lhs: [K : V], rhs: [K : V]) -> [K : V] {
+public func +<K, V>(lhs: [K : V], rhs: [K : V]) -> [K : V] {
+    var result = lhs
     for (key, val) in rhs {
-        lhs[key] = val
+        result[key] = val
     }
 
-    return lhs
+    return result
 }
 
 public func +=<K, V>(inout lhs: [K : V], rhs: [K : V]) {

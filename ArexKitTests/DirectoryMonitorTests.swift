@@ -4,20 +4,10 @@ import XCTest
 
 class DirectoryMonitorTests: XCTestCase {
     func makeTemporaryURL() -> NSURL {
-        var template = NSTemporaryDirectory().stringByAppendingPathComponent("DirectoryMonitorSpec.XXXXXXXX").fileSystemRepresentation()
-        let directoryURL = template.withUnsafeMutableBufferPointer { (inout buffer: UnsafeMutableBufferPointer<Int8>) -> NSURL? in
-            let path = mkdtemp(buffer.baseAddress)
-            return NSURL(fileURLWithFileSystemRepresentation: path, isDirectory: true, relativeToURL: nil)
-        }
-
-        if let directoryURL = directoryURL {
-            return directoryURL
-        } else {
-            let error = errno
-            let string = String.fromCString(strerror(error))
-            XCTFail("Could not create directory template: error \(error) \"\(string)\"")
-            return undefined("XCTFail() should end the test")
-        }
+        var fsrep = [Int8](count: Int(PATH_MAX), repeatedValue: 0)
+        let template = NSURL.fileURLWithPath(NSTemporaryDirectory(), isDirectory: true).URLByAppendingPathComponent("DirectoryMonitorSpec.XXXXXXXX")
+        template.getFileSystemRepresentation(&fsrep, maxLength: fsrep.count)
+        return NSURL(fileURLWithFileSystemRepresentation: mkdtemp(&fsrep), isDirectory: true, relativeToURL: nil)
     }
 
     func removeTemporaryURL(directoryURL: NSURL) {
@@ -52,12 +42,12 @@ class DirectoryMonitorTests: XCTestCase {
         let serialDisposable = SerialDisposable()
         serialDisposable.innerDisposable = monitorDirectory(directoryURL)
             .observeOn(QueueScheduler())
-            .start(error: { error in
+            .start(Observer(failed: { error in
                 XCTFail("Unexpected failure: \(error)")
             }, next: { value in
                 XCTAssertEqual(value, directoryURL)
                 serialDisposable.dispose()
-            })
+            }))
 
         do {
             let fileURL = directoryURL.URLByAppendingPathComponent("output.txt")
