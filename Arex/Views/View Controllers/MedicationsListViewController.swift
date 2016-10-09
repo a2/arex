@@ -36,9 +36,9 @@ class MedicationsListViewController: UITableViewController {
     func updateNavigationItem(editing: Bool, _ animated: Bool) {
         let leftBarButtonItem: UIBarButtonItem?
         if editing {
-            leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "newMedication:")
+            leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(newMedication))
         } else {
-            leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "dismiss:")
+            leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(dismiss))
         }
 
         navigationItem.setLeftBarButtonItem(leftBarButtonItem, animated: animated)

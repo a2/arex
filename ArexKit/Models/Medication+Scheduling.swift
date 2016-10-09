@@ -1,11 +1,14 @@
 import Pistachio
 import Monocle
 
-private func dayCompare(calendar: NSCalendar)(_ a: NSDate, _ b: NSDate) -> NSComparisonResult {
-    return calendar.compareDate(a, toDate: b, toUnitGranularity: .Day)
+private func dayCompare(calendar: NSCalendar) -> (NSDate, NSDate) -> NSComparisonResult {
+    return { a, b in
+        return calendar.compareDate(a, toDate: b, toUnitGranularity: .Day)
+    }
 }
 
-private func addDay(calendar: NSCalendar, var date: NSDate) -> NSDate {
+private func addDay(calendar: NSCalendar, date: NSDate) -> NSDate {
+    var date = date
     date = calendar.dateByAddingUnit(.Day, value: 1, toDate: date, options: .MatchNextTime)!
     date = calendar.startOfDayForDate(date)
     return date
@@ -25,57 +28,63 @@ extension Medication {
         return everyXDaysDates(interval: 1, startDate: from)(calendar: calendar, from: from, to: to)
     }
 
-    private func everyXDaysDates(interval interval: Int, startDate: NSDate)(calendar: NSCalendar, from: NSDate, to: NSDate) -> [NSDate] {
-        let compare = dayCompare(calendar)
-        if compare(startDate, to) == .OrderedDescending {
-            return []
-        }
-
-        var date = startDate
-        var dates = [NSDate]()
-        var daysSinceFrom = 0
-        while compare(date, to) != .OrderedDescending {
-            if daysSinceFrom % interval == 0 && compare(date, from) != .OrderedAscending {
-                dates += addTimesToDate(calendar, date: date)
+    private func everyXDaysDates(interval interval: Int, startDate: NSDate) -> (calendar: NSCalendar, from: NSDate, to: NSDate) -> [NSDate] {
+        return { calendar, from, to in
+            let compare = dayCompare(calendar)
+            if compare(startDate, to) == .OrderedDescending {
+                return []
             }
 
-            date = addDay(calendar, date: date)
-            daysSinceFrom++
-        }
+            var date = startDate
+            var dates = [NSDate]()
+            var daysSinceFrom = 0
+            while compare(date, to) != .OrderedDescending {
+                if daysSinceFrom % interval == 0 && compare(date, from) != .OrderedAscending {
+                    dates += self.addTimesToDate(calendar, date: date)
+                }
 
-        return dates
+                date = addDay(calendar, date: date)
+                daysSinceFrom += 1
+            }
+
+            return dates
+        }
     }
     
-    private func weeklyDates(days days: Int)(calendar: NSCalendar, from: NSDate, to: NSDate) -> [NSDate] {
-        let compare = dayCompare(calendar)
-        var date = from
-        var dates = [NSDate]()
-        while compare(date, to) != .OrderedDescending {
-            let weekday = calendar.component(.Weekday, fromDate: date)
-            if (days & (1 << (weekday - 1))) != 0 {
-                dates += addTimesToDate(calendar, date: date)
+    private func weeklyDates(days days: Int) -> (calendar: NSCalendar, from: NSDate, to: NSDate) -> [NSDate] {
+        return { calendar, from, to in
+            let compare = dayCompare(calendar)
+            var date = from
+            var dates = [NSDate]()
+            while compare(date, to) != .OrderedDescending {
+                let weekday = calendar.component(.Weekday, fromDate: date)
+                if (days & (1 << (weekday - 1))) != 0 {
+                    dates += self.addTimesToDate(calendar, date: date)
+                }
+
+                date = addDay(calendar, date: date)
             }
 
-            date = addDay(calendar, date: date)
+            return dates
         }
-
-        return dates
     }
     
-    private func monthlyDates(days days: Int)(calendar: NSCalendar, from: NSDate, to: NSDate) -> [NSDate] {
-        let compare = dayCompare(calendar)
-        var date = from
-        var dates = [NSDate]()
-        while compare(date, to) != .OrderedDescending {
-            let monthDay = calendar.component(.Day, fromDate: date)
-            if (days & (1 << (monthDay - 1))) != 0 {
-                dates += addTimesToDate(calendar, date: date)
+    private func monthlyDates(days days: Int) -> (calendar: NSCalendar, from: NSDate, to: NSDate) -> [NSDate] {
+        return { calendar, from, to in
+            let compare = dayCompare(calendar)
+            var date = from
+            var dates = [NSDate]()
+            while compare(date, to) != .OrderedDescending {
+                let monthDay = calendar.component(.Day, fromDate: date)
+                if (days & (1 << (monthDay - 1))) != 0 {
+                    dates += self.addTimesToDate(calendar, date: date)
+                }
+
+                date = addDay(calendar, date: date)
             }
 
-            date = addDay(calendar, date: date)
+            return dates
         }
-
-        return dates
     }
     
     public func dates(inCalendar calendar: NSCalendar, from: NSDate, to: NSDate) -> [NSDate] {

@@ -39,7 +39,7 @@ public func not<T, B: BooleanType>(transform: T -> B) -> T -> Bool {
 /// `fatal error: undefined: main.swift, line 131`
 ///
 /// Thanks to Johannes Weiß <https://github.com/weissi/swift-undefined>.
-public func undefined<T>(hint: String = "", file: StaticString = __FILE__, line: UInt = __LINE__) -> T {
+public func undefined<T>(hint: String = "", file: StaticString = #file, line: UInt = #line) -> T {
     let message = hint == "" ? "" : ": \(hint)"
     fatalError("undefined \(T.self)\(message)", file: file, line: line)
 }
