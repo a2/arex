@@ -10,11 +10,11 @@ Command Line Tools installed.
 ```sh
 git clone --recursive https://github.com/a2/arex-7.git
 cd arex-7
-carthage bootstrap
+carthage bootstrap --platform ios
 ```
 ## Getting Started
 
-Arex must be built with [Xcode](https://developer.apple.com/xcode/downloads/) 7.0 or better.
+Arex must be built with [Xcode](https://developer.apple.com/download/) 7.3.1 or better.
 
 The project may also be built from the command line:
 
@@ -24,7 +24,7 @@ xcodebuild -project Arex.xcodeproj -scheme Arex
 
 ## Tech Stack
 
-* [Swift](https://developer.apple.com/swift/) 2.0 or better.
+* [Swift](https://developer.apple.com/swift/) 2.2 or better.
 * [Carthage](https://github.com/Carthage/Carthage)
 * [MessagePack.swift](https://github.com/a2/MessagePack.swift)
 * [Pistachio](https://github.com/felixjendrusch/Pistachio)
